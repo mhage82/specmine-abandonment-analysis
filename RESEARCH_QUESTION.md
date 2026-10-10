@@ -1,143 +1,59 @@
-# SpecMine Specification Abandonment Analysis
-
-## Selected Research Topic
-
-This project investigates specification abandonment in open-source software repositories represented in the SpecMine dataset. The study focuses on identifying observable characteristics associated with specifications that appear to be abandoned, contain unresolved placeholders, or retain incomplete tasks.
+# Specification Abandonment Analysis — Research Framing
 
 ## Research Question
 
-**What predicts that a software specification will be abandoned, left with placeholders, or left with incomplete tasks?**
+What predicts that a software specification will be abandoned, left with placeholders, or left with incomplete tasks?
 
-## Motivation
+We will study these outcomes separately. Unfinished content may suggest incomplete work, but it does not automatically mean that a specification has been abandoned.
 
-Software specifications are intended to guide development by documenting expected behavior, requirements, and implementation plans. However, some specifications are created and later receive little or no additional attention. Others continue to contain TODO comments, placeholder text, unresolved tasks, or incomplete sections.
+## Motivation and Expected Contribution
 
-Understanding these patterns may help researchers and software teams identify specifications that are at risk of becoming outdated or unfinished. This is especially important because an abandoned specification can create confusion about whether its requirements are still valid, whether its associated implementation was completed, or whether the planned work was discontinued.
+Specifications can help developers describe requirements, plan changes, and track implementation. However, some may stop receiving attention while still containing placeholders or unfinished tasks.
 
-The SpecMine dataset provides an opportunity to examine these patterns across a large collection of specification artifacts and repositories rather than relying on a small number of manually selected projects.
+Our study will examine whether document structure, revision activity, repository context, and tool family are associated with these outcomes. The expected contribution is a reproducible analysis with clearly documented indicators, supporting examples, and limitations. We will not interpret observed associations as proof of causation.
 
-## Expected Contribution
+## Competing Explanations
 
-The expected contribution of this project is a reproducible analysis of observable factors associated with possible specification abandonment. The project will:
+A specification with no recent updates may describe completed, stable work. It may also have been replaced, deferred, or maintained elsewhere.
 
-1. Develop measurable indicators for potential specification abandonment.
-2. Keep placeholders and incomplete tasks separate from abandonment rather than treating them as identical conditions.
-3. Examine whether specification structure, revision history, repository activity, tool family, and contributor-related characteristics are associated with the observed outcomes.
-4. Compare multiple inactivity thresholds to determine whether conclusions remain consistent under different definitions of abandonment.
-5. Produce a baseline predictive analysis that can be reproduced and evaluated by other researchers.
+Unchecked tasks and placeholders may be outdated rather than evidence of ongoing incomplete work. Limited commit history or a short observation period can also make an active specification appear abandoned.
 
-The analysis will identify associations and predictive patterns. It will not claim to determine a developer’s intent or prove that any factor directly caused a specification to be abandoned.
+These explanations will guide the team's operational definition and review of candidate examples.
 
-## Competing or Simpler Explanations
+## Unit of Analysis, Population, and Sample
 
-Several alternative explanations must be considered before a specification is classified as potentially abandoned:
+The planned unit of analysis is an individual specification artifact. Repository-level information will provide context. Because multiple artifacts may come from the same repository, they will not be treated as fully independent without justification.
 
-- A specification may be complete and therefore no longer require changes.
-- A repository may have become inactive as a whole.
-- Development may have moved to another branch, repository, document, or tracking system.
-- A specification may have been replaced by a newer artifact.
-- A TODO or placeholder may be intentionally retained for future work.
-- A recently created specification may not have had enough time to receive additional revisions.
-- Different specification tools may use placeholders or task markers differently.
-- Missing history or incomplete metadata may make an active specification appear inactive.
+The target population is open-source repositories using specification-driven development artifacts. Our accessible sample is the SpecMine v1.1 curated 500-repository sample selected by the team.
 
-These explanations will be addressed by using repository context, revision history, multiple inactivity thresholds, and an unknown or right-censored category for records that do not contain enough follow-up history.
+Dataset source: https://github.com/shyamagarwal13/specmine-official
 
-## Unit of Analysis
+The sample is curated rather than random, so results will be interpreted within its coverage. The final number of specifications and repositories retained for analysis will be reported after loading and filtering.
 
-The unit of analysis is an individual specification artifact represented in the SpecMine dataset.
+## Candidate Explanatory Variables
 
-Each specification will be analyzed using available information about the artifact itself, its revision history, and the repository in which it appears. Repository-level information may be used as context, but the primary observation remains the individual specification artifact.
+We will consider the following groups of variables where the selected data supports them:
 
-## Population
+- Document structure and content, such as length, headings, and requirement-related features.
+- Specification revision activity, such as commit counts and revision timing.
+- Repository context, such as age, activity, and popularity.
+- Contributor context, such as participation in the available specification history.
+- Tool family and artifact lifecycle role.
 
-The target population consists of software specification artifacts created in open-source repositories that use specification-oriented development practices.
+The final variable selection will depend on field availability, data quality, and the team's implemented analysis.
 
-The accessible population for this project consists of specification artifacts included in the official SpecMine dataset.
+## Outcomes and Measurement
 
-## Sprint 1 Sample
+The planned outcomes are specification abandonment, unfilled placeholders, and incomplete tasks.
 
-The study sample will include SpecMine records that can be loaded through the project’s documented data pipeline and contain the minimum information required for the analysis.
+Placeholder flags and unchecked task measures are candidate indicators of unfinished content. The team will define abandonment separately, including the observation period, any inactivity threshold, and how completed or stable specifications are distinguished from abandoned ones.
 
-A record must contain enough information to identify the specification and evaluate the selected predictors or outcomes. Records with insufficient observation time will not automatically be classified as abandoned. They will be retained as right-censored or unknown when appropriate.
+For checkbox-based measures, unchecked count will be calculated as total checkboxes minus checked checkboxes. The unchecked proportion will be undefined when no checkboxes are present. Missing data will not automatically be treated as zero or as evidence of completion.
 
-The final sample size will be recorded after the dataset loader is completed and the inclusion rules are applied.
+An outcome indicator will not also be used as a predictor of that same outcome. Any predictive analysis will require explanatory variables measured before the outcome period. If the available data cannot support that ordering, findings will be described as associations.
 
-## Predictor Variables
+## Current Status
 
-The proposed predictor groups are:
+The research framing is drafted, and the team has selected the SpecMine v1.1 500-repository sample.
 
-### Specification Structure
-
-- Specification length or size
-- Number of sections or structured components
-- Presence of empty or incomplete sections
-- Presence of TODO markers
-- Presence of placeholder text
-- Presence of unresolved task indicators
-
-### Revision Activity
-
-- Number of revisions
-- Time between revisions
-- Time since the most recent revision
-- Frequency of changes
-- Age of the specification
-
-### Repository Activity and Maturity
-
-- Repository age
-- Commit activity
-- Contributor activity
-- Whether repository development continued after specification activity stopped
-- Other available repository-level activity measures
-
-### Tool Family
-
-- Specification tool or framework associated with the artifact
-- Differences in patterns across supported tool families
-
-### Contributor or Team Context
-
-- Number of contributors associated with the repository
-- Number of contributors associated with the specification, when available
-- Other non-identifying team-level measures available in the dataset
-
-Only information available at or before the selected outcome cutoff will be used as a predictor. Information created after the outcome will be excluded to prevent data leakage.
-
-## Outcome Measures
-
-The project will examine related but distinct outcomes.
-
-### Potential Specification Abandonment
-
-A specification may be classified as potentially abandoned when observable evidence indicates unfinished work and the artifact receives no meaningful revision for a defined period while sufficient repository history remains available.
-
-Candidate inactivity thresholds of 30, 60, 90, and 180 days will be evaluated where the available history permits. The final primary threshold will be documented and compared with alternative thresholds through sensitivity analysis.
-
-### Placeholders
-
-The presence of placeholder text will be recorded separately. A placeholder alone will not automatically prove that a specification was abandoned.
-
-### Incomplete Tasks
-
-The presence of TODO markers, unresolved checklist items, or similar unfinished-task indicators will also be recorded separately. An incomplete task alone will not automatically prove abandonment.
-
-### Unknown or Right-Censored Outcome
-
-A specification will be categorized as unknown or right-censored when the available history does not provide enough follow-up time to determine whether it became inactive under the selected threshold.
-
-## Assumptions and Scope
-
-This study is based on observable repository and specification data. It cannot directly determine why a developer stopped modifying a specification.
-
-The analysis therefore uses the term **potential abandonment** for classifications inferred from inactivity and unfinished-work indicators. Results will be reported as associations or predictions rather than causal conclusions.
-
-The project is limited to the information available in SpecMine and its associated metadata. Findings may not generalize to private repositories, repositories not represented in the dataset, or specification practices that are not captured by SpecMine.
-
-## Sprint 1 Decisions Still Requiring Dataset Verification
-
-The following items must be confirmed after the official dataset is loaded:
-
-- Exact sample size
-- Exact
+Final abandonment rules, retained sample counts, and analysis variables will be aligned with the team's operational definition and loading results. No results or validated abandonment labels are claimed at this stage.
