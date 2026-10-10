@@ -1,79 +1,47 @@
-# SpecMine Dataset Acquisition
+# Dataset Acquisition and Sampling
 
-## Purpose
+## Selected Dataset
 
-This guide documents how to obtain the SpecMine data for our specification abandonment study. Relevant fields are described in [DATA_DICTIONARY.md](DATA_DICTIONARY.md).
+Our team selected the SpecMine v1.1 curated 500-repository sample for the specification abandonment study.
 
-## Official Sources
+Source: https://github.com/shyamagarwal13/specmine-official
 
-- Project documentation: https://github.com/shyamagarwal13/specmine-official
-- Parquet files: https://huggingface.co/datasets/ShyAgarwal/specmine/tree/main
+This documentation describes the selected GitHub sample. The full SpecMine release and its mirrors are separate sources and are not the dataset selected for this sprint.
 
-The official project distinguishes the full release from a curated sample. Record which version is used because their coverage and selection differ.
+## Acquisition Instructions
 
-## Download Steps
+1. Clone or download the source repository linked above.
+2. Record the source commit hash and acquisition date so the same dataset revision can be retrieved later.
+3. Preserve the original data folder and supporting files, including README.md, DATA_DICTIONARY.md, schema.sql, and sample_repos.txt.
+4. Use the source data dictionary and schema to identify the relevant tables, fields, and join keys.
+5. Keep the original files unchanged. Save any filtered or derived outputs separately.
+6. Document the dependencies, commands, and paths used by the team's loading pipeline.
 
-1. Open the Parquet files link above.
-2. Open the dataset commit history and select the revision the team will use.
-3. Record the complete revision identifier and download date.
-4. Download the required files from that same revision using each file's download option.
-5. Preserve the original filenames and store the files locally in `data/raw/`.
+The source repository provides load.py and example.ipynb as loading examples. Our team's execution instructions and successful loading results will be documented with the implemented pipeline.
 
-The proposed core files are:
+## Sampling and Study Scope
 
-- `spec_files.parquet`
-- `spec_file_commits.parquet`
-- `spec_content_features.parquet`
-- `spec_links.parquet`
+The 500-repository sample was curated by the dataset authors. Our team is using this existing sample rather than drawing a new random sample.
 
-Supporting files may be needed for task completion, pull request information, and artifact relationships:
+The sample is not representative of all open-source repositories. Findings will therefore be interpreted within the selected sample, with its coverage and selection limits stated explicitly.
 
-- `pull_requests.parquet`
-- `pr_files.parquet`
-- `openspec_artifact_files.parquet`
-- `openspec_code_refs.parquet`
-- `repo_trees.parquet`
-- `kiro_files.parquet`
+An individual specification is the planned unit of analysis. The number of repositories in the release does not establish the number of specifications retained for our study.
 
-Check that each download is a complete Parquet file rather than an HTML page or Git LFS pointer. Keep the raw files unchanged.
+Any additional selection rules, exclusions, or filters will be documented with their reasons and resulting record counts. Missing content, unmatched records, and limited commit history will also be reported where they affect the analysis.
 
-## Loading Checks
+## Reproducibility Records
 
-Use a Parquet-compatible reader to inspect each downloaded table. Record:
+The final acquisition record will include:
 
-- Filename, file size, and SHA-256 checksum.
-- Row and column counts.
-- Column names and actual data types.
-- Missing values in required fields.
-- Duplicate identifiers and key uniqueness.
-- Timestamp parsing problems.
-- Matching coverage between joined tables.
-
-Compare the observed schema with `DATA_DICTIONARY.md` and resolve differences before analysis.
-
-## Sampling Procedure
-
-The planned approach is to use the full dataset if loading succeeds. If a smaller development sample is needed:
-
-1. Obtain and sort the distinct repository names in `spec_files`.
-2. Select a fixed number of repositories without replacement using a recorded random seed.
-3. Retain all specifications from those repositories.
-4. Filter content features and commit history using the retained specification identifiers.
-5. Retain links whose source specification is selected, while recording targets outside the sample.
-6. Filter supporting tables consistently and check join coverage.
-
-Record the sample size, seed, filters, and retained row counts. The team must approve and document the final analysis sample.
-
-If the official curated sample is used instead, record its release and explain its selection limitations.
-
-## Storage and Reproducibility
-
-Keep large raw files outside Git commits. Ensure `data/raw/` is excluded through `.gitignore`.
-
-Commit these instructions, the loading code, and a download manifest recording the dataset revision, filenames, checksums, and observed row counts.
+- Source URL, dataset version, source commit hash, and acquisition date.
+- Files and tables actually loaded.
+- Relevant fields and join keys used.
+- Loading dependencies and execution commands.
+- Record counts before and after filtering.
+- Selection rules, exclusions, and data coverage limitations.
 
 ## Current Status
 
-These are proposed acquisition instructions. Successful downloading and loading have not yet been confirmed.
+Jeremiah confirmed that the team is using the SpecMine v1.1 500-repository sample from the source repository linked above.
 
-The final documentation must match the release, files, sample, and filters actually used by the team's pipeline.
+The exact acquisition revision, successfully loaded tables, record counts, and any additional filters have not yet been provided for this documentation. These details will be added once the loading results are available.
