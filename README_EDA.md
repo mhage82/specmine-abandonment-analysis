@@ -14,9 +14,6 @@ Install the dependencies once:
 python -m pip install -r requirements-eda.txt
 ```
 
-The only new direct dependency beyond items 6/7 is matplotlib. NumPy is already
-installed through pandas/matplotlib. The group can merge these requirements
-into its existing requirements.txt later rather than maintain two lists.
 
 If `results/analysis_table.parquet` already exists from a successful data loader run,
 you can proceed directly to EDA. Otherwise, generate it first:
@@ -83,7 +80,7 @@ observed commit-count distribution.
 ## Limitations
 
 
-The source input fingerprints are included in `reference_results/source_pipeline_summary.json`.
+The source input fingerprints are included in `results/pipeline_summary.json`.
 The combined Parquet fingerprint is recorded in the EDA summary. A Parquet
 byte fingerprint can change across writer versions even when logical table
 values agree; retain package versions when comparing reproducibility.

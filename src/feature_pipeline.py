@@ -97,10 +97,28 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         result.to_parquet(out / "analysis_table.parquet", index=False)
         result.to_csv(out / "analysis_table.csv", index=False)
-        schema = [{"column": col, "dtype": str(dtype),
-                   "source": "derived/join status" if col.startswith("pipeline_") else
-                   "spec_content_features" if col.startswith("feature_") else "spec_files"}
-                  for col, dtype in result.dtypes.items()]
+        spec_columns = set(tables["spec_files"].columns)
+
+        feature_columns = {
+            f"feature_{col}"
+            for col in tables["spec_content_features"].columns
+            if col != KEY
+        }
+
+        schema = [
+            {
+                "column": col,
+                "dtype": str(dtype),
+                "source": (
+                    "spec_files"
+                    if col in spec_columns
+                    else "spec_content_features"
+                    if col in feature_columns
+                    else "derived/join status"
+                ),
+            }
+            for col, dtype in result.dtypes.items()
+        ]
         (out / "analysis_schema.json").write_text(json.dumps(schema, indent=2) + "\n", encoding="utf-8")
         (out / "pipeline_summary.json").write_text(json.dumps(audit, indent=2) + "\n", encoding="utf-8")
         print(f"Created analysis table: {len(result):,} rows, {len(result.columns)} columns")
