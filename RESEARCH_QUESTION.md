@@ -4,56 +4,66 @@
 
 What predicts that a software specification will be abandoned, left with placeholders, or left with incomplete tasks?
 
-We will study these outcomes separately. Unfinished content may suggest incomplete work, but it does not automatically mean that a specification has been abandoned.
+We will examine these outcomes separately. A placeholder or unchecked checkbox can indicate unfinished content, but neither establishes abandonment on its own.
 
 ## Motivation and Expected Contribution
 
-Specifications can help developers describe requirements, plan changes, and track implementation. However, some may stop receiving attention while still containing placeholders or unfinished tasks.
+Specifications help developers describe requirements, plan changes, and track work. Some may stop receiving attention while still containing unfinished content.
 
-Our study will examine whether document structure, revision activity, repository context, and tool family are associated with these outcomes. The expected contribution is a reproducible analysis with clearly documented indicators, supporting examples, and limitations. We will not interpret observed associations as proof of causation.
+Our study will examine whether document structure, revision activity, repository context, and tool family are associated with these outcomes. We aim to provide a reproducible analysis with clear measurement rules, supporting examples, and limitations. Observed associations will not be interpreted as proof of causation.
+
+Sprint 1 establishes the data foundation and explores candidate indicators. It does not yet evaluate abandonment prediction.
 
 ## Competing Explanations
 
-A specification with no recent updates may describe completed, stable work. It may also have been replaced, deferred, or maintained elsewhere.
+A specification without recent updates may describe completed, stable work. It may also have been replaced, deferred, or maintained elsewhere.
 
-Unchecked tasks and placeholders may be outdated rather than evidence of ongoing incomplete work. Limited commit history or a short observation period can also make an active specification appear abandoned.
+Unchecked checkboxes and placeholders may occur in templates, examples, or outdated documents. Limited historical coverage and short observation periods can also make active work appear abandoned.
 
-These explanations will guide the team's operational definition and review of candidate examples.
+These explanations will guide the abandonment definition and review of candidate examples.
 
 ## Unit of Analysis, Population, and Sample
 
-The planned unit of analysis is an individual specification artifact. Repository-level information will provide context. Because multiple artifacts may come from the same repository, they will not be treated as fully independent without justification.
+The unit of analysis is an individual specification artifact identified by file_url_sha16. Repository information provides context. Multiple specifications from the same repository may share development practices, so later comparisons and evaluation must account for that dependence.
 
-The target population is open-source repositories using specification-driven development artifacts. Our accessible sample is the SpecMine v1.1 curated 500-repository sample selected by the team.
+The target population is specification-driven development artifacts in open-source repositories.
 
-Dataset source: https://github.com/shyamagarwal13/specmine-official
+For Sprint 1, the implementation uses the broad-census portion of the SpecMine v1.1 curated 500-repository sample at revision 9fbb61541046cb2fb770fa944192a3fc0b64a9b1.
 
-The sample is curated rather than random, so results will be interpreted within its coverage. The final number of specifications and repositories retained for analysis will be reported after loading and filtering.
+Source: https://github.com/shyamagarwal13/specmine-official
+
+The analyzed sample contains 28,583 specifications from 415 repositories. It uses spec_files.parquet, spec_content_features.parquet, and spec_file_commits.parquet. Separate Kiro tables and other dataset layers are outside this implementation.
+
+No additional row filtering or subsampling was applied within these three tables. All 28,583 specifications were retained. The source sample is curated rather than random, so findings describe the analyzed sample rather than population rates for all open-source specifications.
 
 ## Candidate Explanatory Variables
 
-We will consider the following groups of variables where the selected data supports them:
+The study will consider these groups where the available data supports them:
 
-- Document structure and content, such as length, headings, and requirement-related features.
-- Specification revision activity, such as commit counts and revision timing.
-- Repository context, such as age, activity, and popularity.
-- Contributor context, such as participation in the available specification history.
+- Document structure and content, including length, headings, and requirement-related features.
+- Revision activity, including observed commit counts and timing.
+- Repository context, including age, activity, and popularity.
+- Contributor context, where suitable measures can be constructed from available history.
 - Tool family and artifact lifecycle role.
 
-The final variable selection will depend on field availability, data quality, and the team's implemented analysis.
+The current pipeline retains metadata and existing content features and adds observed-history summaries. Contributor counts and time since last revision are not currently generated. The retained 177 columns are not a finalized predictor list.
 
 ## Outcomes and Measurement
 
-The planned outcomes are specification abandonment, unfilled placeholders, and incomplete tasks.
+The planned outcomes are abandonment, unfilled placeholders, and incomplete tasks.
 
-Placeholder flags and unchecked task measures are candidate indicators of unfinished content. The team will define abandonment separately, including the observation period, any inactivity threshold, and how completed or stable specifications are distinguished from abandoned ones.
+The implemented exploratory analysis examines positive TODO counts, placeholder flags, and unchecked checkboxes. Missing or invalid measurements are treated as unknown, and percentages use valid observed records. Indicator groups may overlap.
 
-For checkbox-based measures, unchecked count will be calculated as total checkboxes minus checked checkboxes. The unchecked proportion will be undefined when no checkboxes are present. Missing data will not automatically be treated as zero or as evidence of completion.
+Unchecked checkboxes are a proxy for unfinished content rather than a verified count of incomplete implementation tasks. No abandonment labels or inactivity thresholds have been applied.
 
-An outcome indicator will not also be used as a predictor of that same outcome. Any predictive analysis will require explanatory variables measured before the outcome period. If the available data cannot support that ordering, findings will be described as associations.
+The team must document the abandonment rule, observation period, and treatment of completed, stable, replaced, or incompletely observed specifications before evaluating that outcome.
 
-## Current Status
+A measure used to define an outcome will not also be used as a predictor of that same outcome. Predictive analysis requires explanatory variables measured before the outcome period. If the available data cannot support that ordering, findings will be described as associations.
 
-The research framing is drafted, and the team has selected the SpecMine v1.1 500-repository sample.
+The observed history span measures the interval between the earliest and latest valid recorded commits. It does not measure inactivity after the last commit.
 
-Final abandonment rules, retained sample counts, and analysis variables will be aligned with the team's operational definition and loading results. No results or validated abandonment labels are claimed at this stage.
+## Sprint 1 Status
+
+The supplied code and run summary document successful preparation of an analysis table with 28,583 rows and 177 columns. The source revision, loaded files, counts, and absence of additional filtering are recorded in DATA_ACQUISITION.md. Field meanings, output names, and derived measures are documented in DATA_DICTIONARY.md.
+
+Research framing and dataset documentation are ready for teammate review. Final abandonment rules and predictor selection remain separate team decisions. This documentation does not claim validated abandonment labels, predictive results, or an independent rerun.
