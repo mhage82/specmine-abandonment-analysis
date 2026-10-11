@@ -57,19 +57,36 @@ for original field meanings.
 ## First-time setup: Windows CMD
 
 Requires Python 3.10+ and Git.
-1. Download group7-dataloader-pipeline.zip
-2. Extract zip
-3. Open CMD
-4. Change directory to this packages directory. 
-cd "C:\your\actual\folder\path\specmine-loader"  EXAMPLE:(cd C:\Users\JR\Desktop\specmine-loader\specmine-loader)
-5. Install the dependencies:
+1. Download or clone specmine-abandonment-analysis repository.
+2. Open CMD
+3. Change directory to this package directory. 
+
+```bat
+cd "C:\your\actual\folder\path\"  
+```
+4. Install the dependencies:
+
+```bat
 python -m pip install -r requirements.txt
-6. Download the SpecMine sample:
+```
+
+5. Download the SpecMine sample:
+
+```bat
 git clone https://github.com/shyamagarwal13/specmine-official.git data/specmine-official
-7. Select the exact version:
+```
+
+6. Select the exact version:
+
+```bat
 git -C data/specmine-official checkout 9fbb61541046cb2fb770fa944192a3fc0b64a9b1
-8. Run loader:
+```
+
+7. Run feature_pipeline:
+
+```bat
 python  src/feature_pipeline.py --data-dir data/specmine-official/data --output-dir results
+```
 
 ## Subsequent runs
 Once the dependencies and sample are available, run only:
