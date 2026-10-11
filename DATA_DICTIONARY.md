@@ -1,66 +1,95 @@
 # Study Data Dictionary
 
-## Scope and Source
+## Scope
 
-This dictionary identifies candidate fields for our specification abandonment study using the selected SpecMine v1.1 500-repository sample. It does not claim that every listed table has already been loaded or selected for analysis.
+This dictionary describes the fields used or retained by the Sprint 1 implementation. The analysis covers 28,583 specifications from 415 repositories in the broad-census portion of the SpecMine v1.1 sample.
 
-Full source dictionary: https://github.com/shyamagarwal13/specmine-official/blob/main/DATA_DICTIONARY.md
+Source revision: 9fbb61541046cb2fb770fa944192a3fc0b64a9b1
 
-## Core Tables
+Source dictionary: https://github.com/shyamagarwal13/specmine-official/blob/9fbb61541046cb2fb770fa944192a3fc0b64a9b1/DATA_DICTIONARY.md
 
-| Table | Contents |
-| --- | --- |
-| spec_files | Specification inventory and repository context |
-| spec_file_commits | File revision history |
-| spec_content_features | Parsed content features |
-| spec_links | References to related artifacts |
+Separate Kiro tables and other dataset layers are not included in this implementation.
 
-## Candidate Fields
+## Input Tables and Join Key
 
-| Table | Field | Meaning |
+| Table | Records | Role |
 | --- | --- | --- |
-| spec_files | file_url_sha16 | Specification identifier |
-| spec_files | repo_name | Repository identifier |
-| spec_files | file_path | Repository-relative path |
-| spec_files | spec_tool | Tool attribution |
-| spec_files | spec_role | Artifact lifecycle role |
-| spec_files | repo_stars | Stars at capture |
-| spec_files | repo_created_at | Repository creation timestamp |
-| spec_files | file_first_commit_at | First file commit timestamp |
-| spec_files | file_last_commit_at | Latest file commit timestamp |
-| spec_files | file_total_commits | Recorded file commit count |
-| spec_file_commits | committed_at | Committer timestamp |
-| spec_file_commits | author_login | Commit author login |
-| spec_content_features | n_words | Word count |
-| spec_content_features | n_headings | Heading count |
-| spec_content_features | n_checkboxes | Checkbox count |
-| spec_content_features | n_checked | Checked checkbox count |
-| spec_content_features | n_todo | TODO count |
-| spec_content_features | has_unfilled_placeholder | Placeholder flag |
+| spec_files | 28,583 | Specification inventory and repository context |
+| spec_content_features | 28,583 | Existing content measurements |
+| spec_file_commits | 42,376 | Observed specification commit history |
 
-## Join Keys
+All three tables are linked through file_url_sha16. Specification and feature identifiers must be present, nonblank, and unique within their respective tables. Commit records are summarized by specification before joining.
 
-Broad specification tables use file_url_sha16. For spec_links, join spec_url_sha16 to spec_files.file_url_sha16.
+## Relevant Retained Fields
 
-Kiro has separate tables: kiro_files, kiro_repos, kiro_file_commits, and kiro_content_features. Kiro history and features join through kiro_file_id to kiro_files.id.
+Specification fields retain their original names. Content-feature fields receive a feature_ prefix in the analysis table.
 
-## Proposed Derived Measures
+The types below describe the supplied output schema. An object type does not mean that a timestamp has already been parsed.
 
-These are study measures, not additional source columns:
+| Output field | Source | Loaded type | Meaning |
+| --- | --- | --- | --- |
+| file_url_sha16 | spec_files | object | Specification identifier and join key |
+| repo_name | spec_files | object | Repository name |
+| file_path | spec_files | object | Path within the repository |
+| spec_tool | spec_files | object | Tool attribution |
+| spec_role | spec_files | object | Artifact lifecycle role |
+| repo_stars | spec_files | int64 | Stars recorded at capture |
+| repo_created_at | spec_files | object | Repository creation timestamp |
+| file_first_commit_at | spec_files | object | Source-reported first file commit timestamp |
+| file_last_commit_at | spec_files | object | Source-reported latest file commit timestamp |
+| file_total_commits | spec_files | int64 | Source-reported file commit count |
+| feature_branch | spec_files | object | Feature branch value, when available |
+| feature_n_words | spec_content_features.n_words | int64 | Word count |
+| feature_n_headings | spec_content_features.n_headings | int64 | Heading count |
+| feature_n_todo | spec_content_features.n_todo | int64 | TODO count |
+| feature_n_checkboxes | spec_content_features.n_checkboxes | int64 | Total checkbox count |
+| feature_n_checked | spec_content_features.n_checked | int64 | Checked checkbox count |
+| feature_has_unfilled_placeholder | spec_content_features.has_unfilled_placeholder | int64 | Unfilled-placeholder flag |
 
-- Unchecked checkbox count: n_checkboxes minus n_checked.
-- Unchecked proportion: unchecked count divided by n_checkboxes, only when n_checkboxes is greater than zero.
-- Time since last recorded revision: a documented observation cutoff minus file_last_commit_at.
-- Contributor count: distinct nonmissing author_login values in the available file history.
+These content measurements were supplied by SpecMine. The pipeline does not recalculate them from raw Markdown.
 
-Missing values will remain missing unless a documented rule justifies another treatment. Negative counts, invalid timestamps, and unmatched joins will be investigated rather than silently corrected.
+## Pipeline-Derived Fields
 
-Checkbox and placeholder measures are candidate indicators of unfinished content. They do not establish abandonment by themselves. The team will document the abandonment rule separately and check competing explanations, including completed work and limited history.
+| Field | Loaded type | Definition |
+| --- | --- | --- |
+| pipeline_has_feature_row | bool | Whether a matching feature row exists |
+| pipeline_history_rows | Int64 | Number of observed history rows, including duplicate commits if present |
+| pipeline_distinct_commit_count | Int64 | Number of distinct non-null commit_sha values |
+| pipeline_first_observed_commit_at | datetime64[ns, UTC] | Earliest valid observed committed_at timestamp |
+| pipeline_last_observed_commit_at | datetime64[ns, UTC] | Latest valid observed committed_at timestamp |
+| pipeline_valid_commit_date_rows | Int64 | Number of parseable commit timestamps |
+| pipeline_invalid_commit_date_rows | Int64 | Number of non-null commit timestamps that failed parsing |
+| pipeline_has_history_rows | boolean | Whether at least one matching history row exists |
+| pipeline_observed_history_span_days | float64 | Difference between the latest and earliest valid observed timestamps, in fractional days |
 
-## Validation and Current Status
+The observed history span measures revision-history coverage. It does not measure inactivity since the last commit. A zero span can result from a single valid observed timestamp.
 
-The team must confirm which tables and fields the pipeline actually uses, their loaded data types, missingness, key uniqueness, join coverage, and retained record counts.
+## Implemented Exploratory Indicators
 
-The source dictionary lists MySQL schema types. The actual Parquet and loaded types must be checked before analysis.
+| Indicator | Rule | Valid observations |
+| --- | --- | --- |
+| TODO present | feature_n_todo > 0 | Nonnegative integer TODO counts |
+| Placeholder present | feature_has_unfilled_placeholder = 1 | Flag values of 0 or 1 |
+| Unchecked checkbox present | feature_n_checkboxes > feature_n_checked | Nonnegative integer counts, with checked count no greater than total |
 
-Any additional Kiro, OpenSpec, or pull-request fields used by the pipeline will be added with their source table, meaning, and join rules. The final dictionary will distinguish source fields from derived measures and outcome labels.
+Percentages use only valid observed records for each indicator. Missing or invalid values are reported as unknown rather than negative cases. The indicator groups may overlap.
+
+These are indicators of unfinished content, not validated abandonment labels or verified counts of unfinished implementation tasks.
+
+## Missing Values and Validation
+
+Missing feature values are preserved rather than replaced with zero. For specifications without matched history, observed-history counts are zero and date-based measures remain missing.
+
+The supplied run summary reports no unmatched specification/feature/history records, duplicate specification-and-commit records, or missing or unparseable commit timestamps. This does not establish complete historical coverage or complete values in every retained field.
+
+## Proposed Measures and Future Decisions
+
+Unchecked checkbox count and proportion, time since last revision, and contributor counts remain proposed measures unless implemented and documented separately. The current pipeline does not add these as output columns.
+
+Predictor selection, abandonment labels, observation cutoffs, and inactivity thresholds are separate study decisions. The 177 retained output columns are not a finalized predictor list.
+
+## Full Column Inventory and Provenance Note
+
+analysis_schema.json lists the output fields and loaded types. pipeline_summary.json records processing counts and input-file hashes.
+
+One source-category entry needs correction: feature_branch is retained from spec_files, although the supplied schema labels it as spec_content_features. Its name starts with feature_, which causes the current schema-generation rule to misclassify its source. The dictionary above records its actual provenance.
