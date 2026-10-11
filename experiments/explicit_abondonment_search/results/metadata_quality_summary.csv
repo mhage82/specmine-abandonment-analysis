@@ -1,0 +1,10 @@
+metric,value
+total_metadata_records,470795.0
+distinct_repositories,73031.0
+duplicate_identifier_rows_beyond_first,0.0
+duplicate_repository_path_rows_beyond_first,20383.0
+keyword_matched_records,2328.0
+keyword_match_percent,0.4945
+selected_records,20.0
+selected_distinct_repositories,18.0
+selected_distinct_commit_urls,19.0
