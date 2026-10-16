@@ -1,0 +1,11 @@
+{
+  "total_metadata_records": 470795,
+  "distinct_repositories": 73031,
+  "duplicate_identifier_rows_beyond_first": 0,
+  "duplicate_repository_path_rows_beyond_first": 20383,
+  "keyword_matched_records": 2328,
+  "keyword_match_percent": 0.4945,
+  "selected_records": 20,
+  "selected_distinct_repositories": 18,
+  "selected_distinct_commit_urls": 19
+}
