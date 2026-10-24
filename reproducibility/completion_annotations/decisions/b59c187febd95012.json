@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "b59c187febd95012",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/module_package.py | https://github.com/nold-ai/specfact-cli/blob/af8535029d98d8c2548608f544178d57bb49f31c/src/specfact_cli/registry/module_packages.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Optional schema_version and protocol_operations fields, protocol detection and mismatch skip are implemented. Required missing-schema warning recommending explicit declaration is absent: both reviewed revisions only debug-log assuming current. Full protocol discovery also lacks the required compliant per-module message. Metadata exists, but this selected combined metadata/reporting delta is not fully supported. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Optional schema_version and protocol_operations fields, protocol detection and mismatch skip are implemented. Required missing-schema warning recommending explicit declaration is absent: both reviewed revisions only debug-log assuming current. Full protocol discovery also lacks the required compliant per-module message. Metadata exists, but this selected combined metadata/reporting delta is not fully supported.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/module_package.py",
+      "observed_facts": [
+        "Inspected defaults None and empty list for schema_version/protocol_operations."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/af8535029d98d8c2548608f544178d57bb49f31c/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Historical registration uses DEBUG assuming-current for missing schema, with no explicit declaration recommendation; full protocol only increments counter."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Same reporting gaps persist in March snapshot."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "8ec23bd758732d7b",
+      "b59c187febd95012"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

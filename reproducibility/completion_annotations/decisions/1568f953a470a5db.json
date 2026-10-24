@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "1568f953a470a5db",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/sync/bridge_sync.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/adapters/ado.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/adapters/github.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Print removal is supported: a read-only AST scan of the March31 src/scripts/tools Python files found zero bare print calls. However the selected requirement is stronger: production sync diagnostics must use get_bridge_logger. Actual bridge_sync repeatedly creates logging.getLogger(__name__) and uses it directly, so the required logger routing is not established. Adapter code also uses runtime debug helpers rather than the exact declared logger construction. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Print removal is supported: a read-only AST scan of the March31 src/scripts/tools Python files found zero bare print calls. However the selected requirement is stronger: production sync diagnostics must use get_bridge_logger. Actual bridge_sync repeatedly creates logging.getLogger(__name__) and uses it directly, so the required logger routing is not established. Adapter code also uses runtime debug helpers rather than the exact declared logger construction.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/sync/bridge_sync.py",
+      "observed_facts": [
+        "Inspected multiple logger=logging.getLogger(__name__) assignments and debug/warning calls in production sync paths."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/adapters/ado.py",
+      "observed_facts": [
+        "Adapter imports runtime debug_log_operation/debug_print and LoggerSetup; bare prints absent."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/adapters/github.py",
+      "observed_facts": [
+        "Adapter uses runtime debug_log_operation; no direct get_bridge_logger construction in selected file."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md",
+      "observed_facts": [
+        "Reports print-in-src remediation, which is narrower than universal bridge-logger routing."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "1568f953a470a5db",
+      "9af7baa48034fa7a"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

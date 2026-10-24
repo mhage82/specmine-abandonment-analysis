@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "7e75cd320cceb1c6",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/6e8e120bebbca3b1158a5dda327b382de5bbf7c4.patch | https://raw.githubusercontent.com/carverauto/serviceradar/88c5a324793e4cff4155378c29fc29ec5949da6b/elixir/web-ng/lib/serviceradar_web_ng_web/live/diagnostics_live/mtr_compare.ex",
+  "manual_outcome_date": "",
+  "manual_notes": "Aggregate comparison, matched filters, counts, route signatures, representative traces and per-agent deltas have substantial code/test evidence. The exact spec requires local-midnight presets; inspected initial and later pinned UI construct presets with start_of_utc_day/Etc/UTC even though timestamps display user timezone. This acceptance mismatch remains unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The implementation is real, but display timezone does not make UTC-selected windows start at user local midnight. Strict acceptance of this exact spec is not established. No abandonment inference is made.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/6e8e120bebbca3b1158a5dda327b382de5bbf7c4.patch",
+      "observed_facts": "Inspected compare_windows queries, shared target/agent/protocol/reachability filtering, timeline and route-signature aggregation, per-agent comparison and tests for uneven samples/route changes; initial UI uses UTC day boundaries."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/88c5a324793e4cff4155378c29fc29ec5949da6b/elixir/web-ng/lib/serviceradar_web_ng_web/live/diagnostics_live/mtr_compare.ex",
+      "observed_facts": "Later pinned source has full-day/same-hours/rolling presets, drilldown links, baseline notices and user-timezone display, but window_state_from_params uses UTC now and both today presets call start_of_utc_day, which explicitly creates midnight Etc/UTC."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests or UI were executed.",
+    "Original dataset revision could not be relied on as accessible public history. Recovered public implementation commit and later pinned default-branch source are corroborating evidence, not asserted byte-identical to the dataset snapshot.",
+    "Later source was retrieved on 2026-10-23 and may postdate the dataset observation; no historical completion date is assigned.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full selected specification/shared tasks. Inspected substantive recovered implementation/query diff and tests, then checked later pinned UI preset/date logic to avoid treating an initial version as final. No tests were run.",
+  "spec_snapshot_sha256": "25a22449d2227b5288077f0993e78ab01a105eb56842c3726d68fc8207b7aec3",
+  "related_review_ids": [
+    "7e75cd320cceb1c6"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "6f71d1d710f0af12",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://registry.npmjs.org/@vibescore%2ftracker/0.0.3 | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/cli.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/bin/tracker.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Public npm metadata confirms @vibescore/tracker 0.0.3 is published with public access and tracker/vibescore-tracker bin entries. Pinned CLI implements an unauthenticated --help route before command dispatch. This supports the public package/help scope; a clean npx installation was not executed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Public npm metadata confirms @vibescore/tracker 0.0.3 is published with public access and tracker/vibescore-tracker bin entries. Pinned CLI implements an unauthenticated --help route before command dispatch. This supports the public package/help scope; a clean npx installation was not executed.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-22-2025-12-22-fix-tracker-npm-install/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://registry.npmjs.org/@vibescore%2ftracker/0.0.3",
+      "observed_facts": "Unauthenticated metadata response: version 0.0.3, publishConfig.access public, bin tracker and vibescore-tracker, public tarball."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/cli.js",
+      "observed_facts": "--help prints usage and returns without authentication."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/bin/tracker.js",
+      "observed_facts": "Executable entry imports CLI run and passes arguments."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

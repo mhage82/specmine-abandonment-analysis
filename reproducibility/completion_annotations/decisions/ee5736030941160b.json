@@ -1,0 +1,29 @@
+{
+  "file_url_sha16": "ee5736030941160b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/arabold/docs-mcp-server/commit/32dead556bb8549301c5aa872de4dd1f272ed0bc | https://github.com/arabold/docs-mcp-server/blob/0091ab83d1aee4434123f1828a202cf6b85b575d/src/store/DocumentStore.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Known/variable lookup, locked stored dimensions and model-change checks are corroborated. The spec also requires timeout fallback to FTS-only mode. In the inspected pinned store, a probe timeout becomes ModelConfigurationError and is rethrown by initialize; FTS-only handling is explicit for absent configuration/credentials. A higher-level timeout recovery path was not established in this review, so full-scope completion remains unclear; no abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Known/variable lookup, locked stored dimensions and model-change checks are corroborated. The spec also requires timeout fallback to FTS-only mode. In the inspected pinned store, a probe timeout becomes ModelConfigurationError and is rethrown by initialize; FTS-only handling is explicit for absent configuration/credentials. A higher-level timeout recovery path was not established in this review, so full-scope completion remains unclear; no abandonment inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/arabold/docs-mcp-server/commit/32dead556bb8549301c5aa872de4dd1f272ed0bc",
+      "observed_facts": "Inspected known-model aliases, variable-model detection, configuration and relevant tests."
+    },
+    {
+      "url": "https://github.com/arabold/docs-mcp-server/blob/0091ab83d1aee4434123f1828a202cf6b85b575d/src/store/DocumentStore.ts",
+      "observed_facts": "Reviewed detectEmbeddingDimension, resolveEffectiveEmbeddingDimension, throwEmbeddingInitializationError and initialize. The visible timeout path throws; explicit FTS-only returns cover missing config/credentials."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Caller-level fallback outside the inspected store was not exhaustively traced; additional evidence could resolve the uncertainty."
+  ],
+  "uncertainty_category": "incomplete_requirement_corroboration"
+}

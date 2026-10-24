@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "d7846c088fc8f32d",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/App.jsx | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/lib/vibescore-api.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/pages/DashboardPage.jsx | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/hooks/use-usage-data.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical API code clears expiration on successful JWT requests and marks JWT401 responses expired. App removes authenticated access while expired, renders a re-auth gate, and uses a remembered token to limit revalidation to one probe per token; success clears state through the shared API path. Usage hooks skip requests without a resolved token.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Historical API code clears expiration on successful JWT requests and marks JWT401 responses expired. App removes authenticated access while expired, renders a re-auth gate, and uses a remembered token to limit revalidation to one probe per token; success clears state through the shared API path. Usage hooks skip requests without a resolved token.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/App.jsx",
+      "observed_facts": [
+        "Read expired state subscription, signedIn/auth gating and lastProbeTokenRef revalidation."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/lib/vibescore-api.js",
+      "observed_facts": [
+        "Read JWT-specific success/error state transitions and request handling."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": [
+        "Read expired gate and signed-in/public access gating."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/hooks/use-usage-data.ts",
+      "observed_facts": [
+        "Read unresolved-token guard preventing private usage requests."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; historical auth state/probe/API/render gating plus usage hook token guard inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

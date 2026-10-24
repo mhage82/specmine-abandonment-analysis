@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "62a329eb316696c2",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/elixir/serviceradar_core/lib/serviceradar/credentials/plugin_assignment_materializer.ex | https://github.com/carverauto/serviceradar/commit/c19dd005c7bb54cf239451b6997b88d0ebbdee4c | https://github.com/carverauto/serviceradar/commit/e4e387625597fa1008a9f6f31a0f893a01bd3daa | https://github.com/carverauto/serviceradar/commit/3aa8246af8c5688f106022e7084265387330898f",
+  "manual_outcome_date": "",
+  "manual_notes": "Reviewed scoped assignment materializer, version derived from rule timestamp, broker grant references and command/session scope validation. However full required config rotation isolation and wrong-agent console rejection were not established end to end; inspected console credential path loses its resolver in May12 while pinned connector still expects material. Existing scoped planning is partial evidence, not sufficient to mark the entire agent-config/console contract completed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Reviewed scoped assignment materializer, version derived from rule timestamp, broker grant references and command/session scope validation. However full required config rotation isolation and wrong-agent console rejection were not established end to end; inspected console credential path loses its resolver in May12 while pinned connector still expects material. Existing scoped planning is partial evidence, not sufficient to mark the entire agent-config/console contract completed.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/elixir/serviceradar_core/lib/serviceradar/credentials/plugin_assignment_materializer.ex",
+      "observed_facts": [
+        "Selects rules by agent/gateway/partition scopes, target_agent_uid, policy version timestamp and broker refs instead of plaintext. No demonstrated secret-only rotation-to-config isolated invalidation in reviewed evidence."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/c19dd005c7bb54cf239451b6997b88d0ebbdee4c",
+      "observed_facts": [
+        "Materializes inventory/console assignments separately and tests grant reference payloads."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/e4e387625597fa1008a9f6f31a0f893a01bd3daa",
+      "observed_facts": [
+        "Server validates console target/rule scope and resolves assigned agent; not a verified wrong-agent runtime rejection."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/3aa8246af8c5688f106022e7084265387330898f",
+      "observed_facts": [
+        "Removes connector credential resolver; end-to-end authorized scoped session path not verified."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "62a329eb316696c2"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "e4de6848ffab227e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/marketplace_client.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/tests/unit/registry/test_marketplace_client.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/registry/index.json | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/marketplace_client.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Actual HTTP/offline/invalid-JSON/checksum paths and tests support the registry client. Published registry at pinned March17 lacks schema_version and entries omit required namespace/name/core_compatibility fields; fixtures invent the fuller schema. Missing-module/offline errors also omit specified corrective search/local-tarball advice. Therefore the full selected registry contract is unresolved despite functional downloads. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Actual HTTP/offline/invalid-JSON/checksum paths and tests support the registry client. Published registry at pinned March17 lacks schema_version and entries omit required namespace/name/core_compatibility fields; fixtures invent the fuller schema. Missing-module/offline errors also omit specified corrective search/local-tarball advice. Therefore the full selected registry contract is unresolved despite functional downloads.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/marketplace_client.py",
+      "observed_facts": [
+        "Read complete fetch and checksum-before-write download implementation with explicit errors."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/tests/unit/registry/test_marketplace_client.py",
+      "observed_facts": [
+        "Read mocked valid/invalid/offline/download/checksum assertions and fixture schema."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/registry/index.json",
+      "observed_facts": [
+        "Parsed actual index: top-level modules only; inspected official entry lacks several specified fields."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/marketplace_client.py",
+      "observed_facts": [
+        "Later missing-module/offline errors retain no corrective suggestion."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "0e074af520911f3e",
+      "e4de6848ffab227e"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

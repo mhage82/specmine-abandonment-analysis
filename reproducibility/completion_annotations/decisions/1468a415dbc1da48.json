@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "1468a415dbc1da48",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/role/role_dynamic_route_access.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/role/role_dynamic_route_access_test.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/role/role_dynamic_route_access.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Role-owned detached permission projection, revision freshness, input tenant validation and tenant-separated token cache are implemented and tested. Literal selected requirement also asks the output DTO to retain tenant dimension, but DynamicRouteAccessProjection has permissions/roles/data-scope/super-admin only and no tenant identity in both June20 and July11. The semantic isolation is supported; exact output contract remains unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Role-owned detached permission projection, revision freshness, input tenant validation and tenant-separated token cache are implemented and tested. Literal selected requirement also asks the output DTO to retain tenant dimension, but DynamicRouteAccessProjection has permissions/roles/data-scope/super-admin only and no tenant identity in both June20 and July11. The semantic isolation is supported; exact output contract remains unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/role/role_dynamic_route_access.go",
+      "observed_facts": [
+        "Read complete tenant-scoped input and copied projection fields; no tenant in returned DTO."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/role/role_dynamic_route_access_test.go",
+      "observed_facts": [
+        "Read detached-snapshot, tenant separation, freshness failure and invalid-input tests."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/role/role_dynamic_route_access.go",
+      "observed_facts": [
+        "Later DTO retains same field set without tenant identity."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "A human may interpret tenant dimension as semantic scoping rather than an explicit output field and revise this conservative contract-mismatch decision."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "1468a415dbc1da48"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

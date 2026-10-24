@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "b1d8dd98e3ccebd4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/analyze_deps.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/main.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Actual graph fetching and cycle/impact analysis exist, but analyze-deps renders counts and critical path only; it does not display affected cycle items or parent/child/blocking edges as required. A separate trace_impact helper exists in backlog_core main, while the canonical backlog commands module imports/registers only analyze_deps. Strict selected CLI scope remains unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Actual graph fetching and cycle/impact analysis exist, but analyze-deps renders counts and critical path only; it does not display affected cycle items or parent/child/blocking edges as required. A separate trace_impact helper exists in backlog_core main, while the canonical backlog commands module imports/registers only analyze_deps. Strict selected CLI scope remains unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/analyze_deps.py",
+      "observed_facts": [
+        "Read entire file: cycle count only, graph summary, optional JSON export and separate trace_impact."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "Read canonical import/registration lines: analyze_deps registered; trace_impact not imported/mounted."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/main.py",
+      "observed_facts": [
+        "Separate legacy-style main mounts trace-impact, which does not establish it on canonical bundle surface."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b1d8dd98e3ccebd4"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

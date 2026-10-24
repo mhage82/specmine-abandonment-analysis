@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "1da5b49399527488",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/f13a0e447157f826ea805adc65caee4b3d69c5fa | https://github.com/carverauto/serviceradar/commit/4dd697f33749884c12cb687c9d3c9304ad6811e4 | https://github.com/carverauto/serviceradar/commit/63ee6e4ff1506b710fd54f1550dba70136a45af2",
+  "manual_outcome_date": "",
+  "manual_notes": "Per-agent table, source selector/bulk assignment and profile settings exist. However the required preview of effective source changes versus per-device overrides is absent from the reviewed preview handler/render: it passes only SRQL to preview_scope and displays UID/label rows. The source count is only length of a 25-row preview. This explicit UI scope gap prevents a strict completion label; checked shared tasks are insufficient.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Per-agent table, source selector/bulk assignment and profile settings exist. However the required preview of effective source changes versus per-device overrides is absent from the reviewed preview handler/render: it passes only SRQL to preview_scope and displays UID/label rows. The source count is only length of a 25-row preview. This explicit UI scope gap prevents a strict completion label; checked shared tasks are insufficient.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/f13a0e447157f826ea805adc65caee4b3d69c5fa",
+      "observed_facts": [
+        "preview_profile receives no candidate agent/priority and preview_scope returns query, rows and length(rows); rendering only lists IDs and labels, without predicted source changes or override exemptions. CRUD/priority UI and materializer exist."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/4dd697f33749884c12cb687c9d3c9304ad6811e4",
+      "observed_facts": [
+        "Device detail source selection/table implemented; examined metadata rendering and data loading."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/63ee6e4ff1506b710fd54f1550dba70136a45af2",
+      "observed_facts": [
+        "Adds source-label rendering test and freshness filters, but no UI preview effect computation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "1da5b49399527488"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "5cf942683ed37295",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/diff_review.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/diff_review_source_tests.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app_state.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Lint-fix review has real before/after state, per-file accept/reject and regression tests. The spec also requires LLM-generated changes to enter the same approval flow; no connected LLM change producer is established and AppState discards the AI registry. Completion of the full selected scope is therefore unresolved despite the implemented lint workflow.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Lint-fix review has real before/after state, per-file accept/reject and regression tests. The spec also requires LLM-generated changes to enter the same approval flow; no connected LLM change producer is established and AppState discards the AI registry. Completion of the full selected scope is therefore unresolved despite the implemented lint workflow.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/diff_review.rs",
+      "observed_facts": "LintFixBatch input builds pending review files; only explicit confirm calls content application, while reject marks decisions."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/diff_review_source_tests.rs",
+      "observed_facts": "Tests cover review content sources and application after ConfirmCurrentDiffReviewFile."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app_state.rs",
+      "observed_facts": "Constructor accepts AiProviderRegistry but immediately discards it with let _ = ai_registry; no LLM review route was found in inspected application actions."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "90e68baa0c0e1013963375869c6686f00c9f0d9b793b3c35e019a4f1870ccfee"
+}

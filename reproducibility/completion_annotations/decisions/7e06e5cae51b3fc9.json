@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "7e06e5cae51b3fc9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/findings.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/run/test_findings.py",
+  "manual_outcome_date": "",
+  "manual_notes": "The separate modules repository named by the task contains the required validated ReviewFinding model: allowed category/severity literals, required text/line fields and fixable=False default. Invalid severity and empty text are rejected; focused tests assert these behaviors. Evidence is a pinned April9 implementation snapshot; earliest completion date is unestablished.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The separate modules repository named by the task contains the required validated ReviewFinding model: allowed category/severity literals, required text/line fields and fixable=False default. Invalid severity and empty text are rejected; focused tests assert these behaviors. Evidence is a pinned April9 implementation snapshot; earliest completion date is unestablished.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/findings.py",
+      "observed_facts": [
+        "Read full ReviewFinding class and validators; required categories, severity set and default implemented."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/run/test_findings.py",
+      "observed_facts": [
+        "Assertions cover accepted values/categories, critical-severity rejection and required text validation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "7e06e5cae51b3fc9"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

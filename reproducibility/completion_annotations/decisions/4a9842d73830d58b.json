@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "4a9842d73830d58b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/scorer.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/run/test_scorer.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Scorer source implements base100, deductions15/5/2/1, five5-point modifiers, clamp0..120 and reward delta, with required verdict thresholds and blocking-error override. Read tests with numeric assertions for clean, blocking, fixable, warnings, bonuses and cap. This is scope-specific implementation evidence, not an inference from checked tasks.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Scorer source implements base100, deductions15/5/2/1, five5-point modifiers, clamp0..120 and reward delta, with required verdict thresholds and blocking-error override. Read tests with numeric assertions for clean, blocking, fixable, warnings, bonuses and cap. This is scope-specific implementation evidence, not an inference from checked tasks.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/scorer.py",
+      "observed_facts": [
+        "Inspected bonus/deduction functions, score clamp and verdict calculation."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/run/test_scorer.py",
+      "observed_facts": [
+        "Actual assertions verify85,95,94, threshold cases,120 cap and fail override despite110 score."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "4a9842d73830d58b"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

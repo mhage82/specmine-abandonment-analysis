@@ -1,0 +1,61 @@
+{
+  "file_url_sha16": "dcabacafbccc31f1",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/store/store_runtime_upgrade_state.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/index.vue | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/controller/plugin/plugin_v1_list.go | https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/internal/service/plugin/internal/catalog/runtime_upgrade_state.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/plugin-upgrade-modal.vue | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/api/system/plugin/index.ts | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_runtime_execute.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler_upgrade.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler_uninstall.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Runtime upgrade has extensive implementation: explicit confirmed and locked execution, version/state projection, preview dialog, custom Upgrade snapshots, purge-only Uninstall before SQL/storage cleanup, failure diagnostics and shared publication. A concrete required retry interaction is inconsistent: failure projection returns upgrade_failed before setting UpgradeAvailable, but the management retry button requires upgradeAvailable=true. Thus failed upgrades may have backend retry support without the required management-page action. The same early-return pattern and UI gate occur in inspected May and July revisions. Strict full-scope completion is unresolved, not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Runtime upgrade has extensive implementation: explicit confirmed and locked execution, version/state projection, preview dialog, custom Upgrade snapshots, purge-only Uninstall before SQL/storage cleanup, failure diagnostics and shared publication. A concrete required retry interaction is inconsistent: failure projection returns upgrade_failed before setting UpgradeAvailable, but the management retry button requires upgradeAvailable=true. Thus failed upgrades may have backend retry support without the required management-page action. The same early-return pattern and UI gate occur in inspected May and July revisions. Strict full-scope completion is unresolved, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/3fc4f0dda3aee882cb544a67e70286e993acc7b7/openspec/changes/archive/plugin-framework/specs/plugin-runtime-upgrade/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/store/store_runtime_upgrade_state.go",
+      "observed_facts": "Read projection: lines107-115 return failure state with default false UpgradeAvailable; only later newer-version branch at130 sets it true. Read normalized failure phases and business-entry state predicate."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/index.vue",
+      "observed_facts": "Read isRuntimeUpgradeAvailable lines328-334 and action template967-975: both pending and failed actions require true upgradeAvailable. Failed rows with false cannot show retryUpgrade; abnormal rows show disabled repair UI."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/controller/plugin/plugin_v1_list.go",
+      "observed_facts": "List/detail DTO projections copy UpgradeAvailable directly from service items."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/internal/service/plugin/internal/catalog/runtime_upgrade_state.go",
+      "observed_facts": "Historical May 28 state projection has the same early failed-state returns before setting upgrade availability; its management index also gates retry on the availability flag."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/plugin-upgrade-modal.vue",
+      "observed_facts": "Read entire modal: read-only preview load, versions and changes, dependency/host-service/SQL/risk sections, explicit confirm call and success/failure reload."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/api/system/plugin/index.ts",
+      "observed_facts": "GET preview and POST upgrade with confirmed=true are separate frontend requests."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_runtime_execute.go",
+      "observed_facts": "Inspected confirmation requirement, per-plugin lock, authoritative state reread, failure recovery/publication and topology-dependent distributed lock."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler_upgrade.go",
+      "observed_facts": "Read callback before upgrade SQL/governance/release switch; constructs Upgrade input with effective and target manifest snapshots and tags failure stages."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler_uninstall.go",
+      "observed_facts": "Read purge-policy branch: Uninstall callback before uninstall SQL/storage cleanup, early rollback on error, final uninstalled state only afterwards; callback skipped for retained data."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "The complete aggregate also spans startup, route/cron gating, tenant lifecycle and distributed behavior; these were not all independently executed or exhaustively audited here. The saved decision is based on the explicit retry-path mismatch plus substantial targeted corroboration.",
+    "Nearby unified-upgrade component annotations have narrower scopes; this UI-specific discrepancy does not automatically change those labels."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,62 @@
+{
+  "file_url_sha16": "0f795285cf8adcd3",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/lockcap/lockcap.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_lock_adapter.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/hostlock/hostlock_impl.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_lock.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_lock_test.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_directory.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Read complete lock domain contract, scoped host adapter, host acquisition/renew/release and dynamic dispatch. Shared backend receives plugin and tenant identity, validates lease bounds and ticket ownership, and isolates lock names; public source/guest methods expose lockcap DTOs. Regression assertions cover unauthorized resources, mismatched tickets, tenant/plugin isolation and injected shared backend.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Read complete lock domain contract, scoped host adapter, host acquisition/renew/release and dynamic dispatch. Shared backend receives plugin and tenant identity, validates lease bounds and ticket ownership, and isolates lock names; public source/guest methods expose lockcap DTOs. Regression assertions cover unauthorized resources, mismatched tickets, tenant/plugin isolation and injected shared backend.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/lockcap/lockcap.go",
+      "observed_facts": [
+        "Domain-only interface and lease/DTO contract."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_lock_adapter.go",
+      "observed_facts": [
+        "Full scoped adapter validates input and reuses injected hostlock with tenant fallback."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/hostlock/hostlock_impl.go",
+      "observed_facts": [
+        "Read actual namespace, opaque-ticket creation, renew/release ownership checks and shared locker calls."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_lock.go",
+      "observed_facts": [
+        "Dispatcher calls scoped lockcap rather than constructing backend."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_lock_test.go",
+      "observed_facts": [
+        "Inspected lifecycle, cross-resource/tenant/plugin and shared-service assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_directory.go",
+      "observed_facts": [
+        "Guest directory returns lockcap.Service."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "0f795285cf8adcd3"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

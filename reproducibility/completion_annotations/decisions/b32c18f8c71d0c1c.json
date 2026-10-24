@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "b32c18f8c71d0c1c",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/contract_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_contract_runner.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Contract runner scans public top-level/class functions, excludes underscore helpers, recognizes icontract decorators and emits contracts warnings. It invokes CrossHair with --per_path_timeout 2, maps counterexamples to warnings and allows AST results to survive unavailable/timeout outcomes. Inspected implementation and regression fixtures; no independent CrossHair execution.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Contract runner scans public top-level/class functions, excludes underscore helpers, recognizes icontract decorators and emits contracts warnings. It invokes CrossHair with --per_path_timeout 2, maps counterexamples to warnings and allows AST results to survive unavailable/timeout outcomes. Inspected implementation and regression fixtures; no independent CrossHair execution.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/contract_runner.py",
+      "observed_facts": [
+        "Read AST public API selection, decorator recognition, warning creation, CrossHair command/timeout/parser and combined result path."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_contract_runner.py",
+      "observed_facts": [
+        "Regression fixtures cover undecorated/decorated/private APIs, CrossHair counterexample and graceful failures."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b32c18f8c71d0c1c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

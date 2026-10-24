@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "d086d631de69fc1b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/a9cfe6e32dc2690c295373ed9aeb2ed3fcb0d86f.patch | https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/web-ng/lib/serviceradar_web_ng_web/live/admin/plugin_package_live/index.ex | https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/serviceradar_core/lib/serviceradar/observability/service_state_registry.ex | https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/serviceradar_core/lib/serviceradar/observability/service_state.ex",
+  "manual_outcome_date": "",
+  "manual_notes": "First-party release-header selection and ten-row pagination are implemented; assigned plugin rows and failed-to-CRITICAL normalization are supported by code and tests. Full stable-provenance/freshness acceptance remains unverified: assignment-created details include package/assignment IDs, but status upsert constructs details:nil and the resource upserts that field. No end-to-end evidence traced preservation of those details or stale/unknown classification in /services.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial shared-task delivery covers pagination and ordinary status publication, but the exact selected provenance and freshness requirements need further verification. Do not convert this uncertainty into a negative abandonment label.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/a9cfe6e32dc2690c295373ed9aeb2ed3fcb0d86f.patch",
+      "observed_facts": "Inspected assignment service registration, failure normalization in Go push loop, and regression assertions for pending service rows, provenance metadata and failed status mapping."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/web-ng/lib/serviceradar_web_ng_web/live/admin/plugin_package_live/index.ex",
+      "observed_facts": "Pinned UI has a release selector in the First-party Repository Plugins header and paginates selected catalog rows with page size ten."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/serviceradar_core/lib/serviceradar/observability/service_state_registry.ex",
+      "observed_facts": "Assignment creation sets assignment_id, plugin_id, package_id and package_version in details. build_attrs_from_status sets details:nil and reduces incoming message to its summary."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/serviceradar_core/lib/serviceradar/observability/service_state.ex",
+      "observed_facts": "The upsert action includes details in upsert_fields, so preservation of assignment-created provenance across status updates is not established by this path."
+    }
+  ],
+  "limitations": [
+    "Static source/test review only; no tests, benchmarks, deployments or production systems were run.",
+    "Evidence uses recovered public GitHub path-history commits. Their equivalence to the original dataset revision is not asserted; no completion date is inferred from the last specification edit.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full selected specification/shared tasks; inspected actual pagination component, full service registry, resource upsert fields, agent normalization/status construction and relevant assertion-based tests. Stale/freshness UI semantics were not verified end to end.",
+  "spec_snapshot_sha256": "3d3d397eea4c36211a8b541db591ef7b00f8c6bd7d0f14780ba2351c4e40e51c",
+  "related_review_ids": [
+    "d086d631de69fc1b"
+  ]
+}

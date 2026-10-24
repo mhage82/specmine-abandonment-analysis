@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "5136ed2b00da37a9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-leaderboard-settings.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/scripts/acceptance/leaderboard-settings-upsert.cjs",
+  "manual_outcome_date": "",
+  "manual_notes": "Authenticated settings handler tries one user_id upsert first and falls back to select plus insert/update when unsupported or failed. Acceptance code explicitly asserts the single-write path and fallback call counts, response fields, and ownership.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Authenticated settings handler tries one user_id upsert first and falls back to select plus insert/update when unsupported or failed. Acceptance code explicitly asserts the single-write path and fallback call counts, response fields, and ownership.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-22-2025-12-22-optimize-leaderboard-settings-upsert/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-leaderboard-settings.js",
+      "observed_facts": "Upsert-first write; fallback select/update/insert."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/scripts/acceptance/leaderboard-settings-upsert.cjs",
+      "observed_facts": "Assertions cover success with zero selects and fallback insert/update counts."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

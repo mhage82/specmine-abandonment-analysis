@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "ba74e1cdefda5081",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/pull/365/files | https://github.com/UseJunior/safe-docx/pull/371/files | https://github.com/UseJunior/safe-docx/pull/371",
+  "manual_outcome_date": "2026-06-10",
+  "manual_notes": "PR365 adds formattingFidelity.ts, exported APIs and scenario tests for content-aligned run/paragraph/table/section divergence and projected min-score comparison. PR371 adds the required xmlns-declaration exclusion and regression test. Inspected implementation and assertions; both merged Jun10. No test execution by reviewer.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "PR365 adds formattingFidelity.ts, exported APIs and scenario tests for content-aligned run/paragraph/table/section divergence and projected min-score comparison. PR371 adds the required xmlns-declaration exclusion and regression test. Inspected implementation and assertions; both merged Jun10. No test execution by reviewer.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/365/files",
+      "observed_facts": [
+        "Implementation collects paragraph/property units, aligns by text, calculates four dimension tallies and alignment-weighted score; compareProjectedFormattingFidelity compares accept/reject projections and returns Math.min. Tests cover the specification scenarios."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/371/files",
+      "observed_facts": [
+        "canonicalizeElement skips xmlns/xmlns:* attributes; a root-versus-inline binding test asserts score1 and no divergences."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/371",
+      "observed_facts": [
+        "GitHub API reports merged_at=2026-06-10T06:25:43Z; this extends the exact active spec with the namespace scenario."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "ba74e1cdefda5081"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

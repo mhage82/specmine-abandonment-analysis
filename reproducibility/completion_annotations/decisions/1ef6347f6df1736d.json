@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "1ef6347f6df1736d",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/debug-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-response-core.js | https://github.com/victorGPT/vibeusage/commit/92847591a16c2f64d3e3ad0290a4244ce18a50a1",
+  "manual_outcome_date": "",
+  "manual_notes": "The shared usage responder includes the specified request/status/query-duration/threshold/slow-query debug object only for debug=1. All six named usage handlers use the common endpoint/response path; logging uses the same measured diagnostic fields.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The shared usage responder includes the specified request/status/query-duration/threshold/slow-query debug object only for debug=1. All six named usage handlers use the common endpoint/response path; logging uses the same measured diagnostic fields.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/debug-core.js",
+      "observed_facts": [
+        "Read exact debug flag and payload field construction."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-response-core.js",
+      "observed_facts": [
+        "Read opt-in-only attachment and JSON responder."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/92847591a16c2f64d3e3ad0290a4244ce18a50a1",
+      "observed_facts": [
+        "Historical payload implementation lead, corroborated in shared source and six usage handlers."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; shared debug/response code and all six endpoint integration references inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

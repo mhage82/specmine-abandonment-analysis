@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "4391b2248d0f650c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/api/auth/v1/auth_login.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/auth/auth_impl.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/auth/auth_revoke.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/auth/auth_pre_token.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Client-type validation/claims, lifecycle hooks, shared single-use pre-token state and fail-closed revoke reads are implemented. The selected logout requirement limits Redis revoke TTL to remaining JWT validity, but logout passes only token ID and RevokeSession uses now plus a full refresh-token lifetime. That deliberate conservative fallback can outlast remaining validity, so the full selected temporal contract is not a strict completion example.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Client-type validation/claims, lifecycle hooks, shared single-use pre-token state and fail-closed revoke reads are implemented. The selected logout requirement limits Redis revoke TTL to remaining JWT validity, but logout passes only token ID and RevokeSession uses now plus a full refresh-token lifetime. That deliberate conservative fallback can outlast remaining validity, so the full selected temporal contract is not a strict completion example.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/api/auth/v1/auth_login.go",
+      "observed_facts": "Login requires clientType and documents the four allowed user-session types."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/auth/auth_impl.go",
+      "observed_facts": "Validates client types, emits auth hooks, rejects revoke read failures; Logout calls RevokeSession without expiry, whose fallback uses current time plus full refresh TTL."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/auth/auth_revoke.go",
+      "observed_facts": "KV revoke store sets TTL to time.Until(expiresAt), thus preserving the caller-supplied fallback expiry."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/auth/auth_pre_token.go",
+      "observed_facts": "Stores client type in a short-lived pre-token record; atomic increment claim prevents repeat consumption."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "fd111f3ce71142f162faab3792497174b3d3205ef1058a9e4835502924e62be1"
+}

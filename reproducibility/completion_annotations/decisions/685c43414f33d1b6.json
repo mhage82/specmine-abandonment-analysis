@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "685c43414f33d1b6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/inventage-ai/asylum/commit/23b81291b3dcab6d9083e9fffce13312a70d1253 | https://github.com/inventage-ai/asylum/blob/918a23f80b5f916327777533bc136fa8de041b9b/go.mod | https://github.com/inventage-ai/asylum/tree/918a23f80b5f916327777533bc136fa8de041b9b/internal",
+  "manual_outcome_date": "",
+  "manual_notes": "The initial scaffold supplies the four-target Makefile and version-printing entrypoint. The later pinned revision contains the required internal directories/assets and yaml.v3 dependency and updates the module to github.com/inventage-ai/asylum. The no-argument version output is explicitly an initial placeholder behavior, so subsequent CLI expansion is not treated as loss of completion.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The initial scaffold supplies the four-target Makefile and version-printing entrypoint. The later pinned revision contains the required internal directories/assets and yaml.v3 dependency and updates the module to github.com/inventage-ai/asylum. The no-argument version output is explicitly an initial placeholder behavior, so subsequent CLI expansion is not treated as loss of completion.",
+  "sources": [
+    {
+      "url": "https://github.com/inventage-ai/asylum/commit/23b81291b3dcab6d9083e9fffce13312a70d1253",
+      "observed_facts": "Read original Makefile, version entrypoint and setup task scope."
+    },
+    {
+      "url": "https://github.com/inventage-ai/asylum/blob/918a23f80b5f916327777533bc136fa8de041b9b/go.mod",
+      "observed_facts": "Module path and yaml.v3 dependency are present."
+    },
+    {
+      "url": "https://github.com/inventage-ai/asylum/tree/918a23f80b5f916327777533bc136fa8de041b9b/internal",
+      "observed_facts": "Directory tree includes all seven required internal packages and assets/cmd root entries."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Completion established across historical revisions; no single earliest all-requirements completion date assigned."
+  ]
+}

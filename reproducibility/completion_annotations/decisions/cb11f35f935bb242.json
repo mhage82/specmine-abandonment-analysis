@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "cb11f35f935bb242",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/sync.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/upload-throttle.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/vibescore-api.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/diagnostics.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Detached scheduled retry, persisted retry diagnostics, manual bypass and normal 30-minute success throttle are implemented. However the requirement says at most one auto upload attempt every30 minutes: failure records only a60-second initial backoff and internal ingest retries can occur sooner, so the strict attempt-based cadence is not established. This is a contract mismatch, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Detached scheduled retry, persisted retry diagnostics, manual bypass and normal 30-minute success throttle are implemented. However the requirement says at most one auto upload attempt every30 minutes: failure records only a60-second initial backoff and internal ingest retries can occur sooner, so the strict attempt-based cadence is not established. This is a contract mismatch, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-23-add-auto-sync-retry/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/sync.js",
+      "observed_facts": "Throttled/backoff pending data schedules detached retry and manual path bypasses auto gate."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/upload-throttle.js",
+      "observed_facts": "Success interval30min but failure starts60sec without recording a30min attempt interval."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/vibescore-api.js",
+      "observed_facts": "Ingest includes immediate exponential internal retry."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/diagnostics.js",
+      "observed_facts": "Scheduled auto_retry details returned."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "032390a47a8ac56c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/backends/headless_base.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/launch_plan.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/manifest.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/backends/cao_rest.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Launch-plan composition, role injection, resumable headless state, typed manifests and CAO readiness/profile handling are implemented. The selected broad runtime scope also requires emitting events while an interactive request is processing. The inspected headless send_prompt blocks on runner.run and returns its event list only after completion; the reviewed evidence does not establish the required live streaming interface for these supported backends.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Launch-plan composition, role injection, resumable headless state, typed manifests and CAO readiness/profile handling are implemented. The selected broad runtime scope also requires emitting events while an interactive request is processing. The inspected headless send_prompt blocks on runner.run and returns its event list only after completion; the reviewed evidence does not establish the required live streaming interface for these supported backends.",
+  "sources": [
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/backends/headless_base.py",
+      "observed_facts": "send_prompt performs a blocking runner.run before constructing and returning SessionEvent list."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/launch_plan.py",
+      "observed_facts": "Composition, environment and role-injection implementation inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/manifest.py",
+      "observed_facts": "Persistence and validation inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/backends/cao_rest.py",
+      "observed_facts": "Readiness checks, direct input and unique profiles inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "partial_runtime_scope"
+}

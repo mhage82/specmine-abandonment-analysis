@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "03acd398385ff6eb",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-ingest.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/concurrency.mjs | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/ops/ingest-canary.cjs | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/canary-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/db/ingest.mjs",
+  "manual_outcome_date": "",
+  "manual_notes": "The three ingestion-related endpoints use structured logging; ingest has a configured in-flight limiter with 429/Retry-After and guaranteed release. The canary script requires a dedicated token and isolation confirmation, defaults source/model to canary, writes idempotently by bucket key, and shared read filters exclude canary unless explicitly requested.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The three ingestion-related endpoints use structured logging; ingest has a configured in-flight limiter with 429/Retry-After and guaranteed release. The canary script requires a dedicated token and isolation confirmation, defaults source/model to canary, writes idempotently by bucket key, and shared read filters exclude canary unless explicitly requested.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-ingest.js",
+      "observed_facts": [
+        "Read concurrency guard acquisition, 429 response, finally release and logging wrapper; issue/sync-ping wrapper coverage checked."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/concurrency.mjs",
+      "observed_facts": [
+        "Read in-flight counter, configurable limit and Retry-After header."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/ops/ingest-canary.cjs",
+      "observed_facts": [
+        "Read isolated-token/tag guards and deterministic bucket payload."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/canary-core.js",
+      "observed_facts": [
+        "Read default exclusion and explicit source/model override."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/db/ingest.mjs",
+      "observed_facts": [
+        "Hourly upsert unique conflict key makes repeated bucket writes idempotent."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; logging wrapper coverage, limiter, canary script and database/read-filter integration inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

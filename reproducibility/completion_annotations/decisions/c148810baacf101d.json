@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "c148810baacf101d",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/src/skills/detect.rs | https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/src/skills/catalog.rs | https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/src/skills/suggest.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/skill.rs | https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/tests/integration/skill_suggest.rs | https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/tests/contracts/test_skill_suggest_output.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical implementation at a534ace5 supports the seven local technology markers with deterministic confidence/evidence, separate catalog recommendations with deduplication/reasons and installed-state counts, read-only suggestion output, TTY-only guided selection and explicit install-all through the existing installer. Integration/contract assertions corroborate read-only and installed-skip behavior.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical implementation at a534ace5 supports the seven local technology markers with deterministic confidence/evidence, separate catalog recommendations with deduplication/reasons and installed-state counts, read-only suggestion output, TTY-only guided selection and explicit install-all through the existing installer. Integration/contract assertions corroborate read-only and installed-skip behavior.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-30-autodetect-skill-suggestions/specs/skill-recommendations/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/src/skills/detect.rs",
+      "observed_facts": "Sorted local walk, ignored directories, seven marker families and root/nested/incidental confidence."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/src/skills/catalog.rs",
+      "observed_facts": "Recommendations consume detections and deduplicate by skill alias with contributing reasons."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/src/skills/suggest.rs",
+      "observed_facts": "Read-only suggest path, installed state and exact summary counts; selected/all install flows invoke existing installer."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/skill.rs",
+      "observed_facts": "Read-only branch returns before installation; explicit install/all and TTY guard."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/tests/integration/skill_suggest.rs",
+      "observed_facts": "Read-only output, installed detection, selected/all skip, failure and provider-overlay integration tests."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/a534ace5b8542cc800489f6a017dce48bd06cd48/tests/contracts/test_skill_suggest_output.rs",
+      "observed_facts": "Stable detections/recommendations/summary contract and non-TTY failure coverage."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Historical source checked because subsequent catalog-driven detection intentionally changes the original seven-technology architecture."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

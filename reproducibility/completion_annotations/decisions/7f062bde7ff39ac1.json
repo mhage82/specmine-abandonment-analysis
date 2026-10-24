@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "7f062bde7ff39ac1",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5 | https://github.com/Myriad-Dreamin/typst.ts/blob/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5/.github/workflows/reelase-crates.yaml",
+  "manual_outcome_date": "",
+  "manual_notes": "The manual orchestrator orders npm verification/publishing and calls native, Docker and Cargo workflows, but the selected Rust requirement says verification precedes live publish. The called reelase-crates.yaml publishes with --no-verify before its optional dry runs and suppresses errors. The inspected workflow therefore does not establish strict completion of this scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The manual orchestrator orders npm verification/publishing and calls native, Docker and Cargo workflows, but the selected Rust requirement says verification precedes live publish. The called reelase-crates.yaml publishes with --no-verify before its optional dry runs and suppresses errors. The inspected workflow therefore does not establish strict completion of this scope.",
+  "sources": [
+    {
+      "url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+      "observed_facts": "Inspected the new orchestrator and workflow_call wiring."
+    },
+    {
+      "url": "https://github.com/Myriad-Dreamin/typst.ts/blob/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5/.github/workflows/reelase-crates.yaml",
+      "observed_facts": "Publish crates precedes Verify crate health (Optional); both use error suppression."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "specific_contract_gap"
+}

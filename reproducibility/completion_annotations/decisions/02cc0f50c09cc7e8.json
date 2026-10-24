@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "02cc0f50c09cc7e8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/plan.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/project.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/extension_registry.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Feature and ProjectBundle extension dictionaries, contracts, serialization and registry introspection are real. Strict conflict behavior is unresolved: registration catches extension collisions and continues registering the module, despite the requirement to fail second-module registration. Registry also compares target/field across different module names rather than the full namespaced key. Thus selected whole-system scope is partial, not an abandonment label.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Feature and ProjectBundle extension dictionaries, contracts, serialization and registry introspection are real. Strict conflict behavior is unresolved: registration catches extension collisions and continues registering the module, despite the requirement to fail second-module registration. Registry also compares target/field across different module names rather than the full namespaced key. Thus selected whole-system scope is partial, not an abandonment label.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/plan.py",
+      "observed_facts": [
+        "Read namespaced accessor contracts/default extensions on Feature."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/project.py",
+      "observed_facts": [
+        "Read ProjectBundle flat namespace accessors, defaults and postcondition."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/extension_registry.py",
+      "observed_facts": [
+        "Read collision key comparison and introspection methods."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Collision handler logs skipping extensions then continues command registration."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "02cc0f50c09cc7e8"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

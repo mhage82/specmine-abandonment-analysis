@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "b1545b9fb6e9a022",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/d74beb30f3c27333f8fe537f500cfdfad7e5622e/crates/katana-ui/src/settings/tabs/theme.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "The -100..100 slider and clamped additive alpha formula are implemented and stored in serializable theme settings. However both delivery-era and pinned slider handlers only mutate settings/update visuals and lack the save call used by neighboring controls; immediate persistence on contrast change is not corroborated.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The -100..100 slider and clamped additive alpha formula are implemented and stored in serializable theme settings. However both delivery-era and pinned slider handlers only mutate settings/update visuals and lack the save call used by neighboring controls; immediate persistence on contrast change is not corroborated.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/d74beb30f3c27333f8fe537f500cfdfad7e5622e/crates/katana-ui/src/settings/tabs/theme.rs",
+      "observed_facts": "render_theme_tab changes ui_contrast_offset and visuals without settings.save; theme/types.rs adds255*(offset/100) and clamps; current handler has the same absence. No claim made about runtime restart behavior."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "4419c4ae6f9c4dee0647e1ef93b15efea55dbb0b9b17b14fe1c099f2f9513aa4"
+}

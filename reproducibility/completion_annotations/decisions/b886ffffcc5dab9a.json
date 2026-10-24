@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "b886ffffcc5dab9a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tests/scripts/run-suite.mjs | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tests/fixtures/auth.ts | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tests/e2e/i18n/TC007-runtime-i18n-etag.ts | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/openspec/changes/archive/e2e-testing/tasks.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantive implementation supports serial isolation, scoped runner summaries, a lightweight authenticatedPage fixture, and conditional ETag assertions. The selected spec additionally requires recorded before/after host-only and plugin-full wall-clock comparisons; inspected archived tasks/design provide qualitative improvement claims but no numeric comparison, so measurable acceptance remains unverified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Substantive implementation supports serial isolation, scoped runner summaries, a lightweight authenticatedPage fixture, and conditional ETag assertions. The selected spec additionally requires recorded before/after host-only and plugin-full wall-clock comparisons; inspected archived tasks/design provide qualitative improvement claims but no numeric comparison, so measurable acceptance remains unverified.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tests/scripts/run-suite.mjs",
+      "observed_facts": "Splits scopes into parallel/serial files, logs counts/workers/categories and runs serial pool with one worker."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tests/fixtures/auth.ts",
+      "observed_facts": "authenticatedPage omits dashboard navigation while adminPage retains it."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tests/e2e/i18n/TC007-runtime-i18n-etag.ts",
+      "observed_facts": "Asserts conditional headers and valid 304 or changed-ETag 200 responses."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/openspec/changes/archive/e2e-testing/tasks.md",
+      "observed_facts": "Claims significant wall-clock reduction without the requested numeric before/after measurements in the inspected summary."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "3426690858d118bed72e79936adeee642eda2e2eeb87d7535ba69ae6bbd2493e"
+}

@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "e4429e4a8928eb76",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/plugintypes/plugintypes_dependency.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/dependency/dependency.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/dependency/dependency_resolver.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_status.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_install.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Dependency IDs/version ranges, structural checks, installed/version/cycle checks and lifecycle precondition ordering are implemented. Selected later requirement says enabling a consumer must also reject a disabled hard provider. The pinned resolver PluginSnapshot records Installed but has no Enabled field, and enable delegates to the install/version resolver; no enabled-provider check is visible in that path. Task completion alone cannot close this specific gap.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Dependency IDs/version ranges, structural checks, installed/version/cycle checks and lifecycle precondition ordering are implemented. Selected later requirement says enabling a consumer must also reject a disabled hard provider. The pinned resolver PluginSnapshot records Installed but has no Enabled field, and enable delegates to the install/version resolver; no enabled-provider check is visible in that path. Task completion alone cannot close this specific gap.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/plugintypes/plugintypes_dependency.go",
+      "observed_facts": [
+        "Read manifest model and ID/version/self/duplicate validation."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/dependency/dependency.go",
+      "observed_facts": [
+        "Read snapshot and input/result types: installed state present, enabled state absent."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/dependency/dependency_resolver.go",
+      "observed_facts": [
+        "Read actual dependency traversal and installed/version/cycle checks."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_status.go",
+      "observed_facts": [
+        "Read enable precondition delegating to resolveInstallDependencies and disable reverse-dependency guard."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_install.go",
+      "observed_facts": [
+        "Read dependency preparation before install side effects."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Decision is unresolved against inspected available historical pins, not a claim no later branch implements the enabled-provider requirement."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "e4429e4a8928eb76"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

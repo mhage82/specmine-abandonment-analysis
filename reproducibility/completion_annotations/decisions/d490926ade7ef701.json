@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "d490926ade7ef701",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/init.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/codex-config.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/uninstall.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/test/init-uninstall.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Init conditionally updates existing EveryCode config with an explicit source flag, preserving each CLI original separately. Generated notify selects the matching original, skips self-recursion, spawns detached and exits0; uninstall restores each config independently or removes the inserted notify.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Init conditionally updates existing EveryCode config with an explicit source flag, preserving each CLI original separately. Generated notify selects the matching original, skips self-recursion, spawns detached and exits0; uninstall restores each config independently or removes the inserted notify.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-24-2025-12-24-add-every-code-notify-auto/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/init.js",
+      "observed_facts": "Existing-file guard, EveryCode flag/backup and source-aware nonblocking chain with self check."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/codex-config.js",
+      "observed_facts": "Shared reversible config edit helpers."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/uninstall.js",
+      "observed_facts": "Separate Codex and EveryCode restoration."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/test/init-uninstall.test.js",
+      "observed_facts": "Regression assertions cover existing/missing EveryCode configuration."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

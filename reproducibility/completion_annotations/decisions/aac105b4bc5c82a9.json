@@ -1,0 +1,47 @@
+{
+  "file_url_sha16": "aac105b4bc5c82a9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/test_dogfood_self_review.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/adapters/ado.py",
+  "manual_outcome_date": "",
+  "manual_notes": "This narrower delta concerns the branch dogfood proof for tracked findings. Concrete test harness executes full-scope review with JSON output and asserts PASS, zero unknown-member/print/missing-contract/CC>=16/tool_error findings. Dated TDD record reports the successful full run with findings[] after documented production remediations. Scope is supported by implementation plus project-authored execution evidence, while broader CI/expanded-category claims in a different spec remain unresolved. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "This narrower delta concerns the branch dogfood proof for tracked findings. Concrete test harness executes full-scope review with JSON output and asserts PASS, zero unknown-member/print/missing-contract/CC>=16/tool_error findings. Dated TDD record reports the successful full run with findings[] after documented production remediations. Scope is supported by implementation plus project-authored execution evidence, while broader CI/expanded-category claims in a different spec remain unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/test_dogfood_self_review.py",
+      "observed_facts": [
+        "Read full subprocess invocation and each exact tracked-rule/report assertion."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md",
+      "observed_facts": [
+        "Whole record documents baseline2523 findings, code/type/complexity fixes, then March22 PASS/findings[] and March23 passing rerun."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/adapters/ado.py",
+      "observed_facts": [
+        "Read typed/contract-bearing adapter implementation corresponding to named remediation verification."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Project-authored execution record was not independently reproduced; live tests skip in TEST_MODE.",
+    "This narrow label does not certify every broader dogfood-self-review requirement."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "66d399a885cb7f0d",
+      "aac105b4bc5c82a9"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

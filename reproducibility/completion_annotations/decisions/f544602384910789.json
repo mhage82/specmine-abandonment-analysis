@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "f544602384910789",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/architecture/adr/template.md | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/architecture/adr/0001-module-first-architecture.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/architecture.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/_layouts/default.html",
+  "manual_outcome_date": "",
+  "manual_notes": "Read ADR template and accepted module-first ADR with context, decision and consequences. Architecture reference/index and site navigation link to ADRs, satisfying the specific documentation deliverables.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Read ADR template and accepted module-first ADR with context, decision and consequences. Architecture reference/index and site navigation link to ADRs, satisfying the specific documentation deliverables.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/architecture/adr/template.md",
+      "observed_facts": [
+        "Full template has title/status/date/context/decision/consequences."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/architecture/adr/0001-module-first-architecture.md",
+      "observed_facts": [
+        "Accepted concrete lazy-registry architecture decision follows template."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/architecture.md",
+      "observed_facts": [
+        "Architecture Decisions section links index and initial ADR."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/_layouts/default.html",
+      "observed_facts": [
+        "Architecture ADR navigation entry."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "f544602384910789"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

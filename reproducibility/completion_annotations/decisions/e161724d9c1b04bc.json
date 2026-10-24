@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "e161724d9c1b04bc",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/docs/security/index.md | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/docs/security/approval-cli.md | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/docs/security/envelope-migration.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The pinned security index contains working relative references to approval-cli.md and envelope-migration.md, and both target documents are present. These are the two requirements in this selected documentation scope. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The pinned security index contains working relative references to approval-cli.md and envelope-migration.md, and both target documents are present. These are the two requirements in this selected documentation scope. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/docs/security/index.md",
+      "observed_facts": "Quick references explicitly link Approval CLI and Master Key Envelope."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/docs/security/approval-cli.md",
+      "observed_facts": "Target Approval CLI document exists in the same pinned archive."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/docs/security/envelope-migration.md",
+      "observed_facts": "Target envelope migration document exists in the same pinned archive."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "1d4866a1d519c3189c38aef5e0c71710a8419f1501fd99171716b32f8d0293f4"
+}

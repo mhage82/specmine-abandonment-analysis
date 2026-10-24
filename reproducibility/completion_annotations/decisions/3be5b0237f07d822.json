@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "3be5b0237f07d822",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/commit/12804db336516d2f6e8023ad5c5bc5d6b024a78c",
+  "manual_outcome_date": "",
+  "manual_notes": "Runtime-visible empty-answer settlement replaces local-only dismissal and stale responses remove queued requests without adding a fabricated submitted audit item. This supports the dismissal fix, but the broader selected fact contract also requires durable dismissed/cancelled/timeout states and suppression after history hydration or replay. Those persistence/replay guarantees are not established by the inspected frontend settlement and component tests.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Runtime-visible empty-answer settlement replaces local-only dismissal and stale responses remove queued requests without adding a fabricated submitted audit item. This supports the dismissal fix, but the broader selected fact contract also requires durable dismissed/cancelled/timeout states and suppression after history hydration or replay. Those persistence/replay guarantees are not established by the inspected frontend settlement and component tests.",
+  "sources": [
+    {
+      "url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/commit/12804db336516d2f6e8023ad5c5bc5d6b024a78c",
+      "observed_facts": "Read runtime response path, local queue removal, retry handling and stale-dismiss tests; no durable replay verification artifact in this evidence."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "broad_scope_insufficient_evidence"
+}

@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "55827dc64e39174f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/.pre-commit-config.yaml | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/scripts/pre_commit_code_review.py | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/tests/unit/scripts/test_pre_commit_code_review.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/run/findings.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical March17 core release wires a staged-file hook to the score-only review CLI and propagates its exit status, preserving PASS/advisory success and FAIL blocking. Helper deduplicates .py/.pyi inputs, skips noncode-only commits and gives missing-runtime setup advice. Tests assert relevant-file filtering and nonzero propagation. Later July policy was changed to severity-only gating; this decision concerns the supported historical delivery.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical March17 core release wires a staged-file hook to the score-only review CLI and propagates its exit status, preserving PASS/advisory success and FAIL blocking. Helper deduplicates .py/.pyi inputs, skips noncode-only commits and gives missing-runtime setup advice. Tests assert relevant-file filtering and nonzero propagation. Later July policy was changed to severity-only gating; this decision concerns the supported historical delivery.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/.pre-commit-config.yaml",
+      "observed_facts": [
+        "Actual local hook runs helper with matching staged Python filenames."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/scripts/pre_commit_code_review.py",
+      "observed_facts": [
+        "Read full helper: suffix filter, runtime check/setup message, score-only subprocess and returned status."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/tests/unit/scripts/test_pre_commit_code_review.py",
+      "observed_facts": [
+        "Assertions cover file selection, command, no-code skip, FAIL status propagation and missing runtime advice."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/run/findings.py",
+      "observed_facts": [
+        "Review verdict/exit derivation gives0 for PASS/advisory and1 for blocking FAIL."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "The July9 snapshot uses a later severity-only hook policy; historical completion is not a claim the exact archived contract remains current."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "55827dc64e39174f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

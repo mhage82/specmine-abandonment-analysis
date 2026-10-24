@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "04de552a6f9dda4e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/jixoai/openspecui/commit/4102c0725cdbf45de32dec36fb6c443bd131724d | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/lib/static-data-provider.ts | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/components/layout/root-layout.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Static-mode detection, snapshot caching, subscription replacement and routing/export machinery are implemented. The selected rendering scope also requires a visible error when the snapshot is missing or corrupt; inspected loadSnapshot catches failures, logs them and returns null instead. The reviewed UI paths do not establish the required corruption message, so full selected-scope completion remains uncertain.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Static-mode detection, snapshot caching, subscription replacement and routing/export machinery are implemented. The selected rendering scope also requires a visible error when the snapshot is missing or corrupt; inspected loadSnapshot catches failures, logs them and returns null instead. The reviewed UI paths do not establish the required corruption message, so full selected-scope completion remains uncertain.",
+  "sources": [
+    {
+      "url": "https://github.com/jixoai/openspecui/commit/4102c0725cdbf45de32dec36fb6c443bd131724d",
+      "observed_facts": "Historical static banner/provider/trpc/export implementation inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/lib/static-data-provider.ts",
+      "observed_facts": "loadSnapshot returns null after fetch/parse failures; cache and initial-data handling inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/components/layout/root-layout.tsx",
+      "observed_facts": "Static-mode layout inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "partial_error_presentation_scope"
+}

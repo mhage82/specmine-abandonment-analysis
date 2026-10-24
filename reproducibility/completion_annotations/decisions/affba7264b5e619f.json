@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "affba7264b5e619f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-25-add-pricing-table/sql/001_create_pricing_profiles.sql | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/pricing-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-25-add-pricing-table/verification-report.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The schema stores model/source/effective dates and all four price rates; the resolver chooses the latest effective active profile, falls back to the built-in profile on missing/error data, and returns matching pricing metadata for cost calculations.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The schema stores model/source/effective dates and all four price rates; the resolver chooses the latest effective active profile, falls back to the built-in profile on missing/error data, and returns matching pricing metadata for cost calculations.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-25-add-pricing-table/sql/001_create_pricing_profiles.sql",
+      "observed_facts": [
+        "Inspected rate columns, unique model/source/date key and active/effective indexes."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/pricing-core.js",
+      "observed_facts": [
+        "Inspected DEFAULT_PROFILE, dated resolution, fallback, normalized rates and buildPricingMetadata."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-25-add-pricing-table/verification-report.md",
+      "observed_facts": [
+        "Recorded resolver/build checks corroborate code; live migration was not independently verified."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; named implementation and test evidence inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

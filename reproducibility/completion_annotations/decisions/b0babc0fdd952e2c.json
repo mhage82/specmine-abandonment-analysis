@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "b0babc0fdd952e2c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/src/specfact_cli/backlog/mappers/github_mapper.py | https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/src/specfact_cli/adapters/github.py | https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/.github/workflows/pr-orchestrator.yml | https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/.github/workflows/github-pages.yml | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/.github/workflows/github-pages.yml",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical implementation replaces the vulnerable Markdown extraction regex with line iteration and uses parsed exact GitHub host matching; named PR-orchestrator jobs have explicit reduced permissions. Whole selected CI requirement remains unmet: GitHub Pages build/deploy jobs inherit workflow-level pages/id-token write permissions rather than each defining an explicit least-privilege block, both January and July snapshots. Therefore the security scope is partial despite concrete fixes.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical implementation replaces the vulnerable Markdown extraction regex with line iteration and uses parsed exact GitHub host matching; named PR-orchestrator jobs have explicit reduced permissions. Whole selected CI requirement remains unmet: GitHub Pages build/deploy jobs inherit workflow-level pages/id-token write permissions rather than each defining an explicit least-privilege block, both January and July snapshots. Therefore the security scope is partial despite concrete fixes.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/src/specfact_cli/backlog/mappers/github_mapper.py",
+      "observed_facts": [
+        "Read _extract_default_content line-by-line section processing."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/src/specfact_cli/adapters/github.py",
+      "observed_facts": [
+        "Read detect URL extraction and parsed exact github.com/ssh.github.com hostname checks."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/.github/workflows/pr-orchestrator.yml",
+      "observed_facts": [
+        "Inspected explicit job-level permissions for the seven named remediation jobs."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/.github/workflows/github-pages.yml",
+      "observed_facts": [
+        "Read full workflow: global contents read/pages write/id-token write; build and deploy have no permissions block."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/.github/workflows/github-pages.yml",
+      "observed_facts": [
+        "Later pinned workflow retains same inherited permission configuration."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "No security scanner or downloaded workflow was executed; label follows literal each-job requirement."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b0babc0fdd952e2c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

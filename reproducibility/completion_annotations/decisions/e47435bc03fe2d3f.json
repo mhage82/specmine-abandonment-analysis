@@ -1,0 +1,60 @@
+{
+  "file_url_sha16": "e47435bc03fe2d3f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-public-view-issue.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-public-view-revoke.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/shared/public-view.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/shared/auth.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/pages/DashboardPage.jsx | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-usage-summary.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical source implements authenticated random share-token rotation with hash-only storage and one row per owner, revocation checks, explicit read-only access opt-in, owner-scoped usage queries, and /share token routing with hidden install/auth prompts and invalid-link handling. Later source retires issue/revoke in favor of another visibility design; this label records the original implementation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Historical source implements authenticated random share-token rotation with hash-only storage and one row per owner, revocation checks, explicit read-only access opt-in, owner-scoped usage queries, and /share token routing with hidden install/auth prompts and invalid-link handling. Later source retires issue/revoke in favor of another visibility design; this label records the original implementation.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-public-view-issue.js",
+      "observed_facts": [
+        "Read authenticated random-token generation/hash and user_id upsert replacing prior token."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-public-view-revoke.js",
+      "observed_facts": [
+        "Read owner-scoped revoked_at update."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/shared/public-view.js",
+      "observed_facts": [
+        "Read hash lookup plus revoked_at-null guard."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/shared/auth.js",
+      "observed_facts": [
+        "Read getAccessContext allowPublic=false default and explicit public opt-in."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": [
+        "Read public-mode guards, token data flow and invalid-link detection; App routes share path."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-usage-summary.js",
+      "observed_facts": [
+        "Owner user_id filters retained for shared reads."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; historical token lifecycle, access control, representative owner-scoped usage query and UI public-mode integration inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "2330aab8bd245b09",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/commands.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/shortcuts/mod.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/defaults.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "The reset-only shortcut scope is supported: reseeding restores all seven local defaults and false global flag;registration refresh first unregisters all then skips disabled registration.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The reset-only shortcut scope is supported: reseeding restores all seven local defaults and false global flag;registration refresh first unregisters all then skips disabled registration.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-04-02-local-shortcuts/specs/shortcuts/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/commands.rs",
+      "observed_facts": "settings_reset_defaults reseeds/loads settings and invokes register_all."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/shortcuts/mod.rs",
+      "observed_facts": "Unregister-first and disabled early return."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/defaults.rs",
+      "observed_facts": "Seven required local keys and false global flag."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

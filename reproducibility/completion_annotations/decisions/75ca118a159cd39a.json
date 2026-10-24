@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "75ca118a159cd39a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/projection/claude.js | https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/projection/opencode.js | https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/projection/managed-assets.js | https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/templates/claude-commands/devos-docs-refresh.md | https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/test/praxis-devos.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Claude and OpenCode adapters install the two thin docs commands into user-level host paths; both use the shared managed-asset registry with type/version/time, ownership-aware overwrite and pruning. Codex remains skill-based. Command templates use canonical docs paths and conservative refresh, and regression sources cover installation, cross-project adoption and preservation of unmanaged files.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Claude and OpenCode adapters install the two thin docs commands into user-level host paths; both use the shared managed-asset registry with type/version/time, ownership-aware overwrite and pruning. Codex remains skill-based. Command templates use canonical docs paths and conservative refresh, and regression sources cover installation, cross-project adoption and preservation of unmanaged files.",
+  "sources": [
+    {
+      "url": "https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/projection/claude.js",
+      "observed_facts": "User-level command projection and ownership checks inspected."
+    },
+    {
+      "url": "https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/projection/opencode.js",
+      "observed_facts": "Equivalent OpenCode command adapter inspected."
+    },
+    {
+      "url": "https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/projection/managed-assets.js",
+      "observed_facts": "Registry and pruning implementation inspected."
+    },
+    {
+      "url": "https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/src/templates/claude-commands/devos-docs-refresh.md",
+      "observed_facts": "Thin wrapper, canonical paths and non-destructive refresh contract inspected."
+    },
+    {
+      "url": "https://github.com/chhuax/praxis-devos/blob/4cd6b39cb02c4b7e0f3b73f9aa5a916526e5e59d/test/praxis-devos.test.js",
+      "observed_facts": "Relevant projection/sync/ownership regression cases inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

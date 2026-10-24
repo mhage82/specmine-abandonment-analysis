@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "6cdeededd6bc19e6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/47ca645b5d14d48496df7a8c33e1df57a1102b50.patch | https://github.com/zhuanggenhua/BoardGame/commit/0d3bbadf73377259e72627b269559d23e6b2e6a8.patch",
+  "manual_outcome_date": "2026-06-06",
+  "manual_notes": "Production registries implement inherit/selfManaged/baseOnly variant policies, alias suppression and audit handling. Structured definition lists replace standard ongoing registrations; helpers bind policy internally. Inspected regressions assert original Polar Commando totals 6 with one +2, baseOnly excludes POD, and structured helpers avoid duplicate effects. June 6 denotes the implementation commit, not test execution or deployment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Substantive source and targeted assertions correspond to the selected registration, helper, definition and duplicate-evaluation requirements. Tests were inspected, not run.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/47ca645b5d14d48496df7a8c33e1df57a1102b50.patch",
+      "observed_facts": "Inspected ongoingModifiers.ts introduction of three explicit variant strategies across power/breakpoint/base-power registries, alias and audit policy, duplicate target evaluation filtering, and Polar Commando/baseOnly regression assertions."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/0d3bbadf73377259e72627b269559d23e6b2e6a8.patch",
+      "observed_facts": "Inspected structured bulk helper implementations and migration of ongoing_modifiers.ts to definitions. New tests assert structured baseOnly, POD attached modifier single application, and base-power/breakpoint inheritance. This dated commit implements the final structured-definition portion."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "1eb6e2d147055f43dfd5c441f3e0c051569dc7931b736f6da678772509748be9",
+  "related_review_ids": [
+    "6cdeededd6bc19e6"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "f293fa774b506539",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/db/queries.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/Titlebar.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/stats/+page.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/stats/DailyView.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/stats/YearlyView.svelte",
+  "manual_outcome_date": "",
+  "manual_notes": "Statistics window,three tabs,local-date SQL,streak handling,hourly/weekly charts and heatmap are implemented. Strict empty-state display differs from this spec: DailyView fmtTime(0) yields 0m rather than required0h0m; YearlyView renders zero longest streak as a dash despite required zero totals. No abandonment inference.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Statistics window,three tabs,local-date SQL,streak handling,hourly/weekly charts and heatmap are implemented. Strict empty-state display differs from this spec: DailyView fmtTime(0) yields 0m rather than required0h0m; YearlyView renders zero longest streak as a dash despite required zero totals. No abandonment inference.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-01-statistics-visualization/specs/statistics/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/db/queries.rs",
+      "observed_facts": "Local date aggregates,24hour counts,current/longest streak logic and targeted tests."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/Titlebar.svelte",
+      "observed_facts": "Stats window creation and existing-window focus."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/stats/+page.svelte",
+      "observed_facts": "Today default,week/alltime switching,theme changes and live refresh."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/stats/DailyView.svelte",
+      "observed_facts": "fmtTime omits zero hours and all-zero minutes;bounded visible baselines."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/stats/YearlyView.svelte",
+      "observed_facts": "0/1-3/4-7/8+ colors and totals;longest_streak0 displays dash."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

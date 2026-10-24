@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "5fc26ac319708f91",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-02-27",
+  "manual_notes": "Historical implementation provides FlashList recipe feed, empty state, deterministic mock records and a memoized HeroUI card with image/title/two-line description, tags/course, liked heart and rating/servings/time. Mock mapping clamps rounded finite ratings to 1-5; card uses star plus numeric rating.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical implementation provides FlashList recipe feed, empty state, deterministic mock records and a memoized HeroUI card with image/title/two-line description, tags/course, liked heart and rating/servings/time. Mock mapping clamps rounded finite ratings to 1-5; card uses star plus numeric rating.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "044_644078d2caf855284c2a043ed764260f5e7db24a: index.tsx FlashList and empty Card; recipe-mock-data.ts normalization/data; mobile-recipe-card.tsx 176-line rendering implementation."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "738be7d8973cfd742e08c1ac73f0ea9a54f61078e6fdbd47aa4d1d28680b77ca"
+}

@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "1a5483ee6bd74972",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+  "manual_outcome_date": "2026-05-28",
+  "manual_notes": "The manually dispatched orchestrator checks out the selected ref, installs dependencies, builds generic packages and runs allowlisted prepublish/publish:dry commands. Its summary enumerates included packages and explains dedicated/private exclusions. This supports delivery of the package-verification workflow; no release was triggered.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The manually dispatched orchestrator checks out the selected ref, installs dependencies, builds generic packages and runs allowlisted prepublish/publish:dry commands. Its summary enumerates included packages and explains dedicated/private exclusions. This supports delivery of the package-verification workflow; no release was triggered.",
+  "sources": [
+    {
+      "url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+      "observed_facts": "Read verify-packages job, explicit turbo filters and included/skipped summary."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

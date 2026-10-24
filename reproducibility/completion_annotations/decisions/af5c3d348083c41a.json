@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "af5c3d348083c41a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/TencentBlueKing/bk-lite/commit/5caec9f6a1c14d2ada2d18fe05508daecab753c2 | https://github.com/TencentBlueKing/bk-lite/commit/da4355db76a1141a7061f8dc89fd4dec53cae0ee | https://github.com/TencentBlueKing/bk-lite/blob/9fe2693ec6055b51ac9195ec718b4295681eace5/server/apps/mlops/management/commands/init_algorithm_config.py",
+  "manual_outcome_date": "",
+  "manual_notes": "The bootstrap command implements allowed direct-file scanning, strict JSON validation, first-write get_or_create semantics, summary reporting and batch integration. However, the recorded spec requires invalid files to be recorded in output and logs; pinned _report_invalid writes the detailed failure only to stderr, while the logger receives aggregate summary counts. Strict satisfaction of that reporting requirement is unconfirmed; this is not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The bootstrap command implements allowed direct-file scanning, strict JSON validation, first-write get_or_create semantics, summary reporting and batch integration. However, the recorded spec requires invalid files to be recorded in output and logs; pinned _report_invalid writes the detailed failure only to stderr, while the logger receives aggregate summary counts. Strict satisfaction of that reporting requirement is unconfirmed; this is not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/TencentBlueKing/bk-lite/commit/5caec9f6a1c14d2ada2d18fe05508daecab753c2",
+      "observed_facts": "Inspected management-command and batch_init implementation."
+    },
+    {
+      "url": "https://github.com/TencentBlueKing/bk-lite/commit/da4355db76a1141a7061f8dc89fd4dec53cae0ee",
+      "observed_facts": "Inspected get_or_create concurrency update and corresponding race test."
+    },
+    {
+      "url": "https://github.com/TencentBlueKing/bk-lite/blob/9fe2693ec6055b51ac9195ec718b4295681eace5/server/apps/mlops/management/commands/init_algorithm_config.py",
+      "observed_facts": "Pinned _report_invalid writes per-file path/reason to stderr but does not call the MLOPS logger; _write_summary logs counts."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Whether aggregate invalid counts satisfy the intended logging contract needs maintainer/human clarification."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

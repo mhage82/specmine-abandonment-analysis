@@ -1,0 +1,47 @@
+{
+  "file_url_sha16": "e8c11f9a534f20d6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/shared/date.js | https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-daily.js | https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-hourly.js | https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/dashboard/src/lib/date-range.js | https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/dashboard/src/hooks/use-trend-data.js | https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/dashboard/src/pages/DashboardPage.jsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical timezone implementation accepts IANA/offset context with UTC default, converts local day bounds and fills missing local daily rows with zeros. Dashboard passes browser timezone consistently, uses Monday local week ranges, local heatmap and future clipping; hourly missing markers use the local hour containing latest sync.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical timezone implementation accepts IANA/offset context with UTC default, converts local day bounds and fills missing local daily rows with zeros. Dashboard passes browser timezone consistently, uses Monday local week ranges, local heatmap and future clipping; hourly missing markers use the local hour containing latest sync.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-update-dashboard-timezone/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/shared/date.js",
+      "observed_facts": "Timezone normalization, local date boundaries and UTC fallback."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-daily.js",
+      "observed_facts": "Local day-key grid initialized to zero, paginated event aggregation."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-hourly.js",
+      "observed_facts": "Local-day bounds and local sync-hour missing metadata."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/dashboard/src/lib/date-range.js",
+      "observed_facts": "Browser-timezone fixed periods and Monday week start."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/dashboard/src/hooks/use-trend-data.js",
+      "observed_facts": "Local future flags."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": "Timezone propagation to heatmap/usage/trend and fixed controls."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

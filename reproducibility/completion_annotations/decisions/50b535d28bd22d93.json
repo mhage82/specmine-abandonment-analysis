@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "50b535d28bd22d93",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/views/panels/tree/tab_group_menu.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-core/src/workspace/mod.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Explorer context actions create or add directory contents to tab groups, but the implementation recursively collects only Markdown files. The selected spec says all files under the directory; image/other displayed files are excluded by is_markdown(), leaving that acceptance scope unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Explorer context actions create or add directory contents to tab groups, but the implementation recursively collects only Markdown files. The selected spec says all files under the directory; image/other displayed files are excluded by is_markdown(), leaving that acceptance scope unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/views/panels/tree/tab_group_menu.rs",
+      "observed_facts": "Directory create/add actions invoke collect_all_markdown_file_paths and dispatch CreateTabGroupMany/AddTabsToGroup."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-core/src/workspace/mod.rs",
+      "observed_facts": "collect_all_markdown_file_paths pushes a file only when is_markdown() is true."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "4766c6e622166a690baa4fc8ddf3f86804f03fcefc9507638e250551755fe0eb"
+}

@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "899fc7018393f487",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/archmaxai/archmax/commit/af7aafdbc425cee15236210215b119c6fcc7f348 | https://github.com/archmaxai/archmax/commit/4fdce8efc07b4a399382704fd68a2671d63489b5 | https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/apps/api/src/app.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial Firebird model, federation and credential handling exists. However, the exact spec requires an authenticated capability endpoint; at pinned revision3aa7c12, /api/config returns firebirdEnabled before session-auth middleware. This apparent acceptance mismatch prevents a strict full-scope completion judgment. It is not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial Firebird model, federation and credential handling exists. However, the exact spec requires an authenticated capability endpoint; at pinned revision3aa7c12, /api/config returns firebirdEnabled before session-auth middleware. This apparent acceptance mismatch prevents a strict full-scope completion judgment. It is not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/archmaxai/archmax/commit/af7aafdbc425cee15236210215b119c6fcc7f348",
+      "observed_facts": "Inspected model/charset, create/update gating, configuration flag, UI and federation implementation."
+    },
+    {
+      "url": "https://github.com/archmaxai/archmax/commit/4fdce8efc07b4a399382704fd68a2671d63489b5",
+      "observed_facts": "Follow-up fixes attach options, fixed repository and Firebird-only unsigned loading."
+    },
+    {
+      "url": "https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/apps/api/src/app.ts",
+      "observed_facts": "GET /api/config is registered before session checking and returns without calling downstream middleware; capability is exposed on this public handler."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

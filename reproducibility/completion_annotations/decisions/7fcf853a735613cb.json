@@ -1,0 +1,54 @@
+{
+  "file_url_sha16": "7fcf853a735613cb",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/commands/doctor.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/doctor.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/runtime-config.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/tracker-paths.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/doctor.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Doctor resolves configuration with the specified precedence, reports readable human/JSON results, writes a report only with --out, treats any HTTP response as reachable, and sets failure exit status only for critical local checks. Missing token is a warning. Path resolution does not perform migration writes.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Doctor resolves configuration with the specified precedence, reports readable human/JSON results, writes a report only with --out, treats any HTTP response as reachable, and sets failure exit status only for critical local checks. Missing token is a warning. Path resolution does not perform migration writes.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/commands/doctor.js",
+      "observed_facts": [
+        "Read normal doctor path, JSON/out handling and critical exit status."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/doctor.js",
+      "observed_facts": [
+        "Read report/schema, runtime/local/network checks and severity handling."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/runtime-config.js",
+      "observed_facts": [
+        "Read CLI/config/new environment/default precedence."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/tracker-paths.js",
+      "observed_facts": [
+        "Read pure path resolver; no filesystem mutation."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/doctor.test.js",
+      "observed_facts": [
+        "Inspected HTTP401 reachable, invalid JSON critical and --out assertions; not executed."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; named implementation and test evidence inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

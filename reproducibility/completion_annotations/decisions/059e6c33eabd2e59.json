@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "059e6c33eabd2e59",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/rollout.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/sync.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Gemini discovery/parser implements numeric token mapping, UTC half-hour source=gemini queues and content exclusion. A concrete selected-scope gap remains: missing/empty message model retains the previous message model (model changes only when normalization succeeds), whereas the spec requires unknown for missing/empty model. Thus the initial-message fallback does not cover the stated general case.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Gemini discovery/parser implements numeric token mapping, UTC half-hour source=gemini queues and content exclusion. A concrete selected-scope gap remains: missing/empty message model retains the previous message model (model changes only when normalization succeeds), whereas the spec requires unknown for missing/empty model. Thus the initial-message fallback does not cover the stated general case.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-26-add-gemini-cli-usage/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/rollout.js",
+      "observed_facts": "parseGeminiFile initializes lastModel and only overwrites it for truthy normalized msg.model; token allowlist maps output+tool and thoughts; queue persists numeric totals and metadata."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/sync.js",
+      "observed_facts": "Discovers Gemini session files and runs incremental parser."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "The reviewed pinned implementation supports most parser scope; no later fix to this specific fallback was established."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

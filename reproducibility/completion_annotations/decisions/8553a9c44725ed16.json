@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "8553a9c44725ed16",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/rollout.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/commands/sync.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/rollout-parser.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Gemini parser reads session messages, maps only numeric token fields, adds tool to output tokens, buckets by UTC half hour and tags gemini/model. sync wires discovery into the parser. Behavioral fixture contains text content and asserts no content in output plus correct numeric totals. Exact implementation event not established from the documentation-only task commit.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Gemini parser reads session messages, maps only numeric token fields, adds tool to output tokens, buckets by UTC half hour and tags gemini/model. sync wires discovery into the parser. Behavioral fixture contains text content and asserts no content in output plus correct numeric totals. Exact implementation event not established from the documentation-only task commit.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/rollout.js",
+      "observed_facts": [
+        "Inspected parseGeminiFile and normalizeGeminiTokens implementations."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/commands/sync.js",
+      "observed_facts": [
+        "Gemini session discovery invokes parseGeminiIncremental."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/rollout-parser.test.js",
+      "observed_facts": [
+        "Gemini test checks source/model/half-hour, output+tool and content exclusion."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; named implementation and test evidence inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

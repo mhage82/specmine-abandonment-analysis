@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "b8f8f7132939eabe",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/pyproject.toml | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/packaging/test_core_package_includes.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-09-packaging-01-wheel-package-inclusion/TDD_EVIDENCE.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Wheel config now explicitly maps src/specfact_cli into the wheel and declares both console scripts. Regression assertions check payload configuration and entrypoints; project-authored March6 evidence describes inspecting the built wheel, importing cli_main and invoking both clean-install commands successfully. Code plus artifact record supports scope; I did not build/install it.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Wheel config now explicitly maps src/specfact_cli into the wheel and declares both console scripts. Regression assertions check payload configuration and entrypoints; project-authored March6 evidence describes inspecting the built wheel, importing cli_main and invoking both clean-install commands successfully. Code plus artifact record supports scope; I did not build/install it.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/pyproject.toml",
+      "observed_facts": [
+        "Wheel only-include/sources and both project.scripts entries inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/packaging/test_core_package_includes.py",
+      "observed_facts": [
+        "Read package mapping, entrypoint and version regression assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-09-packaging-01-wheel-package-inclusion/TDD_EVIDENCE.md",
+      "observed_facts": [
+        "Dated red/green and built-wheel/clean-install results reported by project."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Artifact execution results are project-authored; the recorded zip entry example has an inconsistent dist-info version, so independent artifact verification is absent."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b8f8f7132939eabe"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

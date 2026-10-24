@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "fbeb8dbebcf092a0",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/styles.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/styles.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/formatting_tags.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document_view.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Weighted modal baseline, earliest-run tie break, 60% threshold and hyperlink rendering are implemented. Effective inherited formatting is incomplete: both historical and later styles.ts choose only the first non-null rPr for an entire style chain before resolving properties, so a child style with italic-only rPr hides bold inherited from its basedOn parent. This prevents strict confirmation of full inheritance resolution.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Weighted modal baseline, earliest-run tie break, 60% threshold and hyperlink rendering are implemented. Effective inherited formatting is incomplete: both historical and later styles.ts choose only the first non-null rPr for an entire style chain before resolving properties, so a child style with italic-only rPr hides bold inherited from its basedOn parent. This prevents strict confirmation of full inheritance resolution.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/openspec/changes/archive/2026-02-19-add-run-level-formatting-visibility/specs/docx-primitives/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/styles.ts",
+      "observed_facts": "extractEffectiveRunFormatting212-225 collapses each style chain to one rPr before property lookup."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/styles.ts",
+      "observed_facts": "Same firstNonNull chain collapse remains at250-259."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/formatting_tags.ts",
+      "observed_facts": "Modal weights, tie breaking, threshold and ordered tags."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document_view.ts",
+      "observed_facts": "Run hyperlink r:id resolved using relationships map."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Direct source reasoning; no application fixture executed. Shared tasks with the MCP visibility scope do not justify equal outcomes."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

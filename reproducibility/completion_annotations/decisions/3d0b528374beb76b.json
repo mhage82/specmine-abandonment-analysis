@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "3d0b528374beb76b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/TimerSection.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/timer/mod.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/db/queries.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Timer badges parse MM:SS or integer minutes, clamp60-5400, revert invalid input, select on focus and commit on Enter/blur (including Tab). Sliders round to minutes; idle settings refresh the timer; daily focus minutes round at30 seconds.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Timer badges parse MM:SS or integer minutes, clamp60-5400, revert invalid input, select on focus and commit on Enter/blur (including Tab). Sliders round to minutes; idle settings refresh the timer; daily focus minutes round at30 seconds.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-03-timer-settings-keyboard-entry/specs/timer-duration-keyboard-entry/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/TimerSection.svelte",
+      "observed_facts": "Parsing,formatting,commit handlers,clamps,nearest-minute derived sliders and second-valued writes inspected."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/timer/mod.rs",
+      "observed_facts": "apply_settings updates idle duration while preserving a running countdown; reset snapshot propagation inspected."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/db/queries.rs",
+      "observed_facts": "focus_mins uses (focus_secs+30)/60 and relevant cases are in test module."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

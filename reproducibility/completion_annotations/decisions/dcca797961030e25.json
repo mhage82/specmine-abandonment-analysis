@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "dcca797961030e25",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/main.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Post-migration summary is generated from wizard-known facts after backup handling: canonical .agents ownership, apply still required, conditional collaborator/gitignore guidance, cautious git review and accurate backup outcomes. Wizard mode suppresses the generic init footer. Renderer assertions cover required and forbidden claims.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Post-migration summary is generated from wizard-known facts after backup handling: canonical .agents ownership, apply still required, conditional collaborator/gitignore guidance, cautious git review and accurate backup outcomes. Wizard mode suppresses the generic init footer. Renderer assertions cover required and forbidden claims.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-31-init-wizard-post-migration-summary/specs/skill-adoption/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs",
+      "observed_facts": "WizardSummaryFacts/BackupOutcome; renderer1363-1398; final invocation2146-2156 after backup resolution; tests3052 onward assert guidance and backup cases."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/main.rs",
+      "observed_facts": "init_next_steps_lines returns None for wizard, call after shared success banner; regression test confirms suppression."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "ff403d32190269c5",
+  "manual_status": "unclear",
+  "manual_scope_match": "unclear",
+  "manual_evidence_url": "https://github.com/styrene-lab/omegon/commit/cdd7c0a9b6c6d48dc3a5afc284f5b8b7c2a07e33",
+  "manual_outcome_date": "",
+  "manual_notes": "The selected design-archive spec still contains only the placeholder Scenario 1 (replace with a real scenario), with empty falsifiability/constraints. A separate design document records decided/implemented layout decisions and regression changes, but the selected spec does not define a concrete feature acceptance scope. Exclude this row from a strict completed-feature set pending scope adjudication; it is not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The selected design-archive spec still contains only the placeholder Scenario 1 (replace with a real scenario), with empty falsifiability/constraints. A separate design document records decided/implemented layout decisions and regression changes, but the selected spec does not define a concrete feature acceptance scope. Exclude this row from a strict completed-feature set pending scope adjudication; it is not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/styrene-lab/omegon/commit/cdd7c0a9b6c6d48dc3a5afc284f5b8b7c2a07e33",
+      "observed_facts": "Read concrete layout decision document and compare with placeholder selected spec."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "placeholder_spec_scope"
+}

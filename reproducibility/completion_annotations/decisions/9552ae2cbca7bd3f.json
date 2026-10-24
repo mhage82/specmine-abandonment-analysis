@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "9552ae2cbca7bd3f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-03-08",
+  "manual_notes": "Historical change replaces dummy detail data with route-ID RecipeDetailProvider, loading/not-found branches, DTO-based rendering and shared subscriptions. Shared context owns scaled ingredients used in detail/cook mode plus rating/favorite mutations; media mapping resolves authenticated image URLs and dummy module is deleted.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical change replaces dummy detail data with route-ID RecipeDetailProvider, loading/not-found branches, DTO-based rendering and shared subscriptions. Shared context owns scaled ingredients used in detail/cook mode plus rating/favorite mutations; media mapping resolves authenticated image URLs and dummy module is deleted.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "PR325 patch096 138a4ea9b7391fe476f3e72a234426ad5d2751e7: detail route, context adapter, view, DTO components, rating/favorite context mutations, URL mapper and dummy-data deletion; pinned view still wires adjustedIngredients/setIngredientAmounts/rateRecipe/toggleLiked."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "e738314e484ed2f1a1eb99dccbfdcaf9a103d93778d979cf1b494444b4b5c986"
+}

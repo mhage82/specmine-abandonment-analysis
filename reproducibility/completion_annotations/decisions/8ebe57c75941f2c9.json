@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "8ebe57c75941f2c9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election_lease.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cachecoord/cachecoord_revision.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/sysinfo/sysinfo_impl.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The topology boundary is implemented through an injected cluster.Service, internally owned election, startup-created coordination, stable node identity in cache events and system diagnostics, and demotion after renewal failure. This is source-supported delivery of the selected architecture; runtime failover was not exercised and the exact historical completion date remains unset.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The topology boundary is implemented through an injected cluster.Service, internally owned election, startup-created coordination, stable node identity in cache events and system diagnostics, and demotion after renewal failure. This is source-supported delivery of the selected architecture; runtime failover was not exercised and the exact historical completion date remains unset.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster.go",
+      "observed_facts": "One topology interface owns enabled mode, primary state and node ID; election is constructed internally only for cluster mode with a lock provider."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+      "observed_facts": "Startup resolves the database dialect before coordination; creates and pings one provider, then wires cluster, cachecoord, auth, session, and plugin services before route/runtime startup."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election.go",
+      "observed_facts": "Fixed leader-election lock, node holder and lease, follower retry ticker, acquisition state and lease-stop demotion are implemented."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election_lease.go",
+      "observed_facts": "Lease renewal failure logs a warning with context and ends the lease worker, notifying election state to demote."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cachecoord/cachecoord_revision.go",
+      "observed_facts": "Local revision branch and shared coordination store calls, tenant/cascade scoping, event payloads, revision fallback, freshness window, observable status and structured publication errors are implemented."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/sysinfo/sysinfo_impl.go",
+      "observed_facts": "NodeID and IsPrimary are read from the injected cluster service and returned with provider health."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

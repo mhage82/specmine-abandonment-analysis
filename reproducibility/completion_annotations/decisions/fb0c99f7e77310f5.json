@@ -1,0 +1,63 @@
+{
+  "file_url_sha16": "fb0c99f7e77310f5",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_call_context.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/protocol/hostservices/catalog.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_auth.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_registry_test.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/i18n/i18n_cache.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Instance-owned runtime dependencies provide typed domain dispatch with plural service names and request-local authorization snapshots. Dynamic catalog excludes Admin/db/http/i18n; source/guest domain operations reuse owners. Host i18n remains a merged sector cache with plugin-scoped invalidation. Registry tests enumerate published methods and reject missing/orphan dispatchers; shared decoding/context helpers are centralized.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Instance-owned runtime dependencies provide typed domain dispatch with plural service names and request-local authorization snapshots. Dynamic catalog excludes Admin/db/http/i18n; source/guest domain operations reuse owners. Host i18n remains a merged sector cache with plugin-scoped invalidation. Registry tests enumerate published methods and reject missing/orphan dispatchers; shared decoding/context helpers are centralized.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service.go",
+      "observed_facts": [
+        "Read constructor dependencies, shared handler and scoped service invocation checks."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_call_context.go",
+      "observed_facts": [
+        "Request-local sync.Once snapshot creates copied service/method/resource/key/table grants."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/protocol/hostservices/catalog.go",
+      "observed_facts": [
+        "Read published catalog names and absence of excluded dynamic services."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_auth.go",
+      "observed_facts": [
+        "Typed dispatcher uses auth namespace subservices and shared host-call helpers."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_registry_test.go",
+      "observed_facts": [
+        "Read published registry coverage, orphan dispatcher and context/helper assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/i18n/i18n_cache.go",
+      "observed_facts": [
+        "Read sector-specific dirty/delete handling and merged view invalidation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Static implementation and registry assertions support published surface coverage; no independent execution of every host-service method."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "fb0c99f7e77310f5"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

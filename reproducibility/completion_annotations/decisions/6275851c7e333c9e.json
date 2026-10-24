@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "6275851c7e333c9e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/blob/10dbc95557ebdfc7027b1b022ab11653dd356cd9/.codex/skill/data-entry-workflow/SKILL.md | https://github.com/zhuanggenhua/BoardGame/blob/10dbc95557ebdfc7027b1b022ab11653dd356cd9/docs/games/smashup/workflows/smashup-faction-intake.md | https://github.com/zhuanggenhua/BoardGame/blob/10dbc95557ebdfc7027b1b022ab11653dd356cd9/docs/games/smashup/workflows/smashup-faction-implementation.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The shared data-entry workflow and separate Smash Up intake/implementation guides implement staged handoff, source/atlas contracts and layered configuration/mechanism/UI gates. The selected scope also requires preserving another task?s occupied root planning files via alternative persistent state; that rule and its trace were not established in the inspected workflow documents. Most workflow delivery is supported, but full selected-scope completion remains uncertain.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The shared data-entry workflow and separate Smash Up intake/implementation guides implement staged handoff, source/atlas contracts and layered configuration/mechanism/UI gates. The selected scope also requires preserving another task?s occupied root planning files via alternative persistent state; that rule and its trace were not established in the inspected workflow documents. Most workflow delivery is supported, but full selected-scope completion remains uncertain.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/blob/10dbc95557ebdfc7027b1b022ab11653dd356cd9/.codex/skill/data-entry-workflow/SKILL.md",
+      "observed_facts": "Shared entry and layered workflow/handoff routing inspected as source material."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/blob/10dbc95557ebdfc7027b1b022ab11653dd356cd9/docs/games/smashup/workflows/smashup-faction-intake.md",
+      "observed_facts": "Intake contract, atlas/source gates and handoff checklist inspected."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/blob/10dbc95557ebdfc7027b1b022ab11653dd356cd9/docs/games/smashup/workflows/smashup-faction-implementation.md",
+      "observed_facts": "Implementation phases and completion gates inspected; generic planning requirements do not establish occupied-file handling."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "partial_workflow_evidence"
+}

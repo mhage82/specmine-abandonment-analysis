@@ -1,0 +1,46 @@
+{
+  "file_url_sha16": "57765c4c45dd0bb4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/commit/028dae0475cd7c4ab5f50a2460ac693b72a82d42 | https://github.com/victorGPT/vibeusage/commit/5b2a4c86912c5ccaff3f481786256882c95e3b70 | https://github.com/victorGPT/vibeusage/commit/1a503e228564d071af654c738b3538e970627a08 | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/docs/pr/2025-12-30-annual-poster.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical implementation clearly supplies the fixed-2025 poster, copy-registry heading, narrowed vertical layout and hidden breakdown metrics. An initial image artifact and mock-data export note are present, but the final post-change poster image and an exact poster capture command were not independently traced; the recorded command is for the separate dashboard screenshot. For a strict complete example including the final exported artifact, coverage is incomplete.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Historical implementation clearly supplies the fixed-2025 poster, copy-registry heading, narrowed vertical layout and hidden breakdown metrics. An initial image artifact and mock-data export note are present, but the final post-change poster image and an exact poster capture command were not independently traced; the recorded command is for the separate dashboard screenshot. For a strict complete example including the final exported artifact, coverage is incomplete.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/028dae0475cd7c4ab5f50a2460ac693b72a82d42",
+      "observed_facts": [
+        "Read AnnualPosterPage and App integration; initial commit also contains poster PNG binary."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/5b2a4c86912c5ccaff3f481786256882c95e3b70",
+      "observed_facts": [
+        "Read vertical-layout change."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/1a503e228564d071af654c738b3538e970627a08",
+      "observed_facts": [
+        "Read summary-only change."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/docs/pr/2025-12-30-annual-poster.md",
+      "observed_facts": [
+        "Poster export path/URL and mock-data note exist; exact headless command documented below concerns dashboard screenshot."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; historical poster code and follow-up diffs inspected, image presence noted without rendering; final export trace remains incomplete.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

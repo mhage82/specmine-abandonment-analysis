@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "356070f7cdb3297b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/go.work | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/packed/packed_plugins.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/plugins/plugins_workspace.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/plugins/plugins_gowork.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/reusable-test-verification-suite.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/reusable-host-only-build-smoke.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/host-only-artifact-smoke/action.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/CONTRIBUTING.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Core decoupling is implemented: root go.work contains only host/tool modules; official_plugins gates the registration bridge; plugin-full generates a separate workspace, and absent/empty workspaces produce actionable submodule guidance for plugin commands. Host and plugin CI suites and empty-plugin smoke assertions exist. However, I could not corroborate the explicit full host verification matrix in BOTH physically missing-directory and empty-directory states: inspected CI has one host checkout mode and no state matrix. The inspector also classifies any directory with no child plugin.yaml as empty rather than distinguishing malformed directory structure. Strict full-scope completion remains unresolved, not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Core decoupling is implemented: root go.work contains only host/tool modules; official_plugins gates the registration bridge; plugin-full generates a separate workspace, and absent/empty workspaces produce actionable submodule guidance for plugin commands. Host and plugin CI suites and empty-plugin smoke assertions exist. However, I could not corroborate the explicit full host verification matrix in BOTH physically missing-directory and empty-directory states: inspected CI has one host checkout mode and no state matrix. The inspector also classifies any directory with no child plugin.yaml as empty rather than distinguishing malformed directory structure. Strict full-scope completion remains unresolved, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/ddd13ce0a3a0656de4c0bfde62a5784bf761a9ff/openspec/changes/archive/plugin-framework/specs/official-plugin-workspace-decoupling/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/go.work",
+      "observed_facts": "Root workspace uses apps/lina-core and hack/tools/linactl, without official plugin modules."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/packed/packed_plugins.go",
+      "observed_facts": "Actual official_plugins build constraint gates the blank import of lina-plugins."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/plugins/plugins_workspace.go",
+      "observed_facts": "Inspected state classifier, missing/empty plugin-command errors, explicit/automatic mode selection and host-only preparation. Non-directory is invalid; any directory with no manifests is empty."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/plugins/plugins_gowork.go",
+      "observed_facts": "WriteOfficialWorkspace generates temp workspace from host uses, discovered plugin modules and registration aggregate; host mode bypasses it."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/reusable-test-verification-suite.yml",
+      "observed_facts": "Separate host and recursive-submodule plugin backend/frontend/E2E jobs exist; inspected definitions do not parameterize missing versus empty plugin directory states."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/reusable-host-only-build-smoke.yml",
+      "observed_facts": "Single checkout/build/smoke sequence with plugins=0; no physical absent/empty directory matrix in this workflow."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/host-only-artifact-smoke/action.yml",
+      "observed_facts": "Actual assertions require zero source plugins from host-only artifact."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/CONTRIBUTING.md",
+      "observed_facts": "Documents default submodule path, host-only commands, plugin-full workspace and initialization command."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Two collected IDs have identical full specification text and the same linked task hash; shared evidence reused only after equality comparison.",
+    "Full host missing/empty verification may exist outside the inspected paths; insufficient corroboration is distinct from proof the runtime feature is absent. Shared framework checklist covers many other scopes and is not sufficient on its own."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

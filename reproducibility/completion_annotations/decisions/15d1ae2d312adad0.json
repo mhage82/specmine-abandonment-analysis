@@ -1,0 +1,42 @@
+{
+  "file_url_sha16": "15d1ae2d312adad0",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/env-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/date-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-range-request-core.js",
+  "manual_outcome_date": "",
+  "manual_notes": "The shared date-range resolver defaults to 800 days, accepts a positive configured override, and returns an error containing the active limit for excess ranges. The range-request adapter returns 400, and summary/daily/model-breakdown use that adapter. The configuration prefix was subsequently renamed to VIBEUSAGE.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The shared date-range resolver defaults to 800 days, accepts a positive configured override, and returns an error containing the active limit for excess ranges. The range-request adapter returns 400, and summary/daily/model-breakdown use that adapter. The configuration prefix was subsequently renamed to VIBEUSAGE.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/env-core.js",
+      "observed_facts": [
+        "DEFAULT_USAGE_MAX_DAYS=800 and configured positive-value resolver inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/date-core.js",
+      "observed_facts": [
+        "Read resolveUsageDateRangeLocal inclusive-day limit and error."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-range-request-core.js",
+      "observed_facts": [
+        "Read 400 propagation; use by the three required endpoints traced."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; shared config/range implementation and named endpoint integration inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

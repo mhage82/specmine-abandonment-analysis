@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "98829ec2f48f1fc1",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/09a4581af051abe5eb60198e65c6a14a8396a71a.patch | https://github.com/carverauto/serviceradar/commit/bcd3855d5aa1724cc76006115447ad7c12dd06bd.patch",
+  "manual_outcome_date": "2026-06-17",
+  "manual_notes": "The backpressure change is corroborated by demand/capacity-bounded pull requests, bounded FIFO/overflow NAKs, per-stream limits, lag/ack/throughput telemetry and retention-risk signals. Inspected tests cover bounds and pull payload configuration. Sizing evidence and local replay/CNPG/Rust harnesses are present; the 50k-agent model documents a bottleneck, not a claim that 50k capacity is achieved. June 17 is the recovered benchmark-delivery event.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The selected change is a bounded ingestion repair plus observability and evaluation design. Direct production code, targeted tests and actual benchmark artifacts support that scope. The design explicitly delegates future edge-anomaly/raw-storage decisions and does not require proven 50k-agent throughput.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/09a4581af051abe5eb60198e65c6a14a8396a71a.patch",
+      "observed_facts": "Inspected producer request budget=min(demand,remaining buffer capacity), FIFO queue, overflow NAK, omission of push deliver_subject, per-stream batch/ack limits, consumer lag reporter, low-cardinality telemetry including retention risk, config/flow-control/consumer tests, fixture replay and rollback-default CNPG benchmark code. sizing.md records measured payload/rate/row fanout and database write benchmarks, partition ownership/failover model and scaling proof gaps."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/bcd3855d5aa1724cc76006115447ad7c12dd06bd.patch",
+      "observed_facts": "Inspected standalone Rust protobuf benchmark controls and documentation separating production BEAM/ERTS repair from experimental controls. Harness consumes captured fixtures, separates phases, disables database writes unless explicitly configured and targets a temporary benchmark table."
+    }
+  ],
+  "limitations": [
+    "Static source/test review only; no tests, benchmarks, deployments or production systems were run.",
+    "Evidence uses recovered public GitHub path-history commits. Their equivalence to the original dataset revision is not asserted; no completion date is inferred from the last specification edit.",
+    "AI-assisted annotation pending human confirmation.",
+    "Benchmark results are repository-author reports and were not independently reproduced.",
+    "Outcome date denotes the observed recovered public delivery of the benchmark portion, not exact developer completion or production deployment.",
+    "Existing raw-log taxonomy and every OTEL field were not independently regression-tested; review focused on this change's pull/backpressure/telemetry/evaluation additions."
+  ],
+  "review_depth": "Read full selected specification/shared tasks; inspected substantive producer/consumer/config/telemetry implementation, flow-control and config test assertions, sizing calculations/results and local benchmark safety/data paths. Tests and benchmarks were not run.",
+  "spec_snapshot_sha256": "eb319d9373984563d00f9eeba41ed9e377d7d36354747d89318bd52bcd978dfd",
+  "related_review_ids": [
+    "98829ec2f48f1fc1"
+  ]
+}

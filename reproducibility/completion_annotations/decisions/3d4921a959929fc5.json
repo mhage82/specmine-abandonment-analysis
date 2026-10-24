@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "3d4921a959929fc5",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Asymmetric-al/core/commit/14d2ad15bedac030cb2c28b714d9da3741149769 | https://github.com/Asymmetric-al/core/commit/e2e5775e4acd9a87edddd5373c8100b60ff3fa41",
+  "manual_outcome_date": "2026-04-17",
+  "manual_notes": "This change is a product-boundary documentation refinement. The accepted delta is folded into current platform-boundaries together with the other three platform specs, and the follow-up updates project guidance and both archived/current boundary wording. Completion here means delivery of the agreed documentation contract; it does not certify implementation of every platform behavior described.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "This change is a product-boundary documentation refinement. The accepted delta is folded into current platform-boundaries together with the other three platform specs, and the follow-up updates project guidance and both archived/current boundary wording. Completion here means delivery of the agreed documentation contract; it does not certify implementation of every platform behavior described.",
+  "sources": [
+    {
+      "url": "https://github.com/Asymmetric-al/core/commit/14d2ad15bedac030cb2c28b714d9da3741149769",
+      "observed_facts": "Read fold-forward changes to the four current specs and review/reconciliation tasks."
+    },
+    {
+      "url": "https://github.com/Asymmetric-al/core/commit/e2e5775e4acd9a87edddd5373c8100b60ff3fa41",
+      "observed_facts": "Project guidance and current/archived surface and publication boundary wording updated together."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Documentation-delivery scope; this row should be distinguished from executable feature completion in downstream analysis."
+  ]
+}

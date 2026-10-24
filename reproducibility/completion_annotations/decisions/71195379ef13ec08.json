@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "71195379ef13ec08",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/30d996bbed913a8b2c67449f3b2a3f8956e5545d/dashboard/src/pages/DashboardPage.jsx | https://github.com/victorGPT/vibeusage/blob/30d996bbed913a8b2c67449f3b2a3f8956e5545d/dashboard/src/lib/daily.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical DETAILS code chooses hour/day/month date keys and rows by period, requests24months for total, paginates total at12 rows, defaults date sort descending, and renders an icon only for the active column. Subsequent trimming/pagination changes are separate.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical DETAILS code chooses hour/day/month date keys and rows by period, requests24months for total, paginates total at12 rows, defaults date sort descending, and renders an icon only for the active column. Subsequent trimming/pagination changes are separate.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-23-update-details-table/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/30d996bbed913a8b2c67449f3b2a3f8956e5545d/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": "Period row selection, DETAILS_PAGE_SIZE12,24month trend request, descending sort and active-only sortIconFor."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/30d996bbed913a8b2c67449f3b2a3f8956e5545d/dashboard/src/lib/daily.js",
+      "observed_facts": "Date/hour/month sort-key support."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

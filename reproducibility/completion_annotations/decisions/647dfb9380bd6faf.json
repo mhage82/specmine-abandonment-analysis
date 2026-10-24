@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "647dfb9380bd6faf",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/Makefile",
+  "manual_outcome_date": "",
+  "manual_notes": "Quality-gate documentation, hooks and CI checks exist, but the exact 100% llvm-cov gate differs from implementation: historical Makefile/current coverage script filter files and zero-count lines rather than enforce --fail-under-lines 100. Checked tasks separately report an 85% gate/87.45% result. Full selected gate is not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Quality-gate documentation, hooks and CI checks exist, but the exact 100% llvm-cov gate differs from implementation: historical Makefile/current coverage script filter files and zero-count lines rather than enforce --fail-under-lines 100. Checked tasks separately report an 85% gate/87.45% result. Full selected gate is not established.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/Makefile",
+      "observed_facts": "Coverage target runs filtered llvm-cov text-report checking with exclusions; docs prescribe fail-under-lines100; CI delegates to make coverage. Task snapshot records85 threshold/87.45 achieved."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "0bb60d37f5271c736393b6033b0d3ceb911e2c9e6d207018398efef08f304b3b"
+}

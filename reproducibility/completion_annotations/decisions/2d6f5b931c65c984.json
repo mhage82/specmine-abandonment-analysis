@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "2d6f5b931c65c984",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/ebpf/types.go | https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/remoteaccess/enhanced_recording_platform_linux.go | https://github.com/carverauto/serviceradar/commit/3066ff0815d3d8e5c896c72bc36368e4d9069dfd | https://github.com/carverauto/serviceradar/commit/1a1a5b339bbf2f39656e1cddd30aa8d1cf1be79b",
+  "manual_outcome_date": "",
+  "manual_notes": "Shared loader, platform checks/self-test and fail-closed SSH policy checks exist. Pinned final task-history snapshot nevertheless has loadedCollection.Attach returning ErrRuntimeNotImplemented and NewPlatformEnhancedRecorder selecting LinuxProcEnhancedEventSource. Thus required session-scoped BPF attachment/cleanup and actual required-BPF capability cannot be established from checked tasks or self-test loading alone.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Shared loader, platform checks/self-test and fail-closed SSH policy checks exist. Pinned final task-history snapshot nevertheless has loadedCollection.Attach returning ErrRuntimeNotImplemented and NewPlatformEnhancedRecorder selecting LinuxProcEnhancedEventSource. Thus required session-scoped BPF attachment/cleanup and actual required-BPF capability cannot be established from checked tasks or self-test loading alone.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/ebpf/types.go",
+      "observed_facts": [
+        "At reviewed May9 end snapshot Attach remains an explicit not-implemented stub."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/remoteaccess/enhanced_recording_platform_linux.go",
+      "observed_facts": [
+        "Capability reporting loads/closes self-test, but actual default recorder is procfs fallback, not session-scoped BPF."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/3066ff0815d3d8e5c896c72bc36368e4d9069dfd",
+      "observed_facts": [
+        "Rejects required target-side SSH BPF when managed-target flag is absent before starting recording."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/1a1a5b339bbf2f39656e1cddd30aa8d1cf1be79b",
+      "observed_facts": [
+        "Integration smoke loads self-test collection; does not attach session probes or verify process-tree events."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "2d6f5b931c65c984"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

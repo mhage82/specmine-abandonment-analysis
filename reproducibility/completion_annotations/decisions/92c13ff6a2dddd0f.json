@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "92c13ff6a2dddd0f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/capability.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/tools/linactl/internal/plugingovernance/plugingovernance_scan.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Current domain Services, Auth/Plugins namespaces, scoped transport and static governance exist, and historical package renames explain some obsolete paths in this aggregate archive. However the selected internal-boundary requirement explicitly includes provider registry: storagecap_provider.go remains in the public consumer package with exported Provide, ProviderFactoryFor, RegisteredProviderIDs and ResolveProvider over a package-global registry. Full selected public/internal separation is therefore not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Current domain Services, Auth/Plugins namespaces, scoped transport and static governance exist, and historical package renames explain some obsolete paths in this aggregate archive. However the selected internal-boundary requirement explicitly includes provider registry: storagecap_provider.go remains in the public consumer package with exported Provide, ProviderFactoryFor, RegisteredProviderIDs and ResolveProvider over a package-global registry. Full selected public/internal separation is therefore not established.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/capability.go",
+      "observed_facts": [
+        "Read current domain namespace directory and concrete capability return types."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go",
+      "observed_facts": [
+        "Read public registry registration/lookup/selection implementation and package-global registry."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go",
+      "observed_facts": [
+        "Historical explicit-provider policy also keeps registry in the public capability package."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/tools/linactl/internal/plugingovernance/plugingovernance_scan.go",
+      "observed_facts": [
+        "Read core-table, cross-plugin-boundary, old-method and capability dependency scanning rules."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "The archive mixes earlier pluginservice package names with later capability namespace requirements. Registry exception would require a documented scope clarification; no such exception was established."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "92c13ff6a2dddd0f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

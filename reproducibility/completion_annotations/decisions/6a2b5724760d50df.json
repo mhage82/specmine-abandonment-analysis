@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "6a2b5724760d50df",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/approval/viewmodel.go | https://github.com/langoai/lango/commit/5571be9f5ff186712e0bede6b26a8699cd4a06f1",
+  "manual_outcome_date": "",
+  "manual_notes": "Tier classification, view model, compact/fullscreen surfaces and bounded diff previews have substantial implementation. Strict risk-indicator scope is unresolved: the scenario requires dangerous plus Activity=execute to yield critical/Executes arbitrary code, but ComputeRisk accepts only safetyLevel and category and produces that label only for category=automation. A dangerous execute request in another category yields a different risk. This is a narrow acceptance mismatch, not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Tier classification, view model, compact/fullscreen surfaces and bounded diff previews have substantial implementation. Strict risk-indicator scope is unresolved: the scenario requires dangerous plus Activity=execute to yield critical/Executes arbitrary code, but ComputeRisk accepts only safetyLevel and category and produces that label only for category=automation. A dangerous execute request in another category yields a different risk. This is a narrow acceptance mismatch, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/approval/viewmodel.go",
+      "observed_facts": "ClassifyTier checks Activity; NewViewModel calls ComputeRisk without it. ComputeRisk switches on category and returns high/Dangerous operation for unrecognized dangerous categories."
+    },
+    {
+      "url": "https://github.com/langoai/lango/commit/5571be9f5ff186712e0bede6b26a8699cd4a06f1",
+      "observed_facts": "Historical follow-up adds bounded fs_write/fs_edit diff previews and still calls ComputeRisk(safetyLevel, category)."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "03dae1d5c368a86463d0a5b8fee91bfcbfa7e2d03e57e5f85116d5d8331353d9"
+}

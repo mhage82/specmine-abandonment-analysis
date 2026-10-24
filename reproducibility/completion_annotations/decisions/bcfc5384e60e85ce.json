@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "bcfc5384e60e85ce",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/ljquan/opentu/commit/97fc60e4b7f766338b3143d8c57a390e4389cd0a | https://github.com/ljquan/opentu/commit/e642f466c5d35a49f1b14e652495ddb07f75f30c",
+  "manual_outcome_date": "2026-05-01",
+  "manual_notes": "The image control stores transform3d separately from rectangular geometry, clamps rotations, removes a zero transform, previews without history writes, restores on cancel and commits one new history batch on confirm. Eligibility excludes unsupported media placeholders. The follow-up keeps original AI image references, emits 2D/3D transform text and excludes rotated images from overlapping graphics exports, with targeted tests.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The image control stores transform3d separately from rectangular geometry, clamps rotations, removes a zero transform, previews without history writes, restores on cancel and commits one new history batch on confirm. Eligibility excludes unsupported media placeholders. The follow-up keeps original AI image references, emits 2D/3D transform text and excludes rotated images from overlapping graphics exports, with targeted tests.",
+  "sources": [
+    {
+      "url": "https://github.com/ljquan/opentu/commit/97fc60e4b7f766338b3143d8c57a390e4389cd0a",
+      "observed_facts": "Toolbar, data helpers, rendering, cancel/confirm history handling and eligibility/math tests."
+    },
+    {
+      "url": "https://github.com/ljquan/opentu/commit/e642f466c5d35a49f1b14e652495ddb07f75f30c",
+      "observed_facts": "Original-reference and transform-context handling, overlap filtering and regression tests."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "UI behavior and board persistence inferred from authored integration; no browser session or project test execution."
+  ]
+}

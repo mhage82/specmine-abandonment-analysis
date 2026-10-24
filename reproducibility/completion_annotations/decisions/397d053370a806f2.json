@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "397d053370a806f2",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/commit/0cc7e6b63977b93ea57f5152c291d718e99f1379",
+  "manual_outcome_date": "2025-12-25",
+  "manual_notes": "The implementation commit introduces both reusable exported UI components, routes their visible labels through copy(), renders the model map in DashboardPage, and wires the cost-info action to modal state. This corroborates the scoped component integration rather than only task checkboxes.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The implementation commit introduces both reusable exported UI components, routes their visible labels through copy(), renders the model map in DashboardPage, and wires the cost-info action to modal state. This corroborates the scoped component integration rather than only task checkboxes.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/0cc7e6b63977b93ea57f5152c291d718e99f1379",
+      "observed_facts": [
+        "Inspected DashboardPage integration and full NeuralDivergenceMap/CostAnalysisModal component diffs; named exports, copy keys, modal open/close and source/model values are present."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Full specification/tasks read; historical component and dashboard integration diffs inspected; no rendered UI execution.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

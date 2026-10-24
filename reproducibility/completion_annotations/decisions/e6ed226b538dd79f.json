@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "e6ed226b538dd79f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/abapify/adt-cli/pull/118 | https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/adt-cli/src/lib/commands/source.ts | https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/adt-lint/src/lib/context.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "PR118 implements MCP editMethod, comment-aware unambiguous boundary scanning, source splicing and standard transport/lock/PUT/unlock flow. The recorded spec names adt source write --method, but pinned CLI registers source put with no write alias; the splice also rebuilds METHOD/ENDMETHOD lines rather than preserving the existing boundary lines. Delivery is substantial, but these contract differences leave strict completion unclear, not abandoned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "PR118 implements MCP editMethod, comment-aware unambiguous boundary scanning, source splicing and standard transport/lock/PUT/unlock flow. The recorded spec names adt source write --method, but pinned CLI registers source put with no write alias; the splice also rebuilds METHOD/ENDMETHOD lines rather than preserving the existing boundary lines. Delivery is substantial, but these contract differences leave strict completion unclear, not abandoned.",
+  "sources": [
+    {
+      "url": "https://github.com/abapify/adt-cli/pull/118",
+      "observed_facts": "Inspected CLI source-write, MCP update-source and boundary helper implementation diffs."
+    },
+    {
+      "url": "https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/adt-cli/src/lib/commands/source.ts",
+      "observed_facts": "Full source registers get and put only; methodBlock replaces boundary lines as well as body."
+    },
+    {
+      "url": "https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/adt-lint/src/lib/context.ts",
+      "observed_facts": "detectMethodBoundary scans case-insensitively, strips inline comments and returns null on multiple matching starts."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "3efd95b44369f3aa",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/mod.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/tabs/icons/mod.rs | https://github.com/HiroyukiFuruno/KatanA/tree/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates",
+  "manual_outcome_date": "",
+  "manual_notes": "The collected revision contains responsibility-based app/action, views, settings tabs, state, parser, platform and linter modules in place of the oversized files. Inspection of the listed areas and a source-length scan found the remaining >200-line Rust source files to be test modules; UI components have dedicated struct/impl boundaries. This supports the decomposition outcome by the snapshot; its exact completion date is not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The collected revision contains responsibility-based app/action, views, settings tabs, state, parser, platform and linter modules in place of the oversized files. Inspection of the listed areas and a source-length scan found the remaining >200-line Rust source files to be test modules; UI components have dedicated struct/impl boundaries. This supports the decomposition outcome by the snapshot; its exact completion date is not established.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/mod.rs",
+      "observed_facts": "Application behavior is split into document/action/workspace/export/preview/diff-review modules and operation traits."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/tabs/icons/mod.rs",
+      "observed_facts": "A dedicated IconsTabOps component coordinates smaller preset/list/row/color/popup modules."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/tree/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates",
+      "observed_facts": "Inspected source tree across core/ui/platform/linter; listed oversized areas are decomposed. Static scan excluding separate test modules and inline cfg(test) tails found no remaining production Rust file above 200 lines."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "711a658b1e10238738937f92f561d37956f4f86073901cfa27bbe2ea76e4de6e"
+}

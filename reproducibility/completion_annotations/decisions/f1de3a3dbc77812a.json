@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "f1de3a3dbc77812a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/pages/missioncontrol.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/pages/missioncontrol_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Pinned renderHeader sanitizes active-agent, model/provider, context, metrics and degraded-note text immediately before rendering. The corresponding header regression asserts normalized values and no escape character. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Pinned renderHeader sanitizes active-agent, model/provider, context, metrics and degraded-note text immediately before rendering. The corresponding header regression asserts normalized values and no escape character. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/pages/missioncontrol.go",
+      "observed_facts": "renderHeader sanitizes all textual summaries; acceptSelectedProposal sanitizes fallback descriptions and invokes compactPreparedBrief, which normalizes each segment and joins with a single-line separator before AcceptProposal."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/pages/missioncontrol_test.go",
+      "observed_facts": "TestMissionControlHeaderSanitizesSummaryText supplies all five malformed fields and checks normalized display text."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "913ff6de480d3a51fae6f367bea46f67319a7d297d84e6599bf41e27fa3464be"
+}

@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "2b40479f1c5b559e",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/pull/370 | https://github.com/UseJunior/safe-docx/pull/370/files | https://github.com/UseJunior/safe-docx/pull/379 | https://github.com/UseJunior/safe-docx/pull/379/files",
+  "manual_outcome_date": "2026-06-10",
+  "manual_notes": "Merged PR #370 implements the exact add-odf-intra-paragraph-compare change: Jaccard/DP modify pairing, token LCS, DOM mapping, tracked-change emission/degradation and stats, with OCMPI scenario tests. Merged PR #379 adds groupBridgedReplacements plus diff/emitter tests for snapshot scenario OCMPI-14. Both merged on 2026-06-10; date is integration of the reviewed scope. Reviewed actual implementation/test diffs, not only the 17/17 shared checklist. PR reports tests passed, but reviewer did not run them. PR #370 documents an existing whole-paragraph EOF reject defect (#367) outside its inline-change fix.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Concrete implementation and scenario-labelled tests match this odf-core spec, including its later OCMPI-14 addition. The task list spans additional packages, so the decision specifically follows the odf-core requirements and associated tests rather than treating every linked PR or shared checkbox as relevant.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/370",
+      "observed_facts": [
+        "GitHub API reported merged=true and merged_at=2026-06-10T06:34:05Z; merge commit a29e213d3139ab24f01db9886fec2ec25bef14e2.",
+        "PR explicitly names the OpenSpec change and describes odf-core inline comparison implementation and its verification.",
+        "PR documents a separate pre-existing whole-paragraph end-of-document reject defect, issue #367."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/370/files",
+      "observed_facts": [
+        "diff.ts adds deterministic modify-pair DP and Jaccard threshold; inline_diff.ts implements token LCS with trimmed common prefixes/suffixes.",
+        "inline_map.ts resolves visible offsets by splitting text/space runs and extracts formatted deletion content.",
+        "emit.ts plans modify pairs before mutation, degrades mapping failures, emits inline insertion/deletion markers, mirrors heading styles, and returns region counts; index.ts wires the pipeline and stats.",
+        "Scenario-labelled diff/emitter tests and a LibreOffice-gated OCMPI-13 accept/reject test are added. The latter skips without LibreOffice."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/379",
+      "observed_facts": [
+        "GitHub API reported merged=true and merged_at=2026-06-10T09:46:49Z; merge commit 68c6e48083c5f7c99652878f7a5e43a7f67bb463.",
+        "PR identifies issue #378 and the added OCMPI-14 scenario for adjacent-word replacement grouping."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/379/files",
+      "observed_facts": [
+        "inline_diff.ts adds groupBridgedReplacements, called by diffInline, to absorb whitespace-only bridges between mixed delete/insert windows.",
+        "inline_diff.test.ts tests grouped replacements, longer chains, kept-word boundaries, and delete-only/insert-only bridges.",
+        "emit_inline.test.ts asserts one deletion/insertion region and reconstruction for OCMPI-14."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation requires human confirmation for a manually verified reference dataset.",
+    "No implementation tests or LibreOffice oracle were executed by this reviewer; reported passing runs belong to the PR authors.",
+    "Completion denotes implementation of the reviewed specification scope, not absence of every product defect.",
+    "Related earlier ODF PRs alone would not establish this narrower intra-paragraph feature's completion."
+  ]
+}

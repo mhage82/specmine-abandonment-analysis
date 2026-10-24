@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "2f21d10d68cf20ee",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/webspatial/webspatial-sdk/pull/1244.diff | https://github.com/webspatial/webspatial-sdk/pull/1244",
+  "manual_outcome_date": "2026-06-01",
+  "manual_notes": "PR1244 implements nonce-plus-sequence rid generation, optional host page epoch query fields, forwarding and callback/timeout correlation. Inspected implementations and tests for requests with/without epoch and module reinitialization. Duplicate spec texts compared equal. Date is the collected PR merge event, not task-check or deployment time; tests not run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "All three selected SDK requirements map to specific implementation and tests. Shared native-refresh tasks were reviewed separately.",
+  "sources": [
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1244.diff",
+      "observed_facts": "spatialRequestMetadata.ts builds context nonce and sequence IDs and URLSearchParams; VisionOS/Pico adapters use the helper; scene-polyfill forwards rid/wsepoch; tests verify metadata, reset-context uniqueness, resolution and timeout cleanup."
+    },
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1244",
+      "observed_facts": "Collected PR metadata records merged=true, merged_at=2026-06-01T09:40:15Z."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation.",
+    "Separate candidate records share the same specification text; reused evidence is disclosed and they are not independent examples."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "33dda2a4524ba8665f6e58c0503ea71c0546580225b4351011cda090454ccc81",
+  "related_review_ids": [
+    "21c6c6ae471f45c7",
+    "2f21d10d68cf20ee"
+  ]
+}

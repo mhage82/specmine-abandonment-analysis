@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "ac918fad8d075753",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-project-usage-summary.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/project-usage-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/ui/matrix-a/components/ProjectUsagePanel.jsx | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/pages/DashboardPage.jsx",
+  "manual_outcome_date": "",
+  "manual_notes": "The authenticated owner-scoped endpoint returns the required project/ref/token fields sorted by billable usage then total usage, with an aggregation fallback. Dashboard state starts at three and connects the 3/6/10 selector to the fetch hook; cards render owner avatar/name, repository, stars and token count.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The authenticated owner-scoped endpoint returns the required project/ref/token fields sorted by billable usage then total usage, with an aggregation fallback. Dashboard state starts at three and connects the 3/6/10 selector to the fetch hook; cards render owner avatar/name, repository, stars and token count.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-project-usage-summary.js",
+      "observed_facts": [
+        "Read authenticated endpoint, limit, query/fallback and response."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/project-usage-core.js",
+      "observed_facts": [
+        "Read owner filter, ordering, totals serialization and fallback aggregation."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/ui/matrix-a/components/ProjectUsagePanel.jsx",
+      "observed_facts": [
+        "Read default/selector, ordering and card metadata rendering."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": [
+        "Read useState(3), summary hook limit and panel wiring."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; endpoint/shared aggregator and complete project-card implementation plus dashboard state integration inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

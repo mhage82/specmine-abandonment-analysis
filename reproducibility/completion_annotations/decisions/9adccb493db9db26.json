@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "9adccb493db9db26",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/b0x42/prizm/commit/0a06b742a7da12e4a511a8685afb77a188dd1113",
+  "manual_outcome_date": "",
+  "manual_notes": "The implementation delivers soft-delete, restore, permanent delete, Trash UI and regression sources, but the selected specification still requires Empty Trash. The merged patch explicitly removes bulk purge because its reauthentication design was unsuitable. It also corrects soft-delete to PUT while the archived spec still says DELETE. This is a documented scope reduction, not evidence of abandonment or full completion of the selected snapshot.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The implementation delivers soft-delete, restore, permanent delete, Trash UI and regression sources, but the selected specification still requires Empty Trash. The merged patch explicitly removes bulk purge because its reauthentication design was unsuitable. It also corrects soft-delete to PUT while the archived spec still says DELETE. This is a documented scope reduction, not evidence of abandonment or full completion of the selected snapshot.",
+  "sources": [
+    {
+      "url": "https://github.com/b0x42/prizm/commit/0a06b742a7da12e4a511a8685afb77a188dd1113",
+      "observed_facts": "Actual API/repository/view changes and merge message explicitly removing EmptyTrash inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "scope_reduced_or_stale_spec"
+}

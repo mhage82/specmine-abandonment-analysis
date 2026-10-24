@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "628ce9bb941e1d47",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/archmaxai/archmax/commit/4ed03992f0b7269910b255e7068b2db5a5baf732 | https://github.com/archmaxai/archmax/commit/314a63595adc66eb3a891b0630db83370ddbc0fa | https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/apps/frontend/src/components/model-visualization/dataset-detail-panel.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Dataset panel, typed metadata API, save handling and synonyms/examples editing are substantially implemented. The recorded spec additionally requires each field entry to show its ai_context. At pinned revision3aa7c12, the field renderer shows name/type/description only and does not render field.ai_context. Strict completion is therefore unclear; no abandonment is inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Dataset panel, typed metadata API, save handling and synonyms/examples editing are substantially implemented. The recorded spec additionally requires each field entry to show its ai_context. At pinned revision3aa7c12, the field renderer shows name/type/description only and does not render field.ai_context. Strict completion is therefore unclear; no abandonment is inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/archmaxai/archmax/commit/4ed03992f0b7269910b255e7068b2db5a5baf732",
+      "observed_facts": "Inspected panel selection, metadata endpoint, atomic merge service, save hook and matching API/service tests."
+    },
+    {
+      "url": "https://github.com/archmaxai/archmax/commit/314a63595adc66eb3a891b0630db83370ddbc0fa",
+      "observed_facts": "Adds editable dataset synonyms/examples and final layout; inspected actual UI diff."
+    },
+    {
+      "url": "https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/apps/frontend/src/components/model-visualization/dataset-detail-panel.tsx",
+      "observed_facts": "Full field rendering section maps name, data type and description inputs without field-level ai_context."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

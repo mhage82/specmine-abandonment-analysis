@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "03224ff2549c0c84",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_impl.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_access_cache.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_access_revision.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_assignable_menu.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Role CRUD, transactional relation cleanup, context-filtered grants and tenant-scoped revision keys are implemented. However, role create/update/delete/status/assignment paths call NotifyAccessTopologyChanged after commit; that function logs revision-publication failure and returns no error. This contradicts the selected requirement that publication failure must not produce a success response. Full completion remains unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Role CRUD, transactional relation cleanup, context-filtered grants and tenant-scoped revision keys are implemented. However, role create/update/delete/status/assignment paths call NotifyAccessTopologyChanged after commit; that function logs revision-publication failure and returns no error. This contradicts the selected requirement that publication failure must not produce a success response. Full completion remains unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_impl.go",
+      "observed_facts": "Transactional deletion propagates relation errors, but mutation paths call void NotifyAccessTopologyChanged then return success."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_access_cache.go",
+      "observed_facts": "NotifyAccessTopologyChanged catches MarkAccessTopologyChanged error and only logs Warningf; clearLocalAccessCache also clears all indexed tenant tokens."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_access_revision.go",
+      "observed_facts": "Cluster revisions use accessRevisionScope with tenant invalidation scope and platform cascade."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/role/role_assignable_menu.go",
+      "observed_facts": "Role menu assignment is filtered to allowed current-context permission IDs."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "c6bbf1109aced79455179bd04ddc5c16973859122f3dd930844492196ade116f"
+}

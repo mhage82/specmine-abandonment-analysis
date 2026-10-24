@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "2705714e2c22457a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-ui/src/main.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical startup statically registers three bundled renderer plugins with API version metadata. Core registry exposes RendererEnhancement/AiTool/UiPanel capability types, rejects mismatched versions and marks initialization Err disabled while retaining other entries; tests cover rejection/failure/enumeration. Scope is the plugin foundation, not dynamic plugin execution.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical startup statically registers three bundled renderer plugins with API version metadata. Core registry exposes RendererEnhancement/AiTool/UiPanel capability types, rejects mismatched versions and marks initialization Err disabled while retaining other entries; tests cover rejection/failure/enumeration. Scope is the plugin foundation, not dynamic plugin execution.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-ui/src/main.rs",
+      "observed_facts": "register_builtin_plugins called at startup; three PluginMeta renderer registrations; core plugin/mod.rs and types plus tests/plugin.rs verify active/disabled/incompatible states."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "668fae018ccc56ed74eec251299727a3444ada4f2a703e137db209de6fa32fac"
+}

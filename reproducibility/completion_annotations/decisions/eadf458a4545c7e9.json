@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "eadf458a4545c7e9",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cachecoord/cachecoord_revision.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_revision.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial cache coordination is implemented, including Redis revisions/events, tenant scope, stale-window errors, diagnostics and shared startup wiring. However, this selected consolidated archive also retains a mandatory persistent revision-table/database-restart contract alongside later Redis-only requirements. The inspected Redis implementation proves atomic increments but does not by itself resolve the required durability configuration or which historical contract controls the label. Treat as an ambiguous evolving scope requiring human adjudication, not abandoned or unimplemented. The two selected records have identical scope text and share this finding.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Substantial cache coordination is implemented, including Redis revisions/events, tenant scope, stale-window errors, diagnostics and shared startup wiring. However, this selected consolidated archive also retains a mandatory persistent revision-table/database-restart contract alongside later Redis-only requirements. The inspected Redis implementation proves atomic increments but does not by itself resolve the required durability configuration or which historical contract controls the label. Treat as an ambiguous evolving scope requiring human adjudication, not abandoned or unimplemented. The two selected records have identical scope text and share this finding.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cachecoord/cachecoord_revision.go",
+      "observed_facts": "Local revision branch and shared coordination store calls, tenant/cascade scoping, event payloads, revision fallback, freshness window, observable status and structured publication errors are implemented."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+      "observed_facts": "Startup resolves the database dialect before coordination; creates and pings one provider, then wires cluster, cachecoord, auth, session, and plugin services before route/runtime startup."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_revision.go",
+      "observed_facts": "INCR/GET implement shared Redis revisions; this file does not establish Redis persistence across restart."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis.go",
+      "observed_facts": "Client configuration covers endpoint, credentials, DB and timeouts with startup ping; server persistence is outside this code."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Consolidated specification contains historical SQL persistence wording and later Redis requirements; the annotation does not assert that later evolution erases earlier completion."
+  ],
+  "uncertainty_category": "evolving_scope_and_unverified_durability"
+}

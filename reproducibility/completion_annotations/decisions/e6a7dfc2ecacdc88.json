@@ -1,0 +1,56 @@
+{
+  "file_url_sha16": "e6a7dfc2ecacdc88",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/pull/340/files | https://github.com/UseJunior/safe-docx/pull/342/files | https://github.com/UseJunior/safe-docx/blob/0d014b8e443be034e3aa5bc3114bdd8994058d30/verification/lean/LeanSpike/Spec.lean | https://github.com/UseJunior/safe-docx/blob/0d014b8e443be034e3aa5bc3114bdd8994058d30/verification/lean/Tier2/README.md | https://github.com/UseJunior/safe-docx/blob/0d014b8e443be034e3aa5bc3114bdd8994058d30/packages/docx-core/src/integration/lean-spec-bridge.test.ts",
+  "manual_outcome_date": "2026-06-07",
+  "manual_notes": "PR340 changes Lean accept to keep every paragraph and simplifies accept_blocks/extractText_accept_normalized proofs; PR342 closes the subsequently documented G5 engine gap and updates differential assertions. Historical Spec.lean contains inv_rt_001 proof composed from the named residual axiom and Tier2 lemmas; README documents residuals and CI audits sorry; bridge tests exercise field-bearing round trips. This completes the explicitly limited model/proof scope, not universal TS/Lean equivalence. Both merges Jun7; no independent Lean build.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "PR340 changes Lean accept to keep every paragraph and simplifies accept_blocks/extractText_accept_normalized proofs; PR342 closes the subsequently documented G5 engine gap and updates differential assertions. Historical Spec.lean contains inv_rt_001 proof composed from the named residual axiom and Tier2 lemmas; README documents residuals and CI audits sorry; bridge tests exercise field-bearing round trips. This completes the explicitly limited model/proof scope, not universal TS/Lean equivalence. Both merges Jun7; no independent Lean build.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/340/files",
+      "observed_facts": [
+        "AcceptReject.lean removes the isEmpty branch; InvFieldOne and RoundTripText reprove the affected cons cases; G3 differential changes to equality, with G5 initially pinned."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/342/files",
+      "observed_facts": [
+        "Both TS accept paths remove content-based paragraph-drop heuristics; G5 assertions change to equality while PPR-DEL behavior remains."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/0d014b8e443be034e3aa5bc3114bdd8994058d30/verification/lean/LeanSpike/Spec.lean",
+      "observed_facts": [
+        "inv_rt_001 is a by-proof composing compareDocumentXml_output_text_roundtrip and extractText_accept_normalized/extractText_reject."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/0d014b8e443be034e3aa5bc3114bdd8994058d30/verification/lean/Tier2/README.md",
+      "observed_facts": [
+        "Documents structural normalizeText, text-order/extensional gaps, named residuals, runtime-check necessity and zero-sorry CI."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/0d014b8e443be034e3aa5bc3114bdd8994058d30/packages/docx-core/src/integration/lean-spec-bridge.test.ts",
+      "observed_facts": [
+        "Contains field-bearing live-engine round-trip assertions and explanations limiting their empirical interpretation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "Residual axioms and equivalence gaps are expressly allowed by the spec; completion does not mean they have been discharged."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "e6a7dfc2ecacdc88"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

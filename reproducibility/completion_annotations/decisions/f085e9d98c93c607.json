@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "f085e9d98c93c607",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://raw.githubusercontent.com/webspatial/webspatial-sdk/c2587cee0606f1b4319da2f52e187636308b4162/packages/visionOS/web-spatial/view/SpatializedElementView.swift | https://raw.githubusercontent.com/webspatial/webspatial-sdk/c2587cee0606f1b4319da2f52e187636308b4162/packages/visionOS/web-spatial/view/SpatializedDynamic3DView.swift | https://raw.githubusercontent.com/webspatial/webspatial-sdk/c2587cee0606f1b4319da2f52e187636308b4162/packages/visionOS/web-spatial/model/SpatialScene.swift | https://raw.githubusercontent.com/webspatial/webspatial-sdk/d3f37b5b398a1717c3c3f65ae344bad9a7c56216/packages/react/src/spatialized-container/PortalSpatializedContainer.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Native spatial gesture code normalizes nonzero axes, uses a near-zero threshold for unconstrained rotation and applies constrained RotateGesture3D for both element types. Scene commands update the axis; the React effect maps missing options to a zero vector and sends property updates, including reset on removal. The selected axis-constraint scope is supported by the cross-layer implementation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Native spatial gesture code normalizes nonzero axes, uses a near-zero threshold for unconstrained rotation and applies constrained RotateGesture3D for both element types. Scene commands update the axis; the React effect maps missing options to a zero vector and sends property updates, including reset on removal. The selected axis-constraint scope is supported by the cross-layer implementation.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/webspatial/webspatial-sdk/c2587cee0606f1b4319da2f52e187636308b4162/packages/visionOS/web-spatial/view/SpatializedElementView.swift",
+      "observed_facts": "Pinned native gesture/command or React axis propagation source inspected."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/webspatial/webspatial-sdk/c2587cee0606f1b4319da2f52e187636308b4162/packages/visionOS/web-spatial/view/SpatializedDynamic3DView.swift",
+      "observed_facts": "Pinned native gesture/command or React axis propagation source inspected."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/webspatial/webspatial-sdk/c2587cee0606f1b4319da2f52e187636308b4162/packages/visionOS/web-spatial/model/SpatialScene.swift",
+      "observed_facts": "Pinned native gesture/command or React axis propagation source inspected."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/webspatial/webspatial-sdk/d3f37b5b398a1717c3c3f65ae344bad9a7c56216/packages/react/src/spatialized-container/PortalSpatializedContainer.tsx",
+      "observed_facts": "Pinned native gesture/command or React axis propagation source inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Historical source supports delivery; first implementation date was not established."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "6c228d11209bbfc2",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/manifest/sql/001-user-auth-bootstrap.sql | https://github.com/linaproai/official-plugins/blob/40bed8e4718ebce3c865fc958d62be3d4782a010/org-center/manifest/sql/001-org-center-schema.sql | https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/dialect_sql_idempotency_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical host source and its exact pinned plugin submodule implement the controlled PostgreSQL SQL corpus before later TIMESTAMPTZ changes. Static inspection of 43 host/plugin SQL files found the prohibited dialect constructs absent; representative schemas use quoted columns, identity keys, separate comments/indexes and explicit conflict guards. Governance tests declare each seed idempotency basis and protect history-log semantics. No SQL was executed in this review.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical host source and its exact pinned plugin submodule implement the controlled PostgreSQL SQL corpus before later TIMESTAMPTZ changes. Static inspection of 43 host/plugin SQL files found the prohibited dialect constructs absent; representative schemas use quoted columns, identity keys, separate comments/indexes and explicit conflict guards. Governance tests declare each seed idempotency basis and protect history-log semantics. No SQL was executed in this review.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/manifest/sql/001-user-auth-bootstrap.sql",
+      "observed_facts": "PostgreSQL identity key, quoted columns, TIMESTAMP without timezone, separate COMMENT/INDEX statements, username unique index and ON CONFLICT DO NOTHING seed."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/40bed8e4718ebce3c865fc958d62be3d4782a010/org-center/manifest/sql/001-org-center-schema.sql",
+      "observed_facts": "Matching historical plugin schema uses PostgreSQL types, identity and quoted identifiers; plugin SQL corpus included in static scan."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/dialect_sql_idempotency_test.go",
+      "observed_facts": "Tests enumerate stable unique-key bases, forbid ON CONFLICT for append-only history and require existence guards/quoted identifiers."
+    }
+  ],
+  "limitations": [
+    "Historical pinned source demonstrates delivery before later timestamp policy changes; exact completion date is not established.",
+    "Static corpus inspection and test definitions are evidence; no database or test execution was performed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "91f9953d4662b25b36d9c83dc15111cd6a183938eeb9007dcd7e7c7ea3a9add1"
+}

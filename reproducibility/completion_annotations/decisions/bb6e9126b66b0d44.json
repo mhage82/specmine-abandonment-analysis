@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "bb6e9126b66b0d44",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/kniwase/WebComPy/commit/873acd4b470de08bb82ba1c6c223e04d3dbce0e3",
+  "manual_outcome_date": "2026-04-21",
+  "manual_notes": "The lifecycle code records gated perf_counter timestamps, exposes profile_data, records run completion and loading removal, then emits consecutive phase durations and a total through browser console or stdout. Regression definitions cover disabled mode, phase timing and summary output. The implementation calls the final phase loading_removed rather than loading_off; this is recorded as a naming difference, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The lifecycle code records gated perf_counter timestamps, exposes profile_data, records run completion and loading removal, then emits consecutive phase durations and a total through browser console or stdout. Regression definitions cover disabled mode, phase timing and summary output. The implementation calls the final phase loading_removed rather than loading_off; this is recorded as a naming difference, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/kniwase/WebComPy/commit/873acd4b470de08bb82ba1c6c223e04d3dbce0e3",
+      "observed_facts": "Read _record_phase, _emit_profile_summary, profile_data, run and root-component loading-removal hook plus profiling tests."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

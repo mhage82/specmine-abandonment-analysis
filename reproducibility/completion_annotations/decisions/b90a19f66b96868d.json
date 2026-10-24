@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "b90a19f66b96868d",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/7d0d3a9a50aaa7cdf97792f8e8f4d34b8c310fa0 | https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/elixir/serviceradar_core/lib/serviceradar/credentials/plugin_assignment_materializer.ex | https://github.com/carverauto/serviceradar/commit/1e33273067640943b48f3d9de8b51c9831dafaf9",
+  "manual_outcome_date": "",
+  "manual_notes": "Discovery has real unauthenticated bounded HTTPS fingerprinting, candidate metadata and auto-discovery opt-in scoped by agent/partition; server materialization resolves SRQL and enrichment tests deduplicate provider identities. Full completion is not established for removing assignments when the device/rule leaves scope: inspected materializer returns empty_summary immediately when no eligible rules and does not invoke cleanup there. No verified reconciliation deletion test or cross-source mapper/plugin identity convergence test closes these requirements.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Discovery has real unauthenticated bounded HTTPS fingerprinting, candidate metadata and auto-discovery opt-in scoped by agent/partition; server materialization resolves SRQL and enrichment tests deduplicate provider identities. Full completion is not established for removing assignments when the device/rule leaves scope: inspected materializer returns empty_summary immediately when no eligible rules and does not invoke cleanup there. No verified reconciliation deletion test or cross-source mapper/plugin identity convergence test closes these requirements.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/7d0d3a9a50aaa7cdf97792f8e8f4d34b8c310fa0",
+      "observed_facts": [
+        "proxmox_poller uses unauthenticated GET and bounded body fingerprint, produces explicit candidate evidence; mapper compiler enables only scoped opted-in rules."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/elixir/serviceradar_core/lib/serviceradar/credentials/plugin_assignment_materializer.ex",
+      "observed_facts": [
+        "Uses server-side SRQL and target_agent_uid, but no-rules branch returns empty without cleanup; separately delegating reconciler may handle device removal, unverified here."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/1e33273067640943b48f3d9de8b51c9831dafaf9",
+      "observed_facts": [
+        "Test confirms duplicate plugin provider refs merge newest observation; it does not establish mapper/plugin cross-source convergence."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b90a19f66b96868d"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

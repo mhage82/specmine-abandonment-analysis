@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "3586856a00895c68",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Fission-AI/OpenSpec/pull/726 | https://github.com/Fission-AI/OpenSpec/pull/726/files",
+  "manual_outcome_date": "2026-02-20",
+  "manual_notes": "Profiles requirements are corroborated by PR726: core/custom workflow resolution, independent delivery enum/default, interactive picker, preserved delivery on core preset, explicit global save/apply flow and migration. Matching tests cover profile selection/schema and delivery. Date is the implementation merge, not deployment; tests inspected, not run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The selected profiles scope maps to concrete code and tests within a much larger shared task group.",
+  "sources": [
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/726",
+      "observed_facts": "Merged 2026-02-20T02:21:06Z; inspected substantive profiles, config schema/commands, init/update, workflow templates and tests, not merely PR title or checklist."
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/726/files",
+      "observed_facts": "profiles.ts defines CORE_WORKFLOWS and resolves custom selections; config-schema.ts preserves passthrough fields/defaults; config.ts validates preset and non-TTY cases, saves global selection and offers explicit project apply. init/update filter skills and commands by delivery; tests assert selection/schema/defaults."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "6ca86fede158c7ebe213c5b2eccaa58c8b351a40a603b6530684a4a8b0ce4daf",
+  "related_review_ids": [
+    "3586856a00895c68"
+  ]
+}

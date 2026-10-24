@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "02c4e3a3a7355a50",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/http_cache_loader/loader.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Cache-clear UI/action and iterative safe deletion are implemented with error-path tests. Retention configuration exists in schema/localization but an actual user-visible lifetime selector/enforced retention strategy was not located in either delivery-era or pinned settings UI. Full two-part scope is unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Cache-clear UI/action and iterative safe deletion are implemented with error-path tests. Retention configuration exists in schema/localization but an actual user-visible lifetime selector/enforced retention strategy was not located in either delivery-era or pinned settings UI. Full two-part scope is unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/http_cache_loader/loader.rs",
+      "observed_facts": "forget_all clears memory and iterates files/subdirectories with warnings; behavior tab has ClearAllCaches button. Historical f49/d74/current settings retain no visible lifetime control despite retention field/labels."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "3b6d9fa14afce74805bf37126dd7d5af106956cb9e39b0a0d3b92d53e45c2dd9"
+}

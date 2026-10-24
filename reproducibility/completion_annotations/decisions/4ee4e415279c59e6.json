@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "4ee4e415279c59e6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/core/src/cli-executor.ts | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/core/src/opsx-kernel.ts | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/config.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "CLI executor builds schemas --json, schema which <name> --json and templates --json commands; the reactive kernel reads schema.yaml from the resolved path. Config UI creation submits schema init or schema fork through its CLI mutation. This directly supports the selected CLI-backed query/create contract.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "CLI executor builds schemas --json, schema which <name> --json and templates --json commands; the reactive kernel reads schema.yaml from the resolved path. Config UI creation submits schema init or schema fork through its CLI mutation. This directly supports the selected CLI-backed query/create contract.",
+  "sources": [
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/core/src/cli-executor.ts",
+      "observed_facts": "Command argument builders inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/core/src/opsx-kernel.ts",
+      "observed_facts": "Schema resolution and schema.yaml reads inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/config.tsx",
+      "observed_facts": "Init/fork create actions inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

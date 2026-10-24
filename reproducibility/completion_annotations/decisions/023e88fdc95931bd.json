@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "023e88fdc95931bd",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/basedpyright_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_basedpyright_runner.py",
+  "manual_outcome_date": "",
+  "manual_notes": "basedpyright runner uses --outputjson, maps all admitted diagnostics to type_safety, preserves severity and translates zero-based lines to one-based, filters normalized requested paths and produces tool_error when unavailable. Implementation and unit-test assertions support all selected scenarios.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "basedpyright runner uses --outputjson, maps all admitted diagnostics to type_safety, preserves severity and translates zero-based lines to one-based, filters normalized requested paths and produces tool_error when unavailable. Implementation and unit-test assertions support all selected scenarios.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/basedpyright_runner.py",
+      "observed_facts": [
+        "Read full invocation, generalDiagnostics parser, path filtering, severity and line mapping, unavailable exception handling."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_basedpyright_runner.py",
+      "observed_facts": [
+        "Assertions verify category/tool/error severity/line4, warnings, other-file exclusion and unavailable tool_error."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "023e88fdc95931bd"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

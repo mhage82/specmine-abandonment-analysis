@@ -1,0 +1,4 @@
+# Versions used for the verified replay (Python 3.13.2).
+numpy==2.5.3
+pandas==2.3.3
+pyarrow==23.0.1

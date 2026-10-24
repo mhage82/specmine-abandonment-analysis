@@ -1,0 +1,70 @@
+{
+  "file_url_sha16": "57a58cb43544e6eb",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/integration/integration_menu.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/integration/integration_menu_test.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler_uninstall.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_admin.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/pluginbridge/contract/contract.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route_auth.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/role/role_dynamic_route_access.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Menu integration uses stable menu keys and existing role-menu tables, explicit uninstall cleans governance and supports retaining business storage, and historical June17 source services have the typed Admin directory. The selected runtime context explicitly asks for role IDs. The actual dynamic IdentitySnapshot and role-owned projection carry role names, permissions and data scope but no role IDs. This exact cross-plugin context requirement remains unsupported, so completion of the entire selected scope is not confirmed. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Menu integration uses stable menu keys and existing role-menu tables, explicit uninstall cleans governance and supports retaining business storage, and historical June17 source services have the typed Admin directory. The selected runtime context explicitly asks for role IDs. The actual dynamic IdentitySnapshot and role-owned projection carry role names, permissions and data scope but no role IDs. This exact cross-plugin context requirement remains unsupported, so completion of the entire selected scope is not confirmed.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/integration/integration_menu.go",
+      "observed_facts": [
+        "Read manifest/menu-key synchronization and role-menu cleanup by menu IDs."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/integration/integration_menu_test.go",
+      "observed_facts": [
+        "Read concrete explicit-sync versus discovery assertions and role-menu lookup."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler_uninstall.go",
+      "observed_facts": [
+        "Read purge-policy-controlled SQL/storage execution followed by menu/resource cleanup."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_admin.go",
+      "observed_facts": [
+        "Historical typed source Admin directory exposes domain management services."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/pluginbridge/contract/contract.go",
+      "observed_facts": [
+        "Read complete IdentitySnapshotV1: RoleNames present, role IDs absent."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route_auth.go",
+      "observed_facts": [
+        "Runtime delegates to role owner for permission/data-scope projection."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/role/role_dynamic_route_access.go",
+      "observed_facts": [
+        "Later role projection still returns names/permissions/data scope without role IDs."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "A human may narrow the requirement to role names or authorize a separate role-query interface; the literal supplied permission-context contract specifies IDs. No claim that implemented permission governance was abandoned."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "57a58cb43544e6eb",
+      "9b38c93d40735a9c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

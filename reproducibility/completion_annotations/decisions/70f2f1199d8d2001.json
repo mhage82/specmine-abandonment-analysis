@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "70f2f1199d8d2001",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/ArcReel/ArcReel/commit/2363ea66217799f37aa19d3c7a794fcb651462bf",
+  "manual_outcome_date": "",
+  "manual_notes": "The four focused agents, permissions and Gemini normalization script were delivered, but the selected contract and checked task 1.2 require step2_shot_budget.md. The inspected normalization implementation writes only step1_normalized_script.md and its agent returns only that file. Strict completion of this particular scope remains unresolved; this is not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The four focused agents, permissions and Gemini normalization script were delivered, but the selected contract and checked task 1.2 require step2_shot_budget.md. The inspected normalization implementation writes only step1_normalized_script.md and its agent returns only that file. Strict completion of this particular scope remains unresolved; this is not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/ArcReel/ArcReel/commit/2363ea66217799f37aa19d3c7a794fcb651462bf",
+      "observed_facts": "Read all four agent definitions and normalize_drama_script.py: model and step1 output exist, but no step2 shot-budget write is present."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "specific_contract_gap"
+}

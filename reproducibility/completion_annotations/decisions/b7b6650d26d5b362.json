@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "b7b6650d26d5b362",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_discovery.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/module_package.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/module_registry/src/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Selected narrow source-metadata delta is implemented: discovery assigns builtin/marketplace/custom source to metadata, registration/state carries it, and module list supports source filtering and explicit origin display. This is narrower than the separate requirement that plain list always show origin.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Selected narrow source-metadata delta is implemented: discovery assigns builtin/marketplace/custom source to metadata, registration/state carries it, and module list supports source filtering and explicit origin display. This is narrower than the separate requirement that plain list always show origin.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_discovery.py",
+      "observed_facts": [
+        "Read deterministic root traversal and discover_package_metadata(root,source=source), returned DiscoveredModule source."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/module_package.py",
+      "observed_facts": [
+        "ModulePackageMetadata source field persists source identity."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/module_registry/src/commands.py",
+      "observed_facts": [
+        "List reads state source, filters --source and renders --show-origin; show command also prints origin."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b7b6650d26d5b362"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

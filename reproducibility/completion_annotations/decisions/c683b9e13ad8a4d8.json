@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "c683b9e13ad8a4d8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/langoai/lango/commit/edf3c83894379d47474d0772f345ec83cd0cd7f6 | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/tools.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/pev.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/workspace.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/planparse.go",
+  "manual_outcome_date": "",
+  "manual_notes": "RunLedger includes journal sequencing/materialization, typed validation, plan/DAG validation, role-restricted tools, resume filtering and workspace helpers. Full strict scope remains unconfirmed for coding-step execution isolation: the initial implementation only defines worktree helpers, while pinned wiring optionally prepares a workspace inside PEV Verify after the agent has proposed its result and changes Validator.WorkDir. This supports validation isolation, but does not establish that the coding execution itself occurred in that worktree before producing evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "RunLedger includes journal sequencing/materialization, typed validation, plan/DAG validation, role-restricted tools, resume filtering and workspace helpers. Full strict scope remains unconfirmed for coding-step execution isolation: the initial implementation only defines worktree helpers, while pinned wiring optionally prepares a workspace inside PEV Verify after the agent has proposed its result and changes Validator.WorkDir. This supports validation isolation, but does not establish that the coding execution itself occurred in that worktree before producing evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/commit/edf3c83894379d47474d0772f345ec83cd0cd7f6",
+      "observed_facts": "Read initial module, PEV and workspace diffs: initial engine has no workspace integration; helpers exist."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/tools.go",
+      "observed_facts": "Propose handler appends a result, then auto-invokes Verify; role checks and step ownership are present."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/pev.go",
+      "observed_facts": "Optional workspace preparation takes place at validation time."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/workspace.go",
+      "observed_facts": "PrepareStepWorkspace creates worktree and changes step.Validator.WorkDir; no agent coding-execution handoff was established."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/runledger/planparse.go",
+      "observed_facts": "Schema checks enforce goal/unique IDs/valid agent and validator types and Kahn cycle detection."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "9ba025c851d7868dc07b0072676f81a0ad0c18c019f56da7a924fca6d5d8fd57"
+}

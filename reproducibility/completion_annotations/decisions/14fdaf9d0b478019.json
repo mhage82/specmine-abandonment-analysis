@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "14fdaf9d0b478019",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/arabold/docs-mcp-server/commit/32dead556bb8549301c5aa872de4dd1f272ed0bc | https://github.com/arabold/docs-mcp-server/blob/0091ab83d1aee4434123f1828a202cf6b85b575d/src/store/DocumentStore.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Model/dimension checking and vector-table ordering are implemented at the pinned revision. However, the exact safety spec requires atomic embedding metadata persistence; setEmbeddingMetadata performs two separate stmt.run calls for model and dimension, with no transaction around these writes or initialize. Full-scope completion is unconfirmed despite checked tasks. This is an apparent contract gap, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Model/dimension checking and vector-table ordering are implemented at the pinned revision. However, the exact safety spec requires atomic embedding metadata persistence; setEmbeddingMetadata performs two separate stmt.run calls for model and dimension, with no transaction around these writes or initialize. Full-scope completion is unconfirmed despite checked tasks. This is an apparent contract gap, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/arabold/docs-mcp-server/commit/32dead556bb8549301c5aa872de4dd1f272ed0bc",
+      "observed_facts": "Inspected table-dimension and model-change implementation/test diffs."
+    },
+    {
+      "url": "https://github.com/arabold/docs-mcp-server/blob/0091ab83d1aee4434123f1828a202cf6b85b575d/src/store/DocumentStore.ts",
+      "observed_facts": "setEmbeddingMetadata writes embedding_model then embedding_dimension separately; initialize invokes final metadata persistence without an enclosing database transaction."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "e92183487ef75f4c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_list.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/index.vue | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/api/system/plugin/index.ts | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/dynamic-page.vue | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/plugins/plugin-page-refresh.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Selected UI specification combines conflicting generations of the list contract: an earlier requirement says complete popup governance fields must remain in the list and be prewarmed, while the final requirement mandates a lightweight list excluding those fields and detail fetched on demand. Actual backend and frontend implement the latter with paginated summary, on-demand detail and lazy modal components. Embedded mounting, locale context and generation-aware refresh are also supported. This is substantial delivered functionality with an unresolved aggregate specification contract; a human must identify superseded requirements before assigning strict full-scope completion. No abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Selected UI specification combines conflicting generations of the list contract: an earlier requirement says complete popup governance fields must remain in the list and be prewarmed, while the final requirement mandates a lightweight list excluding those fields and detail fetched on demand. Actual backend and frontend implement the latter with paginated summary, on-demand detail and lazy modal components. Embedded mounting, locale context and generation-aware refresh are also supported. This is substantial delivered functionality with an unresolved aggregate specification contract; a human must identify superseded requirements before assigning strict full-scope completion. No abandonment inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/1351675189ce9f757eee9c85fb6c604515a79f21/openspec/changes/archive/plugin-framework/specs/plugin-ui-integration/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_list.go",
+      "observed_facts": "Read List67-100 and prewarm/cache103-136: paginated lightweight summary read model and its cache are used, matching later summary-only requirement rather than earlier full-governance prewarm requirement."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/index.vue",
+      "observed_facts": "Inspected lazy defineAsyncComponent modals28-45, list query269-273, on-demand pluginDetail480-487, permission-aware install+enable439-442 and registry refresh after state change529-533."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/api/system/plugin/index.ts",
+      "observed_facts": "Separate paginated pluginList and pluginDetail endpoints, plus explicit upgrade/enable/uninstall requests."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/views/system/plugin/dynamic-page.vue",
+      "observed_facts": "Inspected host mount context with locale/messages and container; lazy ESM entry must export mount(context); lifecycle cleanup unmounts and clears container."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-vben/apps/web-antd/src/plugins/plugin-page-refresh.ts",
+      "observed_facts": "Inspected /x-assets URL matching, active page plugin identification, generation baseline and only-current-plugin refresh signaling."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "The aggregate also retains an earlier /plugin-assets statement and later requirements forbidding that compatibility path. Text needs adjudication as an evolving contract, not interpretation as proof all UI functionality is absent.",
+    "Broad public-assets schema, demo repository pagination, role/menu integration and all historical UI states were not exhaustively traced. Shared framework checkmarks do not establish complete coverage."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

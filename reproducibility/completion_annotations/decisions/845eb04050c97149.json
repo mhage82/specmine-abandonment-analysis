@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "845eb04050c97149",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/run_demo.sh | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/scripts/sanitize_report.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/scripts/verify_report.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/README.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The CAO launcher tutorial pack contains the required README, robust runner, tracked inputs, sanitizer and expected report. The runner copies inputs into a temporary workspace, captures status/start/stop JSON, checks runtime artifact paths and routes comparison/snapshot refresh through a verifier that calls the canonical sanitizer. README provides prerequisites, annotated steps, I/O examples and inventory.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The CAO launcher tutorial pack contains the required README, robust runner, tracked inputs, sanitizer and expected report. The runner copies inputs into a temporary workspace, captures status/start/stop JSON, checks runtime artifact paths and routes comparison/snapshot refresh through a verifier that calls the canonical sanitizer. README provides prerequisites, annotated steps, I/O examples and inventory.",
+  "sources": [
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/run_demo.sh",
+      "observed_facts": "Full setup, launcher flow, artifact checks and snapshot/compare branches inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/scripts/sanitize_report.py",
+      "observed_facts": "Typed normalization and artifact-contract checks inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/scripts/verify_report.py",
+      "observed_facts": "Imports sanitizer; normal comparison and explicit snapshot branches inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-server-launcher/README.md",
+      "observed_facts": "Step-by-step tutorial and appendix inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Tutorial/tooling delivery; the CAO server demo was not run during annotation."
+  ]
+}

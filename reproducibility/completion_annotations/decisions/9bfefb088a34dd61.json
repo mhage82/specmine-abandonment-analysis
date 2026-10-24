@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "9bfefb088a34dd61",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/pull/624.diff",
+  "manual_outcome_date": "",
+  "manual_notes": "The revised startup validation-support bundle requirement is implemented by explicit startup presets, init profile integration and persisted profile configuration. Existing no-profile paths remain available; tests assert startup bundle activation. Completion is observed in implementation evidence; no exact completion event date assigned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The newer specification asks for startup validation-support bundles, matching the explicit bundle preset and init code. Inspected production code and assertion-based tests support this bounded scope.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/pull/624.diff",
+      "observed_facts": "Inspected first_run_selection.py profile presets, recursive precedence resolver, source annotations, profile config writer, init command integration, and unit/CLI test definitions. Startup explicitly enables project, backlog, codebase and code-review bundles; four validation tiers and clean-code mappings are implemented."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "a9913309dd2b550f70e74c12b40df26f075685462e0332a3e1c4990a1b2cff19",
+  "related_review_ids": [
+    "9bfefb088a34dd61"
+  ]
+}

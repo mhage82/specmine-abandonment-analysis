@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "c5810fedfb739bfd",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/webspatial/webspatial-sdk/pull/1168.diff | https://github.com/webspatial/webspatial-sdk/blob/11859eb060e37a4257f6a3b71ec88fa06cbe7428/packages/core/src/runtime/supports.ts | https://github.com/webspatial/webspatial-sdk/pull/1168",
+  "manual_outcome_date": "2026-06-09",
+  "manual_notes": "PR1168 registers useAnimation/entity capability and version-specific supported/unsupported flags. Tests cover ordinary browser, older/newer shells and unknown sub-tokens. Pinned supports.ts caches runtime identity and validates known tokens before lookup. Date is collected implementation merge; debug runtimes intentionally force valid capability support, an existing diagnostic exception. Tests not run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The narrower capability-advertisement scope is directly implemented; it is not inferred from the much larger animation checklist.",
+  "sources": [
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1168.diff",
+      "observed_facts": "capability-data.ts adds version rows/flags and keys.ts restricts useAnimation sub-tokens to entity; useAnimation.capability.test.ts asserts true/false shell cases and rejects unknown/opacity tokens."
+    },
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/blob/11859eb060e37a4257f6a3b71ec88fa06cbe7428/packages/core/src/runtime/supports.ts",
+      "observed_facts": "getRuntime memoizes runtime identity; supports validates token names and applies static version rows. Existing puppeteer/debug-shell override returns true for valid queries."
+    },
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1168",
+      "observed_facts": "Collected metadata records merge 2026-06-09T08:58:07Z."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "205cebe0cc54617fca32a2ae4346d20e6d82dc50b9af21ecc7a7db5dca92ada2",
+  "related_review_ids": [
+    "c5810fedfb739bfd"
+  ]
+}

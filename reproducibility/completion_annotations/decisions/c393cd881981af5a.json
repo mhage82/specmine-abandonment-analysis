@@ -1,0 +1,42 @@
+{
+  "file_url_sha16": "c393cd881981af5a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/user/user_impl.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_update_profile.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_create.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-org-core/backend/internal/dao/internal/user_dept.go | https://github.com/linaproai/official-plugins/blob/40bed8e4718ebce3c865fc958d62be3d4782a010/org-center/backend/internal/dao/internal/user_dept.go",
+  "manual_outcome_date": "",
+  "manual_notes": "User role projection, transactional role replacement/cleanup and optional profile-field updates are implemented. The selected spec still mandates sys_user_dept/sys_user_post writes, while both historical and reviewed implementations delegate organization assignments to a plugin whose tables have plugin-owned names. The July-added profile requirement is supported, but full combined old-storage/new-profile scope needs adjudication; identical two dataset versions share this scoped evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "User role projection, transactional role replacement/cleanup and optional profile-field updates are implemented. The selected spec still mandates sys_user_dept/sys_user_post writes, while both historical and reviewed implementations delegate organization assignments to a plugin whose tables have plugin-owned names. The July-added profile requirement is supported, but full combined old-storage/new-profile scope needs adjudication; identical two dataset versions share this scoped evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/user/user_impl.go",
+      "observed_facts": "Lists role IDs/names, transactionally delegates organization assignments, replaces role links and updates profile only for supplied pointer fields."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_update_profile.go",
+      "observed_facts": "Nickname/email/phone/sex/password are optional pointer fields without required validation."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_create.go",
+      "observed_facts": "Admin create still marks nickname required."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-org-core/backend/internal/dao/internal/user_dept.go",
+      "observed_facts": "Actual organization department assignment table is plugin_linapro_org_core_user_dept, not selected sys_user_dept."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/40bed8e4718ebce3c865fc958d62be3d4782a010/org-center/backend/internal/dao/internal/user_dept.go",
+      "observed_facts": "May18 core gitlink historical plugin already uses plugin_org_center_user_dept. This is not evidence of specified host sys_user_dept delivery."
+    }
+  ],
+  "limitations": [
+    "The two records have identical selected specification content; shared evidence is limited to that same scope.",
+    "Historical and current source inspection does not establish every superseded storage requirement was delivered.",
+    "No downloaded code, database operation or tests were executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "7fa912884be72495f889aec4068cd6e79d54d373133203573d3c13c45df1647a"
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "76074df583c1c70a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Pinned buildActiveAgentSummary strips ANSI/OSC and collapses whitespace in owner labels before joining them; the exact malformed-owner test expects worker-c ops active. The selected aggregation requirement is corroborated. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Pinned buildActiveAgentSummary strips ANSI/OSC and collapses whitespace in owner labels before joining them; the exact malformed-owner test expects worker-c ops active. The selected aggregation requirement is corroborated. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector.go",
+      "observed_facts": "sanitizeMissionProjectionText uses ansi.Strip and strings.Fields/join; Project sanitizes header fields, cron source names/status, and buildActiveAgentSummary sanitizes owners before aggregation. Direct mission projection and proposal-registry projection are wired."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector_test.go",
+      "observed_facts": "Inspected header snapshot, owner-label and cron-loop tests with embedded ANSI/newline input and normalized expected text."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "e0f0d7cf4aa7b8ad29fe2a1eab419bc7f7fc535febc004a622fd5072574e37f9"
+}

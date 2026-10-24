@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated full-history completion exploration data and manual review outputs.
+/results/completion_exploration/
+/results/completion_reproduction/
+/.venv-completion/

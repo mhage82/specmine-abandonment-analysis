@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "88c1ab5f97b2163e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/cmd_mock.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/sqlassets/sqlassets.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/cmd_init.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Confirmation checks, explicit embedded/local sources, dialect preparation and statement-by-statement failure handling are implemented. One strict scenario requires unsupported dialects to fail before any SQL is read; Mock calls ScanMock before Execute resolves dialect.From. That ordering leaves the exact complete acceptance scope unsupported.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Confirmation checks, explicit embedded/local sources, dialect preparation and statement-by-statement failure handling are implemented. One strict scenario requires unsupported dialects to fail before any SQL is read; Mock calls ScanMock before Execute resolves dialect.From. That ordering leaves the exact complete acceptance scope unsupported.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/cmd_mock.go",
+      "observed_facts": "After confirmation/source resolution, ScanMock reads SQL assets before sqlassets.Execute is called."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/sqlassets/sqlassets.go",
+      "observed_facts": "Execute resolves dialect.From only after assets have been scanned; ExecuteWithExecutor translates and stops at the first failing statement."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/cmd_init.go",
+      "observed_facts": "Init checks confirmation and prepares the dialect before scanning SQL, unlike the mock path."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "c34bfe43aee2b1323a03a7094bc2b43878419603ca7d552756593267a4c4e43e"
+}

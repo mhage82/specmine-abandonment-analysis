@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "b4014d84cf96aad8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/5806717679debc637796aa50b1c86a608ea45aab.patch | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/objectProvenance.ts | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/reduce.ts | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/openspec/changes/refactor-domain-object-provenance-model/rollout.md | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/engine/primitives/entityIdentity.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Shared current-actor helpers and game-specific provenance reconstruction exist. The selected requirement also promises reusable lifecycle and deferred snapshot primitives for games generally. Inspected rollout says only engine session seam and first SmashUp families are verified; the common cross-game deferred/lifecycle contract was not fully traced. Identical spec versions share this review.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Initial game-specific helpers and a checked shared checklist are insufficient to establish the full shared-engine scope. Staged migration may be intentional; no abandonment inference is made.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/5806717679debc637796aa50b1c86a608ea45aab.patch",
+      "observed_facts": "Inspected sessionContext.ts actor normalization and SmashUp objectProvenance.ts reference/provenance/reconstruction/transfer event implementation."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/objectProvenance.ts",
+      "observed_facts": "Pinned production helper stores uid, owner provenance, default destination, controller context and can reconstruct a card without the live original."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/reduce.ts",
+      "observed_facts": "CARD_TRANSFERRED prefers objectRef reconstruction, but legacy fallback can still derive owner from fromPlayerId when objectRef/ownerId absent."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/openspec/changes/refactor-domain-object-provenance-model/rollout.md",
+      "observed_facts": "The rollout explicitly restricts verified work to engine session seam and first SmashUp provenance/deferred families; other games and remaining high-risk families are described as not yet migrated."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/engine/primitives/entityIdentity.ts",
+      "observed_facts": "Inspected shared runtime identity/reference helpers; these support identity resolution but do not themselves implement the promised provenance/default-destination/deferred lifecycle contract."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation.",
+    "Separate candidate records share the same specification text; reused evidence is disclosed and they are not independent examples."
+  ],
+  "review_depth": "Read full duplicated specifications, associated design/rollout/tasks; inspected shared identity/actor helpers, SmashUp provenance source, reducer integration and InteractionSystem snapshot/display declarations. Tests were not run.",
+  "spec_snapshot_sha256": "3fd493c585c2cbd995d5916075efec35180dad820dd866a5ed0bcd3ce5f95c05",
+  "related_review_ids": [
+    "0d00946bfdd0be6b",
+    "b4014d84cf96aad8"
+  ]
+}

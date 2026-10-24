@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "f1b1ffb75aaa18ba",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/insforge-src/functions/vibescore-usage-hourly.js | https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/insforge-src/functions/vibescore-usage-monthly.js | https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/hooks/use-trend-data.js | https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/ui/matrix-a/components/TrendMonitor.jsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical December21 code provides authenticated UTC 24-hour and recent-24-month endpoints with stringified bigint totals, and dashboard period-to-granularity routing. Trend builds full period axes and clips plotted values at the elapsed UTC bucket. Later half-hour/local-time extensions are subsequent changes.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical December21 code provides authenticated UTC 24-hour and recent-24-month endpoints with stringified bigint totals, and dashboard period-to-granularity routing. Trend builds full period axes and clips plotted values at the elapsed UTC bucket. Later half-hour/local-time extensions are subsequent changes.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-21-add-usage-hourly-monthly/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/insforge-src/functions/vibescore-usage-hourly.js",
+      "observed_facts": "24 UTC buckets and string token fields."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/insforge-src/functions/vibescore-usage-monthly.js",
+      "observed_facts": "1..24 month window, YYYY-MM keys and strings."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/hooks/use-trend-data.js",
+      "observed_facts": "Hourly/daily/monthly selection and separate cache keys."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/ui/matrix-a/components/TrendMonitor.jsx",
+      "observed_facts": "UTC bucket construction, lastIndex clipping and period labels."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

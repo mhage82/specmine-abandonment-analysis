@@ -1,0 +1,70 @@
+{
+  "file_url_sha16": "382279a14d4c905e",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog_manifest_cache.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_install.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_source_install.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_status.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_uninstall.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_tenant.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Catalog provides detached read models with source-stat and dynamic artifact identity/size/mtime guards and per-plugin invalidation. Explicit lifecycle owns source/dynamic install, status, uninstall and tenant orchestration; dependencies and preconditions precede execution, typed options carry startup/purge/force policy, and shared publication/observer/after-callback epilogues follow state changes. Source install SQL, governance and hook order and dynamic uninstall/tenant callback paths were traced in implementation. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Catalog provides detached read models with source-stat and dynamic artifact identity/size/mtime guards and per-plugin invalidation. Explicit lifecycle owns source/dynamic install, status, uninstall and tenant orchestration; dependencies and preconditions precede execution, typed options carry startup/purge/force policy, and shared publication/observer/after-callback epilogues follow state changes. Source install SQL, governance and hook order and dynamic uninstall/tenant callback paths were traced in implementation.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog.go",
+      "observed_facts": [
+        "Read catalog read-facing interface and isolated dependencies."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog_manifest_cache.go",
+      "observed_facts": [
+        "Read complete source and dynamic stat cache hits, detached clones and plugin-scoped invalidation."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_install.go",
+      "observed_facts": [
+        "Read explicit install options, dependency preparation and source/dynamic orchestration."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_source_install.go",
+      "observed_facts": [
+        "Read before-hook, SQL, governance, hook and optional mock-data sequence."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_status.go",
+      "observed_facts": [
+        "Read source/dynamic enable-disable preconditions and publication."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_uninstall.go",
+      "observed_facts": [
+        "Read reverse dependency guard, typed force/purge policy and shared source/dynamic epilogues."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_tenant.go",
+      "observed_facts": [
+        "Read tenant provision/status/delete preconditions and source/dynamic notifications."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Inspected orchestration and read-model architecture; did not execute an exhaustive lifecycle permutation or multi-node integration suite."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "382279a14d4c905e",
+      "bc55dbf930358562"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

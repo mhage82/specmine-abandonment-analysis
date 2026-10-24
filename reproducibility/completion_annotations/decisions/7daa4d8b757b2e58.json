@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "7daa4d8b757b2e58",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/reason-healthcare/rh/commit/616dfad8146483ba693fa8242c09ef9c7a6b42f8 | https://github.com/reason-healthcare/rh/blob/616dfad8146483ba693fa8242c09ef9c7a6b42f8/apps/rh-cli/docs/PACKAGER.md | https://github.com/reason-healthcare/rh/blob/2e9ffdd8b569968156a1ed2421c089c0f1a9b9c1/apps/rh-cli/docs/PACKAGER.md",
+  "manual_outcome_date": "",
+  "manual_notes": "A substantial CLI guide was delivered, moved into CLI docs, and includes FSH, snapshot/validation, CQL, shell environment, build output and complete stamp/check scripts. Strict agreement with the collected spec is unclear: the historical and pinned CQL example queries base Observation/LOINC rather than referencing the authored BpObservation profile as required. Later setup also changes to generated package.json. This is documentation scope drift, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "A substantial CLI guide was delivered, moved into CLI docs, and includes FSH, snapshot/validation, CQL, shell environment, build output and complete stamp/check scripts. Strict agreement with the collected spec is unclear: the historical and pinned CQL example queries base Observation/LOINC rather than referencing the authored BpObservation profile as required. Later setup also changes to generated package.json. This is documentation scope drift, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/reason-healthcare/rh/commit/616dfad8146483ba693fa8242c09ef9c7a6b42f8",
+      "observed_facts": "Guide relocation and historical walkthrough."
+    },
+    {
+      "url": "https://github.com/reason-healthcare/rh/blob/616dfad8146483ba693fa8242c09ef9c7a6b42f8/apps/rh-cli/docs/PACKAGER.md",
+      "observed_facts": "CQL step uses base Observation and BP Panel; extended shell examples and final output are present."
+    },
+    {
+      "url": "https://github.com/reason-healthcare/rh/blob/2e9ffdd8b569968156a1ed2421c089c0f1a9b9c1/apps/rh-cli/docs/PACKAGER.md",
+      "observed_facts": "Collected-revision guide retains the CQL example and documents generated package metadata."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Human adjudication may accept the example as sufficient for the intended tutorial; unclear reflects the strict recorded requirement. No clinical correctness claim is made."
+  ],
+  "uncertainty_category": "documentation_scope_drift"
+}

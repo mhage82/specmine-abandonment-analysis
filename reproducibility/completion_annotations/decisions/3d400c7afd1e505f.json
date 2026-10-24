@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "3d400c7afd1e505f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/modules/code-review.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Read historical release documentation: provides a copyable local pre-commit YAML invoking specfact code review run --score-only on staged Python files, explains PASS/advisory versus FAIL commit effects, makes house-rules optional, and documents default local JSON with explicitly configured remote backend. All selected documentation scenarios are present; no claim that every underlying ledger behavior was validated. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Read historical release documentation: provides a copyable local pre-commit YAML invoking specfact code review run --score-only on staged Python files, explains PASS/advisory versus FAIL commit effects, makes house-rules optional, and documents default local JSON with explicitly configured remote backend. All selected documentation scenarios are present; no claim that every underlying ledger behavior was validated.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/modules/code-review.md",
+      "observed_facts": [
+        "Inspected Repository Pre-Commit Gate, Add to Any Project, Optional house_rules Workflow and Ledger Storage sections; each required guidance is explicit."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "3d400c7afd1e505f",
+      "fcc43d4aead14778"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

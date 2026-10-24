@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "d98676843a9d9938",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/codeready-toolchain/claw-operator/commit/2ffb8606099fe0d786dd4bdae8c045def2a40274",
+  "manual_outcome_date": "2026-04-03",
+  "manual_notes": "The replacement reconciler watches OpenClaw and owned resources, filters instance, builds embedded Kustomize manifests, assigns namespace/ownership and applies resources with field management and error propagation. RBAC, common labels and registration are present. The scenario defines atomic application as one reconciliation pass with error return; no cross-resource transaction is claimed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The replacement reconciler watches OpenClaw and owned resources, filters instance, builds embedded Kustomize manifests, assigns namespace/ownership and applies resources with field management and error propagation. RBAC, common labels and registration are present. The scenario defines atomic application as one reconciliation pass with error return; no cross-resource transaction is claimed.",
+  "sources": [
+    {
+      "url": "https://github.com/codeready-toolchain/claw-operator/commit/2ffb8606099fe0d786dd4bdae8c045def2a40274",
+      "observed_facts": "Read full new controller, Kustomize resource/label configuration and RBAC additions."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

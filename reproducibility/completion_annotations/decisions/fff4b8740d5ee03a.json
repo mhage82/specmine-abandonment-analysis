@@ -1,0 +1,46 @@
+{
+  "file_url_sha16": "fff4b8740d5ee03a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/commit/0a949f1a9e110250b8d74c4f8ff5db037f97b59c | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/opencode-config.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/rollout.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/init-uninstall.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial implementation exists: scoped plugin installation/removal, a non-blocking hook and numeric usage parsing. The original implementation uses session.idle instead of the required session.updated; the pinned later plugin fixes that event but its later parser includes cache-read tokens in total_tokens, unlike this spec formula. A historical revision satisfying both exact requirements was not established, so strict completion remains unclear rather than abandoned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial implementation exists: scoped plugin installation/removal, a non-blocking hook and numeric usage parsing. The original implementation uses session.idle instead of the required session.updated; the pinned later plugin fixes that event but its later parser includes cache-read tokens in total_tokens, unlike this spec formula. A historical revision satisfying both exact requirements was not established, so strict completion remains unclear rather than abandoned.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/0a949f1a9e110250b8d74c4f8ff5db037f97b59c",
+      "observed_facts": [
+        "Read install/uninstall, plugin event and message-parser diffs; initial event is session.idle and initial total excludes cache."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/opencode-config.js",
+      "observed_facts": [
+        "Read pinned plugin: session.updated, catch-only non-awaited notify, marker-scoped removal."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/rollout.js",
+      "observed_facts": [
+        "Pinned normalizeOpencodeTokens includes cache-read in total, diverging from original formula."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/init-uninstall.test.js",
+      "observed_facts": [
+        "Assertions confirm intended session.updated at later snapshot; not executed."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; named implementation and test evidence inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

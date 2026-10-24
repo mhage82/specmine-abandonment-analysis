@@ -1,0 +1,56 @@
+{
+  "file_url_sha16": "f059c94f7a1cac24",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/test_backlog_module_ownership_cleanup.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/backlog/__init__.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/resources/prompts/specfact.backlog-refine.md | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Source inventories and ownership regressions corroborate removal of core backlog command/group packages and canonical core backlog prompt/template assets. Actual module contains migrated add/sync/refine/policy surfaces and backlog resources; core retains provider conversion/contracts/mappers. Registry no longer requires the special expected-backlog-overlap helper. This is an ownership label, not a claim that every moved command fulfills its own separate spec.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Source inventories and ownership regressions corroborate removal of core backlog command/group packages and canonical core backlog prompt/template assets. Actual module contains migrated add/sync/refine/policy surfaces and backlog resources; core retains provider conversion/contracts/mappers. Registry no longer requires the special expected-backlog-overlap helper. This is an ownership label, not a claim that every moved command fulfills its own separate spec.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/test_backlog_module_ownership_cleanup.py",
+      "observed_facts": [
+        "Read entire forbidden-command/resource paths and duplicate-overlap regression checks; inspected those paths in pinned tree."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/backlog/__init__.py",
+      "observed_facts": [
+        "Core exports only shared adapter conversion helpers; retained tree inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "Actual module imports/registers migrated backlog command implementations."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/resources/prompts/specfact.backlog-refine.md",
+      "observed_facts": [
+        "Backlog prompt and neighboring add/daily/sync prompts and field-mapping templates reside in module."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Special _is_expected_duplicate_extension backlog toleration absent in inspected source."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "f059c94f7a1cac24"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

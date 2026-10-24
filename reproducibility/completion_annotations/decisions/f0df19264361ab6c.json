@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "f0df19264361ab6c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/utils/ide_setup.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/modules/init/src/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Installed module discovery, provenance, basename deduplication and module-first field mappings are implemented. Required missing-asset diagnostics remain absent: prompt discovery silently skips missing resources/prompts directories; absent field mappings produce only a debug skipping-copy message and can fall back to core resources. Selected-source error names a token but not the missing resource path. Strict full scope therefore unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Installed module discovery, provenance, basename deduplication and module-first field mappings are implemented. Required missing-asset diagnostics remain absent: prompt discovery silently skips missing resources/prompts directories; absent field mappings produce only a debug skipping-copy message and can fall back to core resources. Selected-source error names a token but not the missing resource path. Strict full scope therefore unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/utils/ide_setup.py",
+      "observed_facts": [
+        "Read catalog and module-resource discovery: absent prompt/resource paths continue silently; module basenames suppress core duplicates."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/modules/init/src/commands.py",
+      "observed_facts": [
+        "Read field-mapping resolution and copy: core fallbacks retained; absence only debug-logs skipping copy; source error lists available tokens and install advice without resource path."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "f0df19264361ab6c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "0be3f2d72415846a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_discovery.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/module_registry/src/commands.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/modules/module_registry/src/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Multi-root scan, builtin priority with shadow warning, source metadata and silent missing-root handling are concretely implemented. Exact selected list scenario is not: plain list defaults show_origin=False and presents trust labels instead, so builtin/custom origin is only visible with an extra flag. This makes whole-scope completion unresolved while discovery itself is supported. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Multi-root scan, builtin priority with shadow warning, source metadata and silent missing-root handling are concretely implemented. Exact selected list scenario is not: plain list defaults show_origin=False and presents trust labels instead, so builtin/custom origin is only visible with an extra flag. This makes whole-scope completion unresolved while discovery itself is supported.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_discovery.py",
+      "observed_facts": [
+        "Full file implements builtin/marketplace/custom priority, seen-name collision handling and missing-directory continue."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/module_registry/src/commands.py",
+      "observed_facts": [
+        "Read list show_origin=False default, _trust_label and _origin_label; explicit flag required."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/modules/module_registry/src/commands.py",
+      "observed_facts": [
+        "July default still requires --show-origin for raw origin."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "0be3f2d72415846a",
+      "dcb6e074edb4c2a9"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

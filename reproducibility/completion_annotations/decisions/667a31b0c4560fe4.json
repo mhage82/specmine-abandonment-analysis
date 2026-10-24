@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "667a31b0c4560fe4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/cli-contracts/specfact-code-review-run.scenarios.yaml | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/cli-contracts/specfact-code-review-ledger.scenarios.yaml | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/cli-contracts/specfact-code-review-rules.scenarios.yaml",
+  "manual_outcome_date": "",
+  "manual_notes": "All three scenario YAML files exist, but explicit required coverage is missing in the reviewed release snapshot: ledger contains only valid update and reset guard, without invalid-JSON update or status; rules lacks successful show. Run YAML expects JSON stdout although implementation returns a filename. Checked task claiming full schema/scenario coverage is therefore insufficient. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "All three scenario YAML files exist, but explicit required coverage is missing in the reviewed release snapshot: ledger contains only valid update and reset guard, without invalid-JSON update or status; rules lacks successful show. Run YAML expects JSON stdout although implementation returns a filename. Checked task claiming full schema/scenario coverage is therefore insufficient.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/cli-contracts/specfact-code-review-run.scenarios.yaml",
+      "observed_facts": [
+        "Read full file: includes clean/auto-scope patterns and invalid-path/argument anti-patterns, expects JSON text on stdout."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/cli-contracts/specfact-code-review-ledger.scenarios.yaml",
+      "observed_facts": [
+        "Full file has exactly update-from-stdin and reset-without-confirm; required invalid JSON/status absent."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/cli-contracts/specfact-code-review-rules.scenarios.yaml",
+      "observed_facts": [
+        "Full file has init, missing-show error and update; no successful show."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "5279898c83984622",
+      "667a31b0c4560fe4"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

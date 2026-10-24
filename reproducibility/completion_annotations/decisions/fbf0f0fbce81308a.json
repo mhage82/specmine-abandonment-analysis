@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "fbf0f0fbce81308a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_lock.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/locker/locker_impl.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The selected lock capability is implemented: locker delegates to coordination in cluster mode, Redis handles include owner token and fencing value, renew/release compare the current owner, and dynamic plugin reconciliation acquires a plugin-specific lock before its lifecycle callback. A losing background attempt skips the callback; explicit lifecycle calls surface conflict. Standalone keeps the local/SQL branch. No exact first-completion date is inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The selected lock capability is implemented: locker delegates to coordination in cluster mode, Redis handles include owner token and fencing value, renew/release compare the current owner, and dynamic plugin reconciliation acquires a plugin-specific lock before its lifecycle callback. A losing background attempt skips the callback; explicit lifecycle calls surface conflict. Standalone keeps the local/SQL branch. No exact first-completion date is inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_lock.go",
+      "observed_facts": "SETNX with TTL acquires a token-bearing handle; owner-check Lua renew/release prevents old holders deleting a new lock; INCR provides fencing tokens."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/locker/locker_impl.go",
+      "observed_facts": "Locker chooses coordination when configured, otherwise SQL lock behavior."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_reconciler.go",
+      "observed_facts": "reconcilePrimaryPluginWithLock and RequiredLock guard callbacks; lockRuntimeReconcilePlugin skips distributed locking in standalone and uses plugin-runtime-reconcile:<id> in cluster mode."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "ea6222504b9e30b4",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/commit/5ddd64511b1da87eceafd9fb2a4d42c620c90bf8",
+  "manual_outcome_date": "2026-04-29",
+  "manual_notes": "ImageStatusBanner encapsulates image-status visibility, two warning messages and install modal/action/error/navigation flow, delegates appearance to EntityBanner and is mounted only before PropertiesTabContent. The old inline alert and styling overrides are removed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "ImageStatusBanner encapsulates image-status visibility, two warning messages and install modal/action/error/navigation flow, delegates appearance to EntityBanner and is mounted only before PropertiesTabContent. The old inline alert and styling overrides are removed.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/5ddd64511b1da87eceafd9fb2a4d42c620c90bf8",
+      "observed_facts": "Read full new ImageStatusBanner and replacement in container TabsContent."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

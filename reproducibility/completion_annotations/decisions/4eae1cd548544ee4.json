@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "4eae1cd548544ee4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/plugins/plugins_management.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/main_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Submodule conversion preserving files, source config validation, wildcard discovery, persistent Git caches, dirty/hash overwrite protection, lock records and status reporting are implemented and have targeted test assertions. Two selected-contract gaps prevent a strict positive: InstallOrUpdate initializes or converts the workspace before LoadPlan validates items/duplicates/unsafe roots, violating fail-before-any-write scenarios; and failed wildcard source discovery can return before local status is rendered. Explicit-source failures are displayed as unknown but Status returns nil rather than a diagnostic error. This is partial implementation with unresolved full-scope conformance, not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Submodule conversion preserving files, source config validation, wildcard discovery, persistent Git caches, dirty/hash overwrite protection, lock records and status reporting are implemented and have targeted test assertions. Two selected-contract gaps prevent a strict positive: InstallOrUpdate initializes or converts the workspace before LoadPlan validates items/duplicates/unsafe roots, violating fail-before-any-write scenarios; and failed wildcard source discovery can return before local status is rendered. Explicit-source failures are displayed as unknown but Status returns nil rather than a diagnostic error. This is partial implementation with unresolved full-scope conformance, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/openspec/changes/archive/plugin-framework/specs/plugin-workspace-management/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/plugins/plugins_management.go",
+      "observed_facts": "Read InstallOrUpdate 119-172, Status 176-278, validation/wildcard expansion 292-555, workspace conversion 598-703, cache/update/dirty checks 731-896 and unconfigured/orphan lock reporting 983-1021. Initialization precedes LoadPlan, and missing wildcard checkouts are skipped then empty expansion fails before rendering."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/main_test.go",
+      "observed_facts": "Inspected source assertions for submodule conversion preserving files/other sections, automatic install initialization, dirty and committed-lock-drift guards, forced updates and status avoiding plugin installation/lock writes."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Compared management file hashes at July 9 and July 11 cached snapshots: identical for the cited implementation. No downloaded application code or tests executed."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

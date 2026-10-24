@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "b6d3385f1ea01760",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/webspatial/webspatial-sdk/pull/1121.diff | https://github.com/webspatial/webspatial-sdk/pull/1121",
+  "manual_outcome_date": "2026-06-22",
+  "manual_notes": "PR1121 implements recursive supported alias normalization, snake_case precedence per object layer, separate override normalization and higher-priority merging, while callbackReturnMap preserves raw callback returns. Tests assert conflicts, nested aliases, per-scene overrides and chaining. Duplicate texts compared equal. Date is collected PR merge event; tests inspected, not run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "All selected manifest requirements have corresponding code and scenario assertions; same-text duplicate records are not independent examples.",
+  "sources": [
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1121.diff",
+      "observed_facts": "scene-polyfill.ts adds preferSnake and normalizeResizability; normalizes top level and selected scene override separately before deep merge. Test assertions cover whole-value winners, nested min/max aliases, unchanged callback return and named-scene defaults."
+    },
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1121",
+      "observed_facts": "Collected metadata records merge 2026-06-22T07:37:22Z, later than the authored implementation commits."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation.",
+    "Separate candidate records share the same specification text; reused evidence is disclosed and they are not independent examples."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "b265474998f47f175c7547ea81a850dc249470bdb644a8099be60906907ee62a",
+  "related_review_ids": [
+    "b6d3385f1ea01760",
+    "c0e2a356bab0932e"
+  ]
+}

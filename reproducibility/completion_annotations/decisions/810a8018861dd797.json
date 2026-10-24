@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "810a8018861dd797",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/commit/e8e9cbca54911e17ed24165c2d5cffee8624bdb3 | https://github.com/victorGPT/vibeusage/commit/612c87eebe3999484fe28a5c71431ac47555543c | https://github.com/victorGPT/vibeusage/commit/b34e0b05a3956528e43fc4fce14055956ea0542e | https://github.com/victorGPT/vibeusage/commit/b56c5f6bd2d4dd006c445bb0894029a0baa4dad6",
+  "manual_outcome_date": "2025-12-27",
+  "manual_notes": "The implementation and follow-up fixes deterministically move unknown usage to the dominant known model, align EveryCode unknowns to the nearest Codex bucket, retract stale unknown/old-target totals, and recompute when only Codex changes. Test diffs explicitly exercise ties, retractions and Codex-only updates.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The implementation and follow-up fixes deterministically move unknown usage to the dominant known model, align EveryCode unknowns to the nearest Codex bucket, retract stale unknown/old-target totals, and recompute when only Codex changes. Test diffs explicitly exercise ties, retractions and Codex-only updates.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/e8e9cbca54911e17ed24165c2d5cffee8624bdb3",
+      "observed_facts": [
+        "Read grouping, dominant-model/nearest-time tie rules and corresponding parser tests."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/612c87eebe3999484fe28a5c71431ac47555543c",
+      "observed_facts": [
+        "Old alignment zero-row retraction and assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/b34e0b05a3956528e43fc4fce14055956ea0542e",
+      "observed_facts": [
+        "Unknown zero-row retraction and assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/b56c5f6bd2d4dd006c445bb0894029a0baa4dad6",
+      "observed_facts": [
+        "Recompute on Codex-only updates with explicit regression test."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Full specification/tasks read; named implementation and test evidence inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "8153b16bf090462d",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/packages/shared-react/src/contexts/groceries/groceries-context.ts | https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/apps/web/app/(app)/groceries/context.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "The shared groceries factory exists and supplies memoized data, computed done/pending lists and mutations. However, the selected scope requires the shared factory to create separate data/UI contexts and accept storage, exposing useGroceriesUIContext. The pinned factory creates only one data context and accepts query/mutation/subscription adapters; UI/storage behavior remains in the web wrapper. Strict full scope is therefore unconfirmed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The shared groceries factory exists and supplies memoized data, computed done/pending lists and mutations. However, the selected scope requires the shared factory to create separate data/UI contexts and accept storage, exposing useGroceriesUIContext. The pinned factory creates only one data context and accepts query/mutation/subscription adapters; UI/storage behavior remains in the web wrapper. Strict full scope is therefore unconfirmed.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/packages/shared-react/src/contexts/groceries/groceries-context.ts",
+      "observed_facts": "Only GroceriesProvider/useGroceriesContext returned; no UI-context or storage adapter in options."
+    },
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/apps/web/app/(app)/groceries/context.tsx",
+      "observed_facts": "App owns local UI context and persistence around the shared data provider."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "5eb5d2107be37406605e7335eafb5be9b1dd5e4e80ae7d2b3f2ce47884e0ac4e"
+}

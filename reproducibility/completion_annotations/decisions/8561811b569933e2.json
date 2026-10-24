@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "8561811b569933e2",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/fab98c8b60848bb0b951e79fa9b581d433cf6748/src-tauri/src/commands.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/SystemSection.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/AboutSection.svelte",
+  "manual_outcome_date": "",
+  "manual_notes": "Deletion/logging/IPC and confirmed System Data actions exist, but historical implementation explicitly emits sessions:cleared despite the specification saying no event shall be emitted. This is a direct contract mismatch, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Deletion/logging/IPC and confirmed System Data actions exist, but historical implementation explicitly emits sessions:cleared despite the specification saying no event shall be emitted. This is a direct contract mismatch, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-13-clear-timer-events-and-data-management/specs/session-history-management/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/fab98c8b60848bb0b951e79fa9b581d433cf6748/src-tauri/src/commands.rs",
+      "observed_facts": "sessions_clear logs start/success/error,executes delete,and emits sessions:cleared."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/SystemSection.svelte",
+      "observed_facts": "Data heading and independent clear/reset confirmation/cancel state."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/AboutSection.svelte",
+      "observed_facts": "No destructive reset/clear action remains."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,46 @@
+{
+  "file_url_sha16": "ed5c60adb9b39328",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/178db55d81c1c1e2bd7f9188580857ba25a0917e | https://github.com/carverauto/serviceradar/commit/d919bc089e0bda5bf3cb874f316ccceaa17a3062 | https://github.com/carverauto/serviceradar/commit/7539a1680a665a40f4cf1fb761b0cd5228863e4a",
+  "manual_outcome_date": "2026-05-17",
+  "manual_notes": "Reviewed recovered May17 polling/callback implementation: PollWorker persists Oban jobs with target-key uniqueness and reloads targets; command_result_handler preserves deferred state, correlation/deadline/continuation and omits polling in webhook mode. Worker checks cancellation/expiry, records terminal failure and updates parent state; lifecycle tests cover transitions/scheduling/expiry. This supports the job-scheduling scope, distinct from the shared SDK/UI tasks. Tests not run. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Reviewed recovered May17 polling/callback implementation: PollWorker persists Oban jobs with target-key uniqueness and reloads targets; command_result_handler preserves deferred state, correlation/deadline/continuation and omits polling in webhook mode. Worker checks cancellation/expiry, records terminal failure and updates parent state; lifecycle tests cover transitions/scheduling/expiry. This supports the job-scheduling scope, distinct from the shared SDK/UI tasks. Tests not run.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/178db55d81c1c1e2bd7f9188580857ba25a0917e",
+      "observed_facts": [
+        "poll_worker.ex defines database-backed Oban scheduling with target_id uniqueness, persisted-target loading and expiry; result handler records deferred fields and schedules targets."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/d919bc089e0bda5bf3cb874f316ccceaa17a3062",
+      "observed_facts": [
+        "webhook_only? returns nil next_poll_at, so schedule_target does not insert a job; callback result logic preserves nonterminal states and aggregates terminal outcomes."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/7539a1680a665a40f4cf1fb761b0cd5228863e4a",
+      "observed_facts": [
+        "action_lifecycle_test.exs and migration tests exercise scheduling/deferred/expired state and persistence structures."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "a496b6558fb8026e",
+      "ed5c60adb9b39328"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "934e1692f7a8b278",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/BlackBeltTechnology/pi-agent-dashboard/commit/85cd75f1d87aa10124b203264fe907428a0bf513 | https://github.com/BlackBeltTechnology/pi-agent-dashboard/blob/85cd75f1d87aa10124b203264fe907428a0bf513/packages/shared/src/__tests__/no-raw-node-import.test.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Loader-aware path wrapping and restart handling are implemented with jiti/tsx regression tests. The selected revised spec also says the repository lint intentionally permits raw tsx entries. At the inspected revision no-raw-node-import.test.ts checks all non-allowlisted argv entries for URL wrapping without a tsx exception, and no staged violation-fixture test is present. Strict completion of this expanded scope remains unclear.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Loader-aware path wrapping and restart handling are implemented with jiti/tsx regression tests. The selected revised spec also says the repository lint intentionally permits raw tsx entries. At the inspected revision no-raw-node-import.test.ts checks all non-allowlisted argv entries for URL wrapping without a tsx exception, and no staged violation-fixture test is present. Strict completion of this expanded scope remains unclear.",
+  "sources": [
+    {
+      "url": "https://github.com/BlackBeltTechnology/pi-agent-dashboard/commit/85cd75f1d87aa10124b203264fe907428a0bf513",
+      "observed_facts": "Inspected node-spawn, restart helper and unit tests."
+    },
+    {
+      "url": "https://github.com/BlackBeltTechnology/pi-agent-dashboard/blob/85cd75f1d87aa10124b203264fe907428a0bf513/packages/shared/src/__tests__/no-raw-node-import.test.ts",
+      "observed_facts": "Lint checks loader/entry URL shape and fixed allowlist, with no loader-specific exception or fixture test."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "specific_contract_gap"
+}

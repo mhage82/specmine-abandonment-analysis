@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "746ec3ab7673bef9",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/internal/service/plugin/plugin_auto_enable.go | https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/internal/service/plugin/plugin_auto_enable.go | https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/internal/service/config/config_plugin.go | https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/pkg/plugin/pluginhost/pluginhost_source_plugin_inputs.go | https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-vben/apps/web-antd/src/views/system/plugin/index.vue",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial startup bootstrap is present: strict object config validation, source/dynamic install+enable, mock-data opt-in, shared-state waiting, approved dynamic authorization, UI restart warning and explicit trusted startup callback flag. The selected aggregate also requires automatic dependency installation. May18 implements that older behavior, while May28 explicitly rejects missing hard dependencies and no longer installs them; May18 lacks the later trusted startup callback flag. A single delivered version satisfying the combined archived scope was not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Substantial startup bootstrap is present: strict object config validation, source/dynamic install+enable, mock-data opt-in, shared-state waiting, approved dynamic authorization, UI restart warning and explicit trusted startup callback flag. The selected aggregate also requires automatic dependency installation. May18 implements that older behavior, while May28 explicitly rejects missing hard dependencies and no longer installs them; May18 lacks the later trusted startup callback flag. A single delivered version satisfying the combined archived scope was not established.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/internal/service/plugin/plugin_auto_enable.go",
+      "observed_facts": [
+        "Read older deterministic auto-dependency installation and source/dynamic startup flow."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/internal/service/plugin/plugin_auto_enable.go",
+      "observed_facts": [
+        "Read replacement checkStartupAutoEnableDependencies, installed-only blockers and startupAutoEnable flag on explicit source targets."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/internal/service/config/config_plugin.go",
+      "observed_facts": [
+        "Read parser rejecting non-map entries and validating id/withMockData fields, despite stale union-schema comments."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-core/pkg/plugin/pluginhost/pluginhost_source_plugin_inputs.go",
+      "observed_facts": [
+        "Typed trusted StartupAutoEnable callback context."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/135cc6b34cf5631cb077c50e82dacab62be041b8/apps/lina-vben/apps/web-antd/src/views/system/plugin/index.vue",
+      "observed_facts": [
+        "Read restart warning confirm dialog and auto-enable indicator logic."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Unclear concerns combined version/scope, not absence of bootstrap delivery. Historical automatic dependency implementation is explicitly acknowledged rather than treated as never built."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "746ec3ab7673bef9"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

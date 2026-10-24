@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "92f5bcfb35434009",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/ui.rs | https://github.com/HiroyukiFuruno/KatanA/blob/d74beb30f3c27333f8fe537f500cfdfad7e5622e/crates/katana-ui/src/state/mod.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "State/component modules and dependency layering were implemented, but the exact spec requires parents to pass minimal state rather than whole AppState. The reviewed settings window still passes mutable AppState into each child tab renderer; full architectural compliance is unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "State/component modules and dependency layering were implemented, but the exact spec requires parents to pass minimal state rather than whole AppState. The reviewed settings window still passes mutable AppState into each child tab renderer; full architectural compliance is unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/ui.rs",
+      "observed_facts": "SettingsWindow dispatches ThemeTabOps, GeneralTabOps and other renderers with the whole mutable state argument."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/d74beb30f3c27333f8fe537f500cfdfad7e5622e/crates/katana-ui/src/state/mod.rs",
+      "observed_facts": "State code is decomposed into config/document/layout/scroll/search/update/workspace modules."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "a604a62f88ab67d91da3334e57d53cc4c6e8fd6c2758183cd4179154d52d4e7f"
+}

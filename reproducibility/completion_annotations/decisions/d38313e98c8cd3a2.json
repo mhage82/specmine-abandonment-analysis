@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "d38313e98c8cd3a2",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/f835573d9b73c86c2b096727e8761b1e8be8fdab/crates/katana-ui/src/icon/impls.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/tabs/icons/popups.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/tabs/icons/table_row.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Named preset saving/loading/revert, vendor groups and per-icon color/vendor overrides are implemented. The exact universal vendor-default-color requirement is not established: the release and later vendor_default_color use semantic icon categories, and many third-party icons deliberately return None (monochrome). This is a partial delivery rather than evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Named preset saving/loading/revert, vendor groups and per-icon color/vendor overrides are implemented. The exact universal vendor-default-color requirement is not established: the release and later vendor_default_color use semantic icon categories, and many third-party icons deliberately return None (monochrome). This is a partial delivery rather than evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/f835573d9b73c86c2b096727e8761b1e8be8fdab/crates/katana-ui/src/icon/impls.rs",
+      "observed_facts": "Katana returns no tint; third-party tint depends on icon semantics and the default branch explicitly remains monochrome."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/tabs/icons/popups.rs",
+      "observed_facts": "Saves named overrides through settings; renders icons in vendor CollapsingHeader groups."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/settings/tabs/icons/table_row.rs",
+      "observed_facts": "Editable vendor/color override row updates active_overrides; preset controls implement apply/revert."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "9af166178a449a8997d5a9f373d1ba096a6230a21e271fd4981b38c6c6251e1c"
+}

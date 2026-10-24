@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "14553fe94b79a6e6",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tools/read_file.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tools/replace_text.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/formatting_tags.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/add_run_level_formatting_visibility.allure.test.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Default tagged reads, plain-text opt-out and writable b/i/u/highlighting are supported by implementation and integration assertions. However, the selected spec says anchor tags are NOT accepted in replace_text new_string: the handler instead silently strips the anchor wrapper and proceeds with replacement. This supports read-only hyperlink behavior but leaves literal input-rejection semantics unresolved, so the strict full-scope positive is withheld; this is not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Default tagged reads, plain-text opt-out and writable b/i/u/highlighting are supported by implementation and integration assertions. However, the selected spec says anchor tags are NOT accepted in replace_text new_string: the handler instead silently strips the anchor wrapper and proceeds with replacement. This supports read-only hyperlink behavior but leaves literal input-rejection semantics unresolved, so the strict full-scope positive is withheld; this is not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/openspec/changes/archive/2026-02-19-add-run-level-formatting-visibility/specs/mcp-server/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tools/read_file.ts",
+      "observed_facts": "show_formatting defaults true and is passed to the document view; false disables semantic formatting tags."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tools/replace_text.ts",
+      "observed_facts": "Lines 188-189 strip hyperlinks before matching; lines 251-258 parse writable tags into run properties and replacement parts. Anchor-marked input is sanitized, not rejected."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/formatting_tags.ts",
+      "observed_facts": "Actual baseline computation weights visible non-header characters, applies threshold/tie logic and emits run-boundary formatting and hyperlink tags."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/add_run_level_formatting_visibility.allure.test.ts",
+      "observed_facts": "Inspected integration assertions cover default tags, hyperlink output, show_formatting false and XML bold/italic/underline/highlight after editing."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "The exact treatment of read-only anchor input is ambiguous between rejection and stripping; a human should adjudicate whether stripping satisfies NOT accepted. The separate primitive specification has a style-chain issue, but that shared task-group finding was not automatically propagated to this narrower scope."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

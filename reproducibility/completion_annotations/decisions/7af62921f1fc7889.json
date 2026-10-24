@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "7af62921f1fc7889",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/internal/domain/narrative/service.go | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/internal/domain/narrative/handler.go | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/front/app/features/topic-graph/components/NarrativePanel.vue | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/internal/domain/narrative/service_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "GetScopes aggregates NarrativeBoard records into board_count, applies the inclusive anchor-day range with seven-day default, and includes boards without summaries. The handler accepts days; switching the frontend to category mode calls loadScopes. Dedicated regression source covers board counts, empty summaries and date ranges.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "GetScopes aggregates NarrativeBoard records into board_count, applies the inclusive anchor-day range with seven-day default, and includes boards without summaries. The handler accepts days; switching the frontend to category mode calls loadScopes. Dedicated regression source covers board counts, empty summaries and date ranges.",
+  "sources": [
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/internal/domain/narrative/service.go",
+      "observed_facts": "GetScopes implementation and response fields inspected."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/internal/domain/narrative/handler.go",
+      "observed_facts": "Days query parameter defaults to seven."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/front/app/features/topic-graph/components/NarrativePanel.vue",
+      "observed_facts": "switchScope calls loadScopes for category mode."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/internal/domain/narrative/service_test.go",
+      "observed_facts": "GetScopes regressions inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

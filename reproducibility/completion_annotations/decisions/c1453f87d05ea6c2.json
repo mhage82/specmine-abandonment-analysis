@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "c1453f87d05ea6c2",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/9565842b9a1e56220e13a1800545c38145b154c5",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial endpoint/security dashboard implementation exists, but it contradicts the written architecture requirement. The spec explicitly requires authored dashboards without creating or mutating DashboardPackage records or routing through the package host. Reviewed implementation seeds DashboardPackage/Instance records; tests assert package versions and dashboard-package-host/DashboardWasmHost routes for both dashboards. Thus checked tasks do not establish completion of this exact authored-dashboard scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial endpoint/security dashboard implementation exists, but it contradicts the written architecture requirement. The spec explicitly requires authored dashboards without creating or mutating DashboardPackage records or routing through the package host. Reviewed implementation seeds DashboardPackage/Instance records; tests assert package versions and dashboard-package-host/DashboardWasmHost routes for both dashboards. Thus checked tasks do not establish completion of this exact authored-dashboard scope.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/9565842b9a1e56220e13a1800545c38145b154c5",
+      "observed_facts": [
+        "FirstPartyPackages adds endpoint-inventory/security-findings definitions, upsert_package and ensure_route_instance. first_party_packages_test asserts two DashboardPackage versions after update; security_dashboard_routes_test explicitly loads package-host routes. Actual renderers/manifests and data frames exist, but the required authored persistence/routing architecture is not what this implementation uses."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "c1453f87d05ea6c2"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

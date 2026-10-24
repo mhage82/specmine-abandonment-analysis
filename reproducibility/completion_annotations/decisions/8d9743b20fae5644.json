@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "8d9743b20fae5644",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/ledger/client.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/resources/supabase/review_ledger_ddl.sql | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/ledger/test_client.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/ledger/client.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Coin/streak arithmetic, HTTP persistence methods, fallback and DDL are real and have mocked tests. Full specified Supabase/home-path behavior is not established: DDL creates ai_sync tables, while requests target unqualified REST resources without schema-profile headers; default client ignores SUPABASE_URL unless passed explicitly, and fallback prefers repo/.specfact over ~/.specfact. March17 and April9 code agree. These are concrete contract gaps, not abandonment evidence. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Coin/streak arithmetic, HTTP persistence methods, fallback and DDL are real and have mocked tests. Full specified Supabase/home-path behavior is not established: DDL creates ai_sync tables, while requests target unqualified REST resources without schema-profile headers; default client ignores SUPABASE_URL unless passed explicitly, and fallback prefers repo/.specfact over ~/.specfact. March17 and April9 code agree. These are concrete contract gaps, not abandonment evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/ledger/client.py",
+      "observed_facts": [
+        "Read record_run/state arithmetic, REST calls, headers, constructor and repository-first fallback; constructor only uses passed supabase_url/key."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/resources/supabase/review_ledger_ddl.sql",
+      "observed_facts": [
+        "Tables are explicitly in ai_sync schema."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/ledger/test_client.py",
+      "observed_facts": [
+        "Tests inject explicit client URL/key and fake HTTP; assert0.5 delta and streak bonus/penalty, not actual ai_sync routing."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/ledger/client.py",
+      "observed_facts": [
+        "Later pinned snapshot retains same constructor, unqualified REST URLs/header setup and fallback selection."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "No external Supabase instance or schema exposure configuration was inspected; custom default-schema deployment could alter runtime behavior."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "5c0cc8712898ed46",
+      "8d9743b20fae5644"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

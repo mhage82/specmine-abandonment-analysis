@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "e210ffa19232f83c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/extension_registry.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Manifest parsing and extension registry are implemented, but required conflict rejection is contradicted: _register_schema_extensions_safe catches collision and skips extensions, then caller still registers module commands. Invalid declarations are also silently discarded rather than warning. Checked tasks do not establish the selected lifecycle semantics. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Manifest parsing and extension registry are implemented, but required conflict rejection is contradicted: _register_schema_extensions_safe catches collision and skips extensions, then caller still registers module commands. Invalid declarations are also silently discarded rather than warning. Checked tasks do not establish the selected lifecycle semantics.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Read _validated_schema_extensions_from_raw, _register_schema_extensions_safe and caller continuing to _register_commands_for_package."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/extension_registry.py",
+      "observed_facts": [
+        "Collision raises ValueError internally but caller catches it without rejecting module registration."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "93750aac281c7097",
+      "e210ffa19232f83c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

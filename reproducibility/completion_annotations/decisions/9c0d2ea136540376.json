@@ -1,0 +1,54 @@
+{
+  "file_url_sha16": "9c0d2ea136540376",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-pricing-sync.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/pricing-sync-auto-alias.test.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/pricing-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-pricing-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/model-identity.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Pricing sync first writes deterministic canonical aliases dated to earliest observed usage in the sync window, preserves conflicting history, then derives pricing aliases from resolved canonical IDs. Ambiguous families are skipped; dated pricing lookup/fallback and canonical usage filtering are implemented separately. Behavioral tests explicitly cover Qwen, ambiguous Kimi and historical backfill conflicts.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Pricing sync first writes deterministic canonical aliases dated to earliest observed usage in the sync window, preserves conflicting history, then derives pricing aliases from resolved canonical IDs. Ambiguous families are skipped; dated pricing lookup/fallback and canonical usage filtering are implemented separately. Behavioral tests explicitly cover Qwen, ambiguous Kimi and historical backfill conflicts.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-pricing-sync.js",
+      "observed_facts": [
+        "Read main canonical-before-pricing sequence, ordered first-seen scan, buildCanonicalAliasRows, conflict checks and unique pricing-candidate selection."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/pricing-sync-auto-alias.test.js",
+      "observed_facts": [
+        "Read assertions for canonical Qwen, no Kimi auto-alias, earliest-date backfill, conflicting history and dated Qwen pricing alias."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/pricing-core.js",
+      "observed_facts": [
+        "Read effective-dated pricing alias/profile resolver and fallback."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-pricing-core.js",
+      "observed_facts": [
+        "Canonical identity timeline precedes pricing-bucket resolution; inspected grouped response code."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/model-identity.test.js",
+      "observed_facts": [
+        "Read canonical filter expansion and identity/raw fallback assertions."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; sync sequencing and alias-generation helpers plus resolver integration and behavioral test assertions inspected; tests not executed.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "62a263377011e01f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/pull/336 | https://github.com/UseJunior/safe-docx/pull/336/files",
+  "manual_outcome_date": "2026-06-06",
+  "manual_notes": "PR336 merged Jun6. Inspected server dispatch, ODF grep/insert handlers and OdfDocument.insertParagraph: ODF routing, pattern/context results, body-only style inheritance, blank-line splitting, line-break creation, refreshed positional IDs and invalidation flags are implemented; OPLR06-08 and OINS tests assert the corresponding behavior and unsupported-tool guard. Scope is grep/insert, not later comparison/comments features. Tests were read, not executed. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "PR336 merged Jun6. Inspected server dispatch, ODF grep/insert handlers and OdfDocument.insertParagraph: ODF routing, pattern/context results, body-only style inheritance, blank-line splitting, line-break creation, refreshed positional IDs and invalidation flags are implemented; OPLR06-08 and OINS tests assert the corresponding behavior and unsupported-tool guard. Scope is grep/insert, not later comparison/comments features. Tests were read, not executed.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/336",
+      "observed_facts": [
+        "GitHub API reports merge 2026-06-06T21:44:31Z; PR explicitly delivers add-odf-grep-insert."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/336/files",
+      "observed_facts": [
+        "server.ts routes grep/insert through isOdfRequest and lazy handlers. odf/grep.ts calls searchParagraphsCore; odf/insert_paragraph.ts returns invalidation metadata. document.ts implements style guard, before/after insertion, line splitting and rebuilt IDs. Scenario tests assert provider, context, IDs, guards, reread and persistence."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "3623f76981c40e30",
+      "62a263377011e01f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

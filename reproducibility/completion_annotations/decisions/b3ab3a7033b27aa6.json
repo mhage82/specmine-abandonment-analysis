@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "b3ab3a7033b27aa6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-platform/src/settings/migration/v0_1_3_to_0_1_4.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Extra settings are typed Vec<ExtraSetting> and serialize as key/value objects. Settings load registers the migration before structural decoding; legacy object values are transformed into an array with version advanced to0.1.4. Regression definitions cover transformation and serde roundtrip.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Extra settings are typed Vec<ExtraSetting> and serialize as key/value objects. Settings load registers the migration before structural decoding; legacy object values are transformed into an array with version advanced to0.1.4. Regression definitions cover transformation and serde roundtrip.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-platform/src/settings/migration/v0_1_3_to_0_1_4.rs",
+      "observed_facts": "Migration iterates legacy object string values into key/value array; types/app.rs extra Vec and repository load runner inspected; migration/serde tests present."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "06e1bda246b44a294b64204278afc390a3a8193aaeb9ae08cd1a88ddbb8d6e62"
+}

@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "a1d8d8664851c8f1",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/abapify/adt-cli/pull/118 | https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/adt-lint/src/lib/context.ts | https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/openspec/changes/arc-1-feature-parity/specs/context-compression/spec.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Developer-declared completion and substantial implementation: merged PR118 (2026-05-12) adds CLI/MCP context commands, API stripping, ABAP token dependencies, depth/maxDeps limits and tests. However, the exact spec also requires DDLS/CDS referenced-data-source and association dependencies. At dataset revision a52b9a8, extractDependencies handles ABAP reference patterns only; no CDS FROM/JOIN/association handling is present, and DDLS stripping merely returns source. Strict full-scope completion is therefore unconfirmed despite 41 checked shared tasks. This gap does not establish abandonment or ongoing work. Tests inspected, not run; no completion date assigned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The shared ARC-1 checklist contains valid context-compression tasks (1.6, 1.7, 3.3 and 4.3) and corresponding implementation is directly observable. Nevertheless, the full specification is broader than the implemented ABAP token patterns, so the record is not a strict confirmed-completion example. The merged feature and checked tasks are a delivery claim, not proof that all stated requirements are satisfied.",
+  "sources": [
+    {
+      "url": "https://github.com/abapify/adt-cli/pull/118",
+      "observed_facts": "GitHub API reports merged=true with merged_at=2026-05-12T14:01:19Z. The PR covers six ARC-1 capabilities, including context compression. Its changed-file patches implement packages/adt-cli/src/lib/commands/context.ts and packages/adt-mcp/src/lib/tools/get-context.ts, invoke extractDependencies and stripToPublicApi, and enforce traversal depth and maximum dependency count. Added tests cover class stripping, custom ABAP dependencies, and MCP/CLI reachability. The PR's separate human review checklist is still unchecked; the PR states CI passed, but that claim was not independently verified."
+    },
+    {
+      "url": "https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/adt-lint/src/lib/context.ts",
+      "observed_facts": "The full source was read at the dataset revision. stripToPublicApi returns DDLS unchanged. extractDependencies detects TYPE REF TO, NEW, CAST, INHERITING FROM, CALL FUNCTION, RAISING, CATCH, static references and INTERFACES, filtering custom Z/Y names; it has no general CDS data-source FROM/JOIN or association detection. The inspected CLI/MCP code relies on this function to discover dependencies."
+    },
+    {
+      "url": "https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/openspec/changes/arc-1-feature-parity/specs/context-compression/spec.md",
+      "observed_facts": "The exact specification requires a CLI and MCP context tool, API-surface stripping, custom dependency extraction with depth/count controls, and DDLS source together with its referenced data-source/association graph. The DDLS scope is explicitly present at the dataset revision."
+    }
+  ],
+  "limitations": [
+    "Static source review; no SAP system or tests were run and no deployment was inspected.",
+    "The missing CDS extraction path is a specific apparent coverage gap in the reviewed implementation, not evidence of cancellation or abandonment.",
+    "A maintainer clarification narrowing the DDLS requirement, or additional implementation evidence, could change the strict completion decision.",
+    "The PR merge date is known, but it is not recorded as a verified full-specification completion date."
+  ],
+  "scope_match_explanation": "The task document belongs to the correct change, but the inspected implementation does not corroborate all mandatory requirements of the selected specification."
+}

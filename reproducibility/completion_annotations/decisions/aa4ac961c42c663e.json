@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "aa4ac961c42c663e",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-monthly.js",
+  "manual_outcome_date": "",
+  "manual_notes": "UTC monthly handler attempts date_trunc(month)+sum over the daily view, returns the same monthly payload on success, and falls back to daily-row accumulation when unsupported.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "UTC monthly handler attempts date_trunc(month)+sum over the daily view, returns the same monthly payload on success, and falls back to daily-row accumulation when unsupported.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-optimize-usage-monthly-aggregate/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-monthly.js",
+      "observed_facts": "Aggregate-first branch; helper returns null on error/throw; both branches use buildMonthlyResponse."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

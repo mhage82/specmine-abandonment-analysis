@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "75abfeccfaf8cf70",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/docs/architecture/implementation-status.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/architecture/implementation-status.md | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/architecture/implementation-status.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/architecture.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Architecture reference explains core/bundle code ownership, but the selected status-document requirement also calls for temporary documentation-hosting exceptions. Full implementation-status page in March6, March17 and March31 lacks the core-versus-bundle ownership split and temporary-hosting note. Other pages contain ownership language, which does not establish this specific status-page delta.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Architecture reference explains core/bundle code ownership, but the selected status-document requirement also calls for temporary documentation-hosting exceptions. Full implementation-status page in March6, March17 and March31 lacks the core-versus-bundle ownership split and temporary-hosting note. Other pages contain ownership language, which does not establish this specific status-page delta.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/docs/architecture/implementation-status.md",
+      "observed_facts": [
+        "Full historical page lacks bundle ownership and temporary hosting exception."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/architecture/implementation-status.md",
+      "observed_facts": [
+        "Same status content persists."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/architecture/implementation-status.md",
+      "observed_facts": [
+        "Only metadata changes observed; no required ownership detail."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/architecture.md",
+      "observed_facts": [
+        "Core vs modules-repo code boundary exists, showing partial related delivery."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "75abfeccfaf8cf70"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

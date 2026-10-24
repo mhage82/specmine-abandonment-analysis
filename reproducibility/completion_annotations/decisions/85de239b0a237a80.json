@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "85de239b0a237a80",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/ebpf/types.go | https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/remoteaccess/enhanced_recording_platform_linux.go | https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/remoteaccess/enhanced_recording_ebpf.go | https://github.com/carverauto/serviceradar/commit/3066ff0815d3d8e5c896c72bc36368e4d9069dfd",
+  "manual_outcome_date": "",
+  "manual_notes": "Command/file/network BPF source and event normalizers, loss accounting and redaction were added, but required operational session tracing is unsupported by the final reviewed snapshot: shared Attach is unimplemented and default recording is procfs. Managed-target policy flag is checked, without verified BPF process-tree registration before target execution. This is partial implementation evidence; no abandonment inference.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Command/file/network BPF source and event normalizers, loss accounting and redaction were added, but required operational session tracing is unsupported by the final reviewed snapshot: shared Attach is unimplemented and default recording is procfs. Managed-target policy flag is checked, without verified BPF process-tree registration before target execution. This is partial implementation evidence; no abandonment inference.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/ebpf/types.go",
+      "observed_facts": [
+        "Attach returns ErrRuntimeNotImplemented, preventing evidence of specified runtime registration path."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/remoteaccess/enhanced_recording_platform_linux.go",
+      "observed_facts": [
+        "NewPlatformEnhancedRecorder constructs procfs event source despite a separate BPF self-test capability check."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/0ec98502009fbe3f183f1a1dc835dc1b0a0a6959/go/pkg/agent/remoteaccess/enhanced_recording_ebpf.go",
+      "observed_facts": [
+        "Contains normalization functions for command/file/network raw events; these do not implement collection attachment or ring-buffer consumption."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/3066ff0815d3d8e5c896c72bc36368e4d9069dfd",
+      "observed_facts": [
+        "Adds managed-target metadata policy gate; no local process-tree attach path shown."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "85de239b0a237a80"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

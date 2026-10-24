@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "7bbfc5f504b64a66",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-core/src/html/node.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Many external tests and coverage infrastructure exist. The specification requires all tests outside src and a strict100% coverage threshold; inspected historical/current trees include inline cfg(test) modules, and actual gate applies filtered-line exceptions. These are explicit contract differences, not abandonment evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Many external tests and coverage infrastructure exist. The specification requires all tests outside src and a strict100% coverage threshold; inspected historical/current trees include inline cfg(test) modules, and actual gate applies filtered-line exceptions. These are explicit contract differences, not abandonment evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-core/src/html/node.rs",
+      "observed_facts": "Historical html/node.rs contains cfg(test) mod tests; current document.rs also includes inline tests. Historical Makefile/current script filter coverage instead of exact100% command."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "a5732f931e2bd7da996a791eda43aa101b2ce399e998a1940203196d40c4c70b"
+}

@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "0679eea3d4a887b0",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/shared/model-identity.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-usage-model-breakdown.js | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-usage-daily.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/model-identity.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Identity lookup uses a dedicated effective-dated model alias table without pricing_source, groups canonical model IDs, preserves display/raw fallback values, and expands canonical filters to alias usage rows. Breakdown and daily/summary integrations corroborate use of these helpers.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Identity lookup uses a dedicated effective-dated model alias table without pricing_source, groups canonical model IDs, preserves display/raw fallback values, and expands canonical filters to alias usage rows. Breakdown and daily/summary integrations corroborate use of these helpers.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/shared/model-identity.js",
+      "observed_facts": [
+        "Read full identity normalization, dated alias lookup, raw fallback and canonical-to-usage expansion."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-usage-model-breakdown.js",
+      "observed_facts": [
+        "Inspected grouping map keyed by identity.model_id and display fields."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/insforge-src/functions/vibescore-usage-daily.js",
+      "observed_facts": [
+        "Canonical filter expansion and identity-filter integration inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/test/model-identity.test.js",
+      "observed_facts": [
+        "Reviewed latest-mapping/raw fallback and canonical-filter alias assertions; not executed."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; historical identity resolver and named endpoint integrations, with behavioral test assertions, inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

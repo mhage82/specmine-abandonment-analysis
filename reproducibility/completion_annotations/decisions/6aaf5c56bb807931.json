@@ -1,0 +1,91 @@
+﻿{
+    "reviewer":  "Codex (AI-assisted; human confirmation pending)",
+    "reviewed_at":  "2026-10-23",
+    "file_url_sha16":  "6aaf5c56bb807931",
+    "manual_status":  "unclear",
+    "manual_scope_match":  "partial",
+    "manual_evidence_url":  "https://github.com/carverauto/threadr/commit/7b51695f20cdd2c0c4b28123bb739bb2bc66a6cd | https://github.com/carverauto/threadr/pull/132 | https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/elixir/threadr/lib/threadr/messaging/pipeline.ex | https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/openspec/changes/add-threadr-2-rewrite/tasks.md",
+    "manual_outcome_date":  "",
+    "manual_notes":  "Correct task group with 35/35 checked items and substantial matching implementation verified: Elixir/Ash/Phoenix, Broadway/JetStream, ML/GraphRAG, API keys/state machines, deck.gl/Wasm, Bazel and Kubernetes. However, only part of this broad architecture specification was traced through implementation; all acceptance scenarios, including graph hot-path behavior and runtime integration, were not corroborated. Mark unclear for the strict positive set. This is insufficient full-scope evidence, not demonstrated missing code or abandonment. PR #132 merged 2026-03-08; exact full-completion date blank. Tests inspected, not run.",
+    "confidence":  "medium",
+    "rationale":  "This task file belongs to the selected change, but the implementation review covers a subset of a large architecture specification. Actual modules corroborate substantial work, yet component presence and checked tasks do not establish every behavior. The role of typed-memory/Wasm paths in graph interaction and full runtime integration were not traced exhaustively. Under the strict completion rubric, retain unclear pending fuller evidence; do not infer abandonment, missing implementation or failure from incomplete review.",
+    "sources":  [
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/openspec/changes/add-threadr-2-rewrite/tasks.md",
+                        "observed_facts":  [
+                                               "Pinned snapshot contains 35 checked and no unchecked task items, matching local task counts."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/commit/7b51695f20cdd2c0c4b28123bb739bb2bc66a6cd",
+                        "observed_facts":  [
+                                               "Adds tenant bot LiveView and tests, updates controller reconciliation, and replaces scaffold wording with implemented controller tasks.",
+                                               "Commit dated 2026-03-08 is present in task history but absent from the packet\u0027s specification-file history."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/pull/132",
+                        "observed_facts":  [
+                                               "Merged 2026-03-08T00:46:55Z; PR title alone is not completion evidence."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/elixir/threadr/lib/threadr/messaging/pipeline.ex",
+                        "observed_facts":  [
+                                               "Actual Broadway pipeline uses OffBroadway.Jetstream.Producer, configured concurrency/batching, decoded event routing, and persistence handlers."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/elixir/threadr/lib/threadr/ml/graph_rag.ex",
+                        "observed_facts":  [
+                                               "Elixir implementation combines tenant-scoped semantic retrieval, Apache AGE graph context and generation/summarization."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/elixir/threadr/lib/threadr/control_plane/bot.ex",
+                        "observed_facts":  [
+                                               "Ash state machine defines reconciliation/deletion transitions and desired/observed generation attributes."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/elixir/threadr/lib/threadr/control_plane/api_key.ex",
+                        "observed_facts":  [
+                                               "API key resource generates hashed credentials and records revocation metadata."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/elixir/threadr/assets/js/lib/threadr_graph/rendering_graph_methods.js",
+                        "observed_facts":  [
+                                               "Actual graph renderer imports deck.gl and constructs graph layers; companion renderer initializes Wasm engine."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/.github/workflows/threadr-control-plane-image.yml",
+                        "observed_facts":  [
+                                               "Workflow invokes Bazel opt builds/tests, remote config, image push target and immutable production digest updates."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/k8s/operators/ircbot-operator/internal/controller/threadrbot_contract_syncer.go",
+                        "observed_facts":  [
+                                               "Sync loop lists durable bot contracts, applies Kubernetes resources and deletes orphaned contracts."
+                                           ]
+                    },
+                    {
+                        "url":  "https://github.com/carverauto/threadr/blob/aba5b16ea92affbaa5287b897ffff0b4861caedf/openspec/changes/add-threadr-2-rewrite/specs/threadr-2-rewrite/spec.md",
+                        "observed_facts":  [
+                                               "The graph requirement explicitly calls for Wasm or equivalent typed-memory interaction paths and avoiding object-per-node JavaScript transforms on the interactive path.",
+                                               "This is one of many requirements in a broad architectural rewrite, so some implemented components are insufficient to establish full completion."
+                                           ]
+                    }
+                ],
+    "limitations":  [
+                        "The task group matches the change; manual_scope_match=partial records partial implementation/acceptance coverage, not an unrelated task file.",
+                        "Very broad architecture specification; not every acceptance scenario was traced.",
+                        "No tests or services were run and no deployed behavior was verified.",
+                        "Exact full-scope completion date remains unestablished; blank intentionally.",
+                        "Issue #128 closure predates subsequent specification/task implementation, so it must not be substituted for full completion date.",
+                        "The graph hot-path requirement was not fully verified; JavaScript renderer operations alone do not establish failure of the requirement.",
+                        "This is AI-assisted annotation pending human confirmation."
+                    ]
+}

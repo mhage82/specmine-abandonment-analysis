@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "59293f76e930a1c2",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election_lease.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_lock.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/jobmgmt/internal/scheduler/scheduler_runner.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/jobmgmt/internal/scheduler/scheduler_execution.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Leader election is backed by the Redis lock provider: first acquisition sets primary, followers retry, lease renewal failure demotes, and standalone bypasses election and reports primary. Scheduled master-only execution checks the shared primary state before running, while all-node jobs pass that gate. This corroborates delivery without claiming that a multi-node failover test was run during annotation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Leader election is backed by the Redis lock provider: first acquisition sets primary, followers retry, lease renewal failure demotes, and standalone bypasses election and reports primary. Scheduled master-only execution checks the shared primary state before running, while all-node jobs pass that gate. This corroborates delivery without claiming that a multi-node failover test was run during annotation.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster.go",
+      "observed_facts": "One topology interface owns enabled mode, primary state and node ID; election is constructed internally only for cluster mode with a lock provider."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election.go",
+      "observed_facts": "Fixed leader-election lock, node holder and lease, follower retry ticker, acquisition state and lease-stop demotion are implemented."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_election_lease.go",
+      "observed_facts": "Lease renewal failure logs a warning with context and ends the lease worker, notifying election state to demote."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_lock.go",
+      "observed_facts": "SETNX with TTL acquires a token-bearing handle; owner-check Lua renew/release prevents old holders deleting a new lock; INCR provides fencing tokens."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/jobmgmt/internal/scheduler/scheduler_runner.go",
+      "observed_facts": "Scheduled master-only jobs return before execution on followers; the scheduler records a skipped-not-primary diagnostic."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/jobmgmt/internal/scheduler/scheduler_execution.go",
+      "observed_facts": "Scheduler primary and node identity queries delegate to the injected cluster service."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

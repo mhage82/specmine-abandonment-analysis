@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "94b680b40e30cf87",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/styrene-lab/omegon/commit/9984e0703e2c16264c4f224283f37f6414a80792",
+  "manual_outcome_date": "",
+  "manual_notes": "The fork dependencies and imports move to @styrene-lab and a migration strategy is documented. However this selected contract also requires trusted publishing without personal-token dependence. The implementation explicitly adds NPM_TOKEN fallback and its own implementation notes retain that fallback until trusted publishing is confirmed. The package rename is delivered, but that remaining release-authorization criterion is unverified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The fork dependencies and imports move to @styrene-lab and a migration strategy is documented. However this selected contract also requires trusted publishing without personal-token dependence. The implementation explicitly adds NPM_TOKEN fallback and its own implementation notes retain that fallback until trusted publishing is confirmed. The package rename is delivered, but that remaining release-authorization criterion is unverified.",
+  "sources": [
+    {
+      "url": "https://github.com/styrene-lab/omegon/commit/9984e0703e2c16264c4f224283f37f6414a80792",
+      "observed_facts": "Read scope changes, workflow NODE_AUTH_TOKEN fallback and documented unresolved trusted-publishing confirmation."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "external_configuration_unverified"
+}

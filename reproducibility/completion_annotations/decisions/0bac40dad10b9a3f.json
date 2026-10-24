@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "0bac40dad10b9a3f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/coordination.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_lock.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_kv.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_revision.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_event.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_health.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/core/core_key.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cachecoord/cachecoord_revision.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The coordination provider has concrete narrow lock/KV/revision/event/health interfaces, memory and Redis implementations, token-checked TTL locks, Redis-native KV operations and atomic revision increments, namespaced tenant keys, event publication/subscription and health snapshots. Cache revision reads provide the missed-event fallback. Production Redis imports were located in the provider implementation; test helpers also import the client. Evidence supports implementation, not successful execution of every fault scenario.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The coordination provider has concrete narrow lock/KV/revision/event/health interfaces, memory and Redis implementations, token-checked TTL locks, Redis-native KV operations and atomic revision increments, namespaced tenant keys, event publication/subscription and health snapshots. Cache revision reads provide the missed-event fallback. Production Redis imports were located in the provider implementation; test helpers also import the client. Evidence supports implementation, not successful execution of every fault scenario.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/coordination.go",
+      "observed_facts": "Public aliases expose the narrow service/store contracts and memory/Redis constructors."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_lock.go",
+      "observed_facts": "SETNX with TTL acquires a token-bearing handle; owner-check Lua renew/release prevents old holders deleting a new lock; INCR provides fencing tokens."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_kv.go",
+      "observed_facts": "Get/Set/SetNX/Delete/CompareAndDelete/IncrBy/Expire/TTL use context-aware client operations and structured errors."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_revision.go",
+      "observed_facts": "Shared revisions use atomic Redis INCR and scoped keys."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_event.go",
+      "observed_facts": "JSON event publication and context-bound subscription dispatch are implemented."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/redis/redis_health.go",
+      "observed_facts": "Ping and operation health track backend, last success, errors and subscription status."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/coordination/internal/core/core_key.go",
+      "observed_facts": "Central key builder includes application/environment/instance and tenant/business dimensions."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cachecoord/cachecoord_revision.go",
+      "observed_facts": "Local revision branch and shared coordination store calls, tenant/cascade scoping, event payloads, revision fallback, freshness window, observable status and structured publication errors are implemented."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

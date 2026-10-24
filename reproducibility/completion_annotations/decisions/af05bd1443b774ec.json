@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "af05bd1443b774ec",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/settings.tsx | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/config.tsx | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/core/src/opsx-kernel.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Runtime settings and configured-tool detection remain in Settings, while project configuration, schemas/templates and change metadata are implemented in Config. Config uses CLI-backed subscriptions with explicit editing and schema management; structured previews and package-source restrictions are present. The implementation preserves the separation required by this UI-view delta.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Runtime settings and configured-tool detection remain in Settings, while project configuration, schemas/templates and change metadata are implemented in Config. Config uses CLI-backed subscriptions with explicit editing and schema management; structured previews and package-source restrictions are present. The implementation preserves the separation required by this UI-view delta.",
+  "sources": [
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/settings.tsx",
+      "observed_facts": "Runtime settings and configured-tool subscription inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/config.tsx",
+      "observed_facts": "Dedicated Config sections, preview/editor and management controls inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/core/src/opsx-kernel.ts",
+      "observed_facts": "CLI-backed data dependencies inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Schema views are individual tabs rather than one literal Schemas tab."
+  ]
+}

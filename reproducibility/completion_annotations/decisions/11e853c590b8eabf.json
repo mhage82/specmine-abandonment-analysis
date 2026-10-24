@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "11e853c590b8eabf",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/clay-good/OpenLore/pull/214 | https://github.com/clay-good/OpenLore/commit/88f1bc6b9f2365df13a5fb108b958dcd6dad8c5b",
+  "manual_outcome_date": "2026-06-27",
+  "manual_notes": "Merged PR214 explicitly implements this change. Its diff adds scope-qualified nested function IDs across extractors, lexical call resolution and CFG remapping, with regression tests for the specified scenarios. All 26 recorded task items are checked. Scope-qualified stableId is explicitly deferred outside this change's requirements. Date is the UTC merge date. Tests and patches were inspected; repository tests were not independently run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The accepted implementation is explicitly linked to this OpenSpec change and contains substantive code and regression tests matching the precise analyzer requirements. The annotation concerns supported delivery of the recorded scope; it does not certify runtime correctness or deployment.",
+  "sources": [
+    {
+      "url": "https://github.com/clay-good/OpenLore/pull/214",
+      "observed_facts": "GitHub API reports merged=true, merged_at=2026-06-27T01:51:45Z, merge_commit_sha=88f1bc6b9f2365df13a5fb108b958dcd6dad8c5b. PR body explicitly identifies openspec/changes/add-stable-nested-function-identity and reports build/test validation. These are author-reported tests, not independently executed checks."
+    },
+    {
+      "url": "https://github.com/clay-good/OpenLore/commit/88f1bc6b9f2365df13a5fb108b958dcd6dad8c5b",
+      "observed_facts": "The six-file diff updates the exact specification and checklist, call-graph.ts and call-graph.test.ts. ensureUniqueNodeIds uses containing-function scope and ordinals for colliding nested functions, retaining sibling and same-ID wrapper behavior. Call resolution handles nested and recursive candidates. CFG objects are collected by start byte and materialized using final IDs. Dedicated language extractors and shared query extraction are covered. Added tests exercise nesting, unrelated edits, ordinals, export wrappers, lexical calls, recursion, C# nested functions versus overloads, and CFG ownership."
+    }
+  ],
+  "limitations": [
+    "Static review of recorded specification/task snapshots, public PR metadata, implementation patches and tests; repository tests were not independently executed.",
+    "Completion date is the merge event in UTC, not an inferred deployment or exact development-finish time.",
+    "The specification explicitly defers scope-qualified content stableId; that separate work is not a missing requirement of this annotation's scope.",
+    "AI-assisted research annotation requires human confirmation before use as an independently validated reference label."
+  ]
+}

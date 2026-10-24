@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "0270f85ec766abe2",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/pull/2749.diff | https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/f9847a63ac59c367708edd29a36817f234210c5b/apps/ai-dial-admin/src/components/Common/CodeViewer/CodeViewer.tsx | https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/b6415f3055106da54717df64bfc0003ca5bc4a39/apps/ai-dial-admin/src/components/Common/CodeViewer/CodeViewer.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantive progressive detail panels, metric cards, status badges and fullscreen support were delivered. However, the selected specification explicitly forbids Monaco inside CodeViewer; both pinned revisions render @monaco-editor/react Editor there. Strict acceptance for this exact specification version is unresolved despite the checked task list.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Identical selected specification snapshots were compared. The feature is substantially implemented, but an explicit design acceptance constraint differs in both revision snapshots. This may be an accepted design change; without reconciliation, unclear is appropriate, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/pull/2749.diff",
+      "observed_facts": "Inspected CodeViewer, FullscreenViewer, AdaptiveValueRow, ExecutionStatusBar, MetricCard, MetricCardsGrid and MetricInfoPanel production implementation. The ordinary CodeViewer uses Monaco Editor, contrary to its explicit selected no-Monaco requirement."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/f9847a63ac59c367708edd29a36817f234210c5b/apps/ai-dial-admin/src/components/Common/CodeViewer/CodeViewer.tsx",
+      "observed_facts": "Pinned source imports Monaco Editor and renders it inside expanded CodeViewer; confirms the deviation persists at this candidate revision."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/b6415f3055106da54717df64bfc0003ca5bc4a39/apps/ai-dial-admin/src/components/Common/CodeViewer/CodeViewer.tsx",
+      "observed_facts": "Pinned source imports Monaco Editor and renders it inside expanded CodeViewer; confirms the deviation persists at this candidate revision."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation.",
+    "Separate candidate records share the same specification text; reused evidence is disclosed and they are not independent examples."
+  ],
+  "review_depth": "Read full selected specification and task/history packet, compared duplicate specification text, inspected substantive implementation diff and pinned CodeViewer at both revisions. Tests were not executed.",
+  "spec_snapshot_sha256": "62bfbe48275d74b5383096db068a1f9be4fad11b204806c5bd21edfc48d29d28",
+  "related_review_ids": [
+    "0270f85ec766abe2",
+    "bd15e4c7c1902aa9"
+  ]
+}

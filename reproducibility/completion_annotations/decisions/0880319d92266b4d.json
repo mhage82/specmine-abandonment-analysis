@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "0880319d92266b4d",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/skills/specfact-code-review/SKILL.md | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/resources/skills/specfact-code-review/SKILL.md | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/rules/updater.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/rules/test_updater.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Actual core skill has required frontmatter and DO/DONT/managed sections within34lines; historical bundled default has32. Init writes the canonical skill path without touching CLAUDE.md, and updater preserves the DO/DONT prefix while changing metadata/managed content and enforcing35lines. Focused tests explicitly verify file preservation and line budget. This selected file/management scope is distinct from the separately assessed stale-rule algorithm.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Actual core skill has required frontmatter and DO/DONT/managed sections within34lines; historical bundled default has32. Init writes the canonical skill path without touching CLAUDE.md, and updater preserves the DO/DONT prefix while changing metadata/managed content and enforcing35lines. Focused tests explicitly verify file preservation and line budget. This selected file/management scope is distinct from the separately assessed stale-rule algorithm.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/skills/specfact-code-review/SKILL.md",
+      "observed_facts": [
+        "Read and counted34 lines with name,description,allowed-tools and managed marker."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/resources/skills/specfact-code-review/SKILL.md",
+      "observed_facts": [
+        "Read32-line bundled default."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/rules/updater.py",
+      "observed_facts": [
+        "Prefix-preserving rendering and35-line budget implemented."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/rules/test_updater.py",
+      "observed_facts": [
+        "Tests assert cap, unchanged DO/DONT and init leaving CLAUDE.md bytes unchanged."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "0880319d92266b4d"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

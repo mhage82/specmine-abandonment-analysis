@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "dc861afc7f878c12",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/menu/menu_impl.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/menu/menu_permission_tree.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/menu/menu_support.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Menu CRUD, transactional cascading deletion, one-query subtree traversal and platform guards are present. The selected consolidated spec says the role-selection dropdown excludes type B buttons, yet GetTreeSelect deliberately returns D/M/B and projects button permissions into the authorization tree; later requirements in the same record also require assignable plugin buttons. This conflicting acceptance scope needs human adjudication, rather than a strict completion label.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Menu CRUD, transactional cascading deletion, one-query subtree traversal and platform guards are present. The selected consolidated spec says the role-selection dropdown excludes type B buttons, yet GetTreeSelect deliberately returns D/M/B and projects button permissions into the authorization tree; later requirements in the same record also require assignable plugin buttons. This conflicting acceptance scope needs human adjudication, rather than a strict completion label.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/menu/menu_impl.go",
+      "observed_facts": "Delete performs menu and role-relation deletion in one transaction; GetTreeSelect explicitly includes D/M/B; isDescendant loads one parent-child map."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/menu/menu_permission_tree.go",
+      "observed_facts": "Permission projection retains buttons beneath menus and groups root buttons under synthetic permission nodes."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/menu/menu_support.go",
+      "observed_facts": "Menu writes require available tenant service platform bypass, otherwise a structured platform-permission error."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "5df952a961638ececfbae851bdd2cd2c3d180ed1b5b0926a6e4d2ac1e5c90908"
+}

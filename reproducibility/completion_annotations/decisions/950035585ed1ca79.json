@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "950035585ed1ca79",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/official-plugins/blob/40bed8e4718ebce3c865fc958d62be3d4782a010/monitor-operlog/backend/plugin.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/backend/internal/service/middleware/middleware_audit.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-loginlog/backend/plugin.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Independent source-plugin boundaries, local ORM and plugin-owned SQL are present, but the exact selected spec requires host-emitted operation audit events with plugin subscription. Both inspected historical and later operation-log plugin register their own global audit middleware and persist directly, whereas login logging uses the specified auth hooks. The claimed host audit-event seam is not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Independent source-plugin boundaries, local ORM and plugin-owned SQL are present, but the exact selected spec requires host-emitted operation audit events with plugin subscription. Both inspected historical and later operation-log plugin register their own global audit middleware and persist directly, whereas login logging uses the specified auth hooks. The claimed host audit-event seam is not established.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/40bed8e4718ebce3c865fc958d62be3d4782a010/monitor-operlog/backend/plugin.go",
+      "observed_facts": "Historical plugin binds auditMiddlewareSvc.Audit through GlobalMiddlewares rather than subscribing to host audit events."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/backend/internal/service/middleware/middleware_audit.go",
+      "observed_facts": "Plugin middleware constructs and persists its own operation-log record after request execution."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-loginlog/backend/plugin.go",
+      "observed_facts": "Login plugin actually subscribes to host successful/failed login/logout events, showing differing delivery by scope."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "d5ca7e81646c160b887a28eb33b8447937512d6519b208776d76ee01e80fd0e0"
+}

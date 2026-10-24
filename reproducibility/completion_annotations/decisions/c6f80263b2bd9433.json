@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "c6f80263b2bd9433",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/format_layout.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/layout.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/add_safe_docx_layout_format_controls.allure.test.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/format_layout.validation.test.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "TypeScript layout tool validates geometry/enums/selectors and directly mutates paragraph spacing, row heights and cell margins with affected counts. Strict selector preflight uses a clone; paragraph-count invariant and regression assertions protect text/identity without spacer paragraphs. The layout path contains no external-process dependency.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "TypeScript layout tool validates geometry/enums/selectors and directly mutates paragraph spacing, row heights and cell margins with affected counts. Strict selector preflight uses a clone; paragraph-count invariant and regression assertions protect text/identity without spacer paragraphs. The layout path contains no external-process dependency.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/9940fb736d4eee82a84b2a01c4377fdd481ca75f/openspec/changes/archive/2026-02-19-add-safe-docx-layout-format-controls/specs/mcp-server/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/format_layout.ts",
+      "observed_facts": "Full input validation, clone preflight, primitive calls, invariant and response counts inspected."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/layout.ts",
+      "observed_facts": "Direct OOXML pPr/spacing, trPr/trHeight and tcPr/tcMar writes; no paragraph creation or process API."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document.ts",
+      "observed_facts": "Layout wrappers invalidate view cache and preserve document objects."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/add_safe_docx_layout_format_controls.allure.test.ts",
+      "observed_facts": "Saved XML values and paragraph ID/count regression assertions."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/format_layout.validation.test.ts",
+      "observed_facts": "Invalid fields/selectors and best-effort mode assertions."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

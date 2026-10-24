@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "b271a4c1fa469f99",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/14bca4ecf158c16e9fd723243b79ca38880238ca",
+  "manual_outcome_date": "2026-05-17",
+  "manual_notes": "Managed-device lifecycle commit implements active/managed defaults for newly imported devices, preserves operator state on re-import, keeps active/inactive actions independent of managed membership, adds inactive-query controls and inventory inclusion, and filters operational targets/camera relay. Inspected implementation and regression assertions for inactive re-import, lifecycle membership, and camera rejection. No tests independently run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Managed-device lifecycle commit implements active/managed defaults for newly imported devices, preserves operator state on re-import, keeps active/inactive actions independent of managed membership, adds inactive-query controls and inventory inclusion, and filters operational targets/camera relay. Inspected implementation and regression assertions for inactive re-import, lifecycle membership, and camera rejection. No tests independently run.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/14bca4ecf158c16e9fd723243b79ca38880238ca",
+      "observed_facts": [
+        "Device/SyncIngestor/manual creation set initial active/managed flags; re-import test asserts inactive remains false; lifecycle tests assert managed value unchanged. SRQL matcher/devices queries add default active filtering with include_inactive escape and UI inventory opts into history; SNMP compiler filters active devices; camera resolver rejects inactive sources."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b271a4c1fa469f99"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

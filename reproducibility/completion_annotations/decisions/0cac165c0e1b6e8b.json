@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "0cac165c0e1b6e8b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-device-token-issue.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Token insert failure triggers a best-effort delete of the just-created device scoped to device/user IDs and returns a generic issue error. Cleanup errors are handled without exposing token material.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Token insert failure triggers a best-effort delete of the just-created device scoped to device/user IDs and returns a generic issue error. Cleanup errors are handled without exposing token material.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-optimize-device-token-issue-consistency/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-device-token-issue.js",
+      "observed_facts": "tokenErr branch awaits bestEffortDeleteDevice; helper catches delete failure and logs generic issue message."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

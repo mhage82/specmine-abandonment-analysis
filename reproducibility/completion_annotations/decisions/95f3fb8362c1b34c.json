@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "95f3fb8362c1b34c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/contract_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_contract_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/findings.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/test_dogfood_self_review.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Self-review tooling and machine-readable output are real, but the explicit any-tool-failure/error-severity CI contract is not fully met in reviewed source. Missing CrossHair is intentionally emitted as tool_error with warning severity, and ReviewReport only blocks nonfixable errors (a fixable error can yield PASS). Existing tests assert that warning behavior. No separate CI wrapper satisfying all selected error semantics was verified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Self-review tooling and machine-readable output are real, but the explicit any-tool-failure/error-severity CI contract is not fully met in reviewed source. Missing CrossHair is intentionally emitted as tool_error with warning severity, and ReviewReport only blocks nonfixable errors (a fixable error can yield PASS). Existing tests assert that warning behavior. No separate CI wrapper satisfying all selected error semantics was verified.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/contract_runner.py",
+      "observed_facts": [
+        "Unavailable CrossHair produces tool_error(...severity=\"warning\") while AST findings continue."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_contract_runner.py",
+      "observed_facts": [
+        "Regression explicitly asserts warning severity for unavailable CrossHair."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/findings.py",
+      "observed_facts": [
+        "is_blocking requires severity error and not fixable; report overrides verdict only for such blocking findings."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/test_dogfood_self_review.py",
+      "observed_facts": [
+        "Live full-review proof exists but skips under TEST_MODE; not an all-tools-error CI wrapper."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "95f3fb8362c1b34c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

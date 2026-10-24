@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "279530396893266f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/jixoai/openspecui/commit/4102c0725cdbf45de32dec36fb6c443bd131724d | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/package.json | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/ssg/cli.ts | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/vite.config.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The January export implementation writes data/routes manifests, copies built assets and creates SPA fallbacks with timing/page metrics. It does not deliver the specified per-route HTML entry generation or separate export Vite configuration; its script is build:static. A later SSG implementation adds per-route rendering but the inspected build configuration still differs from the complete selected build/manifest contract. Treat this as a partially delivered or stale specification pending scope reconciliation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The January export implementation writes data/routes manifests, copies built assets and creates SPA fallbacks with timing/page metrics. It does not deliver the specified per-route HTML entry generation or separate export Vite configuration; its script is build:static. A later SSG implementation adds per-route rendering but the inspected build configuration still differs from the complete selected build/manifest contract. Treat this as a partially delivered or stale specification pending scope reconciliation.",
+  "sources": [
+    {
+      "url": "https://github.com/jixoai/openspecui/commit/4102c0725cdbf45de32dec36fb6c443bd131724d",
+      "observed_facts": "Actual exportStaticSite writes index/404 and routes manifest; no original per-route HTML generation."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/package.json",
+      "observed_facts": "Later build:ssg targets inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/ssg/cli.ts",
+      "observed_facts": "Later SSG route rendering inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/vite.config.ts",
+      "observed_facts": "Shared build configuration uses runtime base-path handling."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "scope_evolved_or_partial_build_contract"
+}

@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "29fa264a1c190495",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/websocket/mod.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/timer/mod.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Started/paused/resumed/reset broadcasts are wired to timer transitions with required payload shapes and no-client send errors discarded; roundChange/state formats remain supported. Serialization assertions corroborate each new type.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Started/paused/resumed/reset broadcasts are wired to timer transitions with required payload shapes and no-client send errors discarded; roundChange/state formats remain supported. Serialization assertions corroborate each new type.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-04-websocket-timer-events/specs/websocket-protocol/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/websocket/mod.rs",
+      "observed_facts": "Broadcast helpers,silent send-result discard,getState response and JSON serialization tests."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/timer/mod.rs",
+      "observed_facts": "Started/Paused/Resumed/Reset event arms invoke corresponding broadcasts."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

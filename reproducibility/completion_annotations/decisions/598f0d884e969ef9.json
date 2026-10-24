@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "598f0d884e969ef9",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/aehrc/pathling/commit/b2ff19f627484452c36a45a2e9d00f726d115a7b | https://github.com/aehrc/pathling/blob/b20e3401aca4a97125d6d933b57a352385871e84/ui/src/pages/SqlOnFhir.tsx | https://github.com/aehrc/pathling/blob/b20e3401aca4a97125d6d933b57a352385871e84/ui/src/components/sqlOnFhir/SqlQueryForm.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Developer-declared completion: b2ff19f (2026-05-07) changes all 31 tasks from unchecked to checked alongside SQL query API/hooks/forms/result cards and unit/E2E tests. Scope matches this spec. Strict completion remains unconfirmed: the spec requires Execute disabled while a request is in flight, but at dataset revision b20e3401 the page passes isSqlQueryExecuting={false}; SqlQueryForm relies on that flag to disable Execute. Substantial delivery is corroborated, but this explicit acceptance mismatch prevents a strict complete label. It does not establish abandonment or ongoing progress. Tests inspected, not run; date left blank.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The implementation commit is directly linked to this specification: it updates the spec's final tab labels, marks the exact task list done, and adds the requested frontend modules and tests. The completed claim is strong for feature delivery. For this experiment's strict requirement-based examples, however, a directly observed mismatch between a mandatory acceptance condition and page wiring must remain unresolved rather than be silently treated as confirmed completion.",
+  "sources": [
+    {
+      "url": "https://github.com/aehrc/pathling/commit/b2ff19f627484452c36a45a2e9d00f726d115a7b",
+      "observed_facts": "GitHub author and committer timestamps are 2026-05-07T02:11:35Z. The diff changes all 31 checklist entries from unchecked to checked and adds actual SQL query API, typed request assembly, stored/inline forms, save handling, format-aware cards, response hooks and tests. Inspected E2E test code covers stored execution, inline execution, save switching and error display. Inspected API code builds queryReference/queryResource and typed parameters; card code handles rows, parquet downloads and errors."
+    },
+    {
+      "url": "https://github.com/aehrc/pathling/blob/b20e3401aca4a97125d6d933b57a352385871e84/openspec/changes/add-sqlquery-run-ui/specs/sqlquery-run-ui/spec.md",
+      "observed_facts": "The exact specification requires Execute to be disabled while a request is in flight as well as when required inputs are absent. This is a mandatory behavior within the selected SQL query UI specification."
+    },
+    {
+      "url": "https://github.com/aehrc/pathling/blob/b20e3401aca4a97125d6d933b57a352385871e84/ui/src/pages/SqlOnFhir.tsx",
+      "observed_facts": "At the dataset revision, the page passes the literal false to isSqlQueryExecuting on SqlOnFhirForm. It appends independent SQL query jobs, while result cards manage request execution. The flag therefore does not track an in-flight query."
+    },
+    {
+      "url": "https://github.com/aehrc/pathling/blob/b20e3401aca4a97125d6d933b57a352385871e84/ui/src/components/sqlOnFhir/SqlQueryForm.tsx",
+      "observed_facts": "The form's canExecute expression includes !isExecuting and the Execute button uses disabled={!canExecute}. Combined with the page's constant false value, the reviewed wiring does not satisfy the required in-flight disabling behavior."
+    }
+  ],
+  "limitations": [
+    "Static code and diff review only; tests were not executed and actual UI behavior was not exercised.",
+    "Unclear refers to strict full-specification completion, not absence of implementation: extensive feature delivery and a checked completion claim are directly corroborated.",
+    "This acceptance mismatch does not establish abandonment, deferral, or current active development.",
+    "The known implementation commit date is kept in evidence notes rather than assigned as a confirmed full-specification completion date."
+  ],
+  "scope_match_explanation": "The task document belongs to the correct change, but the inspected implementation does not corroborate all mandatory requirements of the selected specification."
+}

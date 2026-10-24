@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "03eafeea94ceb321",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-02-28",
+  "manual_notes": "Startup selects Connect versus recipes from persisted URL; Connect normalizes HTTP(S) input, performs GET /api/health with timeout, saves only after success and surfaces errors without navigation. SecureStore persistence and mobile tRPC provider reuse the selected backend; shared HTTP transport targets /api/trpc.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Startup selects Connect versus recipes from persisted URL; Connect normalizes HTTP(S) input, performs GET /api/health with timeout, saves only after success and surfaces errors without navigation. SecureStore persistence and mobile tRPC provider reuse the selected backend; shared HTTP transport targets /api/trpc.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "052_a9c8aa9e8d175ef86a98797471b1808f84a8d08c: Prior patch051 contains full connect/index/URL-store implementation; patch052 adds URL-change subscription, root provider and MobileTrpcProvider with selected base URL."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "4c19aa7e036b2b8781b58ebdba50bfa49dbf134c7e41bd5175810acd9dec2d85"
+}

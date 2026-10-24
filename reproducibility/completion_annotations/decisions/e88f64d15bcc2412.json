@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "e88f64d15bcc2412",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/learning_buffer.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/learning_buffer_test.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/proposal/service.go",
+  "manual_outcome_date": "",
+  "manual_notes": "LearningSuggestionBuffer.Append normalizes Pattern, ProposedRule and Rationale before storage, and Find returns the sanitized copy. The regression checks all three exact normalized values. Proposal service/registry corroborates the surrounding transient-state requirement. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "LearningSuggestionBuffer.Append normalizes Pattern, ProposedRule and Rationale before storage, and Find returns the sanitized copy. The regression checks all three exact normalized values. Proposal service/registry corroborates the surrounding transient-state requirement. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/learning_buffer.go",
+      "observed_facts": "Append sanitizes the three display-facing fields before adding the event; Snapshot/Find read stored values."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/learning_buffer_test.go",
+      "observed_facts": "Find test uses ANSI/newline inputs and checks normalized Pattern, ProposedRule and Rationale."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/proposal/service.go",
+      "observed_facts": "Learning-suggestion upsert uses the transient registry, prepares a brief and marks prepared; Accept requires prepared status and uses the registry. No execution or deployment claim."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "d45b8acf3dec25413c1b415d1eb9ab1fdfd6b1f027091ba75c1697f347dc6e22"
+}

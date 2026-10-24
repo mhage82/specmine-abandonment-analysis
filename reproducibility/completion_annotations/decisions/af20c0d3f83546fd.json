@@ -1,0 +1,29 @@
+{
+  "file_url_sha16": "af20c0d3f83546fd",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/pull/641.diff",
+  "manual_outcome_date": "",
+  "manual_notes": "The selected older specification promises trace CLI commands, persisted index.json and Markdown/CSV/JSON matrix exports. The implemented delivery deliberately narrows core scope to a generic in-memory artifact/evidence index and analysis; runtime collection, persistence and CLI rendering are assigned elsewhere. Completion of this narrower delivery does not verify the selected older CLI/persistence scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Both candidate records have identical older specification text. The delivered library engine is substantive, but old CLI, storage and export acceptance criteria were not traced to implementation. Scope change is not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/pull/641.diff",
+      "observed_facts": "Read generic artifact-index implementation including canonical serialization, typed links, orphan/dangling/self-link analysis, rebuild deltas and requirements mappings. The same diff revises the specification and explicitly excludes runtime collection, filesystem persistence and command rendering; linked tasks assign that responsibility to another module."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation.",
+    "Separate candidate records share the same specification text; reused evidence is disclosed and they are not independent examples."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "ddecdadef9d4b72baa4fe9ad1e2fb5da6cae40b97632200ec0c6c34abddfd0dc",
+  "related_review_ids": [
+    "4130696b2dac1c2b",
+    "af20c0d3f83546fd"
+  ]
+}

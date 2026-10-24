@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "ec97a148830223ce",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/extract_revisions.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/reject_changes.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/extract_revisions.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/session/manager.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/extract_revisions.allure.test.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical extraction implementation clones accept/reject states, matches paragraphs by bookmarks, includes insertion/deletion/move/format revisions and nested comments, handles fully added/removed paragraphs and filters empty marker-only stubs. Tool validates pagination and caches full results by edit revision without marking edits; tests assert cache invalidation and structured cases.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical extraction implementation clones accept/reject states, matches paragraphs by bookmarks, includes insertion/deletion/move/format revisions and nested comments, handles fully added/removed paragraphs and filters empty marker-only stubs. Tool validates pagination and caches full results by edit revision without marking edits; tests assert cache invalidation and structured cases.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/fb59caf26543b3870035b8210e709b7a199c78a4/openspec/changes/archive/2026-02-19-add-extract-revisions-tool/specs/mcp-server/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/extract_revisions.ts",
+      "observed_facts": "Full extraction algorithm inspected: clones, original document-order paragraph walk including cells, bookmarked before/after lookup, revision types, comments and empty filtering."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/reject_changes.ts",
+      "observed_facts": "Deletion restoration converts delText into t; moves and property rollback logic."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/extract_revisions.ts",
+      "observed_facts": "Limit1-500, nonnegative offset, read-only clone/cache/pagination response and error handling."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/session/manager.ts",
+      "observed_facts": "Cache keyed by editRevision and cleared in markEdited."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/extract_revisions.allure.test.ts",
+      "observed_facts": "Read-only, cache use and invalidation, pagination and changed-paragraph assertions."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Historical API evaluated before later tool/session renames. This source evidence does not establish the earliest implementation date."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

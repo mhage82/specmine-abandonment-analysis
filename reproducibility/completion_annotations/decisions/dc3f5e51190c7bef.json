@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "dc3f5e51190c7bef",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/config/config_cluster.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_impl.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_node_state.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_auto_enable.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Source supports the selected standalone/cluster deployment behavior: disabled mode bypasses election and Redis and is primary; enabled mode injects Redis-backed coordination. Plugin node projections return early in standalone mode, and plugin lifecycle logic uses the injected topology for local versus primary-side execution. Later replacement of standalone SQL cache with memory does not invalidate this spec, whose SQL cache wording is permissive. No exact delivery date is assigned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Source supports the selected standalone/cluster deployment behavior: disabled mode bypasses election and Redis and is primary; enabled mode injects Redis-backed coordination. Plugin node projections return early in standalone mode, and plugin lifecycle logic uses the injected topology for local versus primary-side execution. Later replacement of standalone SQL cache with memory does not invalidate this spec, whose SQL cache wording is permissive. No exact delivery date is assigned.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/config/config_cluster.go",
+      "observed_facts": "Default standalone mode; cluster requires redis backend and a nonempty address; Redis settings use duration parsing and documented defaults."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+      "observed_facts": "Startup resolves the database dialect before coordination; creates and pings one provider, then wires cluster, cachecoord, auth, session, and plugin services before route/runtime startup."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster.go",
+      "observed_facts": "One topology interface owns enabled mode, primary state and node ID; election is constructed internally only for cluster mode with a lock provider."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/cluster/cluster_impl.go",
+      "observed_facts": "Standalone Start/Stop bypass election and IsPrimary returns true; cluster delegates to election state."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_node_state.go",
+      "observed_facts": "Plugin node projection synchronization and reads return early outside cluster mode."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_auto_enable.go",
+      "observed_facts": "Shared lifecycle effects use standalone-or-primary topology checks."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

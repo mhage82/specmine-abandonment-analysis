@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "97941a51f6bb3f92",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/commit/e2de0d56aca029279f5e6f110f1a59612bbe648b | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/orchestration/orchestrator_test.go",
+  "manual_outcome_date": "2026-03-02",
+  "manual_notes": "Historical March 2 implementation removes orchestrator tools, replaces all seven sub-agent rejection instructions with transfer_to_agent escalation, adds direct-response ASSESS and no-same-agent rerouting, and orders direct response before delegation. Associated tests inspect each instruction. Later pinned code deliberately narrows weather/general-knowledge handling, which does not erase this supported historical prompt implementation. Date is the inspected implementation commit; downstream model compliance was not tested.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Historical March 2 implementation removes orchestrator tools, replaces all seven sub-agent rejection instructions with transfer_to_agent escalation, adds direct-response ASSESS and no-same-agent rerouting, and orders direct response before delegation. Associated tests inspect each instruction. Later pinned code deliberately narrows weather/general-knowledge handling, which does not erase this supported historical prompt implementation. Date is the inspected implementation commit; downstream model compliance was not tested.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/commit/e2de0d56aca029279f5e6f110f1a59612bbe648b",
+      "observed_facts": "Read substantive orchestrator.go/tools.go implementation diff and protocol/order test assertions; all seven instruction blocks receive escalation and original ASSESS includes weather/general knowledge."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/orchestration/orchestrator_test.go",
+      "observed_facts": "Later tests explicitly exclude weather/general knowledge from direct-response list, establishing later scope evolution rather than absence of historical implementation."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "d592f0539125b854152a50d28f3804518876e70155311eaaf5042a06392bc72b"
+}

@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "765f8a8170ace454",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/codeready-toolchain/claw-operator/commit/23ad463a52a47a1d75cf71f32802765ec8972281 | https://github.com/codeready-toolchain/claw-operator/commit/51da7da59f2efacfaef9324ce7135bc4547da011",
+  "manual_outcome_date": "2026-04-13",
+  "manual_notes": "The gateway secret implementation generates 32 cryptographic random bytes as 64 hex characters, preserves an existing nonempty token, stores a single key and sets controller ownership. A later explicit rename changes the secret/key to openclaw-gateway-token/token as required by this selected snapshot. The archive date predates that rename, so the supported delivery event for this wording is April13.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The gateway secret implementation generates 32 cryptographic random bytes as 64 hex characters, preserves an existing nonempty token, stores a single key and sets controller ownership. A later explicit rename changes the secret/key to openclaw-gateway-token/token as required by this selected snapshot. The archive date predates that rename, so the supported delivery event for this wording is April13.",
+  "sources": [
+    {
+      "url": "https://github.com/codeready-toolchain/claw-operator/commit/23ad463a52a47a1d75cf71f32802765ec8972281",
+      "observed_facts": "Read generateGatewayToken and applyGatewaySecret preservation/ownership path."
+    },
+    {
+      "url": "https://github.com/codeready-toolchain/claw-operator/commit/51da7da59f2efacfaef9324ce7135bc4547da011",
+      "observed_facts": "Explicit secret/key rename and corresponding regression/consumer updates."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

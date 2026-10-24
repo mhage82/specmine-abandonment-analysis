@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "125abd6f3bb136d2",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/lininn/openflow/commit/9f12e50b1a9f47c1a7d543382205c9c06dea010d | https://github.com/lininn/openflow/commit/3a4057936d283dc928f62d79b14dccf862eaefda",
+  "manual_outcome_date": "2026-06-25",
+  "manual_notes": "The generator registers init and its aliases, the init template covers repository inspection, targeted questions, empty projects, preserving existing context and config-only write boundaries, and routing permits skipping missing context. The follow-up implements persisted artifact language, inferred versus confirmed/default status, and preservation of schema markers, with generator/config tests.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The generator registers init and its aliases, the init template covers repository inspection, targeted questions, empty projects, preserving existing context and config-only write boundaries, and routing permits skipping missing context. The follow-up implements persisted artifact language, inferred versus confirmed/default status, and preservation of schema markers, with generator/config tests.",
+  "sources": [
+    {
+      "url": "https://github.com/lininn/openflow/commit/9f12e50b1a9f47c1a7d543382205c9c06dea010d",
+      "observed_facts": "Actual generator, init/proposal templates, optional routing, and tests."
+    },
+    {
+      "url": "https://github.com/lininn/openflow/commit/3a4057936d283dc928f62d79b14dccf862eaefda",
+      "observed_facts": "Language scaffolding and refinement, inference/confirmation instructions, schema-marker preservation, and tests."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "The deliverable is a generated AI workflow/template; this verifies authored behavior and integration, not that every downstream model will obey it."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "file_url_sha16": "54e26b8d0da1207a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/ast_clean_code_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/semgrep_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/radon_runner.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/scripts/pre_commit_code_review.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Actual review integration consumes expanded categories: Semgrep maps naming, Radon emits KISS, AST runner emits YAGNI/DRY/SOLID, and orchestrator includes each runner in report scoring. Repository local hook uses review results to block errors. The prerequisite baseline is explicitly recorded as a March22 PASS/findings-empty run before this March31 change. Reviewed code and dated project-authored evidence support the selected local-gate scope; did not rerun the reported baseline.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Actual review integration consumes expanded categories: Semgrep maps naming, Radon emits KISS, AST runner emits YAGNI/DRY/SOLID, and orchestrator includes each runner in report scoring. Repository local hook uses review results to block errors. The prerequisite baseline is explicitly recorded as a March22 PASS/findings-empty run before this March31 change. Reviewed code and dated project-authored evidence support the selected local-gate scope; did not rerun the reported baseline.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/runner.py",
+      "observed_facts": [
+        "Ordered tool steps include run_ast_clean_code and all existing analyzers; results go into scorer and ReviewReport."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/ast_clean_code_runner.py",
+      "observed_facts": [
+        "Read actual normalized-clone, unused-private-helper and mixed-dependency-role detection producing dry/yagni/solid."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/semgrep_runner.py",
+      "observed_facts": [
+        "Expanded map includes naming rule and appropriate finding category."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/radon_runner.py",
+      "observed_facts": [
+        "Actual KISS metrics emit errors beyond PhaseA thresholds."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/scripts/pre_commit_code_review.py",
+      "observed_facts": [
+        "Repository review hook invokes nested module and blocks relevant error outcomes."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md",
+      "observed_facts": [
+        "Baseline closure records PASS/findings[] with March22 report timestamp before this charter change."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "The prerequisite execution evidence is a project-authored record, not an independently repeated run."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "54e26b8d0da1207a"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

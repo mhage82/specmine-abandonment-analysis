@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "c2d8a5a4833b5e90",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_installer.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/module_registry/src/commands.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/tests/unit/registry/test_module_installer.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/modules/module_registry/src/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Real CLI install/uninstall/search/list/upgrade and checksum/path-traversal protection exist with regression tests. Full selected UX remains partial: historical and July default list hide origin unless --show-origin, although spec requires source indicators on plain list; already-installed handling omits specified version/upgrade advice. Historical upgrade reinstalls successfully but does not first compare newer versions; July comparison improves that separately. No broad completion inferred from command presence. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Real CLI install/uninstall/search/list/upgrade and checksum/path-traversal protection exist with regression tests. Full selected UX remains partial: historical and July default list hide origin unless --show-origin, although spec requires source indicators on plain list; already-installed handling omits specified version/upgrade advice. Historical upgrade reinstalls successfully but does not first compare newer versions; July comparison improves that separately. No broad completion inferred from command presence.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_installer.py",
+      "observed_facts": [
+        "Read full download/stage/extract/compatibility and builtin-protected uninstall implementation."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/module_registry/src/commands.py",
+      "observed_facts": [
+        "Read install/uninstall/search/list/upgrade paths: list show_origin defaults false, historical upgrade passes reinstall=True."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/tests/unit/registry/test_module_installer.py",
+      "observed_facts": [
+        "Read concrete extraction, reinstall, traversal, uninstall and compatibility assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/modules/module_registry/src/commands.py",
+      "observed_facts": [
+        "July still hides origin by default and already-installed output lacks required version/upgrade suggestion."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "753074de93cc84fa",
+      "c2d8a5a4833b5e90"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "30872e5f1878dfad",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/pull/2806.diff | https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/0cae4d28660c351a96c84b8cff80bb0d99d44fa3/apps/ai-dial-admin/src/components/TestSuites/ArgumentTemplate/ArgumentTemplate.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "The schema-driven argument grid exists, but the selected specification also requires a JSON toggle and Binding/Constant mode controls. The pinned ArgumentTemplate renders only a grid; the inspected columns expose name/type/value with string conversion, not the required mode and typed-editor controls. Checked shared tasks do not resolve this mismatch.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Correct task association with partial production coverage. Several explicitly required editor behaviors are not supported by reviewed source; unresolved scope, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/pull/2806.diff",
+      "observed_facts": "Inspected ArgumentTemplate, columns, argument helpers and McpMethodContent. Grid rows follow inputSchema, required asterisks exist, but mode controls and the component JSON toggle specified in this snapshot are absent from this delivery."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/0cae4d28660c351a96c84b8cff80bb0d99d44fa3/apps/ai-dial-admin/src/components/TestSuites/ArgumentTemplate/ArgumentTemplate.tsx",
+      "observed_facts": "Pinned component has GridView and no JSON editor/toggle branch; edit values are strings."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full argument-editor specification and shared checklist, inspected full component/column/helper implementation diff and pinned component. Tests were not executed.",
+  "spec_snapshot_sha256": "1c5ad779fd0fd6e19259776b3b12157eb6b1a70ef9da8c26e369729c6b04857d",
+  "related_review_ids": [
+    "30872e5f1878dfad"
+  ]
+}

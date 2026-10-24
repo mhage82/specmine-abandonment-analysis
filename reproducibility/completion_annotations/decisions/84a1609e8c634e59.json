@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "84a1609e8c634e59",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/commit/686f6ef17b704d5f776c7438918d0d81f94258a0",
+  "manual_outcome_date": "2025-12-25",
+  "manual_notes": "The historical implementation supplies the dated alias table, latest non-future alias lookup and exact/suffix matching before vendor/family-based latest-model alias generation. Later canonical identity work changes mapping policy; this is evidence of the original implementation, not a claim that the original policy remains current.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The historical implementation supplies the dated alias table, latest non-future alias lookup and exact/suffix matching before vendor/family-based latest-model alias generation. Later canonical identity work changes mapping policy; this is evidence of the original implementation, not a claim that the original policy remains current.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/686f6ef17b704d5f776c7438918d0d81f94258a0",
+      "observed_facts": [
+        "Inspected pricing.js alias query, SQL unique key and effective date columns, and buildAliasRows/matchesPricingModel/inferVendorRule/selectLatestCandidate code."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Full specification/tasks read; historical SQL/resolver/sync helper implementation inspected; generated bundles excluded from primary evidence.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

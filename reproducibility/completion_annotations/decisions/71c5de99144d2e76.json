@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "71c5de99144d2e76",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/session_resolution.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/open_document.ts | https://github.com/UseJunior/safe-docx/commit/816fd468800dd38308ef282bb5518a495c64dc37 | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/server.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical file-first resolution, MRU reuse context, explicit-session support and open_document deprecation are implemented. The selected archived text combines incompatible API generations: it requires close_file and missing-file-only validation while retaining resolved_session_id and deprecated open_document. The March17 migration introduces close_file while removing session-id response fields; no single inspected revision establishes this whole selected contract.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical file-first resolution, MRU reuse context, explicit-session support and open_document deprecation are implemented. The selected archived text combines incompatible API generations: it requires close_file and missing-file-only validation while retaining resolved_session_id and deprecated open_document. The March17 migration introduces close_file while removing session-id response fields; no single inspected revision establishes this whole selected contract.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/e342910c6f99045b00b3380c3d531c070073d9e8/openspec/changes/archive/2026-02-11-update-safe-docx-sessionless-entry-and-session-controls/specs/mcp-server/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/session_resolution.ts",
+      "observed_facts": "Old MRU, explicit-session and file-first metadata paths; missing context permits session_id without file_path."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/open_document.ts",
+      "observed_facts": "Deprecated open_document still returns session ID; clear_session is the historical close tool."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/commit/816fd468800dd38308ef282bb5518a495c64dc37",
+      "observed_facts": "Actual patch renames clear_session to close_file and removes resolved_session_id/context fields from session resolution."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/server.ts",
+      "observed_facts": "Later public dispatch contains close_file; no open_document handler."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Identical selected spec text for both dataset versions; scope ambiguity from retrospective spec edits prevents strict completion. This is not evidence that the implemented session lifecycle was abandoned."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

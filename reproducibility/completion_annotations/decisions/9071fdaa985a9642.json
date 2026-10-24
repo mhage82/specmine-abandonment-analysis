@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "9071fdaa985a9642",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/shortcuts/mod.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/commands.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/ShortcutsSection.svelte",
+  "manual_outcome_date": "",
+  "manual_notes": "Global registration is gated by the persisted flag;changes/reset call register_all,which first unregisters stale bindings and returns when disabled. UI blocks/dims fields when off and saved bindings remain available.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Global registration is gated by the persisted flag;changes/reset call register_all,which first unregisters stale bindings and returns when disabled. UI blocks/dims fields when off and saved bindings remain available.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-14-global-shortcuts-toggle/specs/shortcuts/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/shortcuts/mod.rs",
+      "observed_facts": "Unregister-first,disabled early-return and registration from stored bindings."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/commands.rs",
+      "observed_facts": "Flag/binding changes and reset trigger registration refresh."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/ShortcutsSection.svelte",
+      "observed_facts": "Toggle and disabled container with pointer-events:none,opacity0.4."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}
