@@ -14,7 +14,9 @@ def main():
     p.add_argument('--labels',type=Path)
     p.add_argument('--evidence',type=Path)
     p.add_argument('--stale-days',type=int,default=90)
+    p.add_argument('--figures-dir',type=Path,help='Optional new directory for PNG/PDF research figures')
     args=p.parse_args()
+    if args.figures_dir and args.figures_dir.exists():p.error('Choose a fresh figures directory')
     if args.output_dir.exists():p.error('Choose a fresh output directory')
     here=Path(__file__).resolve().parent
     stage=args.stage1_dir
@@ -28,5 +30,9 @@ def main():
     for k in ['labels','evidence']:
         if getattr(args,k):command.extend(['--'+k,str(getattr(args,k).resolve())])
     subprocess.run(command,check=True)
+    if args.figures_dir:
+        subprocess.run([sys.executable,str(here/'plot_abandonment_results.py'),
+                        '--screening-dir',str((args.output_dir/'screening').resolve()),
+                        '--output-dir',str(args.figures_dir.resolve())],check=True)
 
 if __name__=='__main__':main()

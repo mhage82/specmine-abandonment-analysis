@@ -7,11 +7,13 @@ The project includes data loading, feature preparation, exploratory analysis, a 
 ## Documentation
 
 | Component | Guide |
-|---|---|
+|-|---|
 | Data loading and feature pipeline | [Data and feature pipeline](src/README.md) |
 | Data quality and exploratory analysis | [Exploratory analysis](README_EDA.md) |
 | Completion-review experiment | [Reproduction guide](reproducibility/README.md) |
 | Abandonment screening and evaluation | [Screening guide](docs/SCREENING_README.md) |
+| Preliminary result figures | [Figure generation guide](docs/FIGURES_README.md) |                                   |                                             |
+
 
 The completion-review reproduction guide documents the raw dataset snapshot, preserved annotation decisions, required scripts, expected outputs, and report-generation steps.
 
