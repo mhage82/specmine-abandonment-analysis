@@ -221,3 +221,7 @@ __marimo__/
 /results/completion_exploration/
 /results/completion_reproduction/
 /.venv-completion/
+# Downloaded datasets and reproducible generated outputs
+/data/
+/figures/
+/results/
