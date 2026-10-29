@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "bb6903b5ce4db600",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/apps/web/app/(app)/calendar/context.tsx | https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/packages/shared-react/src/contexts/index.ts | https://github.com/norish-recipes/norish/blob/bb003e9a5fe3553f3a6665fee3412b3cb028392d/packages/shared-react/src/contexts/index.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The web feature has a concrete local provider, but the required shared createCalendarContext factory/export was not found in either the first inspected monorepo integration or the collected revision. The web provider still owns its context and app hook imports rather than using that shared factory. Full consolidation scope is unconfirmed despite the checked shared task list; no abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The web feature has a concrete local provider, but the required shared createCalendarContext factory/export was not found in either the first inspected monorepo integration or the collected revision. The web provider still owns its context and app hook imports rather than using that shared factory. Full consolidation scope is unconfirmed despite the checked shared task list; no abandonment inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/apps/web/app/(app)/calendar/context.tsx",
+      "observed_facts": "Inspected local createContext/provider and app hook dependencies."
+    },
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/packages/shared-react/src/contexts/index.ts",
+      "observed_facts": "Context barrel does not export createCalendarContext; source-tree search found no implementation."
+    },
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/bb003e9a5fe3553f3a6665fee3412b3cb028392d/packages/shared-react/src/contexts/index.ts",
+      "observed_facts": "Historical integration context barrel likewise lacks createCalendarContext."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "0d34a6cf0cd4580810030cec2c8b884544b35d4497dc588be6994999c4690451"
+}

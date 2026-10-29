@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "080a6f60576221eb",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/sync.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Registered sync implementation fetches provider graph, compares local baseline and writes a local graph/plan file. It does not export OpenSpec changes to remote issues, execute cross-adapter bidirectional round trips, or update the existing OpenSpec bundle as specified. Required ceremony sync alias is also absent. This is substantial code for a different sync interpretation, so selected scope is partial. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Registered sync implementation fetches provider graph, compares local baseline and writes a local graph/plan file. It does not export OpenSpec changes to remote issues, execute cross-adapter bidirectional round trips, or update the existing OpenSpec bundle as specified. Required ceremony sync alias is also absent. This is substantial code for a different sync interpretation, so selected scope is partial.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/sync.py",
+      "observed_facts": [
+        "Read entire module: provider read, compute_delta, baseline write and new local plan serialization; no remote issue write/round-trip workflow."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "Canonical sync imports that function; ceremony registrations contain no sync alias."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "080a6f60576221eb",
+      "59afaab9cb50333a"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

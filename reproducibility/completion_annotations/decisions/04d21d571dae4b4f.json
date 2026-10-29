@@ -1,0 +1,58 @@
+{
+  "file_url_sha16": "04d21d571dae4b4f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/9565842b9a1e56220e13a1800545c38145b154c5 | https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/rust/srql/src/query/endpoint_packages.rs | https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/rust/srql/src/query/endpoint_inventory_scans.rs | https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/elixir/web-ng/lib/serviceradar_web_ng/dashboards/frame_runner.ex | https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/elixir/web-ng/lib/serviceradar_web_ng/srql.ex",
+  "manual_outcome_date": "",
+  "manual_notes": "Endpoint freshness/current-package aggregates, OCSF findings/scan/DNS aliases, bounded manifests and frame pagination are implemented. Strict completion is unconfirmed for the explicit protected-field authorization scenario: frame_runner passes scope, but pinned SRQL uses it only for dashboard-catalog searches; other entities translate and execute SQL directly and return all selected columns, with no field omission/redaction demonstrated. No independent authorization test or alternative enforcement path was verified. This evidence gap is not an abandonment label.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Endpoint freshness/current-package aggregates, OCSF findings/scan/DNS aliases, bounded manifests and frame pagination are implemented. Strict completion is unconfirmed for the explicit protected-field authorization scenario: frame_runner passes scope, but pinned SRQL uses it only for dashboard-catalog searches; other entities translate and execute SQL directly and return all selected columns, with no field omission/redaction demonstrated. No independent authorization test or alternative enforcement path was verified. This evidence gap is not an abandonment label.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/9565842b9a1e56220e13a1800545c38145b154c5",
+      "observed_facts": [
+        "Adds OCSF entity aliases and category/class predicates; manifests bound scan/finding/DNS windows and row limits with identity/metadata fields; tests cover entity and nested-field queries."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/rust/srql/src/query/endpoint_packages.rs",
+      "observed_facts": [
+        "Current counts use maintained endpoint_inventory_current_package_counts; current CPE and indexed package surfaces are implemented with SQL assertions excluding broad live aggregations."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/rust/srql/src/query/endpoint_inventory_scans.rs",
+      "observed_facts": [
+        "Returns bounded scan rows, freshness filters, device/agent identifiers and metadata using plan.limit/offset."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/elixir/web-ng/lib/serviceradar_web_ng/dashboards/frame_runner.ex",
+      "observed_facts": [
+        "Clamps frames to twelve and rows to max2000; passes scope and returns per-frame limit, pagination and errors."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/9565842b9a1e56220e13a1800545c38145b154c5/elixir/web-ng/lib/serviceradar_web_ng/srql.ex",
+      "observed_facts": [
+        "query_arrow does not use scope; execute_query uses scope only for dashboards entity; general path translates then Ecto.Adapters.SQL.query and maps returned columns, without demonstrated protected-field redaction. Existing database policy was not independently established."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion.",
+    "Authorization may be enforced elsewhere; this review did not establish such a path, so absence of complete evidence is not a claim of an exploitable vulnerability."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "04d21d571dae4b4f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

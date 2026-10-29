@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "2931b3822683d055",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/a103c1dc58b24b1bc5a7168cb669e785522a9bdb/src/messages/tr.json | https://github.com/Splode/pomotroid/blob/a103c1dc58b24b1bc5a7168cb669e785522a9bdb/src/lib/components/settings/sections/SystemSection.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/ShortcutInput.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/project.inlang/settings.json",
+  "manual_outcome_date": "",
+  "manual_notes": "Turkish catalog and picker integration are implemented and the historical Turkish key set matches English. Strict scenario that all UI strings display in Turkish remains unsupported because About and shortcut capture text contain literal English; do not equate catalog completeness with complete UI coverage.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Turkish catalog and picker integration are implemented and the historical Turkish key set matches English. Strict scenario that all UI strings display in Turkish remains unsupported because About and shortcut capture text contain literal English; do not equate catalog completeness with complete UI coverage.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-05-turkish-language-support/specs/localization/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/a103c1dc58b24b1bc5a7168cb669e785522a9bdb/src/messages/tr.json",
+      "observed_facts": "Compared historical tr/en key sets: no missing Turkish keys."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/a103c1dc58b24b1bc5a7168cb669e785522a9bdb/src/lib/components/settings/sections/SystemSection.svelte",
+      "observed_facts": "T?rk?e choice persists tr and invokes setLocale."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/ShortcutInput.svelte",
+      "observed_facts": "Visible capture placeholder Click and press keys remains literal English."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/project.inlang/settings.json",
+      "observed_facts": "Turkish is registered among supported locales."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "453622eba6f6bfdd",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/validate-architecture-guardrails.cjs | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/.github/workflows/ci.yml | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2026-01-01-add-lean-architecture-guardrails/specs/vibeusage-tracker/spec.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Concrete guardrail implementation and CI enforcement exist for client credentials/internal URLs/SDK wrappers and unsafe SQL timestamp/money types. However this broader specification also requires all relevant foreign keys indexed, required-column constraints, and documented performance/rollback justification for redundant stores. Those repository-wide obligations were not fully audited, so strict whole-scope completion is not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Concrete guardrail implementation and CI enforcement exist for client credentials/internal URLs/SDK wrappers and unsafe SQL timestamp/money types. However this broader specification also requires all relevant foreign keys indexed, required-column constraints, and documented performance/rollback justification for redundant stores. Those repository-wide obligations were not fully audited, so strict whole-scope completion is not established.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/validate-architecture-guardrails.cjs",
+      "observed_facts": [
+        "Read scanner: validates client references, SDK allowlist and SQL money/timestamp types; does not check all listed schema/policy obligations."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/.github/workflows/ci.yml",
+      "observed_facts": [
+        "Read validate:guardrails and guardrail test CI steps."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2026-01-01-add-lean-architecture-guardrails/specs/vibeusage-tracker/spec.md",
+      "observed_facts": [
+        "Full spec includes broader SSOT/schema obligations beyond implemented scanner checks."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; entire guardrail scanner and CI wiring inspected; repository-wide compliance not exhaustively reviewed.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

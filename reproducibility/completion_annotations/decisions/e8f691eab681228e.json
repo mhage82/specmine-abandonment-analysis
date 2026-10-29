@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "e8f691eab681228e",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/ArcReel/ArcReel/commit/2363ea66217799f37aa19d3c7a794fcb651462bf",
+  "manual_outcome_date": "2026-03-08",
+  "manual_notes": "The extraction agent implements whole-book or selected-range reading, incremental character/clue extraction, visual-only descriptions, separate voice style, typed/weighted clues, validation and a structured summary. The accompanying add_characters_clues.py calls the batch and validation APIs. This is delivery of the specified agent workflow, not an observed successful novel-processing run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The extraction agent implements whole-book or selected-range reading, incremental character/clue extraction, visual-only descriptions, separate voice style, typed/weighted clues, validation and a structured summary. The accompanying add_characters_clues.py calls the batch and validation APIs. This is delivery of the specified agent workflow, not an observed successful novel-processing run.",
+  "sources": [
+    {
+      "url": "https://github.com/ArcReel/ArcReel/commit/2363ea66217799f37aa19d3c7a794fcb651462bf",
+      "observed_facts": "Inspected analyze-characters-clues.md and add_characters_clues.py, including range selection, existing-name handling, validation and summary."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

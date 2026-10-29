@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "52842b54b6aab30e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/webspatial/webspatial-sdk/pull/1168.diff",
+  "manual_outcome_date": "",
+  "manual_notes": "PR1168 delivers substantive animation code: validators, React lifecycle logic/tests, native manager/session and bridge wiring. Reviewed validator ranges, native play/pause/cancel/snapshot/loop code and lifecycle/error test definitions. This long specification also requires precise untargeted-field coexistence, shortest-path rotation and all asynchronous failure/unmount orderings; these end-to-end guarantees were not fully traced. Strict completion remains unconfirmed; no missing implementation or abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial implementation is corroborated but full acceptance coverage of this broad multi-layer specification is beyond the demonstrated evidence. The narrower runtime-capability sibling has its own decision.",
+  "sources": [
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1168.diff",
+      "observed_facts": "animationValidator.ts validates targets/timing/loop/playbackRate; native EntityAnimationManager snapshots from state, manages pause/resume/cancel and RealityKit loops/completion. Added lifecycle/features tests target serialization, replacement failure, state flags and callback timing. Review does not establish every native acceptance guarantee."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full 400+line specification and task/history packet; inspected complete animationValidator and native manager diff, capability implementation, and lifecycle/features test definitions. Did not fully trace every React/native guarantee or execute tests.",
+  "spec_snapshot_sha256": "f77add57f260c674834df2b9b845c5292323033ce1701c9d9cff0f6bc4961450",
+  "related_review_ids": [
+    "52842b54b6aab30e"
+  ]
+}

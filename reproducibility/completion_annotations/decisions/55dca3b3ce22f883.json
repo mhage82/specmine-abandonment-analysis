@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "55dca3b3ce22f883",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/module-package.yaml | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/review/commands.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/module_packages.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/review/test_commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Module scaffold is implemented in the separate modules repository. March17 manifest has the exact >=0.40.0,<1.0.0 compatibility contract, official tier/name/code bundle, and Typer wiring exposes review run/ledger/rules. Core discovery registers enabled installed modules and recursively merges group names while skipping duplicate command names. Later compatibility increases are not treated as failure of the historical scaffold requirement. End-to-end installation was not independently executed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Module scaffold is implemented in the separate modules repository. March17 manifest has the exact >=0.40.0,<1.0.0 compatibility contract, official tier/name/code bundle, and Typer wiring exposes review run/ledger/rules. Core discovery registers enabled installed modules and recursively merges group names while skipping duplicate command names. Later compatibility increases are not treated as failure of the historical scaffold requirement. End-to-end installation was not independently executed.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/module-package.yaml",
+      "observed_facts": [
+        "Pinned March17 manifest explicitly matches required identity, official tier, bundle_group_command and original compatibility range."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/review/commands.py",
+      "observed_facts": [
+        "Actual Typer app adds review subgroup, run handler, ledger and rules subapps."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Enabled-module discovery and _merge_typer_registered_commands/_groups avoid duplicate surfaces and omit absent packages."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/review/test_commands.py",
+      "observed_facts": [
+        "CliRunner invokes review run and asserts successful argument forwarding; tests were inspected only."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "55dca3b3ce22f883"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

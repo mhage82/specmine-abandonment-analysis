@@ -1,0 +1,56 @@
+{
+  "file_url_sha16": "12360316ace7c903",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/utils/terminal.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/runtime.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/registry/test_module_packages.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/utils/test_terminal.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Terminal capability code detects nonrepresentable glyphs, applies replacement error handling for unsafe streams and disables emoji while preserving UTF8 behavior. Runtime console construction invokes this helper. Module loader resolves namespaced layouts and wraps import/compiled dependency failures with package path, failing component and interpreter guidance; focused tests assert these concrete paths.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Terminal capability code detects nonrepresentable glyphs, applies replacement error handling for unsafe streams and disables emoji while preserving UTF8 behavior. Runtime console construction invokes this helper. Module loader resolves namespaced layouts and wraps import/compiled dependency failures with package path, failing component and interpreter guidance; focused tests assert these concrete paths.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/utils/terminal.py",
+      "observed_facts": [
+        "Read encoding probe, stream replacement, Unicode-safe no-op and console flags."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/runtime.py",
+      "observed_facts": [
+        "get_configured_console invokes stream safety before constructing console."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Actual loader resolves nested package layout and wraps import errors with sys.executable context."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/registry/test_module_packages.py",
+      "observed_facts": [
+        "Tests assert nested loading and missing compiled dependency compatibility guidance."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/utils/test_terminal.py",
+      "observed_facts": [
+        "Read cp1252 and UTF8 assertions."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "12360316ace7c903"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

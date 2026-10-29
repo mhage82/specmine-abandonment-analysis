@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "ce44e8284a3739d1",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src/lib/components/settings/sections/AppearanceSection.svelte | https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src-tauri/src/db/migrations.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/utils/theme.ts | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/settings/+page.svelte",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical implementation supports auto/light/dark resolution, independent all-theme pickers and deferred inactive preview, persisted defaults and legacy-theme migration. Later Pomotroid Light default is a subsequent redesign, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical implementation supports auto/light/dark resolution, independent all-theme pickers and deferred inactive preview, persisted defaults and legacy-theme migration. Later Pomotroid Light default is a subsequent redesign, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-02-26-auto-light-and-dark-mode/specs/theme-mode/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src/lib/components/settings/sections/AppearanceSection.svelte",
+      "observed_facts": "Mode selection resolves/applies immediately; separate light/dark callbacks only apply the active picker and persist both choices."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src-tauri/src/db/migrations.rs",
+      "observed_facts": "Migration copies legacy theme into both selections, defaults both to Pomotroid, seeds auto and removes old key."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/utils/theme.ts",
+      "observed_facts": "Runtime resolver follows auto OS versus forced light/dark."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/settings/+page.svelte",
+      "observed_facts": "Both window routes have matchMedia changes and settings-change re-resolution; reviewed main route too."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

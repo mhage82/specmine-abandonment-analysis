@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "cf56d29bf04cdc7f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/quiqr/quiqr-desktop/commit/1a9302bd15313e73eb296d281eef304b7612205b",
+  "manual_outcome_date": "2026-01-13",
+  "manual_notes": "The implementation commit installs proposal/apply/archive command assets for two hosts, the managed root instruction block, detailed OpenSpec guidance, project context and current/archived spec structure. The assets contain proposal/scenario formatting, task tracking and strict-validation/troubleshooting guidance. This supports repository workflow adoption; it does not certify that every future contributor follows the process.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The implementation commit installs proposal/apply/archive command assets for two hosts, the managed root instruction block, detailed OpenSpec guidance, project context and current/archived spec structure. The assets contain proposal/scenario formatting, task tracking and strict-validation/troubleshooting guidance. This supports repository workflow adoption; it does not certify that every future contributor follows the process.",
+  "sources": [
+    {
+      "url": "https://github.com/quiqr/quiqr-desktop/commit/1a9302bd15313e73eb296d281eef304b7612205b",
+      "observed_facts": "Actual command assets, root guide, openspec/AGENTS.md, project.md and spec tree additions inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Workflow/documentation delivery; external OpenSpec validator was not executed during this review."
+  ]
+}

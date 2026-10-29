@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "16276d3a7652864f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4378489ec6fca10a73adf17fced1a596d68323ee/dashboard/src/hooks/use-usage-data.js | https://github.com/victorGPT/vibeusage/blob/4378489ec6fca10a73adf17fced1a596d68323ee/dashboard/src/hooks/use-activity-heatmap.js | https://github.com/victorGPT/vibeusage/blob/4378489ec6fca10a73adf17fced1a596d68323ee/dashboard/src/pages/DashboardPage.jsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical dashboard retains cached summary/daily/heatmap on failed refresh, distinguishes cache source, and displays CACHE with a UTC last-fetch timestamp in usage status. Without cached data the hooks expose errors. Later source-indicator redesign does not erase the historical implementation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical dashboard retains cached summary/daily/heatmap on failed refresh, distinguishes cache source, and displays CACHE with a UTC last-fetch timestamp in usage status. Without cached data the hooks expose errors. Later source-indicator redesign does not erase the historical implementation.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-20-add-dashboard-cache/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4378489ec6fca10a73adf17fced1a596d68323ee/dashboard/src/hooks/use-usage-data.js",
+      "observed_facts": "Read cached summary/daily; failed refresh retains them and fetchedAt; no-cache path sets error."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4378489ec6fca10a73adf17fced1a596d68323ee/dashboard/src/hooks/use-activity-heatmap.js",
+      "observed_facts": "Failed refresh restores cached heatmap/daily; otherwise error."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4378489ec6fca10a73adf17fced1a596d68323ee/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": "usageStatusLabel formats cached fetchedAt and passes it to the usage panel."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Timestamp is displayed on the usage status; heatmap cache uses the same source concept but does not expose its own timestamp."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

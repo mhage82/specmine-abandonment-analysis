@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "78473dcd9865b13a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/lib/backend-probe-scheduler.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/hooks/use-backend-status.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Probe cadence increases on consecutive successes from 120 seconds to a 300-second ceiling and resets to a 10-second failure retry. Hook schedules according to outcomes and uses failure threshold before down status, preserving its public state shape.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Probe cadence increases on consecutive successes from 120 seconds to a 300-second ceiling and resets to a 10-second failure retry. Hook schedules according to outcomes and uses failure threshold before down status, preserving its public state shape.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-optimize-backend-probe/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/lib/backend-probe-scheduler.js",
+      "observed_facts": "Success streak backoff, capped intervals and failure retry."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/hooks/use-backend-status.js",
+      "observed_facts": "Outcome-driven scheduling, retry and threshold integration."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

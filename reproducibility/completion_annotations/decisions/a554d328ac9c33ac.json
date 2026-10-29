@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "a554d328ac9c33ac",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-link-code-init.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-link-code-exchange.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-28-add-one-login-link-code/sql/002_link_code_exchange_rpc.sql",
+  "manual_outcome_date": "",
+  "manual_notes": "Issuance implements a hashed, session-bound 10-minute code and exchange handles expiration and same-request retries. However the inspected live-source handler performs separate device insert, token insert and conditional code update with best-effort compensation, whereas the spec requires marking used in the same transaction. An unused RPC migration exists, but its same-request branch also falls through to an exception. Strict full-scope completion is therefore not established; this is not abandonment evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Issuance implements a hashed, session-bound 10-minute code and exchange handles expiration and same-request retries. However the inspected live-source handler performs separate device insert, token insert and conditional code update with best-effort compensation, whereas the spec requires marking used in the same transaction. An unused RPC migration exists, but its same-request branch also falls through to an exception. Strict full-scope completion is therefore not established; this is not abandonment evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-link-code-init.js",
+      "observed_facts": [
+        "Read authenticated issuance, session hash, code hash and TTL."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-link-code-exchange.js",
+      "observed_facts": [
+        "Read full handler: separate database operations, deterministic token and compensation, no RPC call."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-28-add-one-login-link-code/sql/002_link_code_exchange_rpc.sql",
+      "observed_facts": [
+        "RPC has row lock and transactional writes but is not invoked by inspected handler; RETURN QUERY is followed by RAISE in used-code branch."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; issuance/exchange source and SQL RPC inspected; strict atomicity mismatch identified.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

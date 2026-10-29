@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "794e91a0af74d733",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/db/migrations.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/defaults.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/mod.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Second-resolution persistence and non-destructive minute-key migration are implemented. Fresh/reset defaults use seconds, load reads seconds directly, and old minute keys are deleted.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Second-resolution persistence and non-destructive minute-key migration are implemented. Fresh/reset defaults use seconds, load reads seconds directly, and old minute keys are deleted.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-03-timer-settings-keyboard-entry/specs/settings/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/db/migrations.rs",
+      "observed_facts": "MIGRATION_2 multiplies legacy values by60 and deletes old keys."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/defaults.rs",
+      "observed_facts": "Defaults1500,300,900 under *_secs."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/mod.rs",
+      "observed_facts": "Direct seconds loading and save/reset assertions."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

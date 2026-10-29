@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "fbc9dff1b4b4642c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/monthly-openspec-archive.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/monthly-openspec-archive-codex.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/monthly-openspec-assert-archive-complete/action.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/monthly-openspec-detect-changes/action.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/prompts/monthly-openspec-auto-archive.zh-CN.md | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/monthly-openspec-finalize-pr/action.yml",
+  "manual_outcome_date": "",
+  "manual_notes": "The monthly router and three tool workflows implement schedule/leap-year handling, branch targeting, candidate preflight, isolated credentials, shared prompts, conditional consolidation, validation, scope guarding and PR finalization. A specific selected fail-fast requirement is not corroborated: an assert-archive-complete action exists but none of the inspected tool workflows calls it after the AI process returns. The prompt asks the AI to recheck archived candidates, but that does not establish the workflow postcondition when the AI reports success with completed changes remaining. Keep full-scope completion unresolved; this is not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The monthly router and three tool workflows implement schedule/leap-year handling, branch targeting, candidate preflight, isolated credentials, shared prompts, conditional consolidation, validation, scope guarding and PR finalization. A specific selected fail-fast requirement is not corroborated: an assert-archive-complete action exists but none of the inspected tool workflows calls it after the AI process returns. The prompt asks the AI to recheck archived candidates, but that does not establish the workflow postcondition when the AI reports success with completed changes remaining. Keep full-scope completion unresolved; this is not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/monthly-openspec-archive.yml",
+      "observed_facts": "Router detects completed candidates, runs deterministic preflight, selects exactly one configured tool and passes target/source branches."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/monthly-openspec-archive-codex.yml",
+      "observed_facts": "After tool-driven auto archive the workflow proceeds to diff detection and conditional validation/consolidation, without invoking the available completion assertion."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/monthly-openspec-assert-archive-complete/action.yml",
+      "observed_facts": "Standalone action lists active changes, reports remaining completed names/status/task counts and exits failure, but no caller was found in inspected monthly workflows."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/monthly-openspec-detect-changes/action.yml",
+      "observed_facts": "Diff detector only checks git diff under openspec; it does not verify no completed active candidates remain."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/prompts/monthly-openspec-auto-archive.zh-CN.md",
+      "observed_facts": "Prompt asks for post-archive active-list confirmation; this delegates the check to the AI rather than enforcing it after a successful tool exit."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/actions/monthly-openspec-finalize-pr/action.yml",
+      "observed_facts": "Validation, generated-path guard and conditional commit/push/PR handling are implemented."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "workflow_postcondition_not_wired"
+}

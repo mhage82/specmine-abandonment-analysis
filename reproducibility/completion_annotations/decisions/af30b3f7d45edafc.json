@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "af30b3f7d45edafc",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_directory.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_test.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/internal/hostservice/hostservice_descriptor_test.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The inspected tree consolidates public plugin code under pluginhost, pluginbridge and capability, uses domain-cap packages and includes boundary governance. The selected archive also requires capability/guest and capability/data as public owners and a bridge root without business-client exports, whereas inspected June and July snapshots put the dynamic guest SDK and recordstore in pluginbridge. Later requirements in this same archive describe bridge-owned guest SDKs. The record combines incompatible architectural stages; delivery of the overall refactor is apparent but a single strict full-scope label needs version-aware human adjudication.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The inspected tree consolidates public plugin code under pluginhost, pluginbridge and capability, uses domain-cap packages and includes boundary governance. The selected archive also requires capability/guest and capability/data as public owners and a bridge root without business-client exports, whereas inspected June and July snapshots put the dynamic guest SDK and recordstore in pluginbridge. Later requirements in this same archive describe bridge-owned guest SDKs. The record combines incompatible architectural stages; delivery of the overall refactor is apparent but a single strict full-scope label needs version-aware human adjudication.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go",
+      "observed_facts": "Public root SDK exposes Services and guest capability clients."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_directory.go",
+      "observed_facts": "RecordStore and guest service accessors are assembled in the bridge directory."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_test.go",
+      "observed_facts": "Boundary governance includes prevention of bridge imports of provider SPI."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/internal/hostservice/hostservice_descriptor_test.go",
+      "observed_facts": "Governance tests cover domain capability boundaries and catalog/guest/dispatcher consistency."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go",
+      "observed_facts": "June source already exposes the root guest SDK; later movement alone is not treated as proof of historical noncompletion."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "internally_conflicting_evolving_scope"
+}

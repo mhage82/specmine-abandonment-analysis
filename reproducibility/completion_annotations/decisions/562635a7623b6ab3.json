@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "562635a7623b6ab3",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/package.json | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/package.json | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/insforge-client.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/vibescore-api.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/lib/insforge-client.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/lib/vibescore-api.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Both root and dashboard use @insforge/sdk ^1.0.4. CLI token issuance/ingest and dashboard usage calls are routed through SDK wrappers while preserving user JWT versus device-token arguments. The task note records earlier failing tests; source review supports migration behavior but does not establish a clean historical test run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Both root and dashboard use @insforge/sdk ^1.0.4. CLI token issuance/ingest and dashboard usage calls are routed through SDK wrappers while preserving user JWT versus device-token arguments. The task note records earlier failing tests; source review supports migration behavior but does not establish a clean historical test run.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-21-migrate-insforge-sdk/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/package.json",
+      "observed_facts": "SDK dependency ^1.0.4."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/package.json",
+      "observed_facts": "Same SDK version string."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/insforge-client.js",
+      "observed_facts": "Official createClient wrapper and accessToken propagation."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/vibescore-api.js",
+      "observed_facts": "Function invocation sends user accessToken for issuance and deviceToken for ingest."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/lib/insforge-client.js",
+      "observed_facts": "Official SDK wrapper with bearer."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/lib/vibescore-api.js",
+      "observed_facts": "Usage calls use SDK HTTP client."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Task checklist and its prose disagree about a historical test run; no claim of passing tests is made."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

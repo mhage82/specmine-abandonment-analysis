@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "49e8932f4d353706",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/4dd697f33749884c12cb687c9d3c9304ad6811e4 | https://github.com/carverauto/serviceradar/commit/f13a0e447157f826ea805adc65caee4b3d69c5fa | https://github.com/carverauto/serviceradar/commit/f6d877759ce1033ef041657ebc82a5c5210b7ca8",
+  "manual_outcome_date": "2026-05-27",
+  "manual_notes": "Inspected persistent unique(device_uid,agent_id) availability records, metadata upsert, canonical source-gated sweep updates, freshness timestamps and profile materialization. Profiles resolve paginated SRQL IDs, sort deterministic priority/id, retain per-device overrides and clear stale profile assignments. Ingestion and materializer tests explicitly cover conflicting agent observations and override precedence. No independent tests run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Inspected persistent unique(device_uid,agent_id) availability records, metadata upsert, canonical source-gated sweep updates, freshness timestamps and profile materialization. Profiles resolve paginated SRQL IDs, sort deterministic priority/id, retain per-device overrides and clear stale profile assignments. Ingestion and materializer tests explicitly cover conflicting agent observations and override precedence. No independent tests run.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/4dd697f33749884c12cb687c9d3c9304ad6811e4",
+      "observed_facts": [
+        "Adds per-device/per-agent table and latest-state upsert with timestamp/check/ports/response/execution metadata; sweep writes canonical availability only for selected agent or legacy default. Tests assert both agents retained."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/f13a0e447157f826ea805adc65caee4b3d69c5fa",
+      "observed_facts": [
+        "Profiles materialize SRQL scope with deterministic precedence, preserve explicit device override, expose profile ID and statistics; tests assert chosen agent and stale assignment clearing."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/f6d877759ce1033ef041657ebc82a5c5210b7ca8",
+      "observed_facts": [
+        "Fresh per-agent evidence prevents unreachable aliases overriding the canonical available device; end-to-end regression retains separate observations."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "49e8932f4d353706"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

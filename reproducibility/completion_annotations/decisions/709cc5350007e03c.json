@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "709cc5350007e03c",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/.semgrep/clean_code.yaml | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/tools/test_semgrep_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/fixtures/semgrep/bad_get_modify.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Pinned March17 bundle contains all five custom Semgrep patterns and matching bad/good fixtures. Read YAML patterns for state read/write, config-chain access, repository plus HTTP calls, module network construction and print; fixtures represent each required trigger/separated alternative. Tests invoke the real runner over each fixture when Semgrep is installed; no independent run claimed. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Pinned March17 bundle contains all five custom Semgrep patterns and matching bad/good fixtures. Read YAML patterns for state read/write, config-chain access, repository plus HTTP calls, module network construction and print; fixtures represent each required trigger/separated alternative. Tests invoke the real runner over each fixture when Semgrep is installed; no independent run claimed.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/.semgrep/clean_code.yaml",
+      "observed_facts": [
+        "Read all five pattern definitions and network function/class exclusion."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/tools/test_semgrep_runner.py",
+      "observed_facts": [
+        "Parameterized bad-fixture tests require expected rule IDs; good fixtures require no findings, conditional on installed Semgrep."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/fixtures/semgrep/bad_get_modify.py",
+      "observed_facts": [
+        "Actual combined getter/mutator fixture inspected alongside all other bad/good pairs."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "709cc5350007e03c",
+      "eb3dbdad1c7671a0"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

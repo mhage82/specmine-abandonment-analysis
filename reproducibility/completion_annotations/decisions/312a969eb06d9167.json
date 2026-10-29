@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "312a969eb06d9167",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/delta.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/sync.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Delta handlers are real and compare baseline graphs, but selected cost-estimate requires actual story-point/business-value deltas. Implementation instead assigns fixed weights3/2/1 to counts and never aggregates those fields; status shows counts rather than item lists and rollback only HIGH/LOW risk. These concrete differences prevent whole-scope completion. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Delta handlers are real and compare baseline graphs, but selected cost-estimate requires actual story-point/business-value deltas. Implementation instead assigns fixed weights3/2/1 to counts and never aggregates those fields; status shows counts rather than item lists and rollback only HIGH/LOW risk. These concrete differences prevent whole-scope completion.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/delta.py",
+      "observed_facts": [
+        "Read entire status/impact/cost_estimate/rollback_analysis: count-based fixed score, count table and binary rollback risk."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/sync.py",
+      "observed_facts": [
+        "compute_delta supplies changed IDs/edges/status transitions, not story-point/business-value aggregation."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "delta app is actually registered on canonical backlog surface."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "312a969eb06d9167",
+      "684669e310f17c63"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

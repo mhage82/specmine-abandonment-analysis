@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "07ffd263902fc2c9",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/app/document.rs | https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/views/panels/editor/ui.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/action/demo_bundle.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Reference documents have real noninteractive editor rendering and update/replace/save guards. However, the required demo code-asset opening scenario is not established: both historical and later demo resolvers explicitly select only Markdown, excluding non-Markdown textual reference assets. Partial reference-mode implementation is not proof of the complete selected scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Reference documents have real noninteractive editor rendering and update/replace/save guards. However, the required demo code-asset opening scenario is not established: both historical and later demo resolvers explicitly select only Markdown, excluding non-Markdown textual reference assets. Partial reference-mode implementation is not proof of the complete selected scope.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/app/document.rs",
+      "observed_facts": "UpdateBuffer, ReplaceText and Save handlers return early for reference documents."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/views/panels/editor/ui.rs",
+      "observed_facts": "TextEdit is interactive only when !doc.is_reference."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/action/demo_bundle.rs",
+      "observed_facts": "Resolver explicitly excludes non-Markdown assets; all listed assets are Markdown."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "11f83ba251260c8fca9b6a696235c91bf71e2b117f88f648b739d45d25882a57"
+}

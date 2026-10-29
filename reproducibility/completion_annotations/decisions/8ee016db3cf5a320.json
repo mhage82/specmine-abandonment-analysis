@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "8ee016db3cf5a320",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/pull/373 | https://github.com/UseJunior/safe-docx/pull/373/files",
+  "manual_outcome_date": "",
+  "manual_notes": "Most revised scope is implemented in merged PR373: all four suite release lists include odf-core in dependency order, regular dependency/private metadata change, snapshot/private guards and tests. However ORP05 explicitly requires actual one-time npm bootstrap and trusted-publisher setup; the PR describes these as after-merge work, and this review has no execution/publishing evidence establishing them. Strict whole-spec completion remains unconfirmed despite checked tasks. The obsolete independent-release design is not treated as the current requirement. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Most revised scope is implemented in merged PR373: all four suite release lists include odf-core in dependency order, regular dependency/private metadata change, snapshot/private guards and tests. However ORP05 explicitly requires actual one-time npm bootstrap and trusted-publisher setup; the PR describes these as after-merge work, and this review has no execution/publishing evidence establishing them. Strict whole-spec completion remains unconfirmed despite checked tasks. The obsolete independent-release design is not treated as the current requirement.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/373",
+      "observed_facts": [
+        "PR merged Jun10 but its Bootstrap section directs manual initial publish then npm trusted-publisher configuration after merge; reports a packed-tarball smoke, not successful registry bootstrap."
+      ]
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/pull/373/files",
+      "observed_facts": [
+        "release.yml changes all four package loops; package metadata adds regular dependency/removes private; check-release-isolation.mjs and tests guard membership/private packages."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "Missing external bootstrap evidence is an evidence gap, not proof the feature is unfinished or abandoned."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "5fae564ef51a4be8",
+      "8ee016db3cf5a320"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

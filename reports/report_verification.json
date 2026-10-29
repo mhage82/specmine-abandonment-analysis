@@ -1,0 +1,34 @@
+{
+  "pdf_pages": 4,
+  "page_limit": 5,
+  "fits_planned_pages": true,
+  "layout": [
+    {
+      "page": 1,
+      "contentHeight": 936,
+      "availableHeight": 936,
+      "fits": true
+    },
+    {
+      "page": 2,
+      "contentHeight": 936,
+      "availableHeight": 936,
+      "fits": true
+    },
+    {
+      "page": 3,
+      "contentHeight": 936,
+      "availableHeight": 936,
+      "fits": true
+    },
+    {
+      "page": 4,
+      "contentHeight": 936,
+      "availableHeight": 936,
+      "fits": true
+    }
+  ],
+  "pdf_sha256": "c4a194975fca7ea3b79d5eddb469474edc85935777833e24a0f6cfa38806a2b4",
+  "docx_pagination": "Editable counterpart; PDF pagination independently verified.",
+  "renderer": "chrome.exe"
+}

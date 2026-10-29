@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "ec6734a1de1aaa64",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-core/src/html/node.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "External/internal/anchor resolution and unified HTML/Markdown link parsing are implemented. The exact spec also requires initial OpenInNewTab variant; historical and pinned LinkAction expose only OpenInBrowser/NavigateCurrentTab and tasks explicitly defer OpenInNewTab. Partial completion does not establish the full selected contract.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "External/internal/anchor resolution and unified HTML/Markdown link parsing are implemented. The exact spec also requires initial OpenInNewTab variant; historical and pinned LinkAction expose only OpenInBrowser/NavigateCurrentTab and tasks explicitly defer OpenInNewTab. Partial completion does not establish the full selected contract.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-core/src/html/node.rs",
+      "observed_facts": "LinkTarget resolve/default_action implemented and tested; LinkAction has two variants. Associated task2.3 explicitly says OpenInNewTab deferred under YAGNI."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "9260358f96dbff4cbe5260bfc60202e7fc1de97e5d049985876c39163441d1b9"
+}

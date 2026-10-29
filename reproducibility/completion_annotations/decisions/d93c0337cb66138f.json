@@ -1,0 +1,64 @@
+{
+  "file_url_sha16": "d93c0337cb66138f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route_auth.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route_match.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_cache.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_cache.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Runtime takes role access and shared session store through constructor; request authentication calls the owners and builds detached identity instead of querying role tables. Match carries parsed manifest into request runtime. WASM compilation occurs outside global cache lock with per-artifact inflight work; known artifact invalidation is scoped. Peer revisions compare previous/current active artifact paths and invalidate changed entries, with broad fallback only on snapshot-read error. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Runtime takes role access and shared session store through constructor; request authentication calls the owners and builds detached identity instead of querying role tables. Match carries parsed manifest into request runtime. WASM compilation occurs outside global cache lock with per-artifact inflight work; known artifact invalidation is scoped. Peer revisions compare previous/current active artifact paths and invalidate changed entries, with broad fallback only on snapshot-read error.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime.go",
+      "observed_facts": [
+        "Constructor injects role.Service and session.Store."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route_auth.go",
+      "observed_facts": [
+        "Read complete host authentication/projection/session path."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route_match.go",
+      "observed_facts": [
+        "Route match retains Manifest."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/runtime/runtime_route.go",
+      "observed_facts": [
+        "prepareDynamicRouteRuntime reuses match.Manifest and stores request state."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_cache.go",
+      "observed_facts": [
+        "Read inflight compile outside cacheMu and artifact-scoped invalidation."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_cache.go",
+      "observed_facts": [
+        "Read ReconcileActiveDynamicArtifactCaches path comparison and error fallback."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Bounded reconciliation interpreted as scoped changed-artifact invalidation; no independent latency or cluster benchmark."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "d73d13529d528cb1",
+      "d93c0337cb66138f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

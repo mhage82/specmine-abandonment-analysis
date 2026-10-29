@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "28b654274f0cf557",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/exasol/exasol-personal/commit/d246748b41e2750358cf12c53aa23cd7d6cb678d | https://github.com/exasol/exasol-personal/commit/e89ddd4ae4c5867a71f35fdc97d2edbfe810d57d",
+  "manual_outcome_date": "2026-05-12",
+  "manual_notes": "All three provider presets add deployment-specific bootstrap storage, file uploads keyed by destination paths and HTTPS cloud-init sources while retaining inline metadata. The follow-up scopes AWS reads to the deployment endpoint and adds Azure private-container/subnet controls with read-only SAS, and documents Exoscale public SOS behavior. This is verified infrastructure-code delivery; no cloud deployment or destroy was performed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "All three provider presets add deployment-specific bootstrap storage, file uploads keyed by destination paths and HTTPS cloud-init sources while retaining inline metadata. The follow-up scopes AWS reads to the deployment endpoint and adds Azure private-container/subnet controls with read-only SAS, and documents Exoscale public SOS behavior. This is verified infrastructure-code delivery; no cloud deployment or destroy was performed.",
+  "sources": [
+    {
+      "url": "https://github.com/exasol/exasol-personal/commit/d246748b41e2750358cf12c53aa23cd7d6cb678d",
+      "observed_facts": "Read AWS/Azure/Exoscale bootstrap resources, hash-tracked uploads, cloud-init replacements and lifecycle configuration."
+    },
+    {
+      "url": "https://github.com/exasol/exasol-personal/commit/e89ddd4ae4c5867a71f35fdc97d2edbfe810d57d",
+      "observed_facts": "Read private-access restrictions and provider documentation."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

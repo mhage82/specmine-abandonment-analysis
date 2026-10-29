@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "6c4020f921dfa420",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Broad multi-agent skill/command/instruction migration exists. A required MCP exclusion is not preserved when its parent directory is also selected: CursorDirectory and other generic directory arms recursively copy the entire directory, while only the separate MCP-specific arm is notes-only. copy_dir_all has no MCP exclusion, so .cursor/mcp.json can enter .agents/.cursor through its parent.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Broad multi-agent skill/command/instruction migration exists. A required MCP exclusion is not preserved when its parent directory is also selected: CursorDirectory and other generic directory arms recursively copy the entire directory, while only the separate MCP-specific arm is notes-only. copy_dir_all has no MCP exclusion, so .cursor/mcp.json can enter .agents/.cursor through its parent.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-28-universal-agent-adoption/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs",
+      "observed_facts": "Agent file scanning variants; skills/commands migration; lines1904-1938 copy parent directories recursively;1963-1982 MCP arm only reports;2163 onward copy_dir_all copies each child without MCP filtering."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "The selected spec explicitly covers MCP files inside migrated parent directories. This mismatch does not indicate abandonment."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

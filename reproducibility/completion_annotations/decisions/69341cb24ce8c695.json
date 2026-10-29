@@ -1,0 +1,35 @@
+{
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "file_url_sha16": "69341cb24ce8c695",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/commit/3f3bd0ed812d5fded4e08aba68cae34cfaaacc17 | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-24-add-every-code-support/tasks.md",
+  "manual_outcome_date": "2025-12-24",
+  "manual_notes": "Completed: 3f3bd0e adds Every Code payload.msg ingestion, CODE_HOME scanning, source-aware bucket/queue keys, legacy codex default, and corresponding parser/uploader tests. The same commit adds this specification under its old vibescore-tracker name and an 11/11 checked checklist; its evidence map marks all three requirements implemented. Later spec-only commits are rename/format-related, not the implementation. Date is the recorded implementation/checklist commit, not proof of deployment. Tests inspected, not executed.",
+  "confidence": "high",
+  "rationale": "All three requirements map to concrete changes in src/commands/sync.js, src/lib/rollout.js and src/lib/uploader.js. Tests exercise the Every Code envelope, same-hour source separation and missing-source compatibility. Task history recovers an earlier implementation omitted by the renamed spec's history.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/3f3bd0ed812d5fded4e08aba68cae34cfaaacc17",
+      "observed_facts": [
+        "Commit dated 2025-12-24 adds exact original specification, 11 checked tasks, implementation and tests.",
+        "sync scans CODE_HOME or ~/.code with source=every-code.",
+        "rollout parser accepts payload.msg token_count events and source-aware bucket keys.",
+        "uploader preserves source and defaults missing source to codex; regression test added.",
+        "Evidence map explicitly marks the three matching requirements Implemented."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2025-12-24-add-every-code-support/tasks.md",
+      "observed_facts": [
+        "At pinned specification revision, all 11 task items are checked; matches collected task counts."
+      ]
+    }
+  ],
+  "limitations": [
+    "Code and tests reviewed but not independently executed.",
+    "Recorded commit date establishes implementation in version control, not production deployment or exact human work-completion time.",
+    "This is AI-assisted annotation pending human confirmation."
+  ]
+}

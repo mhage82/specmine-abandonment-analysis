@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "56b50f1b7f377656",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/af8535029d98d8c2548608f544178d57bb49f31c/src/specfact_cli/modules/module_io_shim.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/contracts/module_interface.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/validation.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Four-operation Protocol, structured ValidationReport and decorated shared implementations exist. However the selected sync-only-module scenario requires sync_with_bundle to use import_to_bundle and export_from_bundle internally; actual shared sync merely reloads a bundle directory or returns the original and never invokes export. This is a concrete unfulfilled operation scope despite the methods being present.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Four-operation Protocol, structured ValidationReport and decorated shared implementations exist. However the selected sync-only-module scenario requires sync_with_bundle to use import_to_bundle and export_from_bundle internally; actual shared sync merely reloads a bundle directory or returns the original and never invokes export. This is a concrete unfulfilled operation scope despite the methods being present.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/af8535029d98d8c2548608f544178d57bb49f31c/src/specfact_cli/modules/module_io_shim.py",
+      "observed_facts": [
+        "Read full shared implementation: import/export decorators satisfy path/result contracts; sync only loads directory or returns bundle."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/contracts/module_interface.py",
+      "observed_facts": [
+        "Four typed abstract Protocol methods and ValidationReport result contract exist."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/models/validation.py",
+      "observed_facts": [
+        "Structured report model exists; implementation evidence does not establish full bidirectional synchronization."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "56b50f1b7f377656"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

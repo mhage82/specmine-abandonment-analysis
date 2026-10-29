@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "c72020823516a4e9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/README.md | https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/docs/guides/backlog-refinement.md | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/guides/module-development.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/commands.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical March6 README explicitly defines core/modules documentation ownership and intended migration; inspected bundle-focused backlog guide has the required visible temporary-hosting note naming specfact-cli-modules. Later March17/31 handoff text records the migrated modules docs site, so changed future tense is consistent with subsequent delivery rather than failure of the historical requirement. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical March6 README explicitly defines core/modules documentation ownership and intended migration; inspected bundle-focused backlog guide has the required visible temporary-hosting note naming specfact-cli-modules. Later March17/31 handoff text records the migrated modules docs site, so changed future tense is consistent with subsequent delivery rather than failure of the historical requirement.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/README.md",
+      "observed_facts": [
+        "Ownership section states bundle-specific docs temporarily hosted and intended modules-repository destination."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/docs/guides/backlog-refinement.md",
+      "observed_facts": [
+        "Visible Temporary docs note explicitly names planned migration to specfact-cli-modules."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/guides/module-development.md",
+      "observed_facts": [
+        "Later ownership/handoff note explains canonical modules docs destination."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/commands.md",
+      "observed_facts": [
+        "Later command reference identifies lean-core overview versus canonical bundle detail site."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Compared historical ownership declaration and representative bundle pages; did not exhaustively certify every live module-focused page."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "4c5a0348e835d0e2",
+      "c72020823516a4e9"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "8f928457851437d9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Pinned Project sanitizes active-agent, model/provider, metrics, context and degraded summaries before storing HeaderView. The header snapshot regression checks removal of escape sequences. This supports the selected snapshot-storage scenario. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Pinned Project sanitizes active-agent, model/provider, metrics, context and degraded summaries before storing HeaderView. The header snapshot regression checks removal of escape sequences. This supports the selected snapshot-storage scenario. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector.go",
+      "observed_facts": "sanitizeMissionProjectionText uses ansi.Strip and strings.Fields/join; Project sanitizes header fields, cron source names/status, and buildActiveAgentSummary sanitizes owners before aggregation. Direct mission projection and proposal-registry projection are wired."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/missioncontrol_projector_test.go",
+      "observed_facts": "Inspected header snapshot, owner-label and cron-loop tests with embedded ANSI/newline input and normalized expected text."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "3baf9662823c0ddf49e8ac1e04dde33b2422281c23fb29f9f91bc2ca9e9412b0"
+}

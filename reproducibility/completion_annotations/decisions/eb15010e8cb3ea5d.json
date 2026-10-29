@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "eb15010e8cb3ea5d",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-03-03",
+  "manual_notes": "Historical MobileIntlProvider loads @norish/i18n messages for a validated selection, derives options from shared locale config, preserves server names and supplies a single default option when none are enabled. Source and locale-state tests corroborate fallback behavior; later bundled-locale refactor does not erase this delivery.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical MobileIntlProvider loads @norish/i18n messages for a validated selection, derives options from shared locale config, preserves server names and supplies a single default option when none are enabled. Source and locale-state tests corroborate fallback behavior; later bundled-locale refactor does not erase this delivery.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "PR325 patch067 fbf42f216538c2b86b2b7fb994056ad0a34035ac: mobile-i18n-context, locale-state.ts, appearance-settings-sheet LanguageSection and tests for invalid/disabled/empty options."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "9f7ef96b86557f08aefcc1f8eb7375cc48972d308d30a92e6e0322ab868f6bbe"
+}

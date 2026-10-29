@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "3050816afca89765",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/commit/78d927a3f8aea3328eb6dfae6a9964e29a105f3e | https://github.com/epam/ai-dial-admin-frontend/commit/5ddd64511b1da87eceafd9fb2a4d42c620c90bf8",
+  "manual_outcome_date": "2026-04-23",
+  "manual_notes": "The original four views gate on saved container source/id and mount a shared warning below the header. The component fetches the route-specific list, stores only the selected container, hides for loading/missing/running/error cases and links to the container with translated copy. A subsequent change deliberately moves banners into Properties; that supersession does not erase this historical delivery.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The original four views gate on saved container source/id and mount a shared warning below the header. The component fetches the route-specific list, stores only the selected container, hides for loading/missing/running/error cases and links to the container with translated copy. A subsequent change deliberately moves banners into Properties; that supersession does not erase this historical delivery.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/78d927a3f8aea3328eb6dfae6a9964e29a105f3e",
+      "observed_facts": "Read shared component, four view mounts and route dispatcher."
+    },
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/5ddd64511b1da87eceafd9fb2a4d42c620c90bf8",
+      "observed_facts": "Explicit subsequent placement refactor distinguishes old and new scopes."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Later selected wording includes DialNotification terminology from a UI-kit rename."
+  ]
+}

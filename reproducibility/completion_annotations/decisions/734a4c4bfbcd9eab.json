@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "734a4c4bfbcd9eab",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/fd5026b82958bbfa8278db37cf441ec3824a824a.patch | https://github.com/zhuanggenhua/BoardGame/commit/14701860aa666a3c099d707e1bc713258ed45f0b.patch | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/da82e67afbbe9af038e4897666f2cd564126ae99/server.ts | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/d6518bc5506eff138cdf4540d89ad52802d88b33/server.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Shared catalog, transient broadcast, cooldown, seat-anchor display and sender-echo behavior have substantive implementation/test evidence. The explicit server membership/spectator rule is unresolved: identical pinned handlers accept caller-supplied playerId and validate occupied seat metadata, without a traced caller-to-seat credential check. No exploit or live server test was performed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The checked task group and normal-path tests substantiate most behavior but do not establish the specified spectator prohibition under server-side membership validation. This is an unresolved acceptance criterion, not a claim of abandonment or a demonstrated exploit.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/fd5026b82958bbfa8278db37cf441ec3824a824a.patch",
+      "observed_facts": "Inspected full match-emote validation/rate-limiter helper, socket JOIN/SEND handlers, client emission/subscription, overlay anchoring/fallback, unit assertions and end-to-end test assertions for sender local echo and other-player popup."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/14701860aa666a3c099d707e1bc713258ed45f0b.patch",
+      "observed_facts": "Catalog changes emotes to common scope and tests explicitly assert availability across DiceThrone and SmashUp."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/da82e67afbbe9af038e4897666f2cd564126ae99/server.ts",
+      "observed_facts": "Pinned JOIN takes playerId from payload and stores it after checking a playable seat; SEND also falls back to payload identity. The two candidate revisions have identical emote handlers. No caller-to-seat authorization was traced in these handlers or surrounding lobby connection references."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/d6518bc5506eff138cdf4540d89ad52802d88b33/server.ts",
+      "observed_facts": "Pinned JOIN takes playerId from payload and stores it after checking a playable seat; SEND also falls back to payload identity. The two candidate revisions have identical emote handlers. No caller-to-seat authorization was traced in these handlers or surrounding lobby connection references."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation.",
+    "Separate candidate records share the same specification text; reused evidence is disclosed and they are not independent examples."
+  ],
+  "review_depth": "Read full identical selected specifications/shared tasks. Inspected transport, helper, catalog, overlay and test implementation; compared pinned handlers at both candidate revisions and searched surrounding connection authorization references. Did not execute tests or security probes.",
+  "spec_snapshot_sha256": "045686826318ab45da1be7e7a8a7da73e0f75ca18c5cafe028b27b733a4e9c5a",
+  "related_review_ids": [
+    "6ec81a6e9ed5eae1",
+    "734a4c4bfbcd9eab"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "84bbcc1f578b5723",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/f1426eb6765222ec677894a9b3b4cc35274017e3 | https://github.com/zhuanggenhua/BoardGame/commit/5579893f57edd059a0dc8abcecda134a8a6fc125",
+  "manual_outcome_date": "2026-05-30",
+  "manual_notes": "Completed implementation is corroborated for lobby-room-summaries, specifically shared tasks 1.2, 3.2 and relevant verification tasks. f1426eb adds server-to-lobby publicSetupSummary wiring and conditional room-card tags; 5579893 restricts summary tags to a public allowlist, adds deckQuery labels and updates tests to the final specification. All 9 task boxes are checked at dataset revision d6518bc. Date is the observed implementation/spec-update event, not deployment. Tests were inspected, not run; this is not a security audit of all existing lobby fields.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The exact specification concerns public extension summaries and their rendering on lobby room cards. Both relevant code changes and matching assertions are present in the same dated commits as the specification. The shared checklist also covers the separate deck-query option; those unrelated tasks were not used alone to infer this specification's outcome.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/f1426eb6765222ec677894a9b3b4cc35274017e3",
+      "observed_facts": "The diff adds buildSmashUpPublicRoomSummary to server.ts, carries publicSetupSummary through lobby types, and renders room-card labels only for a nonempty enabledExpansions array. RoomList uses translated complete labels rather than truncating tag text. Added roomSetup and RoomList tests assert the summary shape and labels. The task file and this specification are added in the same change."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/5579893f57edd059a0dc8abcecda134a8a6fc125",
+      "observed_facts": "GitHub commit author and committer timestamps are 2026-05-30T06:54:57Z. The diff updates the exact lobby-room-summaries specification, uses an allowlist for public tags in roomSetup.ts, adds the deckQuery display label in RoomList.tsx, and updates unit and E2E assertions for the public summary and full labels."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/blob/d6518bc5506eff138cdf4540d89ad52802d88b33/openspec/changes/add-smashup-deck-query-room-option/tasks.md",
+      "observed_facts": "The task file at the dataset's specification revision contains 9 checked items. Task 1.2 concerns public lobby summaries, task 3.2 concerns room-card summary tags, and verification tasks cover those behaviors. The checklist is shared with the smashup-room-options specification."
+    }
+  ],
+  "limitations": [
+    "Static review of public source diffs and tests; tests were not executed and production deployment was not verified.",
+    "Outcome date denotes observed implementation of the final recorded scope, not the exact time developers finished work.",
+    "The new summary is limited to public tags, but the existing lobby structure still includes ownerKey separately. This annotation does not certify that the entire lobby payload contains no sensitive fields."
+  ]
+}

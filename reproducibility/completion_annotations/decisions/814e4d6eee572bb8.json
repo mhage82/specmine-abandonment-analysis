@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "814e4d6eee572bb8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/.github/SECURITY.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Security policy, Dependabot configuration and restricted/pinned Actions are tracked. Required repository-side branch rules, dependency alerts/code scanning and fork-approval settings cannot be established from these files; policy itself permits private reporting not yet being enabled. Full OSS-security baseline is therefore unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Security policy, Dependabot configuration and restricted/pinned Actions are tracked. Required repository-side branch rules, dependency alerts/code scanning and fork-approval settings cannot be established from these files; policy itself permits private reporting not yet being enabled. Full OSS-security baseline is therefore unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/.github/SECURITY.md",
+      "observed_facts": "Policy asks for private reports but explicitly says if private reporting is not enabled, wait. Current workflows restrict contents:read and pin actions; Dependabot file covers github-actions. Remote settings were not independently verified."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "1b94cba29a1d225d37ce7fb6369600357782d421c4b368d5caecef7c78609ee1"
+}

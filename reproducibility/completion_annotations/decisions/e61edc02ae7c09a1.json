@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "e61edc02ae7c09a1",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/archmaxai/archmax/commit/4fdce8efc07b4a399382704fd68a2671d63489b5 | https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/packages/core/src/config/env.ts | https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/apps/docs/src/content/docs/reference/docker.mdx",
+  "manual_outcome_date": "2026-06-05",
+  "manual_notes": "The June5 follow-up implements the final deployment scope: Firebird-only unsigned-extension switch, fixed extension repository, rejection of arbitrary custom-source console installs, and environment/Docker/federation security documentation. Inspected helper, DuckDB creation, parser changes and test assertions. Date is the supporting implementation commit, not deployment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The June5 follow-up implements the final deployment scope: Firebird-only unsigned-extension switch, fixed extension repository, rejection of arbitrary custom-source console installs, and environment/Docker/federation security documentation. Inspected helper, DuckDB creation, parser changes and test assertions. Date is the supporting implementation commit, not deployment.",
+  "sources": [
+    {
+      "url": "https://github.com/archmaxai/archmax/commit/4fdce8efc07b4a399382704fd68a2671d63489b5",
+      "observed_facts": "Removes general unsigned/custom-repository options, gates DuckDB creation on customFirebirdEnabled, restricts console INSTALL parsing, updates env/docs and tests."
+    },
+    {
+      "url": "https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/packages/core/src/config/env.ts",
+      "observed_facts": "Pinned helper accepts only trimmed case-insensitive true/1 and returns a fixed Firebird repository."
+    },
+    {
+      "url": "https://github.com/archmaxai/archmax/blob/3aa7c1208a8ea686d08703f14e4ccc1066f0eecd/apps/docs/src/content/docs/reference/docker.mdx",
+      "observed_facts": "Pinned Docker reference documents disabled default and unsigned native-code security implications."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

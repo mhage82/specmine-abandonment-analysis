@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "10c7cdb72b48a9d7",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/gitignore.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/main.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Disabled-mode cleanup, configured markers, dry-run and --no-gitignore precedence are implemented. Strict no-op when no managed block exists is not guaranteed: remove_managed_section rebuilds every line with a newline, so an unmanaged file lacking a final newline (or using CRLF) differs and is rewritten/reported as cleanup despite having no managed section.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Disabled-mode cleanup, configured markers, dry-run and --no-gitignore precedence are implemented. Strict no-op when no managed block exists is not guaranteed: remove_managed_section rebuilds every line with a newline, so an unmanaged file lacking a final newline (or using CRLF) differs and is rewritten/reported as cleanup despite having no managed section.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-31-gitignore-disabled-cleanup/specs/gitignore-management/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/gitignore.rs",
+      "observed_facts": "cleanup_gitignore compares original with remove_managed_section output; lines119-130 reconstruct all lines with LF even without a marker."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/main.rs",
+      "observed_facts": "Apply479-500 gates both update/cleanup under !no_gitignore and passes dry_run."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs",
+      "observed_facts": "Gitignore audit branches by configured enabled state."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Finding follows direct string reconstruction, not an executed application test. Existing tests use LF-terminated examples and do not establish the required no-marker byte-preserving no-op."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

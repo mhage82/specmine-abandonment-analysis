@@ -1,0 +1,71 @@
+{
+  "file_url_sha16": "c5166e79ebaf8f82",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/d919bc089e0bda5bf3cb874f316ccceaa17a3062 | https://github.com/carverauto/serviceradar/blob/d919bc089e0bda5bf3cb874f316ccceaa17a3062/go/cmd/wasm-plugins/sample-northbound/action.go | https://github.com/carverauto/serviceradar/blob/d919bc089e0bda5bf3cb874f316ccceaa17a3062/go/cmd/wasm-plugins/sample-northbound/main_test.go | https://github.com/carverauto/serviceradar/blob/9c3388359ad9a5ef079c2aa1b1ae7a0e7100f692/demo/vendor/github.com/carverauto/serviceradar-sdk-go/v2/sdk/action.go",
+  "manual_outcome_date": "2026-05-17",
+  "manual_notes": "Exact SDK scope corroborated: historical sample action.go uses deferred correlation/continuation/poll-delay helpers, final summary and per-target results, callback metadata and webhook-only mode; main_test.go contains deferred and webhook lifecycle assertions. May17 commit d919bc0 adds webhook usage/tests and the matching SDK dependency update. Current pinned vendored SDK directly contains the helpers and JSON types. Original dataset commit/anchor SHAs are unavailable (GitHub422); path history returned different SHAs with matching timestamps/messages, so record this provenance discrepancy. Date is the recovered implementation-evidence event, not independently established earliest completion. Tests were inspected, not run. Exact-path source records have identical specification Markdown, verified before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The plugin-sdk-go delta contains three scenarios, all supported by concrete SDK types/helpers and historical sample integration/tests. Tasks 3.1 and 3.4 specifically match the SDK requirement; the whole 20-item shared checklist also covers runtime/UI work and is not the sole basis. Historical SHA discrepancy lowers confidence in exact temporal provenance, not the observed implementation of the requirement.",
+  "sources": [
+    {
+      "url": "https://api.github.com/repos/carverauto/serviceradar/commits?path=openspec%2Fchanges%2Fadd-long-running-northbound-actions%2Fspecs%2Fplugin-sdk-go%2Fspec.md&per_page=100",
+      "observed_facts": [
+        "Current path history returns d60cf744c3b0847894c13144cf4cca0ea4a8f0ee (2026-05-17T00:31:15Z, Improve device metadata and task history UX) and d919bc089e0bda5bf3cb874f316ccceaa17a3062 (2026-05-17T03:19:00Z, Add northbound action webhook callbacks).",
+        "Those dates and messages match the recorded two source commits, but their SHAs differ. Requests for source SHAs 2b10b90db365f8a2deb0269d4b06d0eca9665a64 and 109d2bd3fee4b67061b37f30c73b779295a1ebbd, and source anchor a85d9b72fe18f1507e3a984892bf7fa898012175, returned GitHub422."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/d919bc089e0bda5bf3cb874f316ccceaa17a3062",
+      "observed_facts": [
+        "Committer date is 2026-05-17T03:19:00Z.",
+        "Diff adds webhook mode to sample action.go, a webhook lifecycle test, callback handling in runtime/controller, and updates the SDK dependency to a May17 version.",
+        "Diff adds the webhook specification scenario and checked task3.4 in the same change folder."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/d919bc089e0bda5bf3cb874f316ccceaa17a3062/go/cmd/wasm-plugins/sample-northbound/action.go",
+      "observed_facts": [
+        "deferAction calls ActionDeferred, WithCorrelationID, WithContinuationState, WithNextPollDelay or WithWebhookCallback, and adds per-target deferred results.",
+        "pollDeferredAction reads continuation state and poll attempts, returns an intermediate fetching state, then returns finalized results and summary.",
+        "The target result carries NorthboundJobID and callback URL/header; webhook mode uses ActionPollModeWebhook."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/d919bc089e0bda5bf3cb874f316ccceaa17a3062/go/cmd/wasm-plugins/sample-northbound/main_test.go",
+      "observed_facts": [
+        "TestDeviceLookupDeferredLifecycle checks deferred launch, next poll delay, fetching phase, final success and external-task correlation.",
+        "TestDeviceLookupWebhookLifecycle checks webhook mode, no poll delay, callback URL presence and exclusion of callback token from result."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/9c3388359ad9a5ef079c2aa1b1ae7a0e7100f692/demo/vendor/github.com/carverauto/serviceradar-sdk-go/v2/sdk/action.go",
+      "observed_facts": [
+        "Current pinned SDK implements ActionDeferred, ActionResultFetching, WithCorrelationID, WithContinuationState, WithNextPollDelay, WithWebhookCallback, WithSummary, target results and JSON serialization.",
+        "ActionInvocation includes phase, correlation/continuation and poll count; ActionTargetSnapshot exposes NorthboundJobID and ActionCallback; ActionResult supports webhook poll mode."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/9c3388359ad9a5ef079c2aa1b1ae7a0e7100f692/openspec/changes/add-long-running-northbound-actions/specs/plugin-sdk-go/spec.md",
+      "observed_facts": [
+        "Current pinned specification text matches the local SDK delta and its three scenarios."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation requires human confirmation for a manually verified reference dataset.",
+    "Original dataset SHAs are inaccessible; current file history exposes different SHAs with the same messages and timestamps. The cause was not independently established.",
+    "Direct SDK implementation was inspected at a later pinned revision; historical May17 sample usage/tests corroborate the earlier integration but do not independently reproduce the original SDK package build.",
+    "No tests were executed and no deployment was verified.",
+    "Outcome date denotes a supported code-integration event, not the earliest instant development finished."
+  ],
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "1d4351a45a15d08f",
+      "c5166e79ebaf8f82"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

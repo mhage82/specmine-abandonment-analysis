@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "301fa0148434a41a",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/AGENTS.md | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/front/AGENTS.md | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/AGENTS.md | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/CONTRIBUTING.md | https://github.com/ZanebonoAlter/Syntopica/commit/491c4f148be138c99f3dfa055630a32cba36d81e",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical documentation restructuring delivers the slim root and subdirectory agent guides (57, 23 and 23 lines), one-line cursor entry, authoritative reference links and PostgreSQL correction. CONTRIBUTING is a short navigation page with a build-check summary; redundant subdirectory architecture documents are removed. This is a documentation delivery, not a product feature.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Historical documentation restructuring delivers the slim root and subdirectory agent guides (57, 23 and 23 lines), one-line cursor entry, authoritative reference links and PostgreSQL correction. CONTRIBUTING is a short navigation page with a build-check summary; redundant subdirectory architecture documents are removed. This is a documentation delivery, not a product feature.",
+  "sources": [
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/AGENTS.md",
+      "observed_facts": "Root guide is 57 lines with reference links."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/front/AGENTS.md",
+      "observed_facts": "Frontend guide is 23 lines."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/backend-go/AGENTS.md",
+      "observed_facts": "Backend guide is 23 lines and identifies PostgreSQL."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/CONTRIBUTING.md",
+      "observed_facts": "Short link table and build-check summary; no duplicated detailed style guide."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/commit/491c4f148be138c99f3dfa055630a32cba36d81e",
+      "observed_facts": "Restructuring diff inspected, including redundant architecture removals."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "CONTRIBUTING retains a short command summary rather than being literally links only.",
+    "Documentation-only scope; distinguish from executable feature completion in later analysis."
+  ]
+}

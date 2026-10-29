@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "53d261229820aa69",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/module_installer.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/modules/module_registry/src/commands.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/dependency_resolver.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/openspec/changes/archive/2026-04-05-docs-new-user-onboarding/tasks.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Versioned dependency parsing and compatibility messages exist, but full selected resolver is explicitly unfinished in archived tasks and remains unsupported by July implementation. Installer recursively installs missing dependencies without the required interactive/--yes plan, and command options lack the specified dependency dry-run. Circular graph preflight and upgrade re-evaluation contract were not established. Checked boxes conflict with detailed rolling-status/deferred prose. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Versioned dependency parsing and compatibility messages exist, but full selected resolver is explicitly unfinished in archived tasks and remains unsupported by July implementation. Installer recursively installs missing dependencies without the required interactive/--yes plan, and command options lack the specified dependency dry-run. Circular graph preflight and upgrade re-evaluation contract were not established. Checked boxes conflict with detailed rolling-status/deferred prose.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/module_installer.py",
+      "observed_facts": [
+        "Read string/object spec parser, recursive bundle installation and version mismatch handling."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/modules/module_registry/src/commands.py",
+      "observed_facts": [
+        "Inspected install signature/options and call; no required dependency --dry-run plan or install --yes resolution control."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/dependency_resolver.py",
+      "observed_facts": [
+        "Inspected actual pip resolution helper; pip dry-run is unrelated to a module dependency plan."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/openspec/changes/archive/2026-04-05-docs-new-user-onboarding/tasks.md",
+      "observed_facts": [
+        "Task rolling status and section7d explicitly say full graph/interactive/dry-run/circular wiring deferred despite checked markers."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "53d261229820aa69",
+      "7a244fdc0a08f81e"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

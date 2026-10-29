@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "323f8ba52699d1b1",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/main.jsx | https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/App.jsx",
+  "manual_outcome_date": "",
+  "manual_notes": "The historical entry point wraps React Router in InsforgeProvider and injects SDK-hosted auth routes with a post-sign-in destination. App directs login/signup to /sign-in and /sign-up and derives authenticated identity from the SDK session rather than parsing a callback. This corroborates the hosted-auth integration; no live login was attempted.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The historical entry point wraps React Router in InsforgeProvider and injects SDK-hosted auth routes with a post-sign-in destination. App directs login/signup to /sign-in and /sign-up and derives authenticated identity from the SDK session rather than parsing a callback. This corroborates the hosted-auth integration; no live login was attempted.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/main.jsx",
+      "observed_facts": [
+        "Read provider/router/getInsforgeRoutes setup."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/d700847c42babc77dedbd2d6816a9f7158f85e1c/dashboard/src/App.jsx",
+      "observed_facts": [
+        "Read SDK auth hook and getCurrentSession resolution, identity gating and hosted auth entry links."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; historical router/provider and App session integration inspected; hosted network flow not executed.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "3cd902a83a6ef30c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/commands.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/scripts/pre-commit-smart-checks.sh | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/tests/unit/scripts/test_pre_commit_smart_checks_docs.py | https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/scripts/pre-commit-smart-checks.sh",
+  "manual_outcome_date": "",
+  "manual_notes": "Lean-core/grouped command documentation and marketplace navigation are substantially delivered. Required Markdown autofix pipeline has a concrete trigger gap: staged Markdown selectors pass a two-backslash pattern inside shell single quotes to grep -E, so ordinary README.md does not match the intended literal-dot suffix. Hook contains fix/restage/lint order, but string-only tests do not exercise staged filenames. Selected combined docs/workflow scope is therefore unresolved. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Lean-core/grouped command documentation and marketplace navigation are substantially delivered. Required Markdown autofix pipeline has a concrete trigger gap: staged Markdown selectors pass a two-backslash pattern inside shell single quotes to grep -E, so ordinary README.md does not match the intended literal-dot suffix. Hook contains fix/restage/lint order, but string-only tests do not exercise staged filenames. Selected combined docs/workflow scope is therefore unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/commands.md",
+      "observed_facts": [
+        "Read core/bundle separation, grouped mapping, historical compatibility table and marketplace links."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/scripts/pre-commit-smart-checks.sh",
+      "observed_facts": [
+        "Inspected exact source characters: has_staged_markdown/staged_markdown_files use two backslashes before dot inside single-quoted ERE; fix/restage/lint functions depend on these selectors."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/tests/unit/scripts/test_pre_commit_smart_checks_docs.py",
+      "observed_facts": [
+        "Tests assert source substrings/order, not actual filename detection or hook execution."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c67aa8f0710ba7339f9d2a805f32ca4db1f54f91/scripts/pre-commit-smart-checks.sh",
+      "observed_facts": [
+        "Historical release source also inspected for autofix/restage wiring."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Regex behavior assessed from shell/ERE source, without executing downloaded hook."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "16d3d04a85bc199d",
+      "3cd902a83a6ef30c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

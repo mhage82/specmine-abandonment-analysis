@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "9a3d1e48e980bdb8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/release-test-and-build.yml | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/create-release-tag.yml | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/nightly-image-build.yml | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/nightly-test-and-build.yml | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/deploy/docker-compose.yaml | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/deploy/dev-test/docker-compose.yaml | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/hack/deploy/dev-test/docker-compose.yaml",
+  "manual_outcome_date": "",
+  "manual_notes": "The release/nightly workflows and multi-platform image tooling are substantially implemented, including tag-version validation, shared test gates, plugin-full publication, GitHub Release creation, controlled tag creation and a manual no-test nightly entrypoint. The selected scope also requires a development Compose service with the repository mounted and GF_GCFG_PATH pointing to its test configuration. The inspected dev-test Compose file runs a persistent development container and PostgreSQL but declares neither the repository mount nor that configuration environment. June and July snapshots share this gap; the exact full-scope outcome remains unresolved rather than abandoned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The release/nightly workflows and multi-platform image tooling are substantially implemented, including tag-version validation, shared test gates, plugin-full publication, GitHub Release creation, controlled tag creation and a manual no-test nightly entrypoint. The selected scope also requires a development Compose service with the repository mounted and GF_GCFG_PATH pointing to its test configuration. The inspected dev-test Compose file runs a persistent development container and PostgreSQL but declares neither the repository mount nor that configuration environment. June and July snapshots share this gap; the exact full-scope outcome remains unresolved rather than abandoned.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/release-test-and-build.yml",
+      "observed_facts": "Tag check precedes shared verification; release image depends on both, uses plugin-full multiarchitecture publication, and GitHub Release depends on all gates."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/create-release-tag.yml",
+      "observed_facts": "GitHub App token, shared release.tag.check, existing-tag rejection and controlled annotated-tag push are wired."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/nightly-image-build.yml",
+      "observed_facts": "Manual workflow calls reusable image publication directly with two architectures and nightly tags."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/.github/workflows/nightly-test-and-build.yml",
+      "observed_facts": "Scheduled nightly publication depends on the shared verification suite."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/deploy/docker-compose.yaml",
+      "observed_facts": "Demo uses read-only config, PostgreSQL health dependency, tmpfs data, initialization/mock loading then app startup."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/deploy/dev-test/docker-compose.yaml",
+      "observed_facts": "Development service uses loads/ubuntu:24.04-npm, PostgreSQL health dependency and sleep infinity, but has no volumes/repository mount or GF_GCFG_PATH."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/hack/deploy/dev-test/docker-compose.yaml",
+      "observed_facts": "Earlier June snapshot has the same missing repository/config wiring, so this is not inferred only from a renamed current path."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "development_compose_scope_gap"
+}

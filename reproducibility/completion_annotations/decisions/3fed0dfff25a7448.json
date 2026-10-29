@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "3fed0dfff25a7448",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-02-27",
+  "manual_notes": "Historical starter panel migrated to HeroUI Card.Header/Body, preserving the three editing/devtools/reset-project hint rows. The diff adds no changed action/navigation handler; physical-device hint wording was simplified. Later removal of this starter screen does not negate its earlier delivery.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical starter panel migrated to HeroUI Card.Header/Body, preserving the three editing/devtools/reset-project hint rows. The diff adds no changed action/navigation handler; physical-device hint wording was simplified. Later removal of this starter screen does not negate its earlier delivery.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "043_5898d246809faf2692f19faa2f9dc5d8022681c4: apps/mobile/src/app/index.tsx replaces ThemedView panel with Card while retaining HintRow content; patch date is the implementation event."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "f2d44a91052d93d0b770dc46a48f358e152b18474c6e90cf2e667a1dbaa92e9e"
+}

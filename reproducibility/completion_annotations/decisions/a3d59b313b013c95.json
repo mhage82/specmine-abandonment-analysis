@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "a3d59b313b013c95",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Fission-AI/OpenSpec/pull/726 | https://github.com/Fission-AI/OpenSpec/blob/93e27a755ce5386c66be7f3274a35f70018002bc/src/core/templates/workflows/propose.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "PR726 delivers propose skill/command templates with change scaffolding, dependency-ordered artifact creation and apply guidance. However, exact-snapshot template initial artifact explanations omit specs/ and contain no explicit non-interactive existing-name error path, both specified scenarios. Strict full-scope completion is unconfirmed; no abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Implemented workflow is substantial; strict scenario agreement is not established for named edge behavior.",
+  "sources": [
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/726",
+      "observed_facts": "Merged 2026-02-20T02:21:06Z; inspected substantive profiles, config schema/commands, init/update, workflow templates and tests, not merely PR title or checklist."
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/93e27a755ce5386c66be7f3274a35f70018002bc/src/core/templates/workflows/propose.ts",
+      "observed_facts": "Read template source: onboarding lists proposal.md/design.md/tasks.md but not specs/; guardrails ask continue/new when name exists, with no non-interactive branch. Underlying schema-driven loop and progress messages are implemented."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "ebf6eaef5bf6e8ab1410c11c153e97612bb9e9246a42df8140d87c9fd41ee209",
+  "related_review_ids": [
+    "a3d59b313b013c95"
+  ]
+}

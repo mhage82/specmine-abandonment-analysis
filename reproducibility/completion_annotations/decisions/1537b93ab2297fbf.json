@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "1537b93ab2297fbf",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/fd5026b82958bbfa8278db37cf441ec3824a824a.patch | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b39eaf911883ad852cbe53695469d0ef0dfb0850/public/assets/i18n/assets-manifest.json | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b39eaf911883ad852cbe53695469d0ef0dfb0850/public/assets/i18n/zh-CN/dicethrone/emotes/moon-elf/compressed/speechless-facepalm-chibi-v1.webp",
+  "manual_outcome_date": "",
+  "manual_notes": "Catalog paths omit compressed/ and the overlay uses OptimizedImage. The pinned asset manifest lists the required DiceThrone compressed assets, but direct pinned WebP fetches returned 404, so physical asset availability/routing could not be independently confirmed. No common-pack example was traced. This is an evidence gap, not proof of missing deployed assets or abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Production routing references support part of this narrow scope, but the explicit corresponding-WebP-exists criterion is not confirmed by a manifest alone.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/fd5026b82958bbfa8278db37cf441ec3824a824a.patch",
+      "observed_facts": "Inspected catalog assetPath values, OptimizedImage use in SeatEmoteOverlay, asset manifest additions and catalog tests."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b39eaf911883ad852cbe53695469d0ef0dfb0850/public/assets/i18n/assets-manifest.json",
+      "observed_facts": "Pinned manifest includes compressed and uncompressed-path entries for Moon Elf and Barbarian emotes."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b39eaf911883ad852cbe53695469d0ef0dfb0850/public/assets/i18n/zh-CN/dicethrone/emotes/moon-elf/compressed/speechless-facepalm-chibi-v1.webp",
+      "observed_facts": "Read-only request returned HTTP 404 on 2026-10-23; separate smug-v1.webp request did likewise. Assets may be distributed outside tracked GitHub content."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full asset specification/shared tasks, inspected catalog and image component integration, pinned manifest and attempted two pinned asset reads. Did not inspect actual image bytes or run asset pipeline.",
+  "spec_snapshot_sha256": "ce603ea91937be2314ad1e8492f44dc3a81cdc8b9a37fdc2bf3dd58e5268379e",
+  "related_review_ids": [
+    "1537b93ab2297fbf"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "58a563e647075381",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/ui/matrix-a/components/MatrixRain.jsx | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/openspec/changes/archive/2025-12-23-2025-12-22-optimize-matrix-rain-gpu/tasks.md",
+  "manual_outcome_date": "",
+  "manual_notes": "MatrixRain source corroborates 8fps drawing, half-resolution buffer and visibility cancellation/resume. The quantitative <=2% average GPU requirement depends on reference-device measurement; no retained trace or actual measured numeric result was available beyond the checked task assertion. Strict full-scope completion remains unverified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "MatrixRain source corroborates 8fps drawing, half-resolution buffer and visibility cancellation/resume. The quantitative <=2% average GPU requirement depends on reference-device measurement; no retained trace or actual measured numeric result was available beyond the checked task assertion. Strict full-scope completion remains unverified.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-optimize-matrix-rain-gpu/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/dashboard/src/ui/matrix-a/components/MatrixRain.jsx",
+      "observed_facts": "Scale0.5, fps8, throttled drawing and hidden-document cancelAnimationFrame."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/openspec/changes/archive/2025-12-23-2025-12-22-optimize-matrix-rain-gpu/tasks.md",
+      "observed_facts": "Checked <2% observation item without captured measurement/trace."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

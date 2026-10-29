@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "a9f00f55a2f60e3f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/mod.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Platform-aware defaults and existing-preference preservation are supported: macOS Super+Shift+1-4, other platforms Control+F1-F4,INSERT OR IGNORE seeding, and platform-specific default tests.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Platform-aware defaults and existing-preference preservation are supported: macOS Super+Shift+1-4, other platforms Control+F1-F4,INSERT OR IGNORE seeding, and platform-specific default tests.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-02-28-macos-shortcuts/specs/shortcuts/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/settings/mod.rs",
+      "observed_facts": "Platform default blocks,non-overwriting seeding,load fallback and explicit platform assertions."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

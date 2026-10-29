@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "e4dffc73ba878bc8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/packages/shared-react/src/hooks/archive/index.ts | https://github.com/norish-recipes/norish/blob/bb003e9a5fe3553f3a6665fee3412b3cb028392d/packages/shared-react/src/hooks/archive/index.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The shared archive hook factory is substantively implemented with injected tRPC. Strict public API agreement is unresolved: the collected specification requires returned key useArchiveCache, while both inspected historical and collected-revision factories return useArchiveImportCacheHelpers without that required alias. This narrow naming-contract mismatch does not establish abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The shared archive hook factory is substantively implemented with injected tRPC. Strict public API agreement is unresolved: the collected specification requires returned key useArchiveCache, while both inspected historical and collected-revision factories return useArchiveImportCacheHelpers without that required alias. This narrow naming-contract mismatch does not establish abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/packages/shared-react/src/hooks/archive/index.ts",
+      "observed_facts": "Read factory body/return object: useArchiveImportCacheHelpers present; useArchiveCache absent."
+    },
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/bb003e9a5fe3553f3a6665fee3412b3cb028392d/packages/shared-react/src/hooks/archive/index.ts",
+      "observed_facts": "Historical March integration already uses useArchiveImportCacheHelpers, not the required alias."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "f553ec751438210357f14964805e7bf44b3c49b970212ffd716dbe66e72a5604"
+}

@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "7f878a2b6d1fcfa7",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/1c1e788d9d706006d93926a52a3cf8e136f74f52 | https://github.com/carverauto/serviceradar/commit/38f56ac5d8983e183bf705251788828c8d1e0f73 | https://github.com/carverauto/serviceradar/commit/4feef359336afde1afc19b3627e0423d124858f5 | https://raw.githubusercontent.com/carverauto/serviceradar/4feef359336afde1afc19b3627e0423d124858f5/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/show.ex | https://raw.githubusercontent.com/carverauto/serviceradar/8cb9e7f19921546665da6d3182f8a1dfe711bbc5/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/panel_components.ex",
+  "manual_outcome_date": "",
+  "manual_notes": "Multi-query panels, gauge/count trends, pivot grouping, catalog search separation, actions/variables, compact layout, debounced typed inspector, local drafts, streaming CSV and group settings are implemented and tested in reviewed diffs. One explicit acceptance criterion fails source inspection: sparse pivot cells always receive aggregate_values([])=0, so rendering never uses the configured empty-cell fallback for a missing row/column pair. Verified this in the final task-history snapshot and later extracted component. Full strict completion therefore remains unclear; substantial delivered functionality is not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Multi-query panels, gauge/count trends, pivot grouping, catalog search separation, actions/variables, compact layout, debounced typed inspector, local drafts, streaming CSV and group settings are implemented and tested in reviewed diffs. One explicit acceptance criterion fails source inspection: sparse pivot cells always receive aggregate_values([])=0, so rendering never uses the configured empty-cell fallback for a missing row/column pair. Verified this in the final task-history snapshot and later extracted component. Full strict completion therefore remains unclear; substantial delivered functionality is not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/1c1e788d9d706006d93926a52a3cf8e136f74f52",
+      "observed_facts": [
+        "Inspected independent pending panel/query save, gauge/count bindings/trend, pivot grouping and dashboard catalog topbar separation, plus corresponding LiveView assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/38f56ac5d8983e183bf705251788828c8d1e0f73",
+      "observed_facts": [
+        "Implements authorization-checked duplicate/clone, refresh/SRQL inspect, variable substitution/reload, threshold styling and layout compaction; tests assert resulting panels, values and actions."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/4feef359336afde1afc19b3627e0423d124858f5",
+      "observed_facts": [
+        "Inspector debounces preview450ms, shows inline errors and typed bindings; user-keyed local draft restore; authenticated current_scope export streams CSV chunks; group management moves to settings. Regression tests were inspected, not run."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/4feef359336afde1afc19b3627e0423d124858f5/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/show.ex",
+      "observed_facts": [
+        "pivot_data creates every column key for every row using aggregate_values([],aggregate)=0; renderer Map.get(row.values,column,empty_value) therefore cannot show configured nonzero/text empty value for sparse cells."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/8cb9e7f19921546665da6d3182f8a1dfe711bbc5/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/panel_components.ex",
+      "observed_facts": [
+        "Later same-day extracted PanelComponents retains the same all-column insertion, zero empty aggregation and unreachable configured fallback."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "7f878a2b6d1fcfa7"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "e15db229eeb0ed0e",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/scripts/copy-sync.cjs",
+  "manual_outcome_date": "",
+  "manual_notes": "Copy sync implements origin/main preference with visible source, dry-run defaults/diff previews, clean-tree and schema checks, pull backup, explicit apply/confirm gates and copy-only automatic commit before optional push. Remote push additionally requires origin/main and branch main.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Copy sync implements origin/main preference with visible source, dry-run defaults/diff previews, clean-tree and schema checks, pull backup, explicit apply/confirm gates and copy-only automatic commit before optional push. Remote push additionally requires origin/main and branch main.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-add-copy-registry-sync/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/scripts/copy-sync.cjs",
+      "observed_facts": "Read full command implementation: source lookup, diff, confirmation, backup, validation, dirty-path restriction and commit/push gates."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Documented fallback to local main is visibly identified and remote pushing is disabled for that fallback."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

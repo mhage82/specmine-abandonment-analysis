@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "b7de93100ebb7ada",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-02-27",
+  "manual_notes": "Historical cleanup removes Explore/demo tabs, animated starter overlay, themed demo helpers and external-link/web-badge components. Root becomes the HeroUI/GestureHandler/Slot shell and the home recipe feed remains reachable. This is scoped to starter cleanup, not later tab or backend work.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical cleanup removes Explore/demo tabs, animated starter overlay, themed demo helpers and external-link/web-badge components. Root becomes the HeroUI/GestureHandler/Slot shell and the home recipe feed remains reachable. This is scoped to starter cleanup, not later tab or backend work.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "044_644078d2caf855284c2a043ed764260f5e7db24a: Deletion diff for explore.tsx, app-tabs variants, starter components; _layout.tsx removes template AppTabs/AnimatedSplashOverlay and renders Slot; index.tsx renders recipe cards."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "e88328b2df16d3898b41fe4201fcfd4fd58fa7c8f33326145b58d4c90039c765"
+}

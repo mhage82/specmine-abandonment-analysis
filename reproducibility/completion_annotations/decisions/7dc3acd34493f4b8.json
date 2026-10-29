@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "7dc3acd34493f4b8",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/178db55d81c1c1e2bd7f9188580857ba25a0917e | https://github.com/carverauto/serviceradar/commit/d919bc089e0bda5bf3cb874f316ccceaa17a3062 | https://github.com/carverauto/serviceradar/commit/7539a1680a665a40f4cf1fb761b0cd5228863e4a",
+  "manual_outcome_date": "2026-05-17",
+  "manual_notes": "Reviewed deferred action/poll dispatcher and callback diffs: persisted correlation/continuation and target states; poll requests carry phase/inputs/original target context; callback metadata and token hash are generated, correct-token callbacks update the target then recompute parent state, invalid tokens return unauthorized. Historical sample plugin and lifecycle tests exercise deferred/fetching/final/webhook flows. This is the Wasm-action scope; unrelated shared tasks do not establish it.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Reviewed deferred action/poll dispatcher and callback diffs: persisted correlation/continuation and target states; poll requests carry phase/inputs/original target context; callback metadata and token hash are generated, correct-token callbacks update the target then recompute parent state, invalid tokens return unauthorized. Historical sample plugin and lifecycle tests exercise deferred/fetching/final/webhook flows. This is the Wasm-action scope; unrelated shared tasks do not establish it.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/178db55d81c1c1e2bd7f9188580857ba25a0917e",
+      "observed_facts": [
+        "Dispatcher adds poll resumption, result handler recognizes deferred/polling/result_fetching and persists continuation/correlation; sample plugin handles poll and final results."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/d919bc089e0bda5bf3cb874f316ccceaa17a3062",
+      "observed_facts": [
+        "handle_callback_result resolves one target, authorizes SHA256 token via secure_compare, writes its result and refreshes aggregate invocation; callback controller returns401 on invalid token; webhook mode suppresses poll scheduling."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/7539a1680a665a40f4cf1fb761b0cd5228863e4a",
+      "observed_facts": [
+        "Adds northbound action lifecycle and schema verification tests."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "7dc3acd34493f4b8"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

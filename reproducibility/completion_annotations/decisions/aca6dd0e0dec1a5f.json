@@ -1,0 +1,29 @@
+{
+  "file_url_sha16": "aca6dd0e0dec1a5f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/file/file_upload.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/file/file_open.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Upload implementation generates tenant/year/month keys without a t prefix; same-tenant hash matches insert fresh metadata while reusing the existing path and never reach storage.Put. File access reads the stored metadata path unchanged, supporting legacy t/... files. Both collected rows share the same exact specification text.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Upload implementation generates tenant/year/month keys without a t prefix; same-tenant hash matches insert fresh metadata while reusing the existing path and never reach storage.Put. File access reads the stored metadata path unchanged, supporting legacy t/... files. Both collected rows share the same exact specification text.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/file/file_upload.go",
+      "observed_facts": "buildStorageKey formats tenantId/year/month; duplicate-hash query includes tenant, copies existing.Path/Engine/URL and returns before storage.Put."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/file/file_open.go",
+      "observed_facts": "OpenByID and OpenByPath resolve metadata and openStoredFile passes fileInfo.Path directly to storage.Get; normalization does not strip a t/ prefix."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "2da572f2c257dbd6c1d8c0fdb97e2687451d73aea2638f5c4132fe41cfc2fdbd"
+}

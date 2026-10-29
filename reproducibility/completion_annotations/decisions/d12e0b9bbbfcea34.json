@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "d12e0b9bbbfcea34",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/latest.json | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/.github/workflows/release.yml | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/commands.rs | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/AboutSection.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/tauri.conf.json",
+  "manual_outcome_date": "",
+  "manual_notes": "Updater plugin,commands,UI,signing configuration and generated manifest exist. Strict release-artifact scenario is not matched: macOS manifest URLs use Pomotroid.app.tar.gz rather than the specified DMG. Full release execution/signature acceptance was not independently verified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Updater plugin,commands,UI,signing configuration and generated manifest exist. Strict release-artifact scenario is not matched: macOS manifest URLs use Pomotroid.app.tar.gz rather than the specified DMG. Full release execution/signature acceptance was not independently verified.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-11-autoupdate/specs/autoupdate/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/latest.json",
+      "observed_facts": "Signed per-platform descriptors exist;darwin URLs are app.tar.gz."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/.github/workflows/release.yml",
+      "observed_facts": "Signing secret references,manifest generation and commit-to-main steps."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/src/commands.rs",
+      "observed_facts": "check_update descriptor/null/error and install download-and-install/restart logic."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/settings/sections/AboutSection.svelte",
+      "observed_facts": "Automatic check gated by setting with states/install/error handling."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src-tauri/tauri.conf.json",
+      "observed_facts": "Public verifier key and main/latest.json endpoint."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "0723bbce1b36b6ac",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/app/action/process_demo.rs | https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/action/demo_bundle.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Demo dispatch, tab grouping and recoverable missing-directory handling exist, but v0.16.10 resolves from process current_dir instead of active workspace, selects only Markdown, and marks every demo document read-only. The later embedded resolver still excludes code assets and marks Markdown as reference, contrary to this exact spec. Archive and checked tasks do not resolve these mismatches.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Demo dispatch, tab grouping and recoverable missing-directory handling exist, but v0.16.10 resolves from process current_dir instead of active workspace, selects only Markdown, and marks every demo document read-only. The later embedded resolver still excludes code assets and marks Markdown as reference, contrary to this exact spec. Archive and checked tasks do not resolve these mismatches.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/app/action/process_demo.rs",
+      "observed_facts": "current_dir assets/feature resolution; Markdown-only loop; results.push((p,true)); stable demo group and missing-directory status."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/app/action/demo_bundle.rs",
+      "observed_facts": "Embedded Markdown-only demo assets all have is_reference=true."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "615f87c631dc39a5b8a352b563ef07b15be348a4b31dde77f07ba1c94e921f10"
+}

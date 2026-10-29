@@ -1,0 +1,65 @@
+{
+  "file_url_sha16": "ba929464f3fe1c9e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/show.ex | https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/index.ex | https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng/dashboards/authored.ex | https://github.com/carverauto/serviceradar/commit/f567607e8d5f2da381346b6b128d636a1c316a73 | https://github.com/carverauto/serviceradar/commit/fbb6b9b70283650c788aef930c1e4557883482fc",
+  "manual_outcome_date": "",
+  "manual_notes": "Correct dashboard-creator task group and substantial implementation/test evidence cover persistence, search, routes, preferences, reports/mail and sharing. Strict full completion is not supported: the reviewed line/area renderer chooses the first numeric field and row-index x positions, ignores visual_config, and the creator has no time/value field selection; incompatible visuals are filtered rather than disabled with explanation. Recovered public history matches messages/dates but differs from inaccessible original dataset SHAs. This is a scope mismatch, not abandonment evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The explicit time-series scenario requires user choice of time and value fields. The recovered final implementation inspected at f567607 exposes no such selection in the creator and its chart rendering ignores configured fields, using the first numeric column and row index. A second visual-picker scenario requires disabled incompatible choices with an explanation, whereas the implementation simply removes them. These direct mismatches prevent a strict completed positive despite extensive working implementation and meaningful test coverage elsewhere. Object field classification is also absent from the inspected inference function. The original dataset-to-public SHA mapping cannot be independently established, so the result remains unclear rather than a definitive state of the original snapshot.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/d05b40d41da63bdab51c14ed96f38756facc22e5/openspec/changes/add-dashboard-creator/specs/dashboard-creator/spec.md",
+      "observed_facts": "Specification and matching tasks were read from the local review packet. Scope includes authored dashboard persistence/search, bounded typed previews and selectable temporal/value fields, routes/library/preferences, schedules/mail/delivery history, and user/group authorization. This original dataset SHA was inaccessible publicly; the packet preserves its content."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/show.ex",
+      "observed_facts": "Recovered pinned implementation renders saved panels and local Settings, panel visual-config/layout JSON, sharing grants, schedules and delivery history. Lines 752-753 pass rows/fields only into the line/area renderer; sparkline_points at 1096-1125 selects the first numeric field and uses row index as the x-coordinate. The reviewed chart path does not consume user-selected time/value fields or panel.visual_config."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/index.ex",
+      "observed_facts": "Creator form exposes SRQL query and visual type but no time/value field selectors. visual_select_options at 621-626 removes incompatible options instead of displaying disabled choices with the scenario-required explanation. Preview shows row count and field metadata."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng/dashboards/authored.ex",
+      "observed_facts": "Backend persists dashboards/panels/schedules and validates queries and visual compatibility; preview sends a configured limit to SRQL, returns inferred fields and compatible visuals. infer_type at 848-854 recognizes datetime/number/boolean and otherwise string; object-valued fields have no distinct object classification in this function."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/f567607e8d5f2da381346b6b128d636a1c316a73",
+      "observed_facts": "Workflow test diff exercises creator persistence and saved-ID redirect, hub favorites/default persistence, saved panels and local Settings, panel edits, and report creation/disable/delete. Tests were read, not executed."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/fbb6b9b70283650c788aef930c1e4557883482fc",
+      "observed_facts": "Inspected scheduler transaction/idempotence fixes, cron/timezone/recipient and next-due validations, and report-job tests covering enabled/disabled scans, repeated schedule-plus-due creation, successful email state and failed delivery/error history."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/elixir/web-ng/lib/serviceradar_web_ng/dashboards/report_scanner_worker.ex",
+      "observed_facts": "One bounded scanner reads due schedules, creates a per-schedule/due delivery and advances next due in a transaction before inserting the delivery job; already-sent deliveries are skipped."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/blob/f567607e8d5f2da381346b6b128d636a1c316a73/rust/srql/src/query/dashboards.rs",
+      "observed_facts": "SQL builder returns authored dashboard metadata including panel/report counts, searches panel SRQL text, applies requested limit and ordering, and includes translation tests."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/57dac8c84d627363343392a5588a60260e300b07",
+      "observed_facts": "Inspected encrypted-local mail credential change, settings.mail.manage-protected settings resource, reusable outbound-mail runtime configuration resolving broker-backed credentials, and report delivery integration."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/0dba782250b45f913f8e019138da0516f9564aa0",
+      "observed_facts": "Inspected owner/public/user/group visibility filtering, reusable permission-protected Identity groups and memberships, authored dashboard route additions, and sharing/schedule context code."
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/8fa4d8116c7decab3b7030758d64a53d7e49c3b0",
+      "observed_facts": "Inspected favorites/default persistence and hub authored/package aggregation with service-availability-noc fallback, backend panel/schedule validations, and preview/invalid-query/unsupported-visual/table-fallback tests."
+    }
+  ],
+  "limitations": [
+    "Original dataset snapshot d05b40d41da63bdab51c14ed96f38756facc22e5 and original history SHAs were inaccessible; recovered public task-path history has matching messages/dates but different SHAs, for an unverified reason.",
+    "Code and test diffs were inspected; repository tests, browser UI and email delivery were not independently executed.",
+    "Review used the local full specification/task packet and selected implementation paths across recovered May 22 commits; it was not an exhaustive audit of every authorization branch or production configuration.",
+    "No completion date is assigned because full scoped completion is unsupported. May 22 source/test events establish reviewed implementation availability only."
+  ],
+  "review_depth": "Full local specification/task packet; targeted pinned implementation source plus relevant commit diffs and behavioral tests across creator, query/inference/visuals, routes/preferences, search, report scheduling/history, mail secrets and sharing. Concrete visual-scenario mismatches identified."
+}

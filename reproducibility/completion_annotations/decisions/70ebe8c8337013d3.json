@@ -1,0 +1,50 @@
+{
+  "file_url_sha16": "70ebe8c8337013d3",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_discovery.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_installer.py | https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/init/src/commands.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/module_packages.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Source-aware uninstall protection and historical init aliases/deprecation help are implemented. The required registration-time namespace validation/warning for flat marketplace identities was not found: historical discovery accepts flat manifest names and installer validates caller IDs, which is a different boundary. Later registry source likewise does not establish this warning. Scope remains partial pending the specified registration evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Source-aware uninstall protection and historical init aliases/deprecation help are implemented. The required registration-time namespace validation/warning for flat marketplace identities was not found: historical discovery accepts flat manifest names and installer validates caller IDs, which is a different boundary. Later registry source likewise does not establish this warning. Scope remains partial pending the specified registration evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_discovery.py",
+      "observed_facts": [
+        "Read full discovery, source tracking and priority logic accepting metadata names."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/registry/module_installer.py",
+      "observed_facts": [
+        "Installer caller-ID contract and source-based uninstall guard inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/414e6419efb04fc01bf2a88ab8bdf2bd05dac685/src/specfact_cli/modules/init/src/commands.py",
+      "observed_facts": [
+        "Read deprecated lifecycle flags and continuing state/list behavior."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Registration pipeline inspected/search for marketplace namespace warning; not established."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "70ebe8c8337013d3"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

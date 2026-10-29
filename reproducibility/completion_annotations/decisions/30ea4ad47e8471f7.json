@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "30ea4ad47e8471f7",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/ljquan/opentu/commit/85ce2b7b639626c0d0317081fb8bb8630e6d8fe3 | https://github.com/ljquan/opentu/commit/94dbf95e2941ef28d20674bdc3885e87217a6bad | https://github.com/ljquan/opentu/blob/f57c21235d3b2e970131ed0a583a0f0f8aa2b054/scripts/validate-startup-bundle.js",
+  "manual_outcome_date": "2026-05-17",
+  "manual_notes": "The startup change separates canvas shell, conditionally mounted lazy features and deferred runtime effects; idle prefetch checks connection settings and sends static-manifest groups to the service worker. The follow-up adds the 500 KiB per-asset failure gate. The pinned validator traces direct entry assets and direct dynamic imports plus their static dependencies and rejects prohibited chunks and oversized JS/CSS.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The startup change separates canvas shell, conditionally mounted lazy features and deferred runtime effects; idle prefetch checks connection settings and sends static-manifest groups to the service worker. The follow-up adds the 500 KiB per-asset failure gate. The pinned validator traces direct entry assets and direct dynamic imports plus their static dependencies and rejects prohibited chunks and oversized JS/CSS.",
+  "sources": [
+    {
+      "url": "https://github.com/ljquan/opentu/commit/85ce2b7b639626c0d0317081fb8bb8630e6d8fe3",
+      "observed_facts": "Lazy shell/features, idle effects, prefetch manifest, service-worker handler and initial validator."
+    },
+    {
+      "url": "https://github.com/ljquan/opentu/commit/94dbf95e2941ef28d20674bdc3885e87217a6bad",
+      "observed_facts": "500 KiB budget check and startup boundary updates."
+    },
+    {
+      "url": "https://github.com/ljquan/opentu/blob/f57c21235d3b2e970131ed0a583a0f0f8aa2b054/scripts/validate-startup-bundle.js",
+      "observed_facts": "Entry/dynamic import traversal, prohibited dependency and budget failure conditions."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Build output size and cold-start interactivity were not independently measured; the annotation records supported delivery of the requested mechanisms, not a performance benchmark."
+  ]
+}

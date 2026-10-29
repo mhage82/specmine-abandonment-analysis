@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "797b113ac8c9917e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+  "manual_outcome_date": "",
+  "manual_notes": "OIDC permissions, Node/npm versions, token removal and the npm-publish environment reference are implemented. However the contract additionally requires actual trusted-publisher registration and protected-environment approval; the setup runbook explicitly describes these as external maintainer configuration still needing audit. Those settings were not verified, so this is a partial implementation with an external-evidence gap.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "OIDC permissions, Node/npm versions, token removal and the npm-publish environment reference are implemented. However the contract additionally requires actual trusted-publisher registration and protected-environment approval; the setup runbook explicitly describes these as external maintainer configuration still needing audit. Those settings were not verified, so this is a partial implementation with an external-evidence gap.",
+  "sources": [
+    {
+      "url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+      "observed_facts": "Read OIDC workflow changes, native publish job and trusted-publishing setup runbook distinguishing repository configuration from external setup."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "external_configuration_unverified"
+}

@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "5d07d3e8b81d1f7c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/insforge-src/functions/vibescore-ingest.js | https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/src/lib/vibescore-api.js | https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/src/lib/upload-throttle.js | https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/dashboard/src/hooks/use-backend-status.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Bulk duplicate-ignore ingest and visibility-paused backend probing are implemented. Full backpressure scope is unresolved: SDK error normalization does not propagate Retry-After to retryAfterMs, while uploader throttling caps supplied retry-after at 30 minutes. The 60-second minimum can satisfy the example accidentally but does not establish honoring server signals generally. This is a requirement gap, not abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Bulk duplicate-ignore ingest and visibility-paused backend probing are implemented. Full backpressure scope is unresolved: SDK error normalization does not propagate Retry-After to retryAfterMs, while uploader throttling caps supplied retry-after at 30 minutes. The 60-second minimum can satisfy the example accidentally but does not establish honoring server signals generally. This is a requirement gap, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-21-improve-ingest-resilience/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/insforge-src/functions/vibescore-ingest.js",
+      "observed_facts": "Historical event bulk insert uses onConflict user_id,event_id and resolution ignore-duplicates, with legacy fallback."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/src/lib/vibescore-api.js",
+      "observed_facts": "Retry delay reads retryAfterMs but normalized error copies status/code without Retry-After."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/src/lib/upload-throttle.js",
+      "observed_facts": "Failure delay caps retryAfterMs using backoffMaxMs."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/fec60f666006e2618c2fec4fdd4f5a9121b578d8/dashboard/src/hooks/use-backend-status.js",
+      "observed_facts": "Stops hidden-tab probe scheduling."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

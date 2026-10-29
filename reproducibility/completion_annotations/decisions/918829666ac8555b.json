@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "918829666ac8555b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/i18n/logic.rs | https://github.com/HiroyukiFuruno/KatanA/blob/d74beb30f3c27333f8fe537f500cfdfad7e5622e/crates/katana-linter/tests/ast_linter.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "The custom AST integration tests and JSON-backed language list are real, but this spec additionally requires adding a locale without changing Rust. The reviewed i18n loader still enumerates language codes in a Rust match with include_str! and panics for any unhandled code, so that acceptance criterion is not supported.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The custom AST integration tests and JSON-backed language list are real, but this spec additionally requires adding a locale without changing Rust. The reviewed i18n loader still enumerates language codes in a Rust match with include_str! and panics for any unhandled code, so that acceptance criterion is not supported.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/src/i18n/logic.rs",
+      "observed_facts": "supported_languages reads languages.json, whereas get_messages_for_lang hardcodes ten locale branches and a panic fallback."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/d74beb30f3c27333f8fe537f500cfdfad7e5622e/crates/katana-linter/tests/ast_linter.rs",
+      "observed_facts": "Standard cargo integration tests call custom AST checks across source crates."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "ec64aacd1d1efbe533575514602572377d7af231e4d11307f8a38e7e6c46c5e7"
+}

@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "ac0a6520992f7bbf",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/MiniControls.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/Timer.svelte | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/+page.svelte",
+  "manual_outcome_date": "",
+  "manual_notes": "Compact mode renders restart/play-pause/skip controls outside the zoomed dial;24px sizing, state-dependent icons and direct IPC handlers support the scoped behavior.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Compact mode renders restart/play-pause/skip controls outside the zoomed dial;24px sizing, state-dependent icons and direct IPC handlers support the scoped behavior.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-02-27-mini-controls/specs/mini-controls/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/MiniControls.svelte",
+      "observed_facts": "Three handlers, running-state icon switch,24px button dimensions."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/components/Timer.svelte",
+      "observed_facts": "MiniControls conditionally rendered outside style zoom container."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/+page.svelte",
+      "observed_facts": "Compact calculation uses either dimension below300; full controls handled by Timer."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

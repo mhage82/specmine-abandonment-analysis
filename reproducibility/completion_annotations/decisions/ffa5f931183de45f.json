@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "ffa5f931183de45f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/exasol/exasol-personal/pull/145 | https://github.com/exasol/exasol-personal/pull/145/files | https://github.com/exasol/exasol-personal/commit/89a50524ca97a830401946d356cefe09492eec7b",
+  "manual_outcome_date": "2026-06-15",
+  "manual_notes": "PR #145 merged on 2026-06-15. Inspected its diff: Taskfile.yml and .goreleaser.yaml apply the size flags; DEBUG_BUILD=true omits stripping and selects debugger-friendly compiler settings; doc/binary_size.md documents accepted/rejected techniques and operational tradeoffs, linked from development/release docs. These cover all three requirements, beyond the 8/8 checklist. Author reports Linux/Windows builds and Go unit tests; reviewer did not run them. Native GoReleaser validation was not run according to the PR. Date is the observed merge/completion-evidence event, not an inferred task-check date. Exact-path source records have identical specification Markdown, verified before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The exact OpenSpec change is delivered in a merged PR whose concrete build configuration and documentation changes directly implement standard size optimization, optional debugger support, and documented supportability tradeoffs. Completion is supported by code/configuration plus the checked task list; it is not inferred from inactivity, archive status, or PR merge alone.",
+  "sources": [
+    {
+      "url": "https://github.com/exasol/exasol-personal/pull/145",
+      "observed_facts": [
+        "GitHub API reported merged=true and merged_at=2026-06-15T14:51:09Z; merge commit 89a50524ca97a830401946d356cefe09492eec7b.",
+        "PR names optimize-go-binary-size, reports reduced binary sizes, Linux/Windows build commands and Go unit tests.",
+        "PR explicitly says GoReleaser was not installed and native GoReleaser validation was not run."
+      ]
+    },
+    {
+      "url": "https://github.com/exasol/exasol-personal/pull/145/files",
+      "observed_facts": [
+        "Taskfile.yml adds CGO_ENABLED=0, trimpath, gcflags and stripped linker flags for normal builds, plus a DEBUG_BUILD conditional for both standard and Windows builds.",
+        ".goreleaser.yaml adds matching optimization flags.",
+        "doc/binary_size.md documents approved/rejected techniques, tradeoffs, and debugger mode; development and release documentation link this policy.",
+        "The same diff adds this exact spec and 8 checked tasks."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation requires human confirmation for a manually verified reference dataset.",
+    "No project build or test was independently executed by this reviewer.",
+    "Operational preservation of every CLI behavior was not independently exhaustively tested.",
+    "GoReleaser configuration changes were inspected, but PR author did not run native GoReleaser validation."
+  ],
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "23c0fcfbbd9696f8",
+      "ffa5f931183de45f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

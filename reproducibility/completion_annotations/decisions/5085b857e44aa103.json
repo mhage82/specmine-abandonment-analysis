@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "5085b857e44aa103",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/abapify/adt-cli/pull/111 | https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/aclass/tests/roundtrip.test.ts | https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/aclass/src/parser.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial structural parser and fixture coverage are implemented in PR111. The selected spec explicitly makes parse-to-abapAstPrint roundtrip equality a release gate; the pinned roundtrip.test.ts instead checks declaration counts, repeated-parse shape and preserved body slices, without invoking a printer. Parser comments also document a statement-based alternative to CstParser. Strict recorded-scope completion is unconfirmed; no abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial structural parser and fixture coverage are implemented in PR111. The selected spec explicitly makes parse-to-abapAstPrint roundtrip equality a release gate; the pinned roundtrip.test.ts instead checks declaration counts, repeated-parse shape and preserved body slices, without invoking a printer. Parser comments also document a statement-based alternative to CstParser. Strict recorded-scope completion is unconfirmed; no abandonment inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/abapify/adt-cli/pull/111",
+      "observed_facts": "Inspected lexer/package/parser, public exports and fixture/roundtrip test diffs."
+    },
+    {
+      "url": "https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/aclass/tests/roundtrip.test.ts",
+      "observed_facts": "Read full test: assertions do not perform the required emitter roundtrip."
+    },
+    {
+      "url": "https://github.com/abapify/adt-cli/blob/a52b9a89c756bb496818246762b97500cce983ec/packages/aclass/src/parser.ts",
+      "observed_facts": "Implementation uses Chevrotain tokens with a custom statement cursor and describes the architectural tradeoff."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

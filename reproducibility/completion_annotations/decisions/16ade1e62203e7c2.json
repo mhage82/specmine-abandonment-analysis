@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "16ade1e62203e7c2",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-device-token-issue.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-ingest.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/openspec/changes/archive/2025-12-23-2025-12-18-fix-service-role-key-missing/sql/001_rls_no_service_role.sql",
+  "manual_outcome_date": "",
+  "manual_notes": "Device issuance and ingestion have non-service-role paths, using user auth for device binding and token-hash lookup plus user/device-bound RLS helpers for writes. The migration rejects cross-user/device bindings. This is source/migration corroboration, not verification of a live deployment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Device issuance and ingestion have non-service-role paths, using user auth for device binding and token-hash lookup plus user/device-bound RLS helpers for writes. The migration rejects cross-user/device bindings. This is source/migration corroboration, not verification of a live deployment.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-18-fix-service-role-key-missing/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-device-token-issue.js",
+      "observed_facts": "Optional service role; authenticated user client fallback."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-ingest.js",
+      "observed_facts": "No-service-role records path passes device-token hash and resolved device/user identity."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/openspec/changes/archive/2025-12-23-2025-12-18-fix-service-role-key-missing/sql/001_rls_no_service_role.sql",
+      "observed_facts": "Authenticated own-device insert, nonrevoked hash lookup, and user/device/token-bound insert policy."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

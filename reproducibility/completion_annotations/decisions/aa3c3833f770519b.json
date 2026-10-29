@@ -1,0 +1,56 @@
+{
+  "file_url_sha16": "aa3c3833f770519b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/gitignore-team-workflows.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/astro.config.mjs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/README.md | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/npm/agentsync/README.md | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/configuration.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/cli.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/getting-started.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/index.mdx",
+  "manual_outcome_date": "",
+  "manual_notes": "Canonical team-workflow guide covers default managed and intentional committed-destination modes, maintainer/collaborator steps, expected init/apply diffs, marker-aware cleanup, root-anchored entries, prepare/manual setup and strict one-run --no-gitignore opt-out. Navigation and README/npm/home/getting-started/config/CLI surfaces link to it.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Canonical team-workflow guide covers default managed and intentional committed-destination modes, maintainer/collaborator steps, expected init/apply diffs, marker-aware cleanup, root-anchored entries, prepare/manual setup and strict one-run --no-gitignore opt-out. Navigation and README/npm/home/getting-started/config/CLI surfaces link to it.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-31-document-gitignore-team-workflows/specs/documentation/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/gitignore-team-workflows.mdx",
+      "observed_facts": "Full guide read: both policies, roles, examples, cleanup and override semantics."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/astro.config.mjs",
+      "observed_facts": "Canonical guide in sidebar."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/README.md",
+      "observed_facts": "Default/opt-out note links canonical workflow."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/npm/agentsync/README.md",
+      "observed_facts": "Default/opt-out canonical link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/configuration.mdx",
+      "observed_facts": "Field semantics and canonical link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/cli.mdx",
+      "observed_facts": "Apply modes and canonical link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/getting-started.mdx",
+      "observed_facts": "Default guidance and canonical link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/index.mdx",
+      "observed_facts": "Workflow card and link."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Documentation scope is supported; runtime edge cases are evaluated separately in the cleanup specification."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

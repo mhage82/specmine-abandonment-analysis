@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "44262a4aa993c4af",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/9738ececfc516bfa999659002b9b2213aabbd89a | https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/elixir/serviceradar_core/lib/serviceradar/credentials/plugin_assignment_materializer.ex | https://github.com/carverauto/serviceradar/commit/d50c5d6f05d39d8bab6946dcc53c5416e9ebbdfc",
+  "manual_outcome_date": "",
+  "manual_notes": "Credential storage/settings, scoped grant construction and preview/materializer code exist. The mandatory functional brokered credential-test scenario is contradicted by reviewed agent handler: grant-only tests return credential broker unavailable and direct tokens are rejected. Materializer conflict handling also groups identical target query strings, without demonstrating overlapping distinct-query conflict or per-device override behavior. Cannot certify this full credential-rules scope from checked tasks.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Credential storage/settings, scoped grant construction and preview/materializer code exist. The mandatory functional brokered credential-test scenario is contradicted by reviewed agent handler: grant-only tests return credential broker unavailable and direct tokens are rejected. Materializer conflict handling also groups identical target query strings, without demonstrating overlapping distinct-query conflict or per-device override behavior. Cannot certify this full credential-rules scope from checked tasks.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/9738ececfc516bfa999659002b9b2213aabbd89a",
+      "observed_facts": [
+        "runProxmoxCredentialTest removes HTTP execution and returns credential broker unavailable for scoped grant input; tests assert denial. Plans construct TTL/GET/path-bounded grants without raw token."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/elixir/serviceradar_core/lib/serviceradar/credentials/plugin_assignment_materializer.ex",
+      "observed_facts": [
+        "Uses in-scope rules, server-side input definitions and grant references; conflict collapse is grouped by target_query."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/d50c5d6f05d39d8bab6946dcc53c5416e9ebbdfc",
+      "observed_facts": [
+        "Adds SSH key validation and rotation metadata to secret storage, with secret_payload nonpublic; this does not demonstrate brokered SSH test execution."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "44262a4aa993c4af"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "e1f55e889d85d132",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/quiqr/quiqr-desktop/blob/2c2c30a7e8d6b5570e03c27796d11184c0225e07/RELEASE.md | https://github.com/quiqr/quiqr-desktop/blob/2c2c30a7e8d6b5570e03c27796d11184c0225e07/README.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The pinned root RELEASE.md contains the specified pre-1.0 version policy, pre-release build checks, changelog/package version updates, tagging commands and post-release build guidance. README links to it without duplicating the runbook. The delivered documentation supports this scope even though the runbook records a separate unsigned-DMG limitation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The pinned root RELEASE.md contains the specified pre-1.0 version policy, pre-release build checks, changelog/package version updates, tagging commands and post-release build guidance. README links to it without duplicating the runbook. The delivered documentation supports this scope even though the runbook records a separate unsigned-DMG limitation.",
+  "sources": [
+    {
+      "url": "https://github.com/quiqr/quiqr-desktop/blob/2c2c30a7e8d6b5570e03c27796d11184c0225e07/RELEASE.md",
+      "observed_facts": "Full release guide inspected."
+    },
+    {
+      "url": "https://github.com/quiqr/quiqr-desktop/blob/2c2c30a7e8d6b5570e03c27796d11184c0225e07/README.md",
+      "observed_facts": "Release guide link and documentation organization inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Documentation delivery, not independent verification of release execution."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "fcb51567bc0c7e45",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/plugin_host_services.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/middleware/middleware.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/pkg/plugin/pluginhost/pluginhost_source_plugin_registration.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/rules/backend-go.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Startup constructs shared runtime services and passes individual interface arguments into middleware and plugin facades. NewHostServices forwards those dependencies to internal capability adapters; source-plugin registration validates inputs with returned errors. Reviewed service construction/import scans and project review rules support the explicit dependency boundary and guard against hidden replacement graphs.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Startup constructs shared runtime services and passes individual interface arguments into middleware and plugin facades. NewHostServices forwards those dependencies to internal capability adapters; source-plugin registration validates inputs with returned errors. Reviewed service construction/import scans and project review rules support the explicit dependency boundary and guard against hidden replacement graphs.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+      "observed_facts": "Runtime owns shared config/auth/plugin/role/cache and passes services to plugin.NewHostServices."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/plugin_host_services.go",
+      "observed_facts": "NewHostServices takes individual typed dependencies and delegates to internal capabilityhost; WASM runtime constructor returns errors."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/middleware/middleware.go",
+      "observed_facts": "New takes explicit shared auth/bizctx/config/i18n/role/tenant services."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/pkg/plugin/pluginhost/pluginhost_source_plugin_registration.go",
+      "observed_facts": "Nil source/plugin callback validation returns error instead of panicking."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/rules/backend-go.md",
+      "observed_facts": "Review policy prohibits implicit critical New calls and aggregate Dependencies/Deps/Options, requires error returns and shared runtime construction."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "cc823e1aa5f0a344804f4e6b10112ce416970d19e727498d62c4930eefd04ea3"
+}

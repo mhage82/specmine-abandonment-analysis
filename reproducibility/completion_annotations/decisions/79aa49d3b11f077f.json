@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "79aa49d3b11f077f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/pull/624.diff",
+  "manual_outcome_date": "",
+  "manual_notes": "This older snapshot explicitly requires startup sync and ceremony capabilities. The implemented/revised startup profile enables named project, backlog, codebase and code-review bundles; their complete mapping to the older sync/ceremony promise was not established. Later task completion and revised wording do not establish full compliance with this version.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Correct task group and substantive profile implementation, but the old specification differs from the later validation-support wording. The unverified capability mapping prevents a strict completion example; it is not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/pull/624.diff",
+      "observed_facts": "Inspected first_run_selection.py profile presets, recursive precedence resolver, source annotations, profile config writer, init command integration, and unit/CLI test definitions. Startup explicitly enables project, backlog, codebase and code-review bundles; four validation tiers and clean-code mappings are implemented."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "46e8bdaf053d279bd81f846d27d6efa03e1f6e7a79aa36020062531b3066f224",
+  "related_review_ids": [
+    "79aa49d3b11f077f"
+  ]
+}

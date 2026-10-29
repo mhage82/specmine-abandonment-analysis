@@ -1,0 +1,63 @@
+{
+  "file_url_sha16": "73574e3419e5f1a4",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_owner.go | https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/cap/aicap/aicap_owner_invoker.go | https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/plugin.go | https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/api/provider/v1/provider_list.go | https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/api/tier/v1/tier_list.go | https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/api/invocation/v1/invocation_list.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Owner host-service dispatch checks the registered method and per-caller authorization snapshot, then passes the caller identity to the typed AI invoker. AI invoker exposes only text generation/status operations. Provider/model/tier/invocation management routes separately require authentication, tenancy and named management permissions; purpose/tier selection does not itself grant these rights.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Owner host-service dispatch checks the registered method and per-caller authorization snapshot, then passes the caller identity to the typed AI invoker. AI invoker exposes only text generation/status operations. Provider/model/tier/invocation management routes separately require authentication, tenancy and named management permissions; purpose/tier selection does not itself grant these rights.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_owner.go",
+      "observed_facts": [
+        "Read full owner registry lookup, request-snapshot access check and typed invocation construction."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/cap/aicap/aicap_owner_invoker.go",
+      "observed_facts": [
+        "Read complete switch exposing text.generate and status queries, forwarding caller plugin scope to typed AI service."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/plugin.go",
+      "observed_facts": [
+        "Management route group uses Auth, Tenancy and Permission middleware."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/api/provider/v1/provider_list.go",
+      "observed_facts": [
+        "Provider list requires ai:provider:list permission."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/api/tier/v1/tier_list.go",
+      "observed_facts": [
+        "Tier list requires ai:tier:list permission."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/1b90535404d1563a045efe3888dd9db6d1bf5e29/linapro-ai-core/backend/api/invocation/v1/invocation_list.go",
+      "observed_facts": [
+        "Invocation log list requires ai:invocation:list permission."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Official plugin source is pinned to the exact July11 core gitlink, not an unpinned external checkout."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "73574e3419e5f1a4"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

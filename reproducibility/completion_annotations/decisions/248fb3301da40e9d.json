@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "248fb3301da40e9d",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+  "manual_outcome_date": "2026-05-28",
+  "manual_notes": "The delivered workspace publishing job depends on both verification jobs, uses the fixed generic-package allowlist, excludes typst.node and enhanced-typst-svg, and adds typst.svelte publish scripts. This supports implementation of the selected release path, not confirmation of a live npm release.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The delivered workspace publishing job depends on both verification jobs, uses the fixed generic-package allowlist, excludes typst.node and enhanced-typst-svg, and adds typst.svelte publish scripts. This supports implementation of the selected release path, not confirmation of a live npm release.",
+  "sources": [
+    {
+      "url": "https://github.com/Myriad-Dreamin/typst.ts/commit/1880ef1ac6edbc0c5610582c30f4c5d529f29ee5",
+      "observed_facts": "Read publish-packages needs and filters, verification stage, and typst.svelte package.json script additions."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

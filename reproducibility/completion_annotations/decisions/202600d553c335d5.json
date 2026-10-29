@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "202600d553c335d5",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/pages/missioncontrol.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/proposal/service.go",
+  "manual_outcome_date": "",
+  "manual_notes": "compactPreparedBrief sanitizes each description/reason/effect/evidence segment and joins them with a single-line separator; acceptSelectedProposal passes that value to durable AcceptProposal. This directly corroborates the selected persisted-description scenario. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "compactPreparedBrief sanitizes each description/reason/effect/evidence segment and joins them with a single-line separator; acceptSelectedProposal passes that value to durable AcceptProposal. This directly corroborates the selected persisted-description scenario. Completion is supported at the pinned source revision; no exact delivery event date was established.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/cockpit/pages/missioncontrol.go",
+      "observed_facts": "renderHeader sanitizes all textual summaries; acceptSelectedProposal sanitizes fallback descriptions and invokes compactPreparedBrief, which normalizes each segment and joins with a single-line separator before AcceptProposal."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/proposal/service.go",
+      "observed_facts": "Learning-suggestion upsert uses the transient registry, prepares a brief and marks prepared; Accept requires prepared status and uses the registry. No execution or deployment claim."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "95e6ee37749dcc63034abd3f57ca5b8f297672a11e3f27479c023646a082c36a"
+}

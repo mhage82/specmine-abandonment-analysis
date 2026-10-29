@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "e0baadbb5807c470",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_get.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/controller/user/user_v1_get.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/api_contract_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Reviewed API definitions use REST metadata, json path fields, dc/eg documentation, independent response DTOs and millisecond instant fields. A static scan of host API Go files found no direct entity/time-object response types or legacy p tags and no tagged JSON field missing dc/eg. User response mapping and contract tests corroborate the API boundary; this is implementation evidence, not executed API validation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Reviewed API definitions use REST metadata, json path fields, dc/eg documentation, independent response DTOs and millisecond instant fields. A static scan of host API Go files found no direct entity/time-object response types or legacy p tags and no tagged JSON field missing dc/eg. User response mapping and contract tests corroborate the API boundary; this is implementation evidence, not executed API validation.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user.go",
+      "observed_facts": "Independent UserItem uses statusflag contract and *int64 documented Unix-millisecond timestamps; password/deleted fields omitted."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_get.go",
+      "observed_facts": "GET /user/{id}, json id binding, documented fields and independent UserItem response."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/controller/user/user_v1_get.go",
+      "observed_facts": "Builds response explicitly through userItem and separate department/post/role/tenant fields."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/api_contract_test.go",
+      "observed_facts": "Checks forbidden JSON fields and entity embeddings in DTOs; static test definitions inspected."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "15668d37f4636e537730df68d1a582e496de987489896184719a379209b41854"
+}

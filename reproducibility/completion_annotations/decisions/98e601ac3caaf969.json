@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "98e601ac3caaf969",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/269326d47f4455da9a85ec983172b33b84384b94 | https://github.com/carverauto/serviceradar/commit/f8a7eb19e8a95035b592f61139b39d8990e787c2 | https://github.com/carverauto/serviceradar/commit/8cb9e7f19921546665da6d3182f8a1dfe711bbc5 | https://raw.githubusercontent.com/carverauto/serviceradar/8cb9e7f19921546665da6d3182f8a1dfe711bbc5/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/show.ex",
+  "manual_outcome_date": "",
+  "manual_notes": "Metadata-first creation, typed editor validation, source/output metadata and panel controls have real implementation. The required source-query nonduplication is contradicted by the reviewed phase-2 code: each output stores source.srql_query in its own panel, and the final pinned show module executes panel.srql_query independently for every panel. Metadata stores the query again. The added test verifies only one output and explicitly asserts both copies. Strict completion of reusable-query scope is not supported despite checked tasks. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Metadata-first creation, typed editor validation, source/output metadata and panel controls have real implementation. The required source-query nonduplication is contradicted by the reviewed phase-2 code: each output stores source.srql_query in its own panel, and the final pinned show module executes panel.srql_query independently for every panel. Metadata stores the query again. The added test verifies only one output and explicitly asserts both copies. Strict completion of reusable-query scope is not supported despite checked tasks.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/269326d47f4455da9a85ec983172b33b84384b94",
+      "observed_facts": [
+        "Implements metadata-first save and schema-guided/typed panel editing rather than raw JSON controls."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/f8a7eb19e8a95035b592f61139b39d8990e787c2",
+      "observed_facts": [
+        "Adds explicit availability binding/shape validation and regression tests for unsupported combinations."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/8cb9e7f19921546665da6d3182f8a1dfe711bbc5",
+      "observed_facts": [
+        "SourceQueries.panel_attrs_from_output copies srql_query into each output panel while source metadata also stores it; test asserts panel.srql_query and source.srql_query are both the source text."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/8cb9e7f19921546665da6d3182f8a1dfe711bbc5/elixir/web-ng/lib/serviceradar_web_ng_web/live/authored_dashboard_live/show.ex",
+      "observed_facts": [
+        "Mount/reload Map.new(panels) invokes preview_panel_query for every panel; that function substitutes variables into panel.srql_query and executes it, without resolving a shared source-query execution."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "83882bdc5df2d2a0",
+      "98e601ac3caaf969"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

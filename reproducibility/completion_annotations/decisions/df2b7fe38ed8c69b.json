@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "df2b7fe38ed8c69b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/arabold/docs-mcp-server/commit/32dead556bb8549301c5aa872de4dd1f272ed0bc | https://github.com/arabold/docs-mcp-server/blob/0091ab83d1aee4434123f1828a202cf6b85b575d/src/store/DocumentStore.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Implementation adds dimension resolution, normalization and stored-dimension reuse. The selected spec says runtime probing occurs only without an explicit dimension override, but pinned resolveEffectiveEmbeddingDimension still probes an unknown model without stored metadata even when an override is explicit. The original diff even tests rejecting a too-small explicit override after provider output. This spec/code mismatch leaves strict completion unclear, not abandoned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Implementation adds dimension resolution, normalization and stored-dimension reuse. The selected spec says runtime probing occurs only without an explicit dimension override, but pinned resolveEffectiveEmbeddingDimension still probes an unknown model without stored metadata even when an override is explicit. The original diff even tests rejecting a too-small explicit override after provider output. This spec/code mismatch leaves strict completion unclear, not abandoned.",
+  "sources": [
+    {
+      "url": "https://github.com/arabold/docs-mcp-server/commit/32dead556bb8549301c5aa872de4dd1f272ed0bc",
+      "observed_facts": "Inspected dimension-resolution, normalization and configuration changes with test assertions."
+    },
+    {
+      "url": "https://github.com/arabold/docs-mcp-server/blob/0091ab83d1aee4434123f1828a202cf6b85b575d/src/store/DocumentStore.ts",
+      "observed_facts": "Resolver checks stored metadata first, then probes whenever config.dimensions is null; isVectorDimensionExplicit only guards assignment of dbDimension after probing."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_requirement_gap"
+}

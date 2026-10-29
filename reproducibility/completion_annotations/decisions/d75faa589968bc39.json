@@ -1,0 +1,56 @@
+{
+  "file_url_sha16": "d75faa589968bc39",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/compile.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/validate-spec.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/emit/document-part.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/emit/numbering-part.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/comments.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/document.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/generation-drafting-notes.test.ts | https://github.com/UseJunior/safe-docx/blob/1a8f29b26302f48ec22ca26551b001e6608911cd/packages/docx-core/docs/generation-manual-compat-checklist.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial DOCX generation is implemented: deterministic compile pipeline, validation, styles, sections, headers/footers, tables, numbering, field runs and optional drafting comments, with targeted structural tests. A later pinned compatibility checklist records Word/Pages/Google observations, so archive timing alone is not the limitation. However, SDX-GEN-082 requires no comment parts after post-generation note deletion: deleteComment writes empty comment parts back and toBuffer retains them. The associated test permits an empty comments part instead of enforcing absence. This concrete full-scope mismatch prevents a strict completed label; no abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Substantial DOCX generation is implemented: deterministic compile pipeline, validation, styles, sections, headers/footers, tables, numbering, field runs and optional drafting comments, with targeted structural tests. A later pinned compatibility checklist records Word/Pages/Google observations, so archive timing alone is not the limitation. However, SDX-GEN-082 requires no comment parts after post-generation note deletion: deleteComment writes empty comment parts back and toBuffer retains them. The associated test permits an empty comments part instead of enforcing absence. This concrete full-scope mismatch prevents a strict completed label; no abandonment inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1a8f29b26302f48ec22ca26551b001e6608911cd/openspec/changes/archive/2026-06-11-add-docx-generation/specs/docx-generation/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/compile.ts",
+      "observed_facts": "Inspected validation/compile order, explicit optional note emission, package part registration and fixed ZIP epoch for reproducibility."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/validate-spec.ts",
+      "observed_facts": "Inspected actual validation of supported kinds, references and page/table/numbering geometry."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/emit/document-part.ts",
+      "observed_facts": "Inspected section break emission and last-section sectPr placement including trailing paragraph after a final table."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/emit/numbering-part.ts",
+      "observed_facts": "Inspected numbering definitions and instances with level properties; related tests assert label round-trip."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/comments.ts",
+      "observed_facts": "deleteComment lines 1102-1128 remove elements but rewrite comments.xml and commentsExtended.xml; it removes document markers, not package comment parts or relationships."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/document.ts",
+      "observed_facts": "toBuffer lines 1175-1205 serializes document.xml and existing ZIP parts; no cleanup of empty comment parts."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/generation/generation-drafting-notes.test.ts",
+      "observed_facts": "Scenario 082 assertion allows comments.xml to remain if it contains zero comment elements, weaker than no comment parts."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1a8f29b26302f48ec22ca26551b001e6608911cd/packages/docx-core/docs/generation-manual-compat-checklist.md",
+      "observed_facts": "Exact selected-generation snapshot checklist records Word/Pages observations July 6 and Google Docs July 7; June 11 archived source had these manual cells unfilled. This corroborates later observations, not earliest completion."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Compatibility observations are repository-recorded reports, not independently rerun by this reviewer. Broader generator code and tests were targeted by requirement; no exhaustive execution or application compatibility validation was performed."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

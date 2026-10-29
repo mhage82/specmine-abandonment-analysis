@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "7b1ba5fd32b81513",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/controller/user/user_v1_get.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_get.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/middleware/middleware.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Layered dependency injection and many documented contracts exist, but the selected universal source-file documentation criterion is not satisfied in inspected production files: user_v1_get.go and API user_get.go begin directly with package declarations. This is a concrete remaining scope gap despite the broader quality task being checked.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Layered dependency injection and many documented contracts exist, but the selected universal source-file documentation criterion is not satisfied in inspected production files: user_v1_get.go and API user_get.go begin directly with package declarations. This is a concrete remaining scope gap despite the broader quality task being checked.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/controller/user/user_v1_get.go",
+      "observed_facts": "Production controller file starts with package user and has no file-responsibility header."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/api/user/v1/user_get.go",
+      "observed_facts": "API source file starts with package v1 without the required top-of-file responsibility comment."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/middleware/middleware.go",
+      "observed_facts": "Constructor actually accepts shared auth/bizctx/config/i18n/role/tenant dependencies; partial substantive compliance."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "ba937ec36478f2b51d6752636b783fb2e6e1f9aaeebb9a203bf5401a32b7c655"
+}

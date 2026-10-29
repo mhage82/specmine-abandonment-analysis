@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "5fbde5dac183eb9e",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-platform/src/theme/builder_impls.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Preview highlighting now obtains theme colors and draws active/hover backgrounds. The explicit dark-editor white-overlay requirement is not matched: historical Dracula uses black alpha50; pinned theme builder still constructs black current-line background and accent-colored hover. Thus full visibility contract cannot be marked complete.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Preview highlighting now obtains theme colors and draws active/hover backgrounds. The explicit dark-editor white-overlay requirement is not matched: historical Dracula uses black alpha50; pinned theme builder still constructs black current-line background and accent-colored hover. Thus full visibility contract cannot be marked complete.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-platform/src/theme/builder_impls.rs",
+      "observed_facts": "build_code uses RGB0 current-line and accent hover; preview theme extraction/hook draws supplied colors. Historical f49 Dracula has RGB0 alpha50, despite checked task requesting white alpha15-25."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "93941a14a5d9d33007ce53d74cb3ee8d8498768d66a95d95ece23117f75ac939"
+}

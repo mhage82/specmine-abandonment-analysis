@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "e7f7f135ffa738b7",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dbdriver/dbdriver.go | https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/dialect_runtime.go | https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/internal/sqlite/dialect.go | https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/internal/sqlite/translate.go | https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/dialect_postgres_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical source before the later PostgreSQL-only redesign implements the selected PG+SQLite setup: supported driver registration, prefix-based dispatch and explicit MySQL rejection, SQLite preparation and nonproduction warning, and PostgreSQL-to-SQLite SQL translation. The later removal of SQLite does not erase this earlier delivered scope. Exact completion event date is unverified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical source before the later PostgreSQL-only redesign implements the selected PG+SQLite setup: supported driver registration, prefix-based dispatch and explicit MySQL rejection, SQLite preparation and nonproduction warning, and PostgreSQL-to-SQLite SQL translation. The later removal of SQLite does not erase this earlier delivered scope. Exact completion event date is unverified.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dbdriver/dbdriver.go",
+      "observed_facts": "Registers official GoFrame PG and SQLite drivers, not MySQL."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/dialect_runtime.go",
+      "observed_facts": "Dispatches pgsql and sqlite; mysql returns a specific unsupported error."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/internal/sqlite/dialect.go",
+      "observed_facts": "PrepareDatabase creates parent directory; OnStartup warns not to use SQLite in production; no database recreation in startup hook."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/internal/sqlite/translate.go",
+      "observed_facts": "Actual parser/translator handles the controlled PostgreSQL SQL subset and rejects unsupported constructs."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/dialect/dialect_postgres_test.go",
+      "observed_facts": "Factory tests assert PostgreSQL no-op translation and explicit MySQL rejection."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "57cca4855bd8e85704f88317c1899674e7c23e4588afbb7513db4b764caf647d"
+}

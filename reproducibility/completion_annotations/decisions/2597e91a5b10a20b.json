@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "2597e91a5b10a20b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/add.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_backlog/unit/test_add_command.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Migrated add handler performs parent/DoR validation, interactive drafting, ADO required-field mapping and create call with identity output, with concrete tests. Required ceremony add alias is missing from the reviewed registered ceremony group: it exposes standup/refinement/planning/flow/pi-summary only. Therefore selected restoration scope including alias is incomplete despite real add functionality. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Migrated add handler performs parent/DoR validation, interactive drafting, ADO required-field mapping and create call with identity output, with concrete tests. Required ceremony add alias is missing from the reviewed registered ceremony group: it exposes standup/refinement/planning/flow/pi-summary only. Therefore selected restoration scope including alias is incomplete despite real add functionality.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/add.py",
+      "observed_facts": [
+        "Read add options, parent validation, custom field mapping, DoR blocking and create/identity flow."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "Actual app registers add, but all ceremony decorators inspected and no add alias exists."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_backlog/unit/test_add_command.py",
+      "observed_facts": [
+        "Inspected assertions for missing parent, custom hierarchy, DoR fail and interactive creation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "2597e91a5b10a20b",
+      "2a37040d537c7b19"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

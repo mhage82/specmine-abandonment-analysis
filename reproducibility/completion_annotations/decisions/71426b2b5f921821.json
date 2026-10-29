@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "71426b2b5f921821",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/kniwase/WebComPy/commit/873acd4b470de08bb82ba1c6c223e04d3dbce0e3",
+  "manual_outcome_date": "2026-04-21",
+  "manual_notes": "generate_html conditionally emits import time and the initial timestamp before importing the app, transfers that timestamp into app._profile_data and then calls app.run. Disabled profiling retains the normal import/run bootstrap, matching this narrow CLI delta.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "generate_html conditionally emits import time and the initial timestamp before importing the app, transfers that timestamp into app._profile_data and then calls app.run. Disabled profiling retains the normal import/run bootstrap, matching this narrow CLI delta.",
+  "sources": [
+    {
+      "url": "https://github.com/kniwase/WebComPy/commit/873acd4b470de08bb82ba1c6c223e04d3dbce0e3",
+      "observed_facts": "Read generated py_script_lines branches in webcompy/cli/_html.py."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

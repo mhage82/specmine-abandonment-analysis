@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "5c2e5882b8d1447f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_directory.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/internal/hostservice/hostservice_descriptor.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/internal/hostservice/hostservice_descriptor_test.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Protocol subcomponents, the public host-service catalog, descriptor-derived metadata, bidirectional coverage tests and injected guest transport are implemented. The selected consolidated specification simultaneously retains compatible root-facade/client requirements, later prohibits root business clients and says the root contains only package documentation, and then requires root directory guest assembly. Pinned June and July sources expose a real root SDK with Services clients. These conflicting scope statements prevent one unambiguous full-scope completion judgment; a human must choose the intended version. This does not imply the implemented SDK is abandoned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Protocol subcomponents, the public host-service catalog, descriptor-derived metadata, bidirectional coverage tests and injected guest transport are implemented. The selected consolidated specification simultaneously retains compatible root-facade/client requirements, later prohibits root business clients and says the root contains only package documentation, and then requires root directory guest assembly. Pinned June and July sources expose a real root SDK with Services clients. These conflicting scope statements prevent one unambiguous full-scope completion judgment; a human must choose the intended version. This does not imply the implemented SDK is abandoned.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go",
+      "observed_facts": "Root package exposes the dynamic SDK and Services interface with Runtime, Storage, Cache, Lock and other guest clients."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge_directory.go",
+      "observed_facts": "Root directory assembles capability clients with injected transport."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/internal/hostservice/hostservice_descriptor.go",
+      "observed_facts": "Private descriptors derive from the public protocol/hostservices catalog."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/pluginbridge/internal/hostservice/hostservice_descriptor_test.go",
+      "observed_facts": "Tests inspect protocol aliases, guest selectors, dispatcher coverage, orphan selectors and absence of per-domain stubs."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/pluginbridge/pluginbridge.go",
+      "observed_facts": "Earlier June snapshot also exposes the root guest SDK, so the mismatch is not inferred solely from the latest snapshot."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "internally_conflicting_evolving_scope"
+}

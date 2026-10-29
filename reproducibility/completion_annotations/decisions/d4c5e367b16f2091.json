@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "d4c5e367b16f2091",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/messages/en.json | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/messages/tr.json",
+  "manual_outcome_date": "",
+  "manual_notes": "All required tooltip keys are present across the eight supported locale catalogs;checked programmatically against English key names,with no missing tooltip entries.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "All required tooltip keys are present across the eight supported locale catalogs;checked programmatically against English key names,with no missing tooltip entries.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-03-26-ui-tooltips/specs/localization/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/messages/en.json",
+      "observed_facts": "Fourteen requested tooltip keys defined."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/messages/tr.json",
+      "observed_facts": "Turkish tooltip entries present;de/es/fr/ja/pt/zh catalogs independently compared too."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

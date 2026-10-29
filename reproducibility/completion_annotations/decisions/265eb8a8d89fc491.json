@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "265eb8a8d89fc491",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/docs/ai/changelog-policy.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Most documentation has English/Japanese pairs and coding rules require synchronized updates, but the exact all-docs pairing rule is not satisfied in the inspected historical tree: docs/ai/changelog-policy.md has no .ja counterpart. Complete planning-document exclusion/enforcement was also not corroborated.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Most documentation has English/Japanese pairs and coding rules require synchronized updates, but the exact all-docs pairing rule is not satisfied in the inspected historical tree: docs/ai/changelog-policy.md has no .ja counterpart. Complete planning-document exclusion/enforcement was also not corroborated.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/docs/ai/changelog-policy.md",
+      "observed_facts": "Historical docs pairing inventory identifies missing Japanese sibling for this file; root README pair and most docs pairs exist."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "612296b44fdd842a42e4d0837c3ab188de6d5868c432dbe1892c9c307b7b3c17"
+}

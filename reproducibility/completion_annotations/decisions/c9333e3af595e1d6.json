@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "c9333e3af595e1d6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src-tauri/src/db/migrations.rs | https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src-tauri/src/settings/mod.rs | https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src/lib/types.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The narrower language-setting scope is supported by historical language:auto defaults, Rust/String and TypeScript fields, persistent settings load/upsert and MIGRATION_3 insertion. Broader translation completeness is a different specification.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The narrower language-setting scope is supported by historical language:auto defaults, Rust/String and TypeScript fields, persistent settings load/upsert and MIGRATION_3 insertion. Broader translation completeness is a different specification.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-02-27-add-localization/specs/settings/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src-tauri/src/db/migrations.rs",
+      "observed_facts": "MIGRATION_3 inserts language auto with INSERT OR IGNORE."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src-tauri/src/settings/mod.rs",
+      "observed_facts": "Default/load persist language; defaults round-trip asserts auto."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src/lib/types.ts",
+      "observed_facts": "Settings mirrors language string field."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

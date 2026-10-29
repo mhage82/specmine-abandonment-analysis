@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "3975cdea2eebeb7d",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/go/cmd/wasm-plugins/proxmox/main.go | https://github.com/carverauto/serviceradar/commit/c19dd005c7bb54cf239451b6997b88d0ebbdee4c | https://github.com/carverauto/serviceradar/commit/3aa8246af8c5688f106022e7084265387330898f | https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/go/pkg/agent/proxmox_console_ssh.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Actual Proxmox SDK HTTP collector, discovery/efficiency payloads and console manifest/bridge exist. But reviewed historical plugin still carries APIToken and sets Authorization from it; the required host-broker-only auth path is not demonstrated. May12 removes reusable local SSH resolver without supplying a verified replacement; pinned connector accepts direct credential fields and has no known_hosts/TOFU store. Required brokered authenticated execution remains unsupported by evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Actual Proxmox SDK HTTP collector, discovery/efficiency payloads and console manifest/bridge exist. But reviewed historical plugin still carries APIToken and sets Authorization from it; the required host-broker-only auth path is not demonstrated. May12 removes reusable local SSH resolver without supplying a verified replacement; pinned connector accepts direct credential fields and has no known_hosts/TOFU store. Required brokered authenticated execution remains unsupported by evidence.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/go/cmd/wasm-plugins/proxmox/main.go",
+      "observed_facts": [
+        "Inspected runProxmoxCheck, getJSON/sdk.HTTPRequest, typed discovery and efficiency/event functions; getJSON constructs Authorization from token and Config still accepts raw APIToken."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/c19dd005c7bb54cf239451b6997b88d0ebbdee4c",
+      "observed_facts": [
+        "Adds first-party console package manifest/schema/capability and purpose-scoped assignment materializer."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/3aa8246af8c5688f106022e7084265387330898f",
+      "observed_facts": [
+        "Deletes agent-local credential resolver and its call from host connector."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/go/pkg/agent/proxmox_console_ssh.go",
+      "observed_facts": [
+        "Connector validates private key/password supplied in SSH/credential_secret and known_hosts/TOFU return store unavailable; no grant-resolution implementation in this file."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "3975cdea2eebeb7d"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

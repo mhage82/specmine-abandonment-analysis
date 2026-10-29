@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "2c817c39b591c73a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_test.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_delegates.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The plugin service has substantial layout refactoring and static tests for catalog/store/types boundaries, constructor wiring, mutable state and lifecycle/upgrade ownership. A material selected requirement remains unresolved: unbound runtime delegates must return explicit errors, but RuntimeDelegate.FilterMenus and FilterPermissionMenus return the input menus when unbound, while route-list methods return nil. Some delegate methods do report errors. This is a partial exact-contract match, not evidence that the broader feature was abandoned.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The plugin service has substantial layout refactoring and static tests for catalog/store/types boundaries, constructor wiring, mutable state and lifecycle/upgrade ownership. A material selected requirement remains unresolved: unbound runtime delegates must return explicit errors, but RuntimeDelegate.FilterMenus and FilterPermissionMenus return the input menus when unbound, while route-list methods return nil. Some delegate methods do report errors. This is a partial exact-contract match, not evidence that the broader feature was abandoned.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_test.go",
+      "observed_facts": "Static tests protect catalog/type/store imports, setter removal, wiring state, lifecycle and upgrade boundaries."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_delegates.go",
+      "observed_facts": "Bound is exposed; DispatchHookEvent reports unbound errors, but FilterMenus/FilterPermissionMenus pass through the input and ListSourceRouteBindings returns nil when unbound."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "selected_delegate_failure_contract_gap"
+}

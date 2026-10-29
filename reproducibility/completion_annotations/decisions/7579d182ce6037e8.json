@@ -1,0 +1,48 @@
+{
+  "file_url_sha16": "7579d182ce6037e8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/runtime-config.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/tracker-paths.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2026-01-17-finalize-vibeusage-rename/specs/vibeusage-tracker/spec.md | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2026-01-03-rename-vibeusage/specs/vibeusage-tracker/spec.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Renaming implementation is evident, but this scope guarantees 90-day legacy CLI/API/package/storage compatibility. A January 17 follow-up explicitly removes that compatibility, and the pinned runtime now resolves only the new storage/environment paths. The required compatibility period and legacy package behavior were not corroborated; no abandonment is inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Renaming implementation is evident, but this scope guarantees 90-day legacy CLI/API/package/storage compatibility. A January 17 follow-up explicitly removes that compatibility, and the pinned runtime now resolves only the new storage/environment paths. The required compatibility period and legacy package behavior were not corroborated; no abandonment is inferred.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/runtime-config.js",
+      "observed_facts": [
+        "Read new-environment-only resolver."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/tracker-paths.js",
+      "observed_facts": [
+        "Read new-only local storage path."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2026-01-17-finalize-vibeusage-rename/specs/vibeusage-tracker/spec.md",
+      "observed_facts": [
+        "Later scope explicitly requires removal of legacy runtime paths and old API slugs."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/2026-01-03-rename-vibeusage/specs/vibeusage-tracker/spec.md",
+      "observed_facts": [
+        "Original scope requires 90-day compatibility, including published legacy packages."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full original/follow-up specifications and tasks read; actual runtime config/storage inspected; compatibility-duration and published-package behavior not verified.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

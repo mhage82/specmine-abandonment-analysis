@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "7edc71fc0108b233",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/62765dca1b942f446b0762e4d1e628b278efe0e7.patch | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/evidence/fantasyrealms/current-ui-audit-2026-06-12.md",
+  "manual_outcome_date": "",
+  "manual_notes": "UI consolidation is substantiated by Board layout/asset-fallback changes and foundation test assertions. However, the pinned current-workspace audit explicitly says this change is not fully closed because visual density/residual anomalies still need work, conflicting with the all-checked tasks. Exact completion cannot be certified from that evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The selected specification requires current real-page acceptance and no known blocking UI bugs. The audit gives substantive progress but an explicit unresolved closure statement; reconciliation with checked tasks is needed. That does not establish abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/62765dca1b942f446b0762e4d1e628b278efe0e7.patch",
+      "observed_facts": "Inspected Board changes for compact-landscape river layout, resource readiness and fallback rendering, plus foundation assertions for empty river slots and missing-atlas fallback."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/evidence/fantasyrealms/current-ui-audit-2026-06-12.md",
+      "observed_facts": "Read full audit, which distinguishes real root workspace from historical worktree screenshots, documents 1440x1024/1024x768 fixes and author-reported tests, but ends saying the current change is not fully closed because visual density and residual anomalies remain."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read complete selected specification and checked tasks; inspected actual Board/card-atlas changes and foundation test assertions; read the pinned full current-workspace audit. Referenced screenshots and a live page were not independently inspected, and tests were not run.",
+  "spec_snapshot_sha256": "d827df9f5bfdb6a037a5dafd70879647dc2e8e73f59b82b924c3224d4b4ff4b7",
+  "related_review_ids": [
+    "7edc71fc0108b233"
+  ]
+}

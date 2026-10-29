@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "1ff7c661a117f066",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/SKILL.md | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/scripts/setup-audit-env.sh | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/scripts/prepare-builtin-plugins.sh | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/scripts/restore-audit-env.sh",
+  "manual_outcome_date": "",
+  "manual_notes": "The audit skill, plugin discovery, evidence catalog and issue-card helpers exist, but the setup implementation invokes absent hack/scripts/prepare-packed-assets.sh in both inspected May18 and July9 snapshots. It also fails when the health response lacks Trace-ID, whereas the selected spec requires a time/URL fallback rather than skipping on missing Trace-ID. End-to-end audit delivery is unresolved despite substantial implementation.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The audit skill, plugin discovery, evidence catalog and issue-card helpers exist, but the setup implementation invokes absent hack/scripts/prepare-packed-assets.sh in both inspected May18 and July9 snapshots. It also fails when the health response lacks Trace-ID, whereas the selected spec requires a time/URL fallback rather than skipping on missing Trace-ID. End-to-end audit delivery is unresolved despite substantial implementation.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/SKILL.md",
+      "observed_facts": "Documents explicit manual invocation, three audit stages, all-plugin preparation, temporary logger restoration and persistent issue cards."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/scripts/setup-audit-env.sh",
+      "observed_facts": "After patching logger settings invokes hack/scripts/prepare-packed-assets.sh; dies if Trace-ID header is empty or not found in server log."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/scripts/prepare-builtin-plugins.sh",
+      "observed_facts": "Discovers plugin.yaml files and installs/enables each with structured failure reporting."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.agents/skills/lina-perf-audit/scripts/restore-audit-env.sh",
+      "observed_facts": "Restores recorded logger path/file and stops services."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "27349666181820ea1cce0121a42c9c4968b08ada4f90aa38107f84a98e04f49a"
+}

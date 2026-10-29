@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "464566d4f3ca9670",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "HTML/entity normalization and interactive/plain/file rendering are implemented, but the exact preservation claim is broader: normalizer indiscriminately removes every tag-shaped span even inside Markdown code fences or autolinks, so existing Markdown semantics can be lost. Source has no fence-aware exclusion. This is a concrete limitation of the selected normalization scope, not evidence of abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "HTML/entity normalization and interactive/plain/file rendering are implemented, but the exact preservation claim is broader: normalizer indiscriminately removes every tag-shaped span even inside Markdown code fences or autolinks, so existing Markdown semantics can be lost. Source has no fence-aware exclusion. This is a concrete limitation of the selected normalization scope, not evidence of abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "Read full _normalize_markdown_text: unescape then _HTML_TAG_RE removal without code-fence/autolink handling; builder applies it to included body/comments; TTY/CI and file branches inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "March17 snapshot has same generic tag-removal behavior."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Counterexample inferred from inspected string-processing logic; no downloaded command was executed."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "464566d4f3ca9670"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

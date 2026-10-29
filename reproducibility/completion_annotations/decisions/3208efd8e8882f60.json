@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "3208efd8e8882f60",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/kniwase/WebComPy/commit/7aa43b3a90242525c4f499272cfe0a63f1f4be6c | https://github.com/kniwase/WebComPy/commit/0e15ba838022e643afa7400d496878f63e293f49",
+  "manual_outcome_date": "",
+  "manual_notes": "The five port modules, browser/server implementations and DI keys exist, with a subsequent DOM Protocol/raw-node refactor. However the spec explicitly requires the five ABCs and DOMNode to be accessible by importing webcompy.ports; the introduced package __init__.py is empty and the inspected follow-up does not add exports. The broader package-level API contract is not fully corroborated.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The five port modules, browser/server implementations and DI keys exist, with a subsequent DOM Protocol/raw-node refactor. However the spec explicitly requires the five ABCs and DOMNode to be accessible by importing webcompy.ports; the introduced package __init__.py is empty and the inspected follow-up does not add exports. The broader package-level API contract is not fully corroborated.",
+  "sources": [
+    {
+      "url": "https://github.com/kniwase/WebComPy/commit/7aa43b3a90242525c4f499272cfe0a63f1f4be6c",
+      "observed_facts": "Read port ABCs, browser/server backends, keys and empty package initializer."
+    },
+    {
+      "url": "https://github.com/kniwase/WebComPy/commit/0e15ba838022e643afa7400d496878f63e293f49",
+      "observed_facts": "DOM integration follow-up changes DOM implementations but not the package initializer."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "specific_contract_gap"
+}

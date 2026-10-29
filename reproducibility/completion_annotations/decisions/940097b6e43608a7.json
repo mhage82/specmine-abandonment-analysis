@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "940097b6e43608a7",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/ZanebonoAlter/Syntopica/commit/491c4f148be138c99f3dfa055630a32cba36d81e | https://github.com/ZanebonoAlter/Syntopica/tree/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/docs/reference | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/docs/getting-started.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The historical migration creates the authoritative reference architecture/API/database/development layer, moves the named guides, promotes getting-started to docs root and removes the redundant architecture copies. Actual destination files and the migration diff support this documentation scope. Ongoing future freshness cannot be certified by one snapshot.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The historical migration creates the authoritative reference architecture/API/database/development layer, moves the named guides, promotes getting-started to docs root and removes the redundant architecture copies. Actual destination files and the migration diff support this documentation scope. Ongoing future freshness cannot be certified by one snapshot.",
+  "sources": [
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/commit/491c4f148be138c99f3dfa055630a32cba36d81e",
+      "observed_facts": "Named reference migrations and duplicate removals inspected."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/tree/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/docs/reference",
+      "observed_facts": "Architecture, API, database, development and cross-milestone guides exist."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/docs/getting-started.md",
+      "observed_facts": "Promoted entry document inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Documentation-only delivery."
+  ]
+}

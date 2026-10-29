@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "6bd0dd2570b52bf0",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/ruff_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_ruff_runner.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Ruff runner invokes check --output-format json on only requested files, filters returned paths, maps S/C9/E-F-I families to the specified categories and turns unavailable/invalid output into tool_error. Read tests asserting mapped rules/categories, fixability, path filtering and errors.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Ruff runner invokes check --output-format json on only requested files, filters returned paths, maps S/C9/E-F-I families to the specified categories and turns unavailable/invalid output into tool_error. Read tests asserting mapped rules/categories, fixability, path filtering and errors.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/ruff_runner.py",
+      "observed_facts": [
+        "Full runner inspected including invocation, normalized allowed paths, prefix mapping and exception conversion."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_ruff_runner.py",
+      "observed_facts": [
+        "Mocked tool tests assert S603,C901,E501,F401,I001, filtering and unavailable/parse-error behavior."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "6bd0dd2570b52bf0"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

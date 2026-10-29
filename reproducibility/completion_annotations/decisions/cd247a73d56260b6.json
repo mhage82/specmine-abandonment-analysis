@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "cd247a73d56260b6",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src/lib/components/settings/sections/AboutSection.svelte | https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/messages/en.json | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/vite.config.js | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/utils/locale.ts | https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/+page.svelte",
+  "manual_outcome_date": "",
+  "manual_notes": "Localization catalog, locale detection/override and cross-window updates exist; all five historical catalog key sets match. The strict all-user-visible-strings requirement is not fully met: historical About renders Version and Built with text directly in English, outside message functions.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Localization catalog, locale detection/override and cross-window updates exist; all five historical catalog key sets match. The strict all-user-visible-strings requirement is not fully met: historical About renders Version and Built with text directly in English, outside message functions.",
+  "sources": [
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/openspec/changes/archive/2026-02-27-add-localization/specs/localization/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/src/lib/components/settings/sections/AboutSection.svelte",
+      "observed_facts": "Version and credit strings are literal English while other labels use m.*."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/90542cea67318dfc6f1054376f2d1aa3ea3fcd92/messages/en.json",
+      "observed_facts": "Compared keys against es/fr/de/ja: none missing."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/vite.config.js",
+      "observed_facts": "Paraglide compiler plugin emits declarations with base-locale fallback."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/lib/utils/locale.ts",
+      "observed_facts": "Resolves navigator prefix or explicit locale with English fallback."
+    },
+    {
+      "url": "https://github.com/Splode/pomotroid/blob/f9f0b266f7a04b895599ca660544219c0d0df054/src/routes/+page.svelte",
+      "observed_facts": "Locale initialized and updated from settings-change events; settings route reviewed likewise."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,34 @@
+{
+  "file_url_sha16": "1bb997dc4c6034fe",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Read actual export-format parser and import branch: blocks map by ID, fenced body/criteria/title/metrics update matched items, no-write returns preview before adapter mutation, write calls update_backlog_item with selected fields and success counts. Missing file gives expected path and --tmp-file advice then exit1. Later content-loss/no-match guards strengthen the path; source is now module-owned. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Read actual export-format parser and import branch: blocks map by ID, fenced body/criteria/title/metrics update matched items, no-write returns preview before adapter mutation, write calls update_backlog_item with selected fields and success counts. Missing file gives expected path and --tmp-file advice then exit1. Later content-loss/no-match guards strengthen the path; source is now module-owned.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "Read _parse_refined_export_markdown and full import_from_tmp branch, including ID matching, preview return, adapter lookup/update and missing-file exit."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Read-only implementation review; did not perform remote writeback or independently run the command."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "1bb997dc4c6034fe",
+      "cdb3927b233d3600"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "a93379dfd7d59662",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/71701bc89e3cb5499e01c582de160ea9988aa840.patch | https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/web-ng/lib/serviceradar_web_ng_web/live/agent_live/show.ex | https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/web-ng/lib/serviceradar_web_ng_web/live/settings/agents_live/releases.ex",
+  "manual_outcome_date": "",
+  "manual_notes": "The recovered release UI caps recent inventory at five and includes signed-manifest import controls; rollout detail handling was changed. A selected acceptance case remains unsupported: preferred_release_target falls back to the first historical target when no matching healthy or active target exists, and hydration can fill desired_version from an old failed attempt. Publisher/signature paths were not fully revalidated.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "For an agent with a newer current version, blank desired_version and only an old failed target, the reviewed fallback does not establish the explicit old-attempt-exclusion requirement. This is a static acceptance gap, not abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/71701bc89e3cb5499e01c582de160ea9988aa840.patch",
+      "observed_facts": "Inspected changed agent-detail hydration and preferred_release_target logic: matching healthy target, then active target, then List.first(targets). The last fallback can be a failed historical desired version."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/web-ng/lib/serviceradar_web_ng_web/live/agent_live/show.ex",
+      "observed_facts": "Pinned final delivery source retains the fallback and populates blank desired_version with latest.desired_version without excluding historical failed targets."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/bae03c2dde5b2900ab13aad40e527063a105eea8/elixir/web-ng/lib/serviceradar_web_ng_web/live/settings/agents_live/releases.ex",
+      "observed_facts": "Inspected visible_release_limit=5 and signed-manifest/signature import and publication controls. Full release-publisher/signature validation chain was not traced."
+    }
+  ],
+  "limitations": [
+    "Static source/test review only; no tests, benchmarks, deployments or production systems were run.",
+    "Evidence uses recovered public GitHub path-history commits. Their equivalence to the original dataset revision is not asserted; no completion date is inferred from the last specification edit.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full selected release specification/shared checklist; inspected recovered rollout detail diff and pinned final detail/release UI code. Did not execute tests or fully trace publisher/signature validation.",
+  "spec_snapshot_sha256": "eb259ec391ff9f060467642600001de081b569c7d7b1352f1e8dcaf68c0f0f3c",
+  "related_review_ids": [
+    "a93379dfd7d59662"
+  ]
+}

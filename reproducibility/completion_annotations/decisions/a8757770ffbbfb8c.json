@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "a8757770ffbbfb8c",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/docs/coding-rules.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical source modules and general documentation use English comments/prose; coding rules explicitly require English comments and public API documentation. Japanese OpenSpec and localization resources remain in their intended separate areas, consistent with the stated exclusions.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical source modules and general documentation use English comments/prose; coding rules explicitly require English comments and public API documentation. Japanese OpenSpec and localization resources remain in their intended separate areas, consistent with the stated exclusions.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/docs/coding-rules.md",
+      "observed_facts": "English comment/public API rules and paired documentation inspected; source scan/review of core/platform/UI found Japanese test strings/font names rather than untranslated explanatory comments. This is a historical language-policy implementation assessment, not a claim every future contribution complies."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "7473c8cb2c7cd6ffeb9eba470de59624399cd8d4827c1f9a3a5d21ef722d4a80"
+}

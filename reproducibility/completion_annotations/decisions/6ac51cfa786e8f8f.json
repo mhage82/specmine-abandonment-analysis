@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "6ac51cfa786e8f8f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/macos_menu.m | https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/native_menu/strings.rs | https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/app/action/dispatch_secondary.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "The native Help menu constructs a Demo item, localizes its title, maps TAG_DEMO to OpenHelpDemo, and the app dispatch invokes the resolver handler. This selected menu/dispatch scope is supported even though other demo requirements differ.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The native Help menu constructs a Demo item, localizes its title, maps TAG_DEMO to OpenHelpDemo, and the app dispatch invokes the resolver handler. This selected menu/dispatch scope is supported even though other demo requirements differ.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/macos_menu.m",
+      "observed_facts": "Help menu adds Demo with TAG_DEMO; native-menu string update sets the localized Demo title."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/native_menu/strings.rs",
+      "observed_facts": "Passes msgs.menu.demo into native menu localization."
+    },
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/945c51bff394a86a09e1c432f7458f1c9d343515/crates/katana-ui/src/app/action/dispatch_secondary.rs",
+      "observed_facts": "OpenHelpDemo dispatches handle_action_open_help_demo; native_menu/mod.rs maps TAG_DEMO to this action."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "877a066e4a8fe32831d94eed2a72129a3dacfc9e17f84837fe5aacf9b4827995"
+}

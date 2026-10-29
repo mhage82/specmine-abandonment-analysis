@@ -1,0 +1,58 @@
+{
+  "file_url_sha16": "7797d44f5b6c5c32",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/plugin_runtime_cache.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_cache.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_source_execute.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/i18n/i18n.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/cmd/internal/httpstartup/http_runtime.go",
+  "manual_outcome_date": "",
+  "manual_notes": "June20 implementation locates revision controllers under cachecoord/revisionctrl and plugin/i18n consumers import that owner. Plugin mutation publishing funnels through publishPluginChange, invalidating runtime/WASM, management, frontend/i18n and OpenAPI projections and bumping shared revision. Topology startup explicitly supplies SQL-single-node/coordination-cluster cache backend. Later backend evolution is recorded separately. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "June20 implementation locates revision controllers under cachecoord/revisionctrl and plugin/i18n consumers import that owner. Plugin mutation publishing funnels through publishPluginChange, invalidating runtime/WASM, management, frontend/i18n and OpenAPI projections and bumping shared revision. Topology startup explicitly supplies SQL-single-node/coordination-cluster cache backend. Later backend evolution is recorded separately.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/plugin_runtime_cache.go",
+      "observed_facts": [
+        "Read root publication and revision callback plus narrowed invalidator contracts."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/lifecycle/lifecycle_cache.go",
+      "observed_facts": [
+        "Lifecycle cache helper delegates to shared PublishPluginChange."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_source_execute.go",
+      "observed_facts": [
+        "Upgrade success/failure path uses shared publisher."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/i18n/i18n.go",
+      "observed_facts": [
+        "Runtime i18n imports cachecoord/revisionctrl and creates scoped controller."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/cmd/internal/httpstartup/http_runtime.go",
+      "observed_facts": [
+        "Explicit SQL versus coordination backend selection and injection."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Historical SQL topology verified at June20; July changes single-node backend. Reviewed publication architecture and representative lifecycle/upgrade call paths, not live cluster convergence."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "06f4320babb947d8",
+      "7797d44f5b6c5c32"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

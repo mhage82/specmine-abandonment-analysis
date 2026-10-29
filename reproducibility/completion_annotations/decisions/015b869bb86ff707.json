@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "015b869bb86ff707",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/5806717679debc637796aa50b1c86a608ea45aab.patch | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/objectProvenance.ts | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/reduce.ts | https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/openspec/changes/refactor-domain-object-provenance-model/rollout.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Stable provenance and source-independent card reconstruction are substantively implemented for a first SmashUp transfer family. The pinned rollout explicitly limits verified coverage and lists remaining cross-game/deferred migrations. The selected broad domain guarantees were not fully established across the advertised boundaries; checked tasks document an initial rollout, not proof of universal acceptance.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Correct task group and real first-batch implementation. Broader event self-sufficiency, presentation-descriptor and deferred-state requirements exceed the traced evidence. Design allows staged migration, so this is unresolved full-scope completion rather than abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/5806717679debc637796aa50b1c86a608ea45aab.patch",
+      "observed_facts": "Inspected sessionContext.ts actor normalization and SmashUp objectProvenance.ts reference/provenance/reconstruction/transfer event implementation."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/objectProvenance.ts",
+      "observed_facts": "Pinned production helper stores uid, owner provenance, default destination, controller context and can reconstruct a card without the live original."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/src/games/smashup/domain/reduce.ts",
+      "observed_facts": "CARD_TRANSFERRED prefers objectRef reconstruction, but legacy fallback can still derive owner from fromPlayerId when objectRef/ownerId absent."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zhuanggenhua/BoardGame/b9666f56e1c2bb4b99f8f40fe6355839275bc081/openspec/changes/refactor-domain-object-provenance-model/rollout.md",
+      "observed_facts": "The rollout explicitly restricts verified work to engine session seam and first SmashUp provenance/deferred families; other games and remaining high-risk families are described as not yet migrated."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full specification, design, checked tasks and rollout inventory; inspected actor/provenance implementation, pinned reducer fallback and interaction system snapshot/display fields. Broad cross-game acceptance was not exhaustively traced. Tests were not run.",
+  "spec_snapshot_sha256": "2a741cc8c8637f80745560e2314651ae558300f97fa3c4b85afa21de2bdffd63",
+  "related_review_ids": [
+    "015b869bb86ff707"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "104eef1296a52ce8",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/pluginconfig/pluginconfig_access.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/pluginconfig/pluginconfig.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/hostconfig/hostconfig_reader.go | https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/pluginservice/config/config_access.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Scoped configuration, production/development/artifact fallback, detached artifact bytes and separation from host configuration are implemented. The selected spec explicitly requires typed defaults for absent or blank values. Bool and Int only check nil and then coerce the value; unlike String and Duration they do not treat a non-null blank string as missing. The same gap appears in May18 and July11 implementations, so the entire selected configuration contract is not confirmed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Scoped configuration, production/development/artifact fallback, detached artifact bytes and separation from host configuration are implemented. The selected spec explicitly requires typed defaults for absent or blank values. Bool and Int only check nil and then coerce the value; unlike String and Duration they do not treat a non-null blank string as missing. The same gap appears in May18 and July11 implementations, so the entire selected configuration contract is not confirmed.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/pluginconfig/pluginconfig_access.go",
+      "observed_facts": [
+        "Read full typed accessors: Bool/Int default only on isMissing; String/Duration additionally handle blank."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/pluginconfig/pluginconfig.go",
+      "observed_facts": [
+        "Read scoped factory and copied artifact configuration construction."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/hostconfig/hostconfig_reader.go",
+      "observed_facts": [
+        "Read distinct host configuration reader and raw access."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc/apps/lina-core/pkg/pluginservice/config/config_access.go",
+      "observed_facts": [
+        "Historical Bool/Int also test nil only; String/Duration implement blank fallback."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "This identifies a literal edge-case contract mismatch; it is not evidence that the broader configuration implementation was abandoned."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "104eef1296a52ce8"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

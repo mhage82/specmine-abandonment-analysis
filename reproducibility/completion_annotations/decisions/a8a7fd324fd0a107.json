@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "a8a7fd324fd0a107",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/plugintypes/plugintypes_version.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog_manifest_validate.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog_test.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/tools/linactl/internal/plugingovernance/plugingovernance_scan.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The runtime ID boundary is directly implemented (nonempty lowercase kebab-case, <=64 characters, no required three-part structure), and manifest validation calls it. The broader selected scope also requires automated consistency checks across every official plugin directory, manifest, registration, runtime/apidoc namespace and fixture. The inspected catalog tests and governance scanner do not establish that full migration-and-scan coverage, and the official plugin submodule is a separately versioned source. Keep the full-scope label unresolved rather than treating runtime validation alone as proof of completion.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The runtime ID boundary is directly implemented (nonempty lowercase kebab-case, <=64 characters, no required three-part structure), and manifest validation calls it. The broader selected scope also requires automated consistency checks across every official plugin directory, manifest, registration, runtime/apidoc namespace and fixture. The inspected catalog tests and governance scanner do not establish that full migration-and-scan coverage, and the official plugin submodule is a separately versioned source. Keep the full-scope label unresolved rather than treating runtime validation alone as proof of completion.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/plugintypes/plugintypes_version.go",
+      "observed_facts": "ValidatePluginID enforces the exact safety pattern and length, while ParsePluginID treats three-part structure as a convention."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog_manifest_validate.go",
+      "observed_facts": "Manifest IDs and source registration IDs are validated and compared."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/catalog/catalog_test.go",
+      "observed_facts": "Runtime ID tests cover accepted arbitrary domains and rejected unsafe/long values."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/tools/linactl/internal/plugingovernance/plugingovernance_scan.go",
+      "observed_facts": "Scanner covers table access, legacy clients, dependency and package boundaries; this inspected scanner does not establish all requested official-ID and i18n namespace checks."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "full_scope_governance_coverage_unestablished"
+}

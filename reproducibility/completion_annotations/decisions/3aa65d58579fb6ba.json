@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "3aa65d58579fb6ba",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-ui/src/app_state.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Workspace/document/tree and split panes are implemented, but the exact archived default-layout scenario requires workspace, editor and preview simultaneously. Historical and pinned state default documents to PreviewOnly; tests explicitly assert that default. Task notes also changed the intended default. Strict scope alignment requires adjudication.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Workspace/document/tree and split panes are implemented, but the exact archived default-layout scenario requires workspace, editor and preview simultaneously. Historical and pinned state default documents to PreviewOnly; tests explicitly assert that default. Task notes also changed the intended default. Strict scope alignment requires adjudication.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/4e2c9d9cf9c98e2b79c0564872dd6ed3a0ff9a2c/crates/katana-ui/src/app_state.rs",
+      "observed_facts": "active_view_mode falls back to PreviewOnly; current tests/integration/editor/toggle_view_modes.rs asserts PreviewOnly on open. Split is an explicit user-selected mode."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "09a8d8b61db9e6fd50a2cb5ae28694a2123d4673429639b1769931903d08995f"
+}

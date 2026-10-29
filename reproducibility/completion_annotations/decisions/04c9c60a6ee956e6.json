@@ -1,0 +1,46 @@
+{
+  "file_url_sha16": "04c9c60a6ee956e6",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/4dd697f33749884c12cb687c9d3c9304ad6811e4 | https://github.com/carverauto/serviceradar/commit/63ee6e4ff1506b710fd54f1550dba70136a45af2 | https://github.com/carverauto/serviceradar/commit/f13a0e447157f826ea805adc65caee4b3d69c5fa",
+  "manual_outcome_date": "",
+  "manual_notes": "SRQL per-agent EXISTS filters, canonical source field, freshness filters and valid device-query preview are implemented with tests. Strict completion is not established for the required bounded per-agent summary: inspected detail loader reads all by-device rows with no limit and the resource read defines sorting only; Rust device changes expose the primary source, not a bounded observation list. A later bounded path was not verified. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "SRQL per-agent EXISTS filters, canonical source field, freshness filters and valid device-query preview are implemented with tests. Strict completion is not established for the required bounded per-agent summary: inspected detail loader reads all by-device rows with no limit and the resource read defines sorting only; Rust device changes expose the primary source, not a bounded observation list. A later bounded path was not verified.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/4dd697f33749884c12cb687c9d3c9304ad6811e4",
+      "observed_facts": [
+        "EXISTS filters support divergent agents without duplicate device rows. Device details load_agent_availability calls unbounded Ash.read; resource by_device only sorts."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/63ee6e4ff1506b710fd54f1550dba70136a45af2",
+      "observed_facts": [
+        "Implements fresh/stale selected-agent EXISTS timestamp filters, binds and comprehensive query assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/f13a0e447157f826ea805adc65caee4b3d69c5fa",
+      "observed_facts": [
+        "Validates devices entity/parse and bounds profile preview to25; this is a separate bounded scope-preview feature, not the required per-agent observation summary."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "04c9c60a6ee956e6",
+      "65d51b4e81663452"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

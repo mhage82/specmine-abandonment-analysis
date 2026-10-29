@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "287eaaf1d4c3bded",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/cao/rest_client.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/cao/models.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/backends/cao_rest.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-codex-session/run_demo.sh | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-claude-session/run_demo.sh | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/gemini-headless-session/run_demo.sh",
+  "manual_outcome_date": "",
+  "manual_notes": "The typed CAO client uses the specified query parameter names and output/status models. Backend launch creates a unique tmux session, sets launch environment before terminal creation, maps Codex/Claude providers, and renders unique profiles with name/description. Three provider demo packs and verification/skip handling cover the requested tutorial scope. Live cloud calls were not independently executed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The typed CAO client uses the specified query parameter names and output/status models. Backend launch creates a unique tmux session, sets launch environment before terminal creation, maps Codex/Claude providers, and renders unique profiles with name/description. Three provider demo packs and verification/skip handling cover the requested tutorial scope. Live cloud calls were not independently executed.",
+  "sources": [
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/cao/rest_client.py",
+      "observed_facts": "Create-terminal, input message, output mode and typed response parsing inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/cao/models.py",
+      "observed_facts": "Typed terminal status and output models inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/backends/cao_rest.py",
+      "observed_facts": "Provider mapping, profile rendering and ordered tmux environment/terminal launch inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-codex-session/run_demo.sh",
+      "observed_facts": "Demo runner and credential/connectivity skip paths inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/cao-claude-session/run_demo.sh",
+      "observed_facts": "Claude demo runner and verifier wiring inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/scripts/demo/gemini-headless-session/run_demo.sh",
+      "observed_facts": "Non-CAO Gemini runner and skip/verification paths inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "This annotation supports implementation and demo-artifact delivery, not a new successful provider execution."
+  ]
+}

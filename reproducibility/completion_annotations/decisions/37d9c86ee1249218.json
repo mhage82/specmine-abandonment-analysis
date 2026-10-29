@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "37d9c86ee1249218",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/1563680304f56c5752e827b11500713d39d28509 | https://github.com/carverauto/serviceradar/commit/79642816c7dfa6f72a091c5982554d6fe4f8cd10",
+  "manual_outcome_date": "2026-07-09",
+  "manual_notes": "Recovered July7/9 diffs implement this sync-configuration scope: allowlisted nonsecret settings include asset_fields/extra_metadata_fields; compact settings are emitted separately from credentials; Armis enrichment consumes them. Integration editor accepts v3 client ID/secret/vendor ID while retaining v1 credentials; LiveView/config-generator tests assert storage and separation. Reviewed source and tests; no live service run.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Recovered July7/9 diffs implement this sync-configuration scope: allowlisted nonsecret settings include asset_fields/extra_metadata_fields; compact settings are emitted separately from credentials; Armis enrichment consumes them. Integration editor accepts v3 client ID/secret/vendor ID while retaining v1 credentials; LiveView/config-generator tests assert storage and separation. Reviewed source and tests; no live service run.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/1563680304f56c5752e827b11500713d39d28509",
+      "observed_facts": [
+        "sync_config_generator.ex allowlists source settings, normalizes values and compacts empty payload entries; credentials remain separate. Source model/driver carry settings into enrichment."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/79642816c7dfa6f72a091c5982554d6fe4f8cd10",
+      "observed_facts": [
+        "Integration settings editor maps v3 credential fields into credentials alongside api_key/api_secret, preserving existing secrets on blank edit. Tests assert credential values and editor fields."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "37d9c86ee1249218"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

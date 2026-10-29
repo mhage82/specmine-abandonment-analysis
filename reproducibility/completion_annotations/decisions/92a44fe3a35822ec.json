@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "92a44fe3a35822ec",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/logging-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-pricing-sync.js | https://github.com/victorGPT/vibeusage/commit/18c84ad62fc0db6f388fcd77600690001c08a4f6",
+  "manual_outcome_date": "",
+  "manual_notes": "All five named functions use the request-logging wrapper. The logger emits the required structured fields on responses/exceptions, and the pricing upstream fetch records upstream status and duration without adding request contents.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "All five named functions use the request-logging wrapper. The logger emits the required structured fields on responses/exceptions, and the pricing upstream fetch records upstream status and duration without adding request contents.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/logging-core.js",
+      "observed_facts": [
+        "Read createLogger, fetchWithUpstream and withRequestLogging; all eight required fields are constructed."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-pricing-sync.js",
+      "observed_facts": [
+        "Wrapped handler uses logger.fetch for OpenRouter."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/commit/18c84ad62fc0db6f388fcd77600690001c08a4f6",
+      "observed_facts": [
+        "Implementation lead; named user-status, entitlement grant/revoke and model-breakdown wrappers corroborated in pinned source."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; shared logger code, upstream fetch call and wrapper coverage for all five endpoints inspected.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

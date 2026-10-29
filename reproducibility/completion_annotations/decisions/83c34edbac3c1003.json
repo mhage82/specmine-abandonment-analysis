@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "83c34edbac3c1003",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/test_core_module_isolation.py | https://github.com/nold-ai/specfact-cli/blob/af8535029d98d8c2548608f544178d57bb49f31c/.github/workflows/specfact.yml | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Actual AST isolation test and CI pytest step exist, with aggregate path/line messages and type-only exclusions. Strict zero-runtime-import coverage is incomplete: _get_module_name examines only the first alias of an ast.Import, so import os, specfact_cli.modules.backlog bypasses it; the TYPE_CHECKING ancestor test also does not distinguish the else branch. Runtime/lazy architecture changed since February, so this label is based on the concrete checker gap, not missing CI filename.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Actual AST isolation test and CI pytest step exist, with aggregate path/line messages and type-only exclusions. Strict zero-runtime-import coverage is incomplete: _get_module_name examines only the first alias of an ast.Import, so import os, specfact_cli.modules.backlog bypasses it; the TYPE_CHECKING ancestor test also does not distinguish the else branch. Runtime/lazy architecture changed since February, so this label is based on the concrete checker gap, not missing CI filename.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/test_core_module_isolation.py",
+      "observed_facts": [
+        "Read whole visitor: node.names[0] only and ancestor If TYPE_CHECKING exclusion without checking body versus orelse."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/af8535029d98d8c2548608f544178d57bb49f31c/.github/workflows/specfact.yml",
+      "observed_facts": [
+        "Historical workflow actually invokes pytest test_core_module_isolation without continue-on-error on that step."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/registry/module_packages.py",
+      "observed_facts": [
+        "Source-based protocol inspection and lazy command loader are implemented."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "83c34edbac3c1003"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

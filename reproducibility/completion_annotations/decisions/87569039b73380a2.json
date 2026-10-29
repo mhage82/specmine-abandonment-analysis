@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "87569039b73380a2",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/zhuanggenhua/BoardGame/commit/f1426eb6765222ec677894a9b3b4cc35274017e3 | https://github.com/zhuanggenhua/BoardGame/commit/5579893f57edd059a0dc8abcecda134a8a6fc125",
+  "manual_outcome_date": "2026-05-30",
+  "manual_notes": "This candidate has identical specification text to reviewed 84bbcc1f578b5723. Re-inspected the implementation commits: the server publishes an allowlisted public setup summary and RoomList conditionally renders full translated tag names. May 30 is the observed implementation event, not deployment; repeated snapshots are not independent examples.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Exact duplicate scope was compared before reusing evidence. The shared deck-query checklist is not the sole basis; server projection, conditional rendering and tests support this selected lobby-summary scope.",
+  "sources": [
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/f1426eb6765222ec677894a9b3b4cc35274017e3",
+      "observed_facts": "The diff adds buildSmashUpPublicRoomSummary to server.ts, carries publicSetupSummary through lobby types, and renders room-card labels only for a nonempty enabledExpansions array. RoomList uses translated complete labels rather than truncating tag text. Added roomSetup and RoomList tests assert the summary shape and labels. The task file and this specification are added in the same change."
+    },
+    {
+      "url": "https://github.com/zhuanggenhua/BoardGame/commit/5579893f57edd059a0dc8abcecda134a8a6fc125",
+      "observed_facts": "GitHub commit author and committer timestamps are 2026-05-30T06:54:57Z. The diff updates the exact lobby-room-summaries specification, uses an allowlist for public tags in roomSetup.ts, adds the deckQuery display label in RoomList.tsx, and updates unit and E2E assertions for the public summary and full labels."
+    }
+  ],
+  "limitations": [
+    "Static review of public source diffs and tests; tests were not executed and production deployment was not verified.",
+    "Outcome date denotes observed implementation of the final recorded scope, not the exact time developers finished work.",
+    "The new summary is limited to public tags, but the existing lobby structure still includes ownerKey separately. This annotation does not certify that the entire lobby payload contains no sensitive fields.",
+    "Same selected specification text and implementation evidence as 84bbcc1f578b5723; this is not an independent completion example."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "1de4f7cf83891e74402f05b9151a229be6045469430bb8cd36df22ef5878d497",
+  "related_review_ids": [
+    "87569039b73380a2"
+  ]
+}

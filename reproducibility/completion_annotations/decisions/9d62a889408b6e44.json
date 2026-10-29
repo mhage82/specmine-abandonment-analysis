@@ -1,0 +1,29 @@
+{
+  "file_url_sha16": "9d62a889408b6e44",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_env.setup.go | https://github.com/linaproai/linapro/tree/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc",
+  "manual_outcome_date": "",
+  "manual_notes": "The required archive-based Shell and PowerShell installer entry points were not located in either the earliest supplied May18 compacted-history snapshot or July9 snapshot. The inspected env.setup command installs local development dependencies inside an existing repository, which does not establish archive download, stable-tag fallback or overwrite protection. Historical installer delivery remains unverified; this is not abandonment evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The required archive-based Shell and PowerShell installer entry points were not located in either the earliest supplied May18 compacted-history snapshot or July9 snapshot. The inspected env.setup command installs local development dependencies inside an existing repository, which does not establish archive download, stable-tag fallback or overwrite protection. Historical installer delivery remains unverified; this is not abandonment evidence.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_env.setup.go",
+      "observed_facts": "Current env.setup installs lint tools, frontend dependencies and Playwright; it is not a repository archive bootstrap installer."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/tree/d5e1341d3e0cbd0230b9f297c6733df69bcd58bc",
+      "observed_facts": "Read-only full text archive inspection found no hack/scripts/install/install.sh or install.ps1. Same required paths absent in July9 source archive."
+    }
+  ],
+  "limitations": [
+    "Missing scripts across inspected snapshots do not prove they never existed before the supplied compacted history.",
+    "Static source/archive inspection only; no downloaded code executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "fcdfb027fc1fdfe5e57d4f1fc807552ddb0c84a6ed9771518415200251485ac6"
+}

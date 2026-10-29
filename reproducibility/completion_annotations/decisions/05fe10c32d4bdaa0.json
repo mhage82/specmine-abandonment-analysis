@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "05fe10c32d4bdaa0",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/langoai/lango/commit/5571be9f5ff186712e0bede6b26a8699cd4a06f1 | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/chat/bridge.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/turnrunner/runner.go | https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/chat/bridge_test.go",
+  "manual_outcome_date": "2026-04-04",
+  "manual_notes": "The package-internal bridge preserves OnChunk/OnWarning, sends tool/thinking messages, and the runner invokes nil-safe callbacks, measures call duration and removes timing entries. April 4 follow-up changes thinking callbacks to start only on the first thought and finish with accumulated text. Pinned source and bridge tests corroborate delivery. Date is the inspected follow-up implementation commit; the later sender interface is a compatible testability refactor.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The package-internal bridge preserves OnChunk/OnWarning, sends tool/thinking messages, and the runner invokes nil-safe callbacks, measures call duration and removes timing entries. April 4 follow-up changes thinking callbacks to start only on the first thought and finish with accumulated text. Pinned source and bridge tests corroborate delivery. Date is the inspected follow-up implementation commit; the later sender interface is a compatible testability refactor.",
+  "sources": [
+    {
+      "url": "https://github.com/langoai/lango/commit/5571be9f5ff186712e0bede6b26a8699cd4a06f1",
+      "observed_facts": "Read bridge and runner diffs: thinkingStart duration, accumulated text and boundary-only start callbacks."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/chat/bridge.go",
+      "observed_facts": "OnChunk/OnWarning untouched while tool and thinking callbacks send typed messages."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/turnrunner/runner.go",
+      "observed_facts": "Callbacks are populated and called with nil guards; FunctionResponse computes duration and deletes callID entry."
+    },
+    {
+      "url": "https://github.com/langoai/lango/blob/006c7759f848fb78554365447629a68de237f649/internal/cli/chat/bridge_test.go",
+      "observed_facts": "Existing OnChunk preservation and typed tool/thinking message assertions inspected."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "00c810326a4f95f2a4a34aa3aaf37c45c62cbf990aeca2619c74779f04179ef4"
+}

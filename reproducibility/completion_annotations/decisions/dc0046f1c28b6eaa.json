@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "dc0046f1c28b6eaa",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/src/specfact_cli/adapters/ado.py | https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/adapters/ado.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Centralized PAT/Bearer authentication, cached OAuth refresh, persisted refreshed token and failure guidance are directly implemented. Selected URL contract nevertheless says every configured API path must include org/project before _apis, while actual batch work-item GET deliberately uses an organization-only endpoint. This is an explicit specification/implementation disagreement, not an inference of abandonment or a claim that the API endpoint is invalid. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Centralized PAT/Bearer authentication, cached OAuth refresh, persisted refreshed token and failure guidance are directly implemented. Selected URL contract nevertheless says every configured API path must include org/project before _apis, while actual batch work-item GET deliberately uses an organization-only endpoint. This is an explicit specification/implementation disagreement, not an inference of abandonment or a claim that the API endpoint is invalid.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/fd91d98ca131144680843d1a859b88a8fe7ac81d/src/specfact_cli/adapters/ado.py",
+      "observed_facts": [
+        "Read constructor token precedence/refresh/persistence, PAT encoding, persistent-cache credential, auth helper, WIQL/PATCH and batch GET; batch comments and construction explicitly omit project."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/c0addd7cc4d40a32a959c64d11bb0593062a5fd7/src/specfact_cli/adapters/ado.py",
+      "observed_facts": [
+        "Later _ado_workitems_batch_base_url still builds organization-only work-item batch endpoint."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Full selected specification includes an overly broad URL requirement; a human may narrow it to project-scoped endpoints and reassess. No live ADO authentication was performed."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "616cd509a563ee4b",
+      "dc0046f1c28b6eaa"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

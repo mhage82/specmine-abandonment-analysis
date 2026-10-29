@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "2f36f019fa18cf00",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/radon_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_radon_runner.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Radon runner invokes cc -j for requested paths, maps complexity13..15 to warning and greater15 to error, skips <=12 complexity findings and handles non-JSON/tool failures as tool_error. Read matching mocked runner tests. Later independent KISS checks extend the runner; they do not change this reviewed complexity extraction scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Radon runner invokes cc -j for requested paths, maps complexity13..15 to warning and greater15 to error, skips <=12 complexity findings and handles non-JSON/tool failures as tool_error. Read matching mocked runner tests. Later independent KISS checks extend the runner; they do not change this reviewed complexity extraction scope.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/tools/radon_runner.py",
+      "observed_facts": [
+        "Read subprocess invocation, path whitelist, complexity mapping and parse/error handling."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/unit/specfact_code_review/tools/test_radon_runner.py",
+      "observed_facts": [
+        "Tests assert warning/error boundaries, file filtering and invalid-output tool_error."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "2f36f019fa18cf00"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

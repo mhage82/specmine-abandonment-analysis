@@ -1,0 +1,52 @@
+{
+  "file_url_sha16": "2be50505761fdfb7",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/lib/screenshot-mode.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/pages/DashboardPage.jsx | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/scripts/capture-dashboard-screenshot.mjs | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/wrapped-2025.html | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/styles.css",
+  "manual_outcome_date": "",
+  "manual_notes": "Substantial screenshot implementation exists: query trigger, total period, heatmap controls, clipboard-before-X fallback, animation freeze, exclusion filters and Playwright capture. A concrete unresolved production requirement remains: wrapped-2025.html redirects www.vibeusage.cc visitors to / instead of displaying the required static wrapped image. The complete four-module layout/export at the original completion event was not independently established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Substantial screenshot implementation exists: query trigger, total period, heatmap controls, clipboard-before-X fallback, animation freeze, exclusion filters and Playwright capture. A concrete unresolved production requirement remains: wrapped-2025.html redirects www.vibeusage.cc visitors to / instead of displaying the required static wrapped image. The complete four-module layout/export at the original completion event was not independently established.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/lib/screenshot-mode.js",
+      "observed_facts": [
+        "Read screenshot=1|true parser."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": [
+        "Read total-period selection, heatmap flags, capture exclusions/freeze and clipboard/X handler."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/scripts/capture-dashboard-screenshot.mjs",
+      "observed_facts": [
+        "Read Playwright capture, reduced motion and hidden excluded controls."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/wrapped-2025.html",
+      "observed_facts": [
+        "Read static image markup and production-host redirect to /, conflicting with static wrapped destination requirement."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/styles.css",
+      "observed_facts": [
+        "Capture mode disables animated overlays."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; screenshot capture/control implementation and static page inspected; strict production destination mismatch, full layout not exhaustively rendered.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": []
+}

@@ -1,0 +1,75 @@
+{
+  "file_url_sha16": "b1308153d38e89d0",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/go/pkg/agent/addon_activation.go | https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/go/pkg/agent/push_loop_addons.go | https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/go/pkg/agent/addon/manager.go | https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/elixir/serviceradar_core/lib/serviceradar/plugins/addon_package.ex | https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/elixir/serviceradar_core/lib/serviceradar/plugins/addon_assignment.ex | https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/scripts/check-addon-binary-size.sh | https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/build/native_addons/binary-size-baseline.json | https://github.com/carverauto/serviceradar/commit/7535a16786fe414b82e93e50478fbe1fa3ab25b8",
+  "manual_outcome_date": "",
+  "manual_notes": "Extensive real framework verified: signed artifact staging/rollback, root-updater capabilities/systemd, AutoMTLS go-plugin supervisor with restart bounds, staged/approved catalog, assignment validation and compatibility gating. Strict full scope is not established: reviewed binary-size baseline is empty, and size gate skips artifacts without a baseline, so required enforced no-growth protection is not demonstrated. Manifest-driven UI/cohort/privilege disclosure was documented but not independently verified in its actual UI source. Do not equate broad checked task group with all requirements.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Extensive real framework verified: signed artifact staging/rollback, root-updater capabilities/systemd, AutoMTLS go-plugin supervisor with restart bounds, staged/approved catalog, assignment validation and compatibility gating. Strict full scope is not established: reviewed binary-size baseline is empty, and size gate skips artifacts without a baseline, so required enforced no-growth protection is not demonstrated. Manifest-driven UI/cohort/privilege disclosure was documented but not independently verified in its actual UI source. Do not equate broad checked task group with all requirements.",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/go/pkg/agent/addon_activation.go",
+      "observed_facts": [
+        "Verifies SHA256/signature before atomic staging; rollback and bounded tar extraction implemented."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/go/pkg/agent/push_loop_addons.go",
+      "observed_facts": [
+        "Dispatches supervision kinds, preserves last-good sidecar specs and uses privileged updater for capabilities/systemd lifecycle."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/go/pkg/agent/addon/manager.go",
+      "observed_facts": [
+        "Actual goplugin.NewClient AutoMTLS/GRPC/UDS, per-runner restart backoff and circuit breaker; manager tests present."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/elixir/serviceradar_core/lib/serviceradar/plugins/addon_package.ex",
+      "observed_facts": [
+        "Staged-approved-denied-revoked state machine and provenance/artifact fields exist."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/elixir/serviceradar_core/lib/serviceradar/plugins/addon_assignment.ex",
+      "observed_facts": [
+        "Validates approved package and config schema on create/update."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/scripts/check-addon-binary-size.sh",
+      "observed_facts": [
+        "Artifacts missing baseline are reported then skipped, so no size regression fails for them."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/7535a16786fe414b82e93e50478fbe1fa3ab25b8/build/native_addons/binary-size-baseline.json",
+      "observed_facts": [
+        "Pinned baseline contents are empty JSON object."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/7535a16786fe414b82e93e50478fbe1fa3ab25b8",
+      "observed_facts": [
+        "Removes bundled optional RDP runtime and legacy sidecar manager; adds platform/version/artifact delivery gates."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b1308153d38e89d0"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

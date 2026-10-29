@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "c530bb3387389b0b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/b0x42/prizm/blob/a09a2eba2676de49594aae97826e8382dc434edb/Prizm/Prizm.xcodeproj/project.pbxproj | https://github.com/b0x42/prizm/blob/a09a2eba2676de49594aae97826e8382dc434edb/Prizm/Prizm/Prizm.entitlements | https://github.com/b0x42/prizm/blob/a09a2eba2676de49594aae97826e8382dc434edb/Prizm/LocalConfig.xcconfig.template | https://github.com/b0x42/prizm/blob/8f485e2f9db7f61f754c92d34f78907f17032f41/Macwarden/Data/Keychain/KeychainService.swift",
+  "manual_outcome_date": "",
+  "manual_notes": "Data-protection keychain queries and entitlement-based access-group configuration are implemented, and the local signing template exists. However, the inspected Prizm project still commits explicit developer team settings, contrary to the selected no-Team-ID requirement. The evidence supports the keychain refactor but not the full signing-cleanup contract.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Data-protection keychain queries and entitlement-based access-group configuration are implemented, and the local signing template exists. However, the inspected Prizm project still commits explicit developer team settings, contrary to the selected no-Team-ID requirement. The evidence supports the keychain refactor but not the full signing-cleanup contract.",
+  "sources": [
+    {
+      "url": "https://github.com/b0x42/prizm/blob/a09a2eba2676de49594aae97826e8382dc434edb/Prizm/Prizm.xcodeproj/project.pbxproj",
+      "observed_facts": "Explicit DEVELOPMENT_TEAM settings remain in build configurations."
+    },
+    {
+      "url": "https://github.com/b0x42/prizm/blob/a09a2eba2676de49594aae97826e8382dc434edb/Prizm/Prizm/Prizm.entitlements",
+      "observed_facts": "Resolved com.prizm keychain access group is configured."
+    },
+    {
+      "url": "https://github.com/b0x42/prizm/blob/a09a2eba2676de49594aae97826e8382dc434edb/Prizm/LocalConfig.xcconfig.template",
+      "observed_facts": "Per-developer signing template leaves the team field blank."
+    },
+    {
+      "url": "https://github.com/b0x42/prizm/blob/8f485e2f9db7f61f754c92d34f78907f17032f41/Macwarden/Data/Keychain/KeychainService.swift",
+      "observed_facts": "Historical data-protection query implementation inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "partial_signing_scope"
+}

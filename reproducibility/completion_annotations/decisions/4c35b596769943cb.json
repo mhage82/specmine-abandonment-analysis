@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "4c35b596769943cb",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/complytime/complyctl/commit/2ccd3f31bbbea61d9161fe694ba0bdfb73c35853 | https://github.com/complytime/complyctl/blob/b2e388a93d0ebd927feb4eec23ab92f93db99a28/internal/doctor/doctor.go | https://github.com/complytime/complyctl/pull/675",
+  "manual_outcome_date": "",
+  "manual_notes": "Self-healing cache and digest-plus-cache skip logic are implemented with a refetch regression test. However FR-003 covers an evaluator recorded in state.json; the pinned doctor check enumerates configured policy-graph evaluators rather than state entries. A state-recorded evaluator absent from those graphs is not corroborated by this check. Empty-config skipping is implemented. Strict full-scope completion needs adjudication; PR 675 integration on July 3 is not treated as a confirmed outcome date.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Self-healing cache and digest-plus-cache skip logic are implemented with a refetch regression test. However FR-003 covers an evaluator recorded in state.json; the pinned doctor check enumerates configured policy-graph evaluators rather than state entries. A state-recorded evaluator absent from those graphs is not corroborated by this check. Empty-config skipping is implemented. Strict full-scope completion needs adjudication; PR 675 integration on July 3 is not treated as a confirmed outcome date.",
+  "sources": [
+    {
+      "url": "https://github.com/complytime/complyctl/commit/2ccd3f31bbbea61d9161fe694ba0bdfb73c35853",
+      "observed_facts": "Digest-plus-cache skip guard, missing-cache regression test, and empty configuration handling."
+    },
+    {
+      "url": "https://github.com/complytime/complyctl/blob/b2e388a93d0ebd927feb4eec23ab92f93db99a28/internal/doctor/doctor.go",
+      "observed_facts": "CheckComplypacks uses evaluator lookup and warns when configured content is missing."
+    },
+    {
+      "url": "https://github.com/complytime/complyctl/pull/675",
+      "observed_facts": "Collected stage1/spec_pr_evidence.parquet associates this specification with PR 675, merged_at 2026-07-03T14:10:05Z."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Doctor checks configured policy-graph evaluators; no deployment or exhaustive corrupted-cache test was run.",
+    "The spec also requires empty-config skipping; human adjudication should resolve the intended domain of the state-based doctor scenario. No runtime reproduction; no abandonment inference."
+  ],
+  "adjudication_history": [
+    {
+      "initial_status": "completed",
+      "initial_date": "2026-07-03",
+      "reason_for_revision": "Second AI review found state-recorded evaluator scope in FR-003 is broader than the inspected configured-policy graph check; changed before CSV application."
+    }
+  ],
+  "uncertainty_category": "state_vs_configured_policy_scope"
+}

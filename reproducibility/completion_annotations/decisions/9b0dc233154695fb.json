@@ -1,0 +1,41 @@
+{
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "file_url_sha16": "9b0dc233154695fb",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/Myriad-Dreamin/cosmo/pull/98 | https://github.com/Myriad-Dreamin/cosmo/commit/10db0d9f7679abf36feee3e0ee37309aac9a9708",
+  "manual_outcome_date": "2026-05-24",
+  "manual_notes": "Completed in merged PR #98 / 10db0d9 (2026-05-24). Actual implementation adds check/infer entry points, Pi/lambda/application behavior, WHNF beta/let conversion with explicit strategy, deterministic profile diagnostics and conservative metavariable hooks; tests exercise these cases and profile gating. This commit changes outstanding tasks to checked (34/34); tasks also cover the companion core-data spec, but the selected checker requirements map directly to code. PR #97 is adjacent work, not the decisive completion event. Tests inspected, not executed.",
+  "confidence": "high",
+  "rationale": "Task-file history identifies PR #98, which is absent from spec-file-only leads. It adds the relevant checker in packages/cosmoc/src/types/mltt/check.cos and a Scala MLTT mirror, profile metadata and focused behavioral tests. The checklist transition corroborates completion of the selected bidirectional-checker scope, without relying on the companion core-data checklist alone.",
+  "sources": [
+    {
+      "url": "https://github.com/Myriad-Dreamin/cosmo/pull/98",
+      "observed_facts": [
+        "PR titled feat: add MLTT core type checker is merged, merged_at 2026-05-24T07:21:49Z.",
+        "Merge commit is 10db0d9f7679abf36feee3e0ee37309aac9a9708."
+      ]
+    },
+    {
+      "url": "https://github.com/Myriad-Dreamin/cosmo/commit/10db0d9f7679abf36feee3e0ee37309aac9a9708",
+      "observed_facts": [
+        "Adds actual check/infer and normalization implementations plus profile-aware diagnostics.",
+        "Checker tests cover lambda/Pi, application inference, beta/let conversion, unknown-variable errors, conservative metavariables, and unsupported normalization profiles.",
+        "Existing unchecked tasks become checked and two additional completed items produce 34 total."
+      ]
+    },
+    {
+      "url": "https://github.com/Myriad-Dreamin/cosmo/blob/42d712536cd5889a78a745f2f3e4be684bceddb7/openspec/changes/introduce-mltt-type-checker/tasks.md",
+      "observed_facts": [
+        "Pinned specification revision has 34 checked and no unchecked task items."
+      ]
+    }
+  ],
+  "limitations": [
+    "Checklist is shared with cosmo-mltt-core; reviewed selected bidirectional-checker scope separately.",
+    "Reviewed test definitions and implementation; did not execute tests.",
+    "Outcome date is the matching implementation merge, not deployment.",
+    "This is AI-assisted annotation pending human confirmation."
+  ]
+}

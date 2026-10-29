@@ -1,0 +1,59 @@
+{
+  "file_url_sha16": "1a9b9fedb9bcd867",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/windows-symlink-setup.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/astro.config.mjs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/README.md | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/npm/agentsync/README.md | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/index.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/getting-started.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/configuration.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/cli.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/gitignore-team-workflows.mdx",
+  "manual_outcome_date": "",
+  "manual_notes": "Dedicated Windows guide supplies native Developer Mode/admin prerequisites, shell/context advice, optional WSL path, symlink checks and recovery while delegating team policy to the cross-platform guide. Navigation and all requested entry/reference surfaces link to this canonical guide.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Dedicated Windows guide supplies native Developer Mode/admin prerequisites, shell/context advice, optional WSL path, symlink checks and recovery while delegating team policy to the cross-platform guide. Navigation and all requested entry/reference surfaces link to this canonical guide.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-31-document-windows-symlink-setup/specs/documentation/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/windows-symlink-setup.mdx",
+      "observed_facts": "Full guide read: native prerequisites, optional WSL, verification and recovery, shared-policy crosslinks."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/astro.config.mjs",
+      "observed_facts": "Windows guide sidebar entry."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/README.md",
+      "observed_facts": "Setup and troubleshooting links."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/npm/agentsync/README.md",
+      "observed_facts": "Windows setup link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/index.mdx",
+      "observed_facts": "Windows guide link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/getting-started.mdx",
+      "observed_facts": "Windows guide link."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/configuration.mdx",
+      "observed_facts": "Windows setup links retain cross-platform configuration."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/cli.mdx",
+      "observed_facts": "Windows guide links in command reference."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/gitignore-team-workflows.mdx",
+      "observed_facts": "Brief platform note links canonical Windows guide."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

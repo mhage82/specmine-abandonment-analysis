@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "6da6abe448c3f19b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/webspatial/webspatial-sdk/pull/1244.diff | https://github.com/webspatial/webspatial-sdk/pull/1244",
+  "manual_outcome_date": "2026-06-01",
+  "manual_notes": "PR1244 implements native generation advancement before cleanup, wsepoch comparison for both attachment/SpatialDiv requests, no-epoch compatibility warning, rid-only diagnostics and inspect generation/object IDs. Inspected SpatialScene.swift logic. Date is collected PR merge event. Native runtime was not executed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The selected four native guard requirements have directly matching substantive Swift implementation.",
+  "sources": [
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1244.diff",
+      "observed_facts": "SpatialScene.swift increments currentPageGeneration at start of onPageStartLoad; shouldAcceptSpatialRequest checks epoch equality, warns/accepts absent epochs, logs rid without using it for freshness, and gates both create paths; encoder emits generation and object/child IDs."
+    },
+    {
+      "url": "https://github.com/webspatial/webspatial-sdk/pull/1244",
+      "observed_facts": "Collected metadata records merge 2026-06-01T09:40:15Z."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "f453e14c8d21005549467b2e8f1a62ca23078e3463e5a2a48c53e5f14f1412a4",
+  "related_review_ids": [
+    "6da6abe448c3f19b"
+  ]
+}

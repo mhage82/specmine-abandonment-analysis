@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "0faa99739fa333b4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/config.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/linker.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/status.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Module-map configuration, per-mapping links, clean/status/doctor and naming resolution are implemented. Strict full completion remains unresolved: missing mapping sources increment skipped rather than the required error count, and process_module_map propagates creation errors with ? instead of continuing through all failed mappings.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Module-map configuration, per-mapping links, clean/status/doctor and naming resolution are implemented. Strict full completion remains unresolved: missing mapping sources increment skipped rather than the required error count, and process_module_map propagates creation errors with ? instead of continuing through all failed mappings.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-22-nested-agent-context/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/config.rs",
+      "observed_facts": "ModuleMap type, default mappings and filename priority resolver."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/linker.rs",
+      "observed_facts": "process_module_map lines1123-1177 accumulates created/updated/skipped only; create_symlink lines623-631 treats missing source as skipped. Symlink creation errors propagate."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/status.rs",
+      "observed_facts": "Individual mapping expansion and link status."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs",
+      "observed_facts": "Missing sources, conflicts and module-map configuration checks."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "This is a specific requirement mismatch in the inspected snapshot, not evidence of abandonment; historical earliest full completion was not established."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

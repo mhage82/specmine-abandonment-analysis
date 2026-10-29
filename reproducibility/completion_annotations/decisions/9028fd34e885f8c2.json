@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "9028fd34e885f8c2",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/ZanebonoAlter/Syntopica/commit/26d8a0c876ec312f61c0e91c3d201efb854a2183 | https://github.com/ZanebonoAlter/Syntopica/tree/44b1ac61f1f430eb1d835f90baed77f2e02dcca7",
+  "manual_outcome_date": "",
+  "manual_notes": "Tree-bridge scanning, similarity filtering, deduplication, batch judgments and merge-before-parent execution are implemented in the historical patch. The required skip of every pair involving an already merged tag is not fully supported: skipSet is local to a batch and is checked only in the parent loop, not the merge loop. Later inspected snapshots no longer contain this implementation. Historical delivery of the full safety contract remains uncertain.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Tree-bridge scanning, similarity filtering, deduplication, batch judgments and merge-before-parent execution are implemented in the historical patch. The required skip of every pair involving an already merged tag is not fully supported: skipSet is local to a batch and is checked only in the parent loop, not the merge loop. Later inspected snapshots no longer contain this implementation. Historical delivery of the full safety contract remains uncertain.",
+  "sources": [
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/commit/26d8a0c876ec312f61c0e91c3d201efb854a2183",
+      "observed_facts": "Tree-bridge implementation inspected, including executeTreeBridgePairs and its per-call skipSet."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/tree/44b1ac61f1f430eb1d835f90baed77f2e02dcca7",
+      "observed_facts": "Later snapshot inspected; tree-bridge source no longer present."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "scope_implementation_gap"
+}

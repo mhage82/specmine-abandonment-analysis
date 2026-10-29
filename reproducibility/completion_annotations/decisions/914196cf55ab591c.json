@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "914196cf55ab591c",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_dev.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_status.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/make.cmd | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/reusable-windows-command-smoke.yml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/main_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Go command handlers implement native file/process checks, asynchronous development startup with PID and readiness tracking, stop/status and structured dispatch. The batch wrapper forwards all arguments and exit status; Windows CI invokes help/status/pack.assets from both cmd and PowerShell. This supports delivery of the cross-platform command scope; no commands or CI jobs were executed in this review.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Go command handlers implement native file/process checks, asynchronous development startup with PID and readiness tracking, stop/status and structured dispatch. The batch wrapper forwards all arguments and exit status; Windows CI invokes help/status/pack.assets from both cmd and PowerShell. This supports delivery of the cross-platform command scope; no commands or CI jobs were executed in this review.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_dev.go",
+      "observed_facts": "Builds backend, starts detached backend/frontend processes, waits for readiness, then reports status."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_status.go",
+      "observed_facts": "Status combines recorded PID liveness and TCP listening instead of POSIX shell pipelines."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/make.cmd",
+      "observed_facts": "Forwards %* to go run and preserves ERRORLEVEL."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/.github/workflows/reusable-windows-command-smoke.yml",
+      "observed_facts": "Windows runner executes wrapper help, status and pack.assets from cmd and PowerShell; current runner is explicitly pinned rather than windows-latest."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/main_test.go",
+      "observed_facts": "Source includes tests for make-style parameters, missing tools, asynchronous startup and status; tests were read, not run."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "3b3f6dc625382ea5ff467dac545ff2d2c6b1f903d16fe72201bc0db21622337a"
+}

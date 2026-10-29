@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "703fc9eab71db95c",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/config/config_cluster.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/config/config_duration.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/pkg/dialect/dialect_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/manifest/config/config.template.yaml | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/sysinfo/sysinfo_impl.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The selected Redis cluster configuration scope is corroborated by startup wiring and configuration source: standalone is the default, cluster mode requires Redis and an address, timeouts parse duration strings, unsupported database links fail before Redis initialization, and provider construction pings Redis before runtime startup. The template and diagnostics expose the selected settings. Completion is supported by code; a first completion date is not established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The selected Redis cluster configuration scope is corroborated by startup wiring and configuration source: standalone is the default, cluster mode requires Redis and an address, timeouts parse duration strings, unsupported database links fail before Redis initialization, and provider construction pings Redis before runtime startup. The template and diagnostics expose the selected settings. Completion is supported by code; a first completion date is not established.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/config/config_cluster.go",
+      "observed_facts": "Default standalone mode; cluster requires redis backend and a nonempty address; Redis settings use duration parsing and documented defaults."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+      "observed_facts": "Startup resolves the database dialect before coordination; creates and pings one provider, then wires cluster, cachecoord, auth, session, and plugin services before route/runtime startup."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/config/config_duration.go",
+      "observed_facts": "time.ParseDuration parses timeout strings and rejects invalid or nonpositive values."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/pkg/dialect/dialect_runtime.go",
+      "observed_facts": "Only pgsql links resolve; SQLite, MySQL and unknown prefixes return explicit unsupported errors."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/manifest/config/config.template.yaml",
+      "observed_facts": "Template documents standalone versus Redis cluster mode and all required Redis connection/timeout fields."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/sysinfo/sysinfo_impl.go",
+      "observed_facts": "Diagnostics expose coordination backend, health, node ID and primary state."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

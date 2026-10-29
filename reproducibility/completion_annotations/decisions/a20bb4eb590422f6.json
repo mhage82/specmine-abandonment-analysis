@@ -1,0 +1,45 @@
+{
+  "file_url_sha16": "a20bb4eb590422f6",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/review/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/ledger/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/cli-contracts/specfact-code-review-run.scenarios.yaml",
+  "manual_outcome_date": "",
+  "manual_notes": "Reviewed public review command has require(lambda ctx:True) and ensure(None), but no beartype decorator or repo-path precondition; therefore the specified invalid-repo contract is not established before tool execution. Ledger/rules commands and CLI scenario coverage also do not establish all-public-command contract compliance or the required --ci scenario. Checked shared remediation tasks cannot stand in for this exact API scope. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Reviewed public review command has require(lambda ctx:True) and ensure(None), but no beartype decorator or repo-path precondition; therefore the specified invalid-repo contract is not established before tool execution. Ledger/rules commands and CLI scenario coverage also do not establish all-public-command contract compliance or the required --ci scenario. Checked shared remediation tasks cannot stand in for this exact API scope.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/review/commands.py",
+      "observed_facts": [
+        "Actual public run declaration has trivial ctx precondition, no beartype and no repo_path argument/precondition."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/ledger/commands.py",
+      "observed_facts": [
+        "Inspected terminal command implementations; complete stated cross-command decorator contract not demonstrated."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/tests/cli-contracts/specfact-code-review-run.scenarios.yaml",
+      "observed_facts": [
+        "Scenario document does not establish the stated review run --ci contract and report-path scenario."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "a20bb4eb590422f6",
+      "d8c1e7c576cb30dd"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

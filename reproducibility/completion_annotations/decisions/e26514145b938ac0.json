@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "e26514145b938ac0",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-02-28",
+  "manual_notes": "NativeTabs declares Recipes, Groceries, Calendar and Profile in order with route screens, plus dedicated role=search trigger and minimizeBehavior=onScrollDown. Product tab routing replaces starter destinations. Device behavior was not executed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "NativeTabs declares Recipes, Groceries, Calendar and Profile in order with route screens, plus dedicated role=search trigger and minimizeBehavior=onScrollDown. Product tab routing replaces starter destinations. Device behavior was not executed.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "046_c1974fdce215ce4fe933cea5ceb2cc052f6b44b9: apps/mobile/src/app/(tabs)/_layout.tsx NativeTabs triggers, labels, icons and minimize behavior; added destination screens."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "c8a906dc4199474284a28557e164f96f05876f59955502730d8a2b33c4575c4d"
+}

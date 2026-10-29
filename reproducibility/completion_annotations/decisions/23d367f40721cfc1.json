@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "23d367f40721cfc1",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/test_dogfood_self_review.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/.github/workflows/specfact.yml | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/conftest.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Dated self-review record reports zero findings and type/complexity cleanup, and concrete regression tests exist. The broader specification also requires an enforced first-class PR CI gate and an expanded naming/kiss/yagni/dry/solid zero proof. Reviewed workflow files show no specfact review step; live dogfood tests explicitly skip under TEST_MODE, and the TDD record lacks the later expanded-category proof despite checked task4.4. These unresolved requirements prevent strict whole-scope completion. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Dated self-review record reports zero findings and type/complexity cleanup, and concrete regression tests exist. The broader specification also requires an enforced first-class PR CI gate and an expanded naming/kiss/yagni/dry/solid zero proof. Reviewed workflow files show no specfact review step; live dogfood tests explicitly skip under TEST_MODE, and the TDD record lacks the later expanded-category proof despite checked task4.4. These unresolved requirements prevent strict whole-scope completion.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/unit/specfact_cli/test_dogfood_self_review.py",
+      "observed_facts": [
+        "Full-review helper and targeted zero-rule assertions implemented, but fixture skips when TEST_MODE=true."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-31-code-review-zero-findings/TDD_EVIDENCE.md",
+      "observed_facts": [
+        "Read entire record: baseline remediation and March22 zero-findings closure; no explicit expanded-category rerun proof."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/.github/workflows/specfact.yml",
+      "observed_facts": [
+        "Inspected CI workflow; no direct specfact code-review gate found across workflow YAMLs."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/tests/conftest.py",
+      "observed_facts": [
+        "Test environment sets TEST_MODE, consistent with documented skip limitation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "23d367f40721cfc1",
+      "d02f96af28190e84"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

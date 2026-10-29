@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "ee031833c3bc1021",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Gentleman-Programming/gentle-ai/blob/fdc85ce031b012b8b399eae9cb9b889b7a1d7348/internal/components/sdd/profiles.go | https://github.com/Gentleman-Programming/gentle-ai/commit/d8aedf424fa76fd4bb0ee0b47ae80d5d7748acd9",
+  "manual_outcome_date": "",
+  "manual_notes": "Named profile creation, permissions and shared prompts have implementation evidence, but DetectProfiles accepts every sdd-orchestrator-prefixed key without checking mode: primary. This contradicts the selected specification requirement to ignore matching names whose mode is not primary. The two collected versions have identical specification text and identical inspected profiles.go code; they are not independent feature outcomes.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Named profile creation, permissions and shared prompts have implementation evidence, but DetectProfiles accepts every sdd-orchestrator-prefixed key without checking mode: primary. This contradicts the selected specification requirement to ignore matching names whose mode is not primary. The two collected versions have identical specification text and identical inspected profiles.go code; they are not independent feature outcomes.",
+  "sources": [
+    {
+      "url": "https://github.com/Gentleman-Programming/gentle-ai/blob/fdc85ce031b012b8b399eae9cb9b889b7a1d7348/internal/components/sdd/profiles.go",
+      "observed_facts": "DetectProfiles filters by key prefix only, while GenerateProfileOverlay builds profile agents and shared prompt references."
+    },
+    {
+      "url": "https://github.com/Gentleman-Programming/gentle-ai/commit/d8aedf424fa76fd4bb0ee0b47ae80d5d7748acd9",
+      "observed_facts": "Initial implementation and verification report; a checked task list alone is insufficient."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "apparent_required_behavior_gap"
+}

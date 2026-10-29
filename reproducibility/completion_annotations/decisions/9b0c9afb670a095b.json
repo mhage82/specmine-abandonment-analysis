@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "9b0c9afb670a095b",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/open_document.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/session_resolution.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tools/session_resolution.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tool_catalog.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "Normalization primitives and default normalize-before-bookmark pipeline are implemented, and explicit openDocument supports skipping. Full selected contract is unresolved: file-first resolution does not accept or forward skip_normalization and always normalizes new sessions. Later public file-first schemas still omit that switch; the archived text additionally retains removed explicit-session metadata.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Normalization primitives and default normalize-before-bookmark pipeline are implemented, and explicit openDocument supports skipping. Full selected contract is unresolved: file-first resolution does not accept or forward skip_normalization and always normalizes new sessions. Later public file-first schemas still omit that switch; the archived text additionally retains removed explicit-session metadata.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/e342910c6f99045b00b3380c3d531c070073d9e8/openspec/changes/archive/2026-02-19-add-auto-normalization-on-open/specs/mcp-server/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/open_document.ts",
+      "observed_facts": "Explicit skip_normalization branch and returned normalization stats."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/tools/session_resolution.ts",
+      "observed_facts": "Params only session_id/file_path; normalize called unconditionally in new file-first sessions."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tools/session_resolution.ts",
+      "observed_facts": "Current path resolution and normalized session creation do not expose skip_normalization input."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-mcp/src/tool_catalog.ts",
+      "observed_facts": "Public file-first tool inputs omit skip_normalization."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Skip tests exercise internal openDocument, not file-first calls. Completion not inferred from checked tasks; no abandonment inference."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

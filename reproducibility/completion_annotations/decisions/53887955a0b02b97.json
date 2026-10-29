@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "53887955a0b02b97",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-codebase/src/specfact_codebase/code/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-codebase/src/specfact_codebase/import_cmd/commands.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/groups/project_group.py | https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-17-module-migration-11-project-codebase-ownership-realignment/TDD_EVIDENCE.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/commands.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Canonical code import surface and project exclusion are implemented and tested. Full ownership/alignment scope remains unresolved: actual brownfield analyzer/comparator/parser families still live in specfact_project and code import delegates there; TDD explicitly calls this temporary. More concretely, reviewed command-reference mapping still lists project import as a primary family while common flows use code import. An explicit temporary exception explains delegation, but does not resolve contradictory documented command ownership. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Canonical code import surface and project exclusion are implemented and tested. Full ownership/alignment scope remains unresolved: actual brownfield analyzer/comparator/parser families still live in specfact_project and code import delegates there; TDD explicitly calls this temporary. More concretely, reviewed command-reference mapping still lists project import as a primary family while common flows use code import. An explicit temporary exception explains delegation, but does not resolve contradictory documented command ownership.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-codebase/src/specfact_codebase/code/commands.py",
+      "observed_facts": [
+        "Actual code group mounts import app."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-codebase/src/specfact_codebase/import_cmd/commands.py",
+      "observed_facts": [
+        "Canonical callback delegates to specfact_project legacy_from_code; hidden from-code alias retained."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/src/specfact_cli/groups/project_group.py",
+      "observed_facts": [
+        "Project members exclude import; corresponding tests assert boundary."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/openspec/changes/archive/2026-03-17-module-migration-11-project-codebase-ownership-realignment/TDD_EVIDENCE.md",
+      "observed_facts": [
+        "Full red/green record explicitly limits completion to command/audit and temporary delegation; broader runtime audit not completed."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/reference/commands.md",
+      "observed_facts": [
+        "Bundle mapping still includes project import while later example says code import; contradiction not marked compatibility in mapping."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "49e47ee6ab210285",
+      "53887955a0b02b97"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

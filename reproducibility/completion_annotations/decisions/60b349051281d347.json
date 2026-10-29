@@ -1,0 +1,58 @@
+{
+  "file_url_sha16": "60b349051281d347",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/cmd/internal/httpstartup/http_runtime.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/cmd/internal/httpstartup/http_kvcache_test.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_cache_adapter.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical June20 startup explicitly selects SQL table storage for single-node and coordination KV for clusters, creates one shared service, and injects it into plugin capability host and host authentication/middleware. Cache adapter and dynamic dispatcher use the injected scoped service. Actual topology tests assert SQL/coordination and independence from global default. July later changes single-node to memory, so this is historical completion of the archived SQL contract. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical June20 startup explicitly selects SQL table storage for single-node and coordination KV for clusters, creates one shared service, and injects it into plugin capability host and host authentication/middleware. Cache adapter and dynamic dispatcher use the injected scoped service. Actual topology tests assert SQL/coordination and independence from global default. July later changes single-node to memory, so this is historical completion of the archived SQL contract.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/cmd/internal/httpstartup/http_runtime.go",
+      "observed_facts": [
+        "Read topology selector and shared-service construction/injection."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/cmd/internal/httpstartup/http_kvcache_test.go",
+      "observed_facts": [
+        "Read complete topology/default-provider regression assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_cache_adapter.go",
+      "observed_facts": [
+        "Adapter stores and calls injected kvcache.Service."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost.go",
+      "observed_facts": [
+        "Constructor requires shared cache and stores it."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_runtime.go",
+      "observed_facts": [
+        "Later single-node provider changed to memory."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Label establishes supported historical implementation, not unchanged current SQL behavior."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "60b349051281d347",
+      "678d166bf629a204"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

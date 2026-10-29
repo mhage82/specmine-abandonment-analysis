@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "b09480a2877c6a44",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Fission-AI/OpenSpec/pull/726 | https://github.com/Fission-AI/OpenSpec/pull/741/files | https://github.com/Fission-AI/OpenSpec/blob/5956a8e872f41a8f690922b5c9b6927970252b2a/src/core/migration.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "PR726/736/741 implement profile sync, commands-only detection, delivery cleanup, migration and pruning, with tests. The recorded spec requires migration to delivery=both; exact-snapshot migration.ts instead infers skills/commands/both when delivery is unset. This appears intended preservation behavior but conflicts with recorded requirement, so strict completion is unclear pending scope clarification. No abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Substantial implemented delivery differs from literal historical specification in migration semantics; keep uncertainty separate from abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/726",
+      "observed_facts": "Merged 2026-02-20T02:21:06Z; inspected substantive profiles, config schema/commands, init/update, workflow templates and tests, not merely PR title or checklist."
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/741/files",
+      "observed_facts": "Inspected removeUnselectedSkillDirs/removeUnselectedCommandFiles calls and tests asserting deselected files removed."
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/5956a8e872f41a8f690922b5c9b6927970252b2a/src/core/migration.ts",
+      "observed_facts": "inferDelivery returns skills for skills-only artifacts and commands for commands-only artifacts; applied when rawConfig.delivery is undefined, whereas recorded migration scenario specifies both."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "a44817328d27e22c241462cd471b860eb9458b77701cfc9500257bc3a825ec2e",
+  "related_review_ids": [
+    "b09480a2877c6a44"
+  ]
+}

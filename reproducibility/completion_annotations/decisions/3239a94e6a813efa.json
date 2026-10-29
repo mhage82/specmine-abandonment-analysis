@@ -1,0 +1,37 @@
+{
+  "file_url_sha16": "3239a94e6a813efa",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/biodatageeks/polars-bio/commit/bc8896d331f14f2d6352fe732d719947cc6b0db2 | https://github.com/biodatageeks/polars-bio/commit/5ae758f44506de798188014699618c26cdae6cd1 | https://github.com/biodatageeks/datafusion-bio-formats/blob/94d4d6811eaa8d967ae2ae99485a91ca80d82e6d/datafusion/bio-format-vcf/src/zarr/metadata.rs | https://github.com/biodatageeks/datafusion-bio-formats/blob/94d4d6811eaa8d967ae2ae99485a91ca80d82e6d/datafusion/bio-format-vcf/src/zarr/table_provider.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "The Python/Rust APIs, typed INFO/FORMAT, raw/string GT, sample ordering, pruning, describe/register operations and tests have substantial implementation evidence, including the pinned upstream provider. Strict full-scope completion remains unclear for unsupported remote-path diagnostics: open_local treats its input as a filesystem PathBuf and returns store-not-found, whereas the specification requires an explicit unsupported-remote-storage error. A higher-level override was not established in this review.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The Python/Rust APIs, typed INFO/FORMAT, raw/string GT, sample ordering, pruning, describe/register operations and tests have substantial implementation evidence, including the pinned upstream provider. Strict full-scope completion remains unclear for unsupported remote-path diagnostics: open_local treats its input as a filesystem PathBuf and returns store-not-found, whereas the specification requires an explicit unsupported-remote-storage error. A higher-level override was not established in this review.",
+  "sources": [
+    {
+      "url": "https://github.com/biodatageeks/polars-bio/commit/bc8896d331f14f2d6352fe732d719947cc6b0db2",
+      "observed_facts": "Initial Python/Rust integration, raw genotype options and extensive projection/type tests."
+    },
+    {
+      "url": "https://github.com/biodatageeks/polars-bio/commit/5ae758f44506de798188014699618c26cdae6cd1",
+      "observed_facts": "Describe/register APIs and field metadata tests; pins upstream 94d4d681."
+    },
+    {
+      "url": "https://github.com/biodatageeks/datafusion-bio-formats/blob/94d4d6811eaa8d967ae2ae99485a91ca80d82e6d/datafusion/bio-format-vcf/src/zarr/metadata.rs",
+      "observed_facts": "open_local version validation and filesystem path error behavior."
+    },
+    {
+      "url": "https://github.com/biodatageeks/datafusion-bio-formats/blob/94d4d6811eaa8d967ae2ae99485a91ca80d82e6d/datafusion/bio-format-vcf/src/zarr/table_provider.rs",
+      "observed_facts": "Projection/filter planning, sample selection and local provider integration."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "This narrow diagnostics uncertainty does not negate delivered core support or establish abandonment. Human review may judge the error wording immaterial; no remote-path reproduction or project tests were run."
+  ],
+  "uncertainty_category": "strict_scenario_not_fully_corroborated"
+}

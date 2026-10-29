@@ -1,0 +1,43 @@
+{
+  "file_url_sha16": "414cd4cd51b44744",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/rollout.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-ingest.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/upload-throttle.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/vibescore-api.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-usage-daily.js",
+  "manual_outcome_date": "",
+  "manual_notes": "Client half-hour aggregation, device-scoped replacement upserts, aggregate-derived queries and retention artifacts are implemented. Strict full-scope completion is unresolved because the stated at-most-one auto upload attempt per30minutes is not enforced after failures: initial backoff is60seconds and internal retries run sooner. This does not establish abandonment.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Client half-hour aggregation, device-scoped replacement upserts, aggregate-derived queries and retention artifacts are implemented. Strict full-scope completion is unresolved because the stated at-most-one auto upload attempt per30minutes is not enforced after failures: initial backoff is60seconds and internal retries run sooner. This does not establish abandonment.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-23-add-hourly-client-aggregation/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/rollout.js",
+      "observed_facts": "UTC half-hour numeric aggregate queues and cursors."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-ingest.js",
+      "observed_facts": "Aggregate payload replaces totals via device-scoped conflict key."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/upload-throttle.js",
+      "observed_facts": "30minute success throttle but60second first failure backoff."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/vibescore-api.js",
+      "observed_facts": "Ingest automatic retries."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-usage-daily.js",
+      "observed_facts": "Totals derived from aggregate data."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

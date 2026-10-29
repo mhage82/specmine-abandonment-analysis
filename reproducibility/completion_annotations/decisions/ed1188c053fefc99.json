@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "ed1188c053fefc99",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/commit/7dd9e134cef4c6b24cced3f4ac221eb86b317bf6",
+  "manual_outcome_date": "2026-04-27",
+  "manual_notes": "The warning icon is moved to Common with warningText and hidden-empty tooltip behavior. Saved stopped containers and uninstalled images gain inline icons, the container field retains saved-container display text, and endpoint consumers migrate to the shared component. The change leaves the banner components outside its edit scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The warning icon is moved to Common with warningText and hidden-empty tooltip behavior. Saved stopped containers and uninstalled images gain inline icons, the container field retains saved-container display text, and endpoint consumers migrate to the shared component. The change leaves the banner components outside its edit scope.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/7dd9e134cef4c6b24cced3f4ac221eb86b317bf6",
+      "observed_facts": "Read shared icon move, container/image field predicates, saved display fallback, endpoint imports and dedicated i18n keys."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

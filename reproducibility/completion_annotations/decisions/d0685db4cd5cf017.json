@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "d0685db4cd5cf017",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/apps/mobile/src/context/recipes-context.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Dashboard and search consume the same mobile shared-recipes context and recipeCards shape. Shared subscriptions handle created/updated events and update/invalidate query caches; search modifies the canonical filter state feeding actual recipe queries, replacing dummy data.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Dashboard and search consume the same mobile shared-recipes context and recipeCards shape. Shared subscriptions handle created/updated events and update/invalidate query caches; search modifies the canonical filter state feeding actual recipe queries, replacing dummy data.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/blob/399540ef95b81d82597399f12965d65d988bc7cc/apps/mobile/src/context/recipes-context.tsx",
+      "observed_facts": "Shared createRecipesContext/useRecipesSubscription bindings, centralized recipeCards mapping; both screen consumers and shared onCreated/onUpdated cache handling inspected."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "b021a010cbd1ba56e3be7be53dadd2be92c8049566bdbca4b892dced8dd77c81"
+}

@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "4e413d3b0b812c2a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/main.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "Claude skills scanning and migration of both files and subdirectories with collision protection are implemented. The selected specification requires a nonfatal warning during apply, including dry-run, but the task record explicitly moves this diagnostic to doctor and the source wires check_unmanaged_claude_skills into doctor only. That scope change prevents treating this version as a strict completed positive.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Claude skills scanning and migration of both files and subdirectories with collision protection are implemented. The selected specification requires a nonfatal warning during apply, including dry-run, but the task record explicitly moves this diagnostic to doctor and the source wires check_unmanaged_claude_skills into doctor only. That scope change prevents treating this version as a strict completed positive.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-28-claude-skill-adoption/specs/skill-adoption/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs",
+      "observed_facts": "ClaudeSkills discovery and child migration, skipping destination collisions."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs",
+      "observed_facts": "check_unmanaged_claude_skills invoked in doctor; unmanaged skill findings reported there."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/main.rs",
+      "observed_facts": "Apply dispatch does not invoke the unmanaged-Claude-skill diagnostic."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Later skill-link defaults differ from this earlier version; the diagnostic placement, not the later default redesign, is the blocking evidence."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

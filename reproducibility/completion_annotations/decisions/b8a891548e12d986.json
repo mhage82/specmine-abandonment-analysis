@@ -1,0 +1,41 @@
+{
+  "file_url_sha16": "b8a891548e12d986",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_ctrl.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/goframecli/embedded.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/goframecli/target.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/goframecli/run.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_image.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Image/Wasm/i18n components and isolated embedded GoFrame dispatch are implemented. However, the selected spec requires every generation target, including ctrl, to contain hack/config.yaml. The reviewed ctrl path deliberately sets RequireConfig=false and creates temporary empty config when missing; plugin configuration also resolves at plugin root rather than backend/hack. Exact selected contract coverage is therefore partial despite the checked shared tasks.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Image/Wasm/i18n components and isolated embedded GoFrame dispatch are implemented. However, the selected spec requires every generation target, including ctrl, to contain hack/config.yaml. The reviewed ctrl path deliberately sets RequireConfig=false and creates temporary empty config when missing; plugin configuration also resolves at plugin root rather than backend/hack. Exact selected contract coverage is therefore partial despite the checked shared tasks.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_ctrl.go",
+      "observed_facts": "runCtrl calls resolveGoFrameTargetInput with requireConfig=false."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/goframecli/embedded.go",
+      "observed_facts": "Embedded gen ctrl accepts missing config and creates a temporary config directory; gen dao validates it."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/goframecli/target.go",
+      "observed_facts": "Standard plugin backend config resolves to parent plugin/hack; RequireConfig controls validation."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/goframecli/run.go",
+      "observed_facts": "Whitelisted gen ctrl/dao dispatch through hidden child process."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_image.go",
+      "observed_facts": "Image command calls internal imagebuilder directly."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "fddfdd1f2c0712ef6850cf80244256cb8a5354b64d1d158b27e978d91a288025"
+}

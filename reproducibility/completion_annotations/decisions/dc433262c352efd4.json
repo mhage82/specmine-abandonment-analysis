@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "dc433262c352efd4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/ZanebonoAlter/Syntopica/commit/44b1ac61f1f430eb1d835f90baed77f2e02dcca7 | https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/openspec/changes/archive/2026-05-11-fix-lint-debt/tasks.md",
+  "manual_outcome_date": "",
+  "manual_notes": "The lint-debt patch changes backend and frontend code and the checklist reports clean gates. The selected outcome is the actual zero-issue result of both complete lint commands; the reviewed evidence lacks retained command output or a linked successful run establishing those results. Code cleanup and checked claims alone do not verify this execution-defined scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The lint-debt patch changes backend and frontend code and the checklist reports clean gates. The selected outcome is the actual zero-issue result of both complete lint commands; the reviewed evidence lacks retained command output or a linked successful run establishing those results. Code cleanup and checked claims alone do not verify this execution-defined scope.",
+  "sources": [
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/commit/44b1ac61f1f430eb1d835f90baed77f2e02dcca7",
+      "observed_facts": "Broad lint cleanup diff inspected."
+    },
+    {
+      "url": "https://github.com/ZanebonoAlter/Syntopica/blob/44b1ac61f1f430eb1d835f90baed77f2e02dcca7/openspec/changes/archive/2026-05-11-fix-lint-debt/tasks.md",
+      "observed_facts": "Checklist claims full backend and frontend lint gates passed; no run artifact in the reviewed evidence."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "execution_evidence_missing"
+}

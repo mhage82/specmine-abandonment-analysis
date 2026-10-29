@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "ed87cb41fbf01c75",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/3e908d0810ff33ae387edcaca0910121e0414d22 | https://github.com/carverauto/serviceradar/commit/9738ececfc516bfa999659002b9b2213aabbd89a",
+  "manual_outcome_date": "",
+  "manual_notes": "Typed broker references and recursive credential redactor exist, but strict plugin-result secrecy scope is not proven. Reviewed redactor recognizes a limited key list plus PVEAPIToken/private-key patterns; it does not compare arbitrary values against scoped secrets, nor include cookie/ticket/CSRF keys. The spec explicitly requires any field matching a scoped secret value to be sanitized/rejected before storage. No verified ingestion path/test closes that gap. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Typed broker references and recursive credential redactor exist, but strict plugin-result secrecy scope is not proven. Reviewed redactor recognizes a limited key list plus PVEAPIToken/private-key patterns; it does not compare arbitrary values against scoped secrets, nor include cookie/ticket/CSRF keys. The spec explicitly requires any field matching a scoped secret value to be sanitized/rejected before storage. No verified ingestion path/test closes that gap.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/3e908d0810ff33ae387edcaca0910121e0414d22",
+      "observed_facts": [
+        "CredentialRedactor.redact/1 recursively masks named keys and two string patterns; tests only cover recognized keys/patterns, not an arbitrary field containing scoped secret. Changes wire materializer/test-dispatch redaction, not a demonstrated complete result-ingestion check."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/9738ececfc516bfa999659002b9b2213aabbd89a",
+      "observed_facts": [
+        "Builds typed bounded broker grant metadata; generic direct-token test path is rejected."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "a8186cfde0bfd560",
+      "ed87cb41fbf01c75"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

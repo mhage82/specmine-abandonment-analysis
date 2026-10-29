@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "b1ebf1a1fcb3a3f6",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/ui/matrix-a/components/TrendMonitor.jsx | https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/content/copy.csv | https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/pages/DashboardPage.jsx",
+  "manual_outcome_date": "",
+  "manual_notes": "Historical Trend component implements grid/axes/scan sweep, period-specific labels, full-value UTC hover tooltip with guide/marker, compact K/M/B Y labels, and zero fallback when no data. Dashboard supplies the selected period usage series; later timezone/layout redesign is separate.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical Trend component implements grid/axes/scan sweep, period-specific labels, full-value UTC hover tooltip with guide/marker, compact K/M/B Y labels, and zero fallback when no data. Dashboard supplies the selected period usage series; later timezone/layout redesign is separate.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-21-update-flux-monitor-axes/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/ui/matrix-a/components/TrendMonitor.jsx",
+      "observed_facts": "V2 grid, scan keyframes, period labels, UTC tooltip/full number, compact ticks and hover guide/point."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/content/copy.csv",
+      "observed_facts": "Trend label and UTC tooltip copy."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9e8b2865fe229928c85ef4787929537cfe364562/dashboard/src/pages/DashboardPage.jsx",
+      "observed_facts": "Period-selected trend rows and range passed to TrendMonitor."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

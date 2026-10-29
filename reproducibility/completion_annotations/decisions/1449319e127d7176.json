@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "1449319e127d7176",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/596a9544659e3a32ca9712ad082f0f3acaf75ebf | https://github.com/carverauto/serviceradar/commit/4f5b2df0405a7d49dbaa4fc1237428853da42e3c",
+  "manual_outcome_date": "2026-06-09",
+  "manual_notes": "Inspected schema-reference preservation, signal-display lookup/fallback and dedicated Wasm telemetry emission. June8 schema commit adds bounded metadata validation and generic-view fallback; June9 runtime commit exports capability-gated emit_telemetry, forwards package batches with agent identity, and publishes canonical OCSF/OTEL payloads to fixed streams. This covers the observability spec including its added first-class telemetry requirement; schema/display and runtime tests are present, not run. Exact-path source records have identical specification Markdown; shared evidence is applied only after that comparison.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Inspected schema-reference preservation, signal-display lookup/fallback and dedicated Wasm telemetry emission. June8 schema commit adds bounded metadata validation and generic-view fallback; June9 runtime commit exports capability-gated emit_telemetry, forwards package batches with agent identity, and publishes canonical OCSF/OTEL payloads to fixed streams. This covers the observability spec including its added first-class telemetry requirement; schema/display and runtime tests are present, not run.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/596a9544659e3a32ca9712ad082f0f3acaf75ebf",
+      "observed_facts": [
+        "status_handler validates bounded schema ID/version/path metadata; SignalDisplay reads event metadata or log attributes and returns error/nil fallback when no contract; event/log pages keep generic views."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/4f5b2df0405a7d49dbaa4fc1237428853da42e3c",
+      "observed_facts": [
+        "plugin_runtime_execution exports emit_telemetry; host checks capability and payload limits; push_loop_plugin_signals attaches agent/gateway/partition; status_handler adds metadata without replacing canonical payload fields and selects fixed event/log subjects."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "1449319e127d7176",
+      "b5c6aab7bf787d0f"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

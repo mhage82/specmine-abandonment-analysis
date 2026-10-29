@@ -1,0 +1,46 @@
+{
+  "file_url_sha16": "04cc596c9a17e372",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/backend/internal/service/tenant/tenant_impl.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/backend/internal/service/tenant/tenant_platform_guard_test.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/backend/internal/service/resolver/resolver_code.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/pkg/bizerr/bizerr_format.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/manifest/i18n/en-US/error.json | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/manifest/i18n/zh-CN/error.json",
+  "manual_outcome_date": "",
+  "manual_notes": "Platform tenant CRUD guards and typed rejection tests are implemented, including context-derived platform bypass. Required localization coverage is incomplete in the pinned core/plugin pair: resolver defines MULTI_TENANT_PLATFORM_PERMISSION_REQUIRED, deriving error.multi.tenant.platform.permission.required, while plugin translations provide error.multi.platform.permission.required and host translations provide error.platform.permission.required. Strict completion of the combined guard/localization scope is unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Platform tenant CRUD guards and typed rejection tests are implemented, including context-derived platform bypass. Required localization coverage is incomplete in the pinned core/plugin pair: resolver defines MULTI_TENANT_PLATFORM_PERMISSION_REQUIRED, deriving error.multi.tenant.platform.permission.required, while plugin translations provide error.multi.platform.permission.required and host translations provide error.platform.permission.required. Strict completion of the combined guard/localization scope is unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/backend/internal/service/tenant/tenant_impl.go",
+      "observed_facts": "All tenant list/get/create/update/status/delete methods guard before accessing tenant rows and emit resolver.CodePlatformPermissionRequired on denial."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/backend/internal/service/tenant/tenant_platform_guard_test.go",
+      "observed_facts": "Tests cover allowed platform bypass and denial for each tenant CRUD operation after route permissions would have passed."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/backend/internal/service/resolver/resolver_code.go",
+      "observed_facts": "Defines MULTI_TENANT_PLATFORM_PERMISSION_REQUIRED using default MustDefine key derivation."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/pkg/bizerr/bizerr_format.go",
+      "observed_facts": "MessageKey lowercases and splits underscores, returning error.multi.tenant.platform.permission.required for the defined code."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/manifest/i18n/en-US/error.json",
+      "observed_facts": "English error resource contains error.multi.platform.permission.required, missing tenant segment."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-tenant-core/manifest/i18n/zh-CN/error.json",
+      "observed_facts": "Chinese resource has the same different key; full pinned host/plugin JSON scan did not locate the derived key."
+    }
+  ],
+  "limitations": [
+    "Sources pair exact July9 core revision with its recorded official-plugin gitlink.",
+    "Static implementation/test/resource inspection only; runtime translation and guards were not executed.",
+    "This gap does not establish abandonment or current development status.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "656c01e2eb1338a9839cd3bdaab5280ef8c8aced7290abded05ec6c101e97741"
+}

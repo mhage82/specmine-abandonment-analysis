@@ -1,0 +1,60 @@
+{
+  "file_url_sha16": "8d74b94fd2bf780b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_embed.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_artifact.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_wasmcmd.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_output.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_runtime.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_artifact.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_executor.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_manifest.go | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Pinned implementation supports explicit plugin_embed.go directives and directory fallback, preserves complete visible manifest paths including config, SQL, i18n, optional metadata and non-YAML files, serializes host-readable Wasm custom sections, and exposes those resources through the existing runtime manifest view. Standard CLI and explicit output paths put final and intermediate Wasm artifacts under the selected output tree. Source and targeted assertions corroborate this selected packaging scope; shared framework task completion was not used as proof.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Pinned implementation supports explicit plugin_embed.go directives and directory fallback, preserves complete visible manifest paths including config, SQL, i18n, optional metadata and non-YAML files, serializes host-readable Wasm custom sections, and exposes those resources through the existing runtime manifest view. Standard CLI and explicit output paths put final and intermediate Wasm artifacts under the selected output tree. Source and targeted assertions corroborate this selected packaging scope; shared framework task completion was not used as proof.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/1351675189ce9f757eee9c85fb6c604515a79f21/openspec/changes/archive/plugin-framework/specs/plugin-embed-snapshot-packaging/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_embed.go",
+      "observed_facts": "Read embed directive parsing, filesystem collection and no-declaration fallback; collectManifestResources keeps full manifest paths without a YAML extension restriction, and missing metadata is not required."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_artifact.go",
+      "observed_facts": "Actual serializer appends manifest, frontend, SQL/i18n and full manifest-resource sections using shared protocol names."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/command_wasmcmd.go",
+      "observed_facts": "Standard command defaults out to repository temp/output and passes explicit resolved output directory to WriteRuntimeWasmArtifactFromSource."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_output.go",
+      "observed_facts": "Final output and intermediate runtime path honor explicit directories; repository detection defaults into temp/output internal workspace rather than plugin source."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_runtime.go",
+      "observed_facts": "Actual buildGuestRuntimeWasm resolves intermediate output via resolveGuestRuntimeOutputPath before compilation."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_artifact.go",
+      "observed_facts": "Inspected custom-section parser that validates and decodes manifest resources into runtime artifacts."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/runtime/runtime_executor.go",
+      "observed_facts": "buildArtifactDefaultConfig selects manifest/config/config.yaml, excludes template as runtime default; buildArtifactManifestResources exposes original resource bytes relative to manifest/."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_manifest.go",
+      "observed_facts": "Manifest host service scopes artifact resources to plugin and calls reader Get/GetMany/List, validating requested resource path."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/hack/tools/linactl/internal/wasmbuilder/wasmbuilder_test.go",
+      "observed_facts": "Inspected assertions for declared embedded sections, fallback preservation of config/metadata/SQL/i18n/non-YAML paths, default output location and explicit/relative final plus intermediate paths."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Evaluation covers the specified repository-standard and explicit-output build routes. Low-level in-memory builder output-path metadata and empty output outside a recognized repository have separate fallbacks. Compatibility evidence comes from static source and test assertions, not independently executed builds."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

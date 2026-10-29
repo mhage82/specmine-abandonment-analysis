@@ -1,0 +1,40 @@
+{
+  "file_url_sha16": "9be84e959aaed04f",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document_view.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document.ts | https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/add_safe_docx_ts_formatting_parity.allure.test.ts | https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/document_view-styles.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "TOON/JSON views, derived header metadata, formatting-aware edit support and parity tests are present. Strict session-stable style IDs are unresolved: discoverStyles rebuilds names in first-seen fingerprint order with a fresh counter after cache invalidation. An earlier paragraph changing to a new body fingerprint can renumber the style of a later unchanged paragraph. The repeated-read test does not cover this edit-between-reads case.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "TOON/JSON views, derived header metadata, formatting-aware edit support and parity tests are present. Strict session-stable style IDs are unresolved: discoverStyles rebuilds names in first-seen fingerprint order with a fresh counter after cache invalidation. An earlier paragraph changing to a new body fingerprint can renumber the style of a later unchanged paragraph. The repeated-read test does not cover this edit-between-reads case.",
+  "sources": [
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/bbaa1e694d2042c205210f8d879b9fd40442996b/openspec/changes/archive/2026-02-11-add-safe-docx-ts-formatting-parity/specs/mcp-server/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document_view.ts",
+      "observed_facts": "discoverStyles243-280 creates fresh used counters and assigns body/body_1 by encounter order; structured view/header/rendering implementation inspected."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/docx-primitives/src/document.ts",
+      "observed_facts": "Editing/insertion/layout invalidate documentViewCache."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/1e514dc216322ba22a2aac5887cd73943f7ff40e/packages/safe-docx/src/add_safe_docx_ts_formatting_parity.allure.test.ts",
+      "observed_facts": "JSON/fingerprint and repeated-read assertions; stability test91-101 has no intervening edit."
+    },
+    {
+      "url": "https://github.com/UseJunior/safe-docx/blob/80b7b23802d55f00ac64b7c96c22c93da2d1f105/packages/docx-core/src/primitives/document_view-styles.ts",
+      "observed_facts": "Later extracted discoverStyles retains fresh counter allocation."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Two dataset versions have identical specification text and the same task checklist; evidence reused after equality comparison. No abandonment inference."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

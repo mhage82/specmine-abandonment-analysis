@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "1e7f27f0b088f5ab",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/cli.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/init.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/codex-config.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/rollout.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-ingest.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/test/rollout-parser.test.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/test/init-uninstall.test.js",
+  "manual_outcome_date": "",
+  "manual_notes": "The selected CLI MVP behaviors are implemented across command dispatch, device-token-only persisted configuration, nonblocking notify/chaining, reversible notify installation, numeric token extraction and incremental idempotent bucket uploads. Later provider/hourly extensions retain these behaviors. Implementation and regression assertions support scope; no application execution was performed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The selected CLI MVP behaviors are implemented across command dispatch, device-token-only persisted configuration, nonblocking notify/chaining, reversible notify installation, numeric token extraction and incremental idempotent bucket uploads. Later provider/hourly extensions retain these behaviors. Implementation and regression assertions support scope; no application execution was performed.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-17-vibescore-tracker/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/cli.js",
+      "observed_facts": "init/sync/status/uninstall dispatch."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/commands/init.js",
+      "observed_facts": "Persists device token configuration and installs quiet detached notify handler with original-hook chaining."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/codex-config.js",
+      "observed_facts": "Backs up original notify once and restores/removes installed hook."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/src/lib/rollout.js",
+      "observed_facts": "Token-count extraction, numeric allowlist, cursor/delta processing."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-ingest.js",
+      "observed_facts": "Device-authenticated idempotent bucket upsert."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/test/rollout-parser.test.js",
+      "observed_facts": "Parser/deduplication assertions."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/test/init-uninstall.test.js",
+      "observed_facts": "Notify installation/restoration assertions."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

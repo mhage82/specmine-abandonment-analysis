@@ -1,0 +1,54 @@
+{
+  "file_url_sha16": "cb2380cf5cc5ba36",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/commands/init.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/browser-auth.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-link-code-exchange.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/acceptance/usage-summary-rollup-fallback.cjs | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/runtime-config.js",
+  "manual_outcome_date": "",
+  "manual_notes": "New function slugs and new-only runtime configuration/storage are implemented, but the stated clean scan across runtime directories is not satisfied in the pinned source: CLI/browser copy and a device fallback still contain VibeScore, while acceptance scripts retain VIBESCORE variables. Live old-404/new-200 behavior and before/after database row counts were not independently established.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "New function slugs and new-only runtime configuration/storage are implemented, but the stated clean scan across runtime directories is not satisfied in the pinned source: CLI/browser copy and a device fallback still contain VibeScore, while acceptance scripts retain VIBESCORE variables. Live old-404/new-200 behavior and before/after database row counts were not independently established.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/commands/init.js",
+      "observed_facts": [
+        "Welcome and account-link copy still says VibeScore."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/browser-auth.js",
+      "observed_facts": [
+        "Callback HTML titles still say VibeScore."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/functions-esm/vibeusage-link-code-exchange.js",
+      "observed_facts": [
+        "DEVICE_NAME_FALLBACK remains VibeScore CLI."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/acceptance/usage-summary-rollup-fallback.cjs",
+      "observed_facts": [
+        "Still sets VIBESCORE_ROLLUP_ENABLED."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/src/lib/runtime-config.js",
+      "observed_facts": [
+        "New-only environment resolution corroborates part of scope."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; case-insensitive runtime source scan and matching code lines inspected; live deployment/database migration verification not performed.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

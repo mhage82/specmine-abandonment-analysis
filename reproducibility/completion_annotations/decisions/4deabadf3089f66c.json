@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "4deabadf3089f66c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/suggest.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/catalog.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/detect.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/provider.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/catalog.v1.toml",
+  "manual_outcome_date": "",
+  "manual_notes": "Open technology IDs, compiled catalog rules, package/workspace parsing, expanded embedded catalog and deterministic provider resolution are implemented. Full completion is unresolved: enabled combo contributions only append a reason; add_combo_match explicitly leaves matched_technologies unchanged, contrary to the required merged contributing technologies. File-extension evidence also short-circuits on the first extension instead of listing all matched extensions.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Open technology IDs, compiled catalog rules, package/workspace parsing, expanded embedded catalog and deterministic provider resolution are implemented. Full completion is unresolved: enabled combo contributions only append a reason; add_combo_match explicitly leaves matched_technologies unchanged, contrary to the required merged contributing technologies. File-extension evidence also short-circuits on the first extension instead of listing all matched extensions.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-04-01-autoskills-discovery-support/specs/autoskills-discovery/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/suggest.rs",
+      "observed_facts": "TechnologyId newtype; add_combo_match144-150 explicitly adds no contributing technologies."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/catalog.rs",
+      "observed_facts": "Enabled combo evaluation562-604 calls add_combo_match without required technologies."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/detect.rs",
+      "observed_facts": "CatalogDrivenDetector compiles rules, ordered matching, workspace handling; file_extensions495-505 returns on first matching extension."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/provider.rs",
+      "observed_facts": "Deterministic owner/repo path resolution and simple-ID search fallback."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills/catalog.v1.toml",
+      "observed_facts": "Expanded embedded technology/skill/combo data."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported.",
+    "Targeted implementation mismatches block strict positivity; no abandonment inference. Earlier full conformance and the specified two-second performance measurement were not established."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

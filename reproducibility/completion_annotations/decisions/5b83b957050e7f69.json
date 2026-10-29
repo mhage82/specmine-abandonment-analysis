@@ -1,0 +1,39 @@
+{
+  "file_url_sha16": "5b83b957050e7f69",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/tools/semgrep_runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/tools/test_semgrep_runner.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Semgrep runner resolves the bundle-local ruleset, invokes JSON mode for requested files, maps get-modify findings to clean_code, filters normalized paths and returns tool_error on unavailable/invalid output. Empty result JSON returns no findings. Tests explicitly assert mapping, filtering, absence and failure behavior. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "Semgrep runner resolves the bundle-local ruleset, invokes JSON mode for requested files, maps get-modify findings to clean_code, filters normalized paths and returns tool_error on unavailable/invalid output. Empty result JSON returns no findings. Tests explicitly assert mapping, filtering, absence and failure behavior.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/tools/semgrep_runner.py",
+      "observed_facts": [
+        "Full config resolution, invocation, retry, result parser, category mapping and path whitelist inspected."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/tools/test_semgrep_runner.py",
+      "observed_facts": [
+        "Actual mocked assertions cover requested/nonrequested files, unavailable binary and clean output."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "0a9233020bb09268",
+      "5b83b957050e7f69"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

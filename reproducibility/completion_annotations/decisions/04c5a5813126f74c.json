@@ -1,0 +1,29 @@
+{
+  "file_url_sha16": "04c5a5813126f74c",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/complytime/complyctl/pull/686 | https://github.com/complytime/complyctl/blob/afdf3269647765341c510d56b5fd6404dfe75f77/cmd/complyctl/cli/get.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Per-entry config, global skip and aggregated errors are implemented, but standalone entry verification is not corroborated: syncAll initializes the verifier cache only when workspace verification is non-nil, and resolveVerifier returns nil when that cache is nil even after selecting an entry-specific config. This conflicts with the requirement that an entry can enable verification without workspace verification.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Per-entry config, global skip and aggregated errors are implemented, but standalone entry verification is not corroborated: syncAll initializes the verifier cache only when workspace verification is non-nil, and resolveVerifier returns nil when that cache is nil even after selecting an entry-specific config. This conflicts with the requirement that an entry can enable verification without workspace verification.",
+  "sources": [
+    {
+      "url": "https://github.com/complytime/complyctl/pull/686",
+      "observed_facts": "Per-entry verification implementation and tests."
+    },
+    {
+      "url": "https://github.com/complytime/complyctl/blob/afdf3269647765341c510d56b5fd6404dfe75f77/cmd/complyctl/cli/get.go",
+      "observed_facts": "Normal invocation passes workspace config and nil cache; syncAll conditionally creates the cache, and resolveVerifier has a nil-cache early return."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Static control-flow finding; no runtime reproduction. This does not establish abandonment."
+  ],
+  "uncertainty_category": "apparent_required_behavior_gap"
+}

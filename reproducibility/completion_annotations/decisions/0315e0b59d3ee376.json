@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "0315e0b59d3ee376",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/archmaxai/archmax/commit/af7aafdbc425cee15236210215b119c6fcc7f348",
+  "manual_outcome_date": "2026-06-05",
+  "manual_notes": "The Firebird form implementation conditionally adds the type only for a true server capability, initializes port3050 and charsetUTF8, presents host-side database guidance and URI mode, and sends charset with connection details while preserving write-only password editing. Matching change checklist is fully checked. Date is the implementation commit; UI was not exercised.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The Firebird form implementation conditionally adds the type only for a true server capability, initializes port3050 and charsetUTF8, presents host-side database guidance and URI mode, and sends charset with connection details while preserving write-only password editing. Matching change checklist is fully checked. Date is the implementation commit; UI was not exercised.",
+  "sources": [
+    {
+      "url": "https://github.com/archmaxai/archmax/commit/af7aafdbc425cee15236210215b119c6fcc7f348",
+      "observed_facts": "Inspected ConnectionFormDialog diff: capability query, conditional dropdown, default ports/charset, host database hint, buildConfig and blank password initialization."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

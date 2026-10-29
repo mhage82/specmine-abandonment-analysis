@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "24daa9b44eab02e4",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/verify.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/add.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Registered verify-readiness evaluates graph cycles, blockers, known statuses and completed-parent/unfinished-child consistency. It never loads .specfact/dor.yaml or runs DefinitionOfReady rules, which are the selected requirement. Different release-readiness behavior is implemented, but completion of this DoR scope is unsupported.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Registered verify-readiness evaluates graph cycles, blockers, known statuses and completed-parent/unfinished-child consistency. It never loads .specfact/dor.yaml or runs DefinitionOfReady rules, which are the selected requirement. Different release-readiness behavior is implemented, but completion of this DoR scope is unsupported.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/verify.py",
+      "observed_facts": [
+        "Read entire file, graph-based release checks and READY/BLOCKED output; no DoR config read."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog/commands.py",
+      "observed_facts": [
+        "verify_readiness from this module is the registered command."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-backlog/src/specfact_backlog/backlog_core/commands/add.py",
+      "observed_facts": [
+        "DoR loader exists in separate add command, illustrating that its presence elsewhere does not satisfy verify-readiness."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "24daa9b44eab02e4"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

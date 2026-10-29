@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "7b5597c833ec25c4",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/commit/ce70723c57303218bf304c95b995e7528556faaa | https://github.com/epam/ai-dial-admin-frontend/commit/c5503a0314d20c305d58fff0bf99ba037c9d83d7",
+  "manual_outcome_date": "2026-03-16",
+  "manual_notes": "The image-status predicate drives the Properties warning, install modal/action/navigation/error flow, tab warning and disabled Run control. Historical implementation uses DialAlert; the later explicit UI-kit migration updates that component to DialNotification in the selected wording. This supports historical feature completion rather than assuming current placement never changed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The image-status predicate drives the Properties warning, install modal/action/navigation/error flow, tab warning and disabled Run control. Historical implementation uses DialAlert; the later explicit UI-kit migration updates that component to DialNotification in the selected wording. This supports historical feature completion rather than assuming current placement never changed.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/ce70723c57303218bf304c95b995e7528556faaa",
+      "observed_facts": "Read container view, tabs, install callback, status predicate and Run-button changes."
+    },
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/c5503a0314d20c305d58fff0bf99ba037c9d83d7",
+      "observed_facts": "UI-kit notification rename explains later archived-spec wording."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Outcome date denotes functional feature delivery; later component naming and banner extraction were separate refactors."
+  ]
+}

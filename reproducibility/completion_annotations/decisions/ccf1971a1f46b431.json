@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "ccf1971a1f46b431",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/capability/storagecap/storagecap.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/storagecap/storagecap.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_admin.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/tools/linactl/internal/plugingovernance/plugingovernance_scan.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Typed owner services, request authorization, scoped resource adapters and governance scanner are substantially implemented. The selected contract requires ordinary domain parent packages to expose only consumer interfaces/DTOs and move provider runtime/factory/environment to SPI or internal packages. June17 and July11 storagecap still publicly declare ProviderRuntime, ProviderEnv and ProviderFactory in the consumer parent package. Historical Admin directory existed in June17 and its later removal is treated as evolution, but the explicit provider separation remains unsupported.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Typed owner services, request authorization, scoped resource adapters and governance scanner are substantially implemented. The selected contract requires ordinary domain parent packages to expose only consumer interfaces/DTOs and move provider runtime/factory/environment to SPI or internal packages. June17 and July11 storagecap still publicly declare ProviderRuntime, ProviderEnv and ProviderFactory in the consumer parent package. Historical Admin directory existed in June17 and its later removal is treated as evolution, but the explicit provider separation remains unsupported.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/capability/storagecap/storagecap.go",
+      "observed_facts": [
+        "Read public provider runtime/environment/factory contracts alongside consumer Service."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/pkg/plugin/capability/storagecap/storagecap.go",
+      "observed_facts": [
+        "Later parent package still exposes provider contracts."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_admin.go",
+      "observed_facts": [
+        "Historical typed Admin directory exists, avoiding inference from later renamed interfaces."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service.go",
+      "observed_facts": [
+        "Read typed owner dispatch and authorization-snapshot boundary."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/hack/tools/linactl/internal/plugingovernance/plugingovernance_scan.go",
+      "observed_facts": [
+        "Read concrete core-table/legacy-interface rules and governed scanner implementation."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "This is a specific literal SPI/package-boundary gap in the broad specification, not rejection of implemented resource-domain functionality."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "ccf1971a1f46b431"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

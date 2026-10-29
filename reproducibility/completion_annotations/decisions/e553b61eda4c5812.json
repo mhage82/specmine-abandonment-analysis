@@ -1,0 +1,54 @@
+{
+  "file_url_sha16": "e553b61eda4c5812",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/ops/usage-daily-rollup.sql | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/ops/usage-daily-rollup-backfill.sql | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-rollup-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-aggregate-collector-core.js | https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/hooks/use-usage-data.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The SQL delta trigger/rebuild, rollup-plus-hourly boundary algorithm, unavailable/empty rollup fallback and backend summary consumption are implemented. However the unconditional preference in this spec is not established: the pinned resolver disables rollup by default unless VIBEUSAGE_ROLLUP_ENABLED is set, and also bypasses rollup below a range threshold. Deployment configuration or a historical revision fulfilling the exact preference was not verified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The SQL delta trigger/rebuild, rollup-plus-hourly boundary algorithm, unavailable/empty rollup fallback and backend summary consumption are implemented. However the unconditional preference in this spec is not established: the pinned resolver disables rollup by default unless VIBEUSAGE_ROLLUP_ENABLED is set, and also bypasses rollup below a range threshold. Deployment configuration or a historical revision fulfilling the exact preference was not verified.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/ops/usage-daily-rollup.sql",
+      "observed_facts": [
+        "Read primary key and insert/update/delete delta trigger, including moved-key retraction."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/scripts/ops/usage-daily-rollup-backfill.sql",
+      "observed_facts": [
+        "Read UTC delete-and-rebuild replay function."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-rollup-core.js",
+      "observed_facts": [
+        "Read isRollupEnabled: absent env means false."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/insforge-src/shared/usage-aggregate-collector-core.js",
+      "observed_facts": [
+        "Read boundary splitting, full-day rollup, failure/empty fallback and range-threshold bypass."
+      ]
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/dashboard/src/hooks/use-usage-data.ts",
+      "observed_facts": [
+        "Read backend summary selection; no local daily reduction."
+      ]
+    }
+  ],
+  "limitations": [
+    "Downloaded source/tests were inspected but not executed.",
+    "AI-assisted annotation pending human confirmation.",
+    "Exact completion date not established; snapshot evidence is not treated as an event date."
+  ],
+  "review_depth": "Full specification/tasks read; SQL and rollup algorithm/frontend integration inspected; enabled deployment and exact unconditional preference not corroborated.",
+  "source_snapshot": "4891a5882781e2fff65bf4f7b6609d521265ae98",
+  "network_limitations": [
+    "HTTP Error 403: rate limit exceeded"
+  ]
+}

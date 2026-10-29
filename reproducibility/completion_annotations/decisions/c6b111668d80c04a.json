@@ -1,0 +1,31 @@
+{
+  "file_url_sha16": "c6b111668d80c04a",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/pull/2806.diff | https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/0cae4d28660c351a96c84b8cff80bb0d99d44fa3/apps/ai-dial-admin/src/components/TestSuites/Modals/ChangeMcpToolModal/ChangeMcpToolModal.tsx",
+  "manual_outcome_date": "",
+  "manual_notes": "MCP target selection and the adaptive wizard are implemented. The selected specification also requires Change Tool modal to change both deployment and tool. At the pinned revision the modal only selects a tool within the existing deployment, with no deployment grid or mcpDeploymentRef update. Strict completion remains unverified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "Substantial implementation of the broader MCP task group does not establish all selected target-selection requirements. A concrete modal-scope mismatch remains.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/pull/2806.diff",
+      "observed_facts": "Inspected target tabs, MCP fetch components, field reset helpers, wizard labels and ChangeMcpToolModal. The modal renders only McpTool for the existing deployment."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/epam/ai-dial-admin-frontend/0cae4d28660c351a96c84b8cff80bb0d99d44fa3/apps/ai-dial-admin/src/components/TestSuites/Modals/ChangeMcpToolModal/ChangeMcpToolModal.tsx",
+      "observed_facts": "Pinned modal holds pendingTool only, reads existing deploymentId, and updates toolRef/argumentTemplate without any deployment selection or mcpDeploymentRef change."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read full target-selection specification and shared task/history packet; inspected target/wizard/modal implementation and pinned modal. Tests were not executed.",
+  "spec_snapshot_sha256": "c1544fe3a37acd62bbd4693840472fa73fd660817aed7ed8ca65557927f0bc43",
+  "related_review_ids": [
+    "c6b111668d80c04a"
+  ]
+}

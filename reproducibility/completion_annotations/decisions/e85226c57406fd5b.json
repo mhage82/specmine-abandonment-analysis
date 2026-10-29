@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "e85226c57406fd5b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/config.tsx | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/server/src/router.ts | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/cli/src/export.ts | https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/lib/static-data-provider.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The Config screen implements configuration and change-metadata views plus schema tabs, structured preview, inline templates and generic rendering of unknown artifact fields. Explicit edit/save/cancel and schema management are wired to backend mutations; package sources are read-only in both UI and server. Snapshot generation includes OPSX configuration data. Evidence supports the configuration-center delivery, with schema tabs evolved into per-schema tabs.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The Config screen implements configuration and change-metadata views plus schema tabs, structured preview, inline templates and generic rendering of unknown artifact fields. Explicit edit/save/cancel and schema management are wired to backend mutations; package sources are read-only in both UI and server. Snapshot generation includes OPSX configuration data. Evidence supports the configuration-center delivery, with schema tabs evolved into per-schema tabs.",
+  "sources": [
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/routes/config.tsx",
+      "observed_facts": "Preview/edit, raw-artifact unknown fields, template display, config/change states and schema controls inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/server/src/router.ts",
+      "observed_facts": "File write/delete mutations enforce editable source restrictions."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/cli/src/export.ts",
+      "observed_facts": "OPSX snapshot collection inspected."
+    },
+    {
+      "url": "https://github.com/jixoai/openspecui/blob/a6938ebb29dae08e2645ef005177ef4e4b723108/packages/web/src/lib/static-data-provider.ts",
+      "observed_facts": "Static OPSX data access inspected."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Schema navigation uses individual schema tabs rather than one literal Schemas tab; treated as presentation evolution with preserved functionality."
+  ]
+}

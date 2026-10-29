@@ -1,0 +1,38 @@
+{
+  "file_url_sha16": "460d0c7dcd1a2755",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/rules/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/rules/test_updater.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Rules CLI show prints the complete file, missing-file paths return actionable init advice, init creates bundled/default content, and update loads20 ledger runs and calls the updater. Actual Typer tests assert stdout equality, missing exit1, creation and C901/version update. Those selected scenarios are supported even though a different updater specification has an unresolved stale-rule edge case.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Rules CLI show prints the complete file, missing-file paths return actionable init advice, init creates bundled/default content, and update loads20 ledger runs and calls the updater. Actual Typer tests assert stdout equality, missing exit1, creation and C901/version update. Those selected scenarios are supported even though a different updater specification has an unresolved stale-rule edge case.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/rules/commands.py",
+      "observed_facts": [
+        "Read show/init/update handlers, canonical path, ledger20 and IDE sync calls."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/unit/specfact_code_review/rules/test_updater.py",
+      "observed_facts": [
+        "CliRunner assertions cover exact show output, missing init advice, creation, version4 and C901 from supplied recent runs."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "460d0c7dcd1a2755"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

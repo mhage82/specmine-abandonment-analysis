@@ -1,0 +1,33 @@
+{
+  "file_url_sha16": "29f3b72ec4513f85",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-vben/apps/web-antd/public/stoplight/apidocs.html | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-vben/apps/web-antd/src/views/about/api-docs/index.vue | https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_apidoc_route_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Iframe isolation, JWT-prefilled Stoplight and request-origin tests are implemented. The required configurable OpenAPI source URL is not: both historical and reviewed HTML hardcode /api.json rather than read frontend configuration, while the parent passes only language and token. Full selected acceptance scope is unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Iframe isolation, JWT-prefilled Stoplight and request-origin tests are implemented. The required configurable OpenAPI source URL is not: both historical and reviewed HTML hardcode /api.json rather than read frontend configuration, while the parent passes only language and token. Full selected acceptance scope is unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-vben/apps/web-antd/public/stoplight/apidocs.html",
+      "observed_facts": "Creates elements-api, prefills BearerAuth, and hardcodes the api.json path in apiDescriptionUrl."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-vben/apps/web-antd/src/views/about/api-docs/index.vue",
+      "observed_facts": "Iframe component passes lang/token; no frontend-configured OpenAPI source URL."
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/9776f63798f103c7ff11f7fe9853bd7296690b98/apps/lina-core/internal/cmd/internal/httpstartup/httpstartup_apidoc_route_test.go",
+      "observed_facts": "Tests request Host and X-Forwarded-Proto handling for generated servers URL."
+    }
+  ],
+  "limitations": [
+    "Static source, tests and documentation inspection; no downloaded code or tests were executed.",
+    "Pinned snapshot establishes implementation by that revision, not the exact completion event date.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "a0f38163d1b06aeedb6581124575b5c258caf3b7d440d3a2d2fdd626a5beca28"
+}

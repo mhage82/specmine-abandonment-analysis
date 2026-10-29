@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "e9fb74d163fe3abe",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/kniwase/WebComPy/commit/873acd4b470de08bb82ba1c6c223e04d3dbce0e3",
+  "manual_outcome_date": "",
+  "manual_notes": "AppConfig.profile and HTML profiling bootstrap are implemented. The explicit-parameter precedence statement has a gap: WebComPyApp(profile=False, config=AppConfig(profile=True)) still forces profiling on, and the added test expects that behavior. The stated positive True override works, but general explicit-parameter precedence is unresolved.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "AppConfig.profile and HTML profiling bootstrap are implemented. The explicit-parameter precedence statement has a gap: WebComPyApp(profile=False, config=AppConfig(profile=True)) still forces profiling on, and the added test expects that behavior. The stated positive True override works, but general explicit-parameter precedence is unresolved.",
+  "sources": [
+    {
+      "url": "https://github.com/kniwase/WebComPy/commit/873acd4b470de08bb82ba1c6c223e04d3dbce0e3",
+      "observed_facts": "Read constructor fallback logic, profile config and test_profile_param_overrides_config."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ],
+  "uncertainty_category": "specific_contract_gap"
+}

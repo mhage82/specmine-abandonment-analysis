@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "c634ef1e3c59aaf3",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "2026-02-28",
+  "manual_notes": "Historical cog fix replaces the pale fixed iOS treatment with neutral translucent gray, removes the fixed white border, and uses theme separator color at shell level while retaining BlurView tint/intensity and the Android branch. Source corroborates the targeted visibility adjustment; no screenshots/device test performed.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Historical cog fix replaces the pale fixed iOS treatment with neutral translucent gray, removes the fixed white border, and uses theme separator color at shell level while retaining BlurView tint/intensity and the Android branch. Source corroborates the targeted visibility adjustment; no screenshots/device test performed.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "047_ea5b6b009824d951a683cb3284620539d2c5d25a: header-settings-button styles change background/border; shell-header uses separatorColor; existing blur and Android styling retained."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "7feb3b33d6d05d3a64b2e59747c0e1c4e3b0ae7ce8b77f36b5ce42fed3597f16"
+}

@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "a4252e21760cc390",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/pull/624.diff",
+  "manual_outcome_date": "",
+  "manual_notes": "Profile defaults, organization baseline, repository overlay and developer-local settings are recursively merged in the required precedence, with winning-source annotations. All four tiers, required clean-code mappings, enterprise fields and invalid-profile handling are implemented and covered by inspected tests. Event date unverified.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "high",
+  "rationale": "The selected configuration requirements map directly to resolve_profile_config, write_profile_config, tier defaults and error handling, with tests of precedence, source annotations, enterprise requirements and CLI integration.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/pull/624.diff",
+      "observed_facts": "Inspected first_run_selection.py profile presets, recursive precedence resolver, source annotations, profile config writer, init command integration, and unit/CLI test definitions. Startup explicitly enables project, backlog, codebase and code-review bundles; four validation tiers and clean-code mappings are implemented."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "c1b74af266489d85bd7a331b53501682d89ae5ae9011c0e891a74ba80f999a00",
+  "related_review_ids": [
+    "a4252e21760cc390"
+  ]
+}

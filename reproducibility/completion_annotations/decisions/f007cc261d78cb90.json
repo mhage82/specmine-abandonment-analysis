@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "f007cc261d78cb90",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/dynatrace-oss/dtwiz/pull/30 | https://github.com/dynatrace-oss/dtwiz/commit/2dc2e2c3aae1ab070f01a0deee75f2883755806a | https://github.com/dynatrace-oss/dtwiz/blob/e6bc3f8ab0feb545a95a0b56cb6ce558c94543f5/pkg/client/client.go",
+  "manual_outcome_date": "2026-04-21",
+  "manual_notes": "The PR contains working Classic/Platform client construction, credential checks, shared transient-error retries/timeouts, sensitive-header redaction and status --extensions probes with counts/error handling. The follow-up caps debug bodies at 2048 bytes. Tests cover retry and credential behavior. The client was subsequently moved from cmd/client.go to pkg/client with a command wrapper, so the old path no longer exists at the collected revision.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "The PR contains working Classic/Platform client construction, credential checks, shared transient-error retries/timeouts, sensitive-header redaction and status --extensions probes with counts/error handling. The follow-up caps debug bodies at 2048 bytes. Tests cover retry and credential behavior. The client was subsequently moved from cmd/client.go to pkg/client with a command wrapper, so the old path no longer exists at the collected revision.",
+  "sources": [
+    {
+      "url": "https://github.com/dynatrace-oss/dtwiz/pull/30",
+      "observed_facts": "Implementation patches for client, credentials, status probes and tests; later code relocation is visible."
+    },
+    {
+      "url": "https://github.com/dynatrace-oss/dtwiz/commit/2dc2e2c3aae1ab070f01a0deee75f2883755806a",
+      "observed_facts": "2048-byte debug-body truncation with total size."
+    },
+    {
+      "url": "https://github.com/dynatrace-oss/dtwiz/blob/e6bc3f8ab0feb545a95a0b56cb6ce558c94543f5/pkg/client/client.go",
+      "observed_facts": "Relocated client corroborates continued implementation; this annotation is historical delivery, not literal current constructor-name conformance."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "The selected historical specification predates later credential and constructor refactors; their exact current behavior is not claimed to match the old contract. No live API calls or project tests were run."
+  ]
+}

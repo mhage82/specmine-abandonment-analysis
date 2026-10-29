@@ -1,0 +1,36 @@
+{
+  "file_url_sha16": "6d1979b9b7f6c63f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/manifest.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/boundary_models.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/tests/unit/agents/brain_launch_runtime/test_schema_and_manifest.py | https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/openspec/changes/archive/2026-03-03-decouple-cao-shadow-parser-modes/review/review-20260302-105438.md",
+  "manual_outcome_date": "",
+  "manual_notes": "Runtime manifest writes and loads validate Pydantic boundary models, preserve field-path errors, and expose dataclass execution interfaces. Packaged v1/v2 schemas and consistency/invalid-payload regressions are present. The later March3 review explicitly documents a deliberate hard break from manifest v1 to v2, explaining the newer emitted version rather than treating that evolution as noncompletion of the earlier boundary change.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Runtime manifest writes and loads validate Pydantic boundary models, preserve field-path errors, and expose dataclass execution interfaces. Packaged v1/v2 schemas and consistency/invalid-payload regressions are present. The later March3 review explicitly documents a deliberate hard break from manifest v1 to v2, explaining the newer emitted version rather than treating that evolution as noncompletion of the earlier boundary change.",
+  "sources": [
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/manifest.py",
+      "observed_facts": "Write/load validation and nested launch-plan validation inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/src/gig_agents/agents/brain_launch_runtime/boundary_models.py",
+      "observed_facts": "Boundary models and field-path error formatting inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/tests/unit/agents/brain_launch_runtime/test_schema_and_manifest.py",
+      "observed_facts": "Roundtrip and invalid-field regression sources inspected."
+    },
+    {
+      "url": "https://github.com/igamenovoer/houmao/blob/aacfd31e56f9e9321f47c4c67e9fca4f4d0f2a50/openspec/changes/archive/2026-03-03-decouple-cao-shadow-parser-modes/review/review-20260302-105438.md",
+      "observed_facts": "Explicit decision to supersede schema v1 with v2, without compatibility shims."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Original v1 implementation date was not recovered; later source plus explicit migration decision corroborate historical delivery."
+  ]
+}

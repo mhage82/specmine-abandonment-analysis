@@ -1,0 +1,51 @@
+{
+  "file_url_sha16": "9558437ece69bc11",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/run/runner.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/run/commands.py | https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/e2e/specfact_code_review/test_review_run_e2e.py | https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/commands.py",
+  "manual_outcome_date": "",
+  "manual_notes": "Tool orchestration, score-only, fix mode and clean/dirty fixtures are implemented, but the explicit --json stdout contract is contradicted: run_command writes JSON to a file and returns only its path. E2E tests read that file rather than validating stdout JSON. April9 retains this behavior. Thus the complete selected run-command specification cannot be certified from these snapshots. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Tool orchestration, score-only, fix mode and clean/dirty fixtures are implemented, but the explicit --json stdout contract is contradicted: run_command writes JSON to a file and returns only its path. E2E tests read that file rather than validating stdout JSON. April9 retains this behavior. Thus the complete selected run-command specification cannot be certified from these snapshots.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/run/runner.py",
+      "observed_facts": [
+        "Read ordered six-tool dispatch, TDD checks, scoring/report integration."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/packages/specfact-code-review/src/specfact_code_review/run/commands.py",
+      "observed_facts": [
+        "json_output branch writes report.model_dump_json to output_path and returns path text; score_only returns reward_delta."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/a5293dc5ad56a5766a11ab0330fea4383a62a8db/tests/e2e/specfact_code_review/test_review_run_e2e.py",
+      "observed_facts": [
+        "Clean/dirty tests invoke --json --out then parse out.read_text; they do not assert JSON stdout."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli-modules/blob/c2270942ae4856a291abf4affe7455d660e014a6/packages/specfact-code-review/src/specfact_code_review/run/commands.py",
+      "observed_facts": [
+        "Later implementation still uses file-output JSON mode."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "9558437ece69bc11",
+      "ea5e12b5e02431eb"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

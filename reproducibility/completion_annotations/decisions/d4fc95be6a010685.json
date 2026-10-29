@@ -1,0 +1,44 @@
+{
+  "file_url_sha16": "d4fc95be6a010685",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/guides/module-development.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/architecture/module-system.md | https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/_layouts/default.html",
+  "manual_outcome_date": "",
+  "manual_notes": "Module development guide provides package directory/file roles, required manifest and optional dependency/extension/security fields, naming and runtime-contract guidance. It is linked from architecture and navigation. Later two-repository layout evolves the examples while retaining this original guide scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Module development guide provides package directory/file roles, required manifest and optional dependency/extension/security fields, naming and runtime-contract guidance. It is linked from architecture and navigation. Later two-repository layout evolves the examples while retaining this original guide scope.",
+  "sources": [
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/e96efb12499bdfda5245c136f1dbd05ee2d3beb3/docs/guides/module-development.md",
+      "observed_facts": [
+        "Read full layout, manifest schema fields, command expectations, naming and integration checklist."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/architecture/module-system.md",
+      "observed_facts": [
+        "Development guidance links module guide."
+      ]
+    },
+    {
+      "url": "https://github.com/nold-ai/specfact-cli/blob/1e601b3a56706ebeeea0a8277ad213f1cdda90ae/docs/_layouts/default.html",
+      "observed_facts": [
+        "Module Development navigation entry."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "d4fc95be6a010685"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

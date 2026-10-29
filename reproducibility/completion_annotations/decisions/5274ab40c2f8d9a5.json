@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "5274ab40c2f8d9a5",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/tests/integration/editor/layout_persistence.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "UI interaction tests and press/release injection exist, but the required split-direction/pane-order toggle examples remain action/state tests in the inspected historical/current suites. I did not establish the specified stable toggle locator and pointer-driven round trips; broader unrelated click tests are insufficient for this exact scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "UI interaction tests and press/release injection exist, but the required split-direction/pane-order toggle examples remain action/state tests in the inspected historical/current suites. I did not establish the specified stable toggle locator and pointer-driven round trips; broader unrelated click tests are insufficient for this exact scope.",
+  "sources": [
+    {
+      "url": "https://github.com/HiroyukiFuruno/KatanA/blob/67de40f9b95a0d5ba0249d3fab3ced387f2a7aba/crates/katana-ui/tests/integration/editor/layout_persistence.rs",
+      "observed_facts": "split direction toggle test uses AppAction/state; editor/ui.rs has PointerButton injection for code-menu dismissal instead. Historical integration.rs likewise contains action-based split/pane round-trip tests."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "dd0d1f98ed278f5080539fe1fb2b89a2dfbca281497e0e955d3ea5fa2e89eee4"
+}

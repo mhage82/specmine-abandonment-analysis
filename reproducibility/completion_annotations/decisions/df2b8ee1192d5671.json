@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "df2b8ee1192d5671",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/Fission-AI/OpenSpec/pull/726 | https://github.com/Fission-AI/OpenSpec/pull/736/files | https://github.com/Fission-AI/OpenSpec/blob/93e27a755ce5386c66be7f3274a35f70018002bc/src/core/init.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "PR726/736 implement profile/delivery-aware init, tool detection, migration, CLI overrides and cleanup with tests. Exact spec also requires tool-appropriate success syntax; at snapshot93e27a7 init.ts unconditionally emits /opsx:propose or /opsx:new, without Cursor hyphen syntax. Strict full-scope completion remains unclear despite checked tasks; no abandonment inferred.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Correct task association and broad implementation are supported, but an explicit selected-spec output scenario conflicts with reviewed code.",
+  "sources": [
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/726",
+      "observed_facts": "Merged 2026-02-20T02:21:06Z; inspected substantive profiles, config schema/commands, init/update, workflow templates and tests, not merely PR title or checklist."
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/pull/736/files",
+      "observed_facts": "Inspected init migration/tool-selection changes and tests; custom-profile confirmation removed and commands-only migration tested."
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/93e27a755ce5386c66be7f3274a35f70018002bc/src/core/init.ts",
+      "observed_facts": "Success branch emits colon-based commands unconditionally; profile/delivery generation and noninteractive/tool-selection implementation are present."
+    }
+  ],
+  "limitations": [
+    "Static review only; no tests were executed or deployed behavior independently verified.",
+    "AI-assisted annotation pending human confirmation."
+  ],
+  "review_depth": "Read specification and linked task/history packet; inspected relevant public implementation diffs/source and test definitions. Tests were not run.",
+  "spec_snapshot_sha256": "eb8b5e140059ca7f3db49fd35b81ec254b0bd8a55bb936fa91a7c833f4f9c315",
+  "related_review_ids": [
+    "df2b8ee1192d5671"
+  ]
+}

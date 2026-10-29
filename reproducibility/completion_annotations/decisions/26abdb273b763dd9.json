@@ -1,0 +1,35 @@
+{
+  "file_url_sha16": "26abdb273b763dd9",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-leaderboard.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-leaderboard-refresh.js | https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/.github/workflows/vibescore-leaderboard-refresh.yml",
+  "manual_outcome_date": "",
+  "manual_notes": "Authenticated leaderboard reads current-window stored snapshots first and includes their generated_at, with legacy fallback when unavailable. Service-role refresh endpoint rebuilds each UTC period and workflow schedules asynchronous refreshes.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Authenticated leaderboard reads current-window stored snapshots first and includes their generated_at, with legacy fallback when unavailable. Service-role refresh endpoint rebuilds each UTC period and workflow schedules asynchronous refreshes.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-add-precomputed-aggregates/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-leaderboard.js",
+      "observed_facts": "loadSnapshot branch returns snapshot totals/generation time."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/insforge-src/functions/vibescore-leaderboard-refresh.js",
+      "observed_facts": "Restricted admin bearer; current UTC periods rebuilt and generation timestamp returned."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/9811ca0e8c814d2a3dc0207b80f113477793c093/.github/workflows/vibescore-leaderboard-refresh.yml",
+      "observed_facts": "Scheduled and manual per-period refresh automation."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

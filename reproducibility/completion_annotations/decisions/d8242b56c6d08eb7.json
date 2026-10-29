@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "d8242b56c6d08eb7",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/blob/41cf2e8d99a7b3340dc7612238f2d8a628914d7f/src-tauri/src/engine/claude_forwarder.rs",
+  "manual_outcome_date": "",
+  "manual_notes": "The pinned Claude forwarder starts forwarding timing at event ingress, emits converted realtime payloads before subsequent runtime synchronization, and warns about forwarder stalls only from that ingress duration. Startup timings are carried separately and cannot inflate that measurement.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The pinned Claude forwarder starts forwarding timing at event ingress, emits converted realtime payloads before subsequent runtime synchronization, and warns about forwarder stalls only from that ingress duration. Startup timings are carried separately and cannot inflate that measurement.",
+  "sources": [
+    {
+      "url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/blob/41cf2e8d99a7b3340dc7612238f2d8a628914d7f/src-tauri/src/engine/claude_forwarder.rs",
+      "observed_facts": "Read event_ingress_at, payload emission, post-emission diagnostics and runtime-operation ordering."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Implementation is present by the pinned May15 revision; first implementation event date was not established."
+  ]
+}

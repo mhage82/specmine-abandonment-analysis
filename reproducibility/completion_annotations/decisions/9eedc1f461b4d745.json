@@ -1,0 +1,32 @@
+{
+  "file_url_sha16": "9eedc1f461b4d745",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/backend/internal/dao/internal/operlog.go | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/frontend/pages/operlog-management.vue | https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/backend/plugin.go",
+  "manual_outcome_date": "",
+  "manual_notes": "The operlog plugin implements persistence, filters/export and range-delete UI, but the exact collected spec still requires the old sys table while the inspected DAO targets plugin_linapro_monitor_operlog. The record mixes the earlier host storage contract with later plugin UI scope; full exact-scope completion cannot be confirmed without adjudicating that contract migration.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "The operlog plugin implements persistence, filters/export and range-delete UI, but the exact collected spec still requires the old sys table while the inspected DAO targets plugin_linapro_monitor_operlog. The record mixes the earlier host storage contract with later plugin UI scope; full exact-scope completion cannot be confirmed without adjudicating that contract migration.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/backend/internal/dao/internal/operlog.go",
+      "observed_facts": "The generated DAO table is plugin_linapro_monitor_operlog, not the sys table named in the selected spec."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/frontend/pages/operlog-management.vue",
+      "observed_facts": "Range-delete dialog validates begin/end dates, supports delete-all and sends clean requests; actual plugin UI exists."
+    },
+    {
+      "url": "https://github.com/linaproai/official-plugins/blob/a6ead41b963c964591969a234be8e57fd70f46cd/linapro-monitor-operlog/backend/plugin.go",
+      "observed_facts": "Registers actual protected routes and plugin-owned global audit middleware."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "31a292643cd834d0e59073c89e980ff9bd72483845100bfffe027fe24913c1e3"
+}

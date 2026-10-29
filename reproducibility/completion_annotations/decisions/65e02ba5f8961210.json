@@ -1,0 +1,47 @@
+{
+  "file_url_sha16": "65e02ba5f8961210",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills_layout.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/status.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/skills.mdx | https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/configuration.mdx",
+  "manual_outcome_date": "",
+  "manual_notes": "Wizard offers explicit skill link modes, defaults to a directory symlink and recognizes existing canonical links. An intentional contents-mode override produces post-init and doctor warnings; status provides a hint without declaring a healthy link broken. Configuration and skills guides explain both modes and the default.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Wizard offers explicit skill link modes, defaults to a directory symlink and recognizes existing canonical links. An intentional contents-mode override produces post-init and doctor warnings; status provides a hint without declaring a healthy link broken. Configuration and skills guides explain both modes and the default.",
+  "sources": [
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/openspec/changes/archive/2026-03-29-wizard-preserve-existing-skill-links/specs/skill-adoption/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/init.rs",
+      "observed_facts": "build_skills_wizard_choices, explicit prompt/selection, target-mode rendering, post-init warning collection and override tests."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/skills_layout.rs",
+      "observed_facts": "Canonical target matching and focused mismatch warning generation."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/status.rs",
+      "observed_facts": "Skills mismatch hint is collected separately from target health."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/src/commands/doctor.rs",
+      "observed_facts": "Recognized skills layout mismatch diagnostics."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/guides/skills.mdx",
+      "observed_facts": "Mode descriptions, default and warning behavior."
+    },
+    {
+      "url": "https://github.com/dallay/agentsync/blob/0b6536f0a55d883d565115c1506824940a17f043/website/docs/src/content/docs/reference/configuration.mdx",
+      "observed_facts": "Skills target mode guidance."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}

@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "98a476f90f868659",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/norish-recipes/norish/pull/325.patch",
+  "manual_outcome_date": "",
+  "manual_notes": "Dashboard work exists, but the historical screen composes Today and YourCollection without the required ContinueCooking and Discover sections. Its meal mock includes a fourth Snack entry despite the exact three-meal requirement. Checked tasks/archive do not resolve these scope mismatches.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Dashboard work exists, but the historical screen composes Today and YourCollection without the required ContinueCooking and Discover sections. Its meal mock includes a fourth Snack entry despite the exact three-meal requirement. Checked tasks/archive do not resolve these scope mismatches.",
+  "sources": [
+    {
+      "url": "https://github.com/norish-recipes/norish/pull/325.patch",
+      "observed_facts": "047_ea5b6b009824d951a683cb3284620539d2c5d25a: recipes.tsx imports/renders Today and YourCollection; separate unused ContinueCooking/Discover components and four-entry today meal mock added in same patch."
+    }
+  ],
+  "limitations": [
+    "Static inspection of source and test definitions; tests/apps/deployments were not executed.",
+    "AI-assisted judgment requires human confirmation."
+  ],
+  "review_depth": "Read collected exact specification, linked checked task snapshot and recorded file history; inspected relevant pinned implementation and test or documentation definitions.",
+  "spec_snapshot_sha256": "721eb284f9e5ab8d59a72e08e2d1d14de58130b8f5b0faca6a020608dfc0cf6d"
+}

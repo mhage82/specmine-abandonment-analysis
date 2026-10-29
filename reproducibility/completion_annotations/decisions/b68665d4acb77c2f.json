@@ -1,0 +1,64 @@
+{
+  "file_url_sha16": "b68665d4acb77c2f",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_storage_adapter.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_storage_local_provider.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_storage.go | https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_storage_adapter_test.go | https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go",
+  "manual_outcome_date": "",
+  "manual_notes": "June17 implementation matches the historical storage scope: domain DTOs and plugin/tenant logical keys, safe paths and hidden physical keys, bounded prefix listing, explicit selected provider with no silent fallback, and cluster rejection unless local storage is explicitly allowed. Dynamic dispatcher checks authorized logical resource before scoped operations. Actual tests assert provider selection/no-fallback, prefix/limit and cluster behavior. June20 intentionally switches to zero-configuration available-provider selection; that later change does not erase earlier delivery. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "June17 implementation matches the historical storage scope: domain DTOs and plugin/tenant logical keys, safe paths and hidden physical keys, bounded prefix listing, explicit selected provider with no silent fallback, and cluster rejection unless local storage is explicitly allowed. Dynamic dispatcher checks authorized logical resource before scoped operations. Actual tests assert provider selection/no-fallback, prefix/limit and cluster behavior. June20 intentionally switches to zero-configuration available-provider selection; that later change does not erase earlier delivery.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go",
+      "observed_facts": [
+        "Read explicit ActiveProviderPluginID resolution with local-only-when-empty and fail-closed unavailable selection."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_storage_adapter.go",
+      "observed_facts": [
+        "Read CRUD/list, plugin/tenant key generation, logical metadata projection, traversal rejection and list limit."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_storage_local_provider.go",
+      "observed_facts": [
+        "Read prefix WalkDir stop at limit and cluster allowance guard."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/wasm/wasm_host_service_storage.go",
+      "observed_facts": [
+        "Transport validates target path then calls scoped storagecap."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/d6fe97d3a8b23ff56b06c1620136b3b2fffeec39/apps/lina-core/internal/service/plugin/internal/capabilityhost/capabilityhost_storage_adapter_test.go",
+      "observed_facts": [
+        "Read concrete prefix-limit, provider-selection/no-fallback and cluster-rejection assertions."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7baae297f4e86fc2ca44835d2c2cd01e8752e0bc/apps/lina-core/pkg/plugin/capability/storagecap/storagecap_provider.go",
+      "observed_facts": [
+        "Later provider-selection policy differs, tracked as evolution."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit.",
+    "Historical contract matched June17, not a claim July retains explicit active-provider configuration."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "b68665d4acb77c2f",
+      "bf02d9b3cb07b38c"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

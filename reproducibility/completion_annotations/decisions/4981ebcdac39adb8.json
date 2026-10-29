@@ -1,0 +1,28 @@
+{
+  "file_url_sha16": "4981ebcdac39adb8",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/blob/41cf2e8d99a7b3340dc7612238f2d8a628914d7f/src/features/threads/utils/streamLatencyDiagnostics.ts | https://github.com/zhukunpenglinyutong/desktop-cc-gui/blob/41cf2e8d99a7b3340dc7612238f2d8a628914d7f/src/features/threads/utils/streamLatencyDiagnostics.test.ts",
+  "manual_outcome_date": "",
+  "manual_notes": "The diagnostics code separates no-stdout, stdout-without-valid-event and valid-event-without-text categories, validates finite nonnegative timing fields, clamps gaps and requires first-delta ingress before visible-output-stall handling. Regression definitions cover first-token classification without visible-stall mitigation and malformed timing payloads.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The diagnostics code separates no-stdout, stdout-without-valid-event and valid-event-without-text categories, validates finite nonnegative timing fields, clamps gaps and requires first-delta ingress before visible-output-stall handling. Regression definitions cover first-token classification without visible-stall mitigation and malformed timing payloads.",
+  "sources": [
+    {
+      "url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/blob/41cf2e8d99a7b3340dc7612238f2d8a628914d7f/src/features/threads/utils/streamLatencyDiagnostics.ts",
+      "observed_facts": "Read timing normalizers, first-token category resolver, nonnegative gaps and first-delta guards."
+    },
+    {
+      "url": "https://github.com/zhukunpenglinyutong/desktop-cc-gui/blob/41cf2e8d99a7b3340dc7612238f2d8a628914d7f/src/features/threads/utils/streamLatencyDiagnostics.test.ts",
+      "observed_facts": "Read first-token and malformed-payload regression definitions."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Implementation is present by May15; first delivery event date not established."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "file_url_sha16": "89acb555c7748fc7",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_upgrade.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_source_execute.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_runtime_execute.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_source_failure.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/store/store_runtime_upgrade_state.go | https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_upgrade_test.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Unified upgrade component owns source/dynamic preview and execution with shared dependency checks, release/failure projection and cache publication. Root public mutation entry performs platform guard once and delegates through lifecycle. Both strategies persist failed phases in the same sys_plugin_migration convention and produce normalized phase/error/message/release detail. Tests assert SQL and governance failure retains old release and shows consistent diagnostics. Repeated records have identical path and specification Markdown, compared before sharing this evidence.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "Unified upgrade component owns source/dynamic preview and execution with shared dependency checks, release/failure projection and cache publication. Root public mutation entry performs platform guard once and delegates through lifecycle. Both strategies persist failed phases in the same sys_plugin_migration convention and produce normalized phase/error/message/release detail. Tests assert SQL and governance failure retains old release and shows consistent diagnostics.",
+  "sources": [
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_upgrade.go",
+      "observed_facts": [
+        "Read public guards and narrow shared cache adapters."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_source_execute.go",
+      "observed_facts": [
+        "Read source orchestration through callbacks, SQL, governance, release promotion and shared cache success/failure publication."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_runtime_execute.go",
+      "observed_facts": [
+        "Read confirmed locked execution, type dispatch, stable-state recovery and shared publication."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/upgrade/upgrade_source_failure.go",
+      "observed_facts": [
+        "Common sys_plugin_migration failure writer used for both strategies."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/internal/store/store_runtime_upgrade_state.go",
+      "observed_facts": [
+        "Read normalized failure projection from latest migration."
+      ]
+    },
+    {
+      "url": "https://github.com/linaproai/linapro/blob/7d149838e77fe3d2b1bdda5ebb9d46679f79fd23/apps/lina-core/internal/service/plugin/plugin_runtime_upgrade_test.go",
+      "observed_facts": [
+        "Read dynamic SQL failure and source resource-reference failure assertions preserving old effective release and normalized diagnostic keys."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted annotation pending human confirmation.",
+    "Downloaded source and tests were read, never executed.",
+    "Pinned implementation is evidence of available behavior; the first completion date is not inferred from archival or latest-specification commit."
+  ],
+  "review_depth": "Read the full selected specification and linked task document; inspected concrete implementation and relevant assertions described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "39f9420c68e53984",
+      "89acb555c7748fc7"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

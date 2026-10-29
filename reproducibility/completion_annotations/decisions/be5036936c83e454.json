@@ -1,0 +1,57 @@
+{
+  "file_url_sha16": "be5036936c83e454",
+  "manual_status": "unclear",
+  "manual_scope_match": "partial",
+  "manual_evidence_url": "https://github.com/carverauto/serviceradar/commit/e4e387625597fa1008a9f6f31a0f893a01bd3daa | https://github.com/carverauto/serviceradar/commit/c22db89d887127d1a50e8e15038471e69554ef37 | https://github.com/carverauto/serviceradar/commit/cbd9532922b1deda0ab64015a2bc0d9c2e653508 | https://github.com/carverauto/serviceradar/commit/3aa8246af8c5688f106022e7084265387330898f | https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/go/pkg/agent/proxmox_console_ssh.go",
+  "manual_outcome_date": "",
+  "manual_notes": "Ticket creation/hash/expiry attachment, RBAC/session auditing, xterm shell and guest-console-unavailable gate are implemented. End-to-end authorized PVE SSH session completion cannot be supported: May12 removes the local credential resolver and reviewed connector still requires credential material while known_hosts/TOFU return unavailable. Shared checked tasks and UI alone do not establish a working scoped SSH console path.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-23",
+  "confidence": "medium",
+  "rationale": "Ticket creation/hash/expiry attachment, RBAC/session auditing, xterm shell and guest-console-unavailable gate are implemented. End-to-end authorized PVE SSH session completion cannot be supported: May12 removes the local credential resolver and reviewed connector still requires credential material while known_hosts/TOFU return unavailable. Shared checked tasks and UI alone do not establish a working scoped SSH console path.",
+  "sources": [
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/e4e387625597fa1008a9f6f31a0f893a01bd3daa",
+      "observed_facts": [
+        "Ticket/session code checks rule target/scope, hashes tickets and records lifecycle audit fields."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/c22db89d887127d1a50e8e15038471e69554ef37",
+      "observed_facts": [
+        "React/xterm shell and websocket integration added."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/cbd9532922b1deda0ab64015a2bc0d9c2e653508",
+      "observed_facts": [
+        "Unsupported guest paths explicitly gated, consistent with revised spec."
+      ]
+    },
+    {
+      "url": "https://github.com/carverauto/serviceradar/commit/3aa8246af8c5688f106022e7084265387330898f",
+      "observed_facts": [
+        "Local SSH resolver removed, with no replacement in reviewed host-connect diff."
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/carverauto/serviceradar/3aa8246af8c5688f106022e7084265387330898f/go/pkg/agent/proxmox_console_ssh.go",
+      "observed_facts": [
+        "Actual SSH connector requires provided credential material and returns host-key-store unavailable for default known_hosts/TOFU."
+      ]
+    }
+  ],
+  "limitations": [
+    "AI-assisted review; human confirmation pending.",
+    "No project tests were independently run.",
+    "ServiceRadar source SHAs have differed from available GitHub history; evidence uses explicitly named recovered public commits, not an assumption that original links still resolve.",
+    "Date is a reviewed code-integration evidence event, not independently established earliest completion."
+  ],
+  "review_depth": "Read complete specification and related task packet; inspected implementation/test evidence described in sources.",
+  "duplicate_scope_check": {
+    "matching_source_ids": [
+      "be5036936c83e454"
+    ],
+    "distinct_markdown_versions": 1
+  }
+}

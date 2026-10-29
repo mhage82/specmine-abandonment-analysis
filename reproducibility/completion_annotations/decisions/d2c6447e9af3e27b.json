@@ -1,0 +1,24 @@
+{
+  "file_url_sha16": "d2c6447e9af3e27b",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/epam/ai-dial-admin-frontend/commit/5ddd64511b1da87eceafd9fb2a4d42c620c90bf8",
+  "manual_outcome_date": "2026-04-29",
+  "manual_notes": "The unification change relocates container warnings into Properties content for all five views, using original entities for source gating. Adapter routing is added, the shared fetch/visibility logic is retained, and EntityBanner receives the existing copy/CTA. Outer view mounts are removed as part of the same change.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The unification change relocates container warnings into Properties content for all five views, using original entities for source gating. Adapter routing is added, the shared fetch/visibility logic is retained, and EntityBanner receives the existing copy/CTA. Outer view mounts are removed as part of the same change.",
+  "sources": [
+    {
+      "url": "https://github.com/epam/ai-dial-admin-frontend/commit/5ddd64511b1da87eceafd9fb2a4d42c620c90bf8",
+      "observed_facts": "Read five TabsContent gates, View mount removal, adapter dispatcher and ContainerStatusBanner delegation."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation.",
+    "Later DialNotification naming is a UI-kit refactor; outcome date refers to placement/adapter feature delivery."
+  ]
+}

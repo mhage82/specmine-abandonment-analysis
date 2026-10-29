@@ -1,0 +1,5 @@
+# Reproduction manifests hash exact bytes; keep these stable across checkouts.
+src/completion_*.py text eol=lf
+reproducibility/completion_annotations/decisions/*.json -text
+reproducibility/completion_annotations/manifest.json text eol=lf
+reproducibility/requirements-completion.txt text eol=lf

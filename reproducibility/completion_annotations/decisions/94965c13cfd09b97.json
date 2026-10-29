@@ -1,0 +1,23 @@
+{
+  "file_url_sha16": "94965c13cfd09b97",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/styrene-lab/omegon/commit/4da16c531a84fe5040739a1696bea52abfeebcfa",
+  "manual_outcome_date": "2026-03-15",
+  "manual_notes": "The canonical omegon bin now owns startup, while pi is a compatibility shim importing that same entrypoint. Install/update verification checks omegon ownership and restart messages use omegon. Documentation and executable-probe regression definitions match this selected binary-identity scope.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "high",
+  "rationale": "The canonical omegon bin now owns startup, while pi is a compatibility shim importing that same entrypoint. Install/update verification checks omegon ownership and restart messages use omegon. Documentation and executable-probe regression definitions match this selected binary-identity scope.",
+  "sources": [
+    {
+      "url": "https://github.com/styrene-lab/omegon/commit/4da16c531a84fe5040739a1696bea52abfeebcfa",
+      "observed_facts": "Read bin wiring/shim, update verifier and restart text, installer verification, migration docs and probe tests."
+    }
+  ],
+  "review_depth": "Selected specification and task snapshot; relevant implementation source/diffs and verification artifacts inspected",
+  "limitations": [
+    "Static evidence review; sampled repository tests were not executed and deployment was not verified.",
+    "AI-assisted research annotation, pending human confirmation."
+  ]
+}

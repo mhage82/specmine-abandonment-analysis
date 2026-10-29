@@ -1,0 +1,27 @@
+{
+  "file_url_sha16": "47a07d071edf7d99",
+  "manual_status": "completed",
+  "manual_scope_match": "yes",
+  "manual_evidence_url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-summary.js",
+  "manual_outcome_date": "",
+  "manual_notes": "UTC summary tries database COUNT/SUM first and returns immediately when successful. Null/error falls through to the prior daily rollup, so successful aggregation avoids the legacy full daily read.",
+  "reviewer": "Codex (AI-assisted; human confirmation pending)",
+  "reviewed_at": "2026-10-24",
+  "confidence": "medium",
+  "rationale": "UTC summary tries database COUNT/SUM first and returns immediately when successful. Null/error falls through to the prior daily rollup, so successful aggregation avoids the legacy full daily read.",
+  "sources": [
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/4891a5882781e2fff65bf4f7b6609d521265ae98/openspec/changes/archive/2025-12-23-2025-12-22-optimize-usage-summary-aggregate/specs/vibescore-tracker/spec.md",
+      "observed_facts": "Full local specification and linked task checklist read; scope evaluated individually. Archive/checkmarks are selection evidence only."
+    },
+    {
+      "url": "https://github.com/victorGPT/vibeusage/blob/335e5b053bbdb4d870a17d830cdbf161ae95a734/insforge-src/functions/vibescore-usage-summary.js",
+      "observed_facts": "Aggregate helper and early return before daily-row query."
+    }
+  ],
+  "limitations": [
+    "Source/docs/tests inspected as text; downloaded application code and tests were not executed.",
+    "Pinned snapshot demonstrates available implementation, not the earliest completion date; date omitted unless separately supported."
+  ],
+  "review_depth": "Full specification and linked task checklist; targeted pinned source/docs and tests or implementation diffs for this scope."
+}
