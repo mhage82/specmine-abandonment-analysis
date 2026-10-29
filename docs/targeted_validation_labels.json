@@ -1,0 +1,14 @@
+[
+  {
+    "file_url_sha16": "007f531fa0648744",
+    "repo_name": "alibaba/druid",
+    "file_path": "openspec/templates/spec.md",
+    "file_url": "https://github.com/alibaba/druid/blob/899c27609705335c9dd9608fc4b5ca28d7885155/openspec/templates/spec.md",
+    "split": "development",
+    "outcome": "ineligible",
+    "reviewer": "Jeremiah Briggs",
+    "reviewed_at": "2026-10-26",
+    "evidence_ref": "Revision 899c27609705335c9dd9608fc4b5ca28d7885155: openspec/templates/spec.md, requirement and scenario instructions, configuration placeholders, and Test Coverage checklist.",
+    "rationale": "The selected file is a reusable specification template containing generic authoring instructions and five unchecked test-coverage items. It does not define a concrete feature or implementation scope. Its incomplete fields are intentional template content and do not establish abandonment. The case is ineligible for assessing abandonment of a concrete specification scope. It was selected separately by identifier order from previously unreviewed stale-content candidates."
+  }
+]
