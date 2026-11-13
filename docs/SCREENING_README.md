@@ -57,4 +57,6 @@ Tests cover false keyword matches, conflicts, supersession, missing dates/counts
 
 This is an additive runnable screening/evaluation stage, not a trained predictive model. It does not certify birth/path lineage or generate predictive eligibility windows. Reuse the preserved temporal experiment for that separate feasibility investigation. Existing stages cannot accept superseded as a manual_status without modification, so the new label schema remains separate.
 
-To finish the research deliverable: run on your real stage-one table, freeze rules and evaluation sampling, complete independent review, rerun evaluation, inspect false positives/negatives and unresolved cases, and write the decision rationale. No failed prediction performance is claimed: reliable prospective labels/history have not yet been established.
+
+
+

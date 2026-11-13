@@ -6,14 +6,14 @@ The project includes data loading, feature preparation, exploratory analysis, a 
 
 ## Documentation
 
-| Component | Guide |
-|-|---|
-| Data loading and feature pipeline | [Data and feature pipeline](src/README.md) |
-| Data quality and exploratory analysis | [Exploratory analysis](README_EDA.md) |
-| Completion-review experiment | [Reproduction guide](reproducibility/README.md) |
-| Abandonment screening and evaluation | [Screening guide](docs/SCREENING_README.md) |
-| Preliminary result figures | [Figure generation guide](docs/FIGURES_README.md) |                                   |                                             |
-
+| Component                                                              | Guide                                                                           |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Data loading and feature pipeline                                      | [Data and feature pipeline](src/README.md)                                      |
+| Data quality and exploratory analysis                                  | [Exploratory analysis](README_EDA.md)                                           |
+| Completion-review experiment                                           | [Reproduction guide](reproducibility/README.md)                                 |
+| Abandonment screening and evaluation                                   | [Screening guide](docs/SCREENING_README.md)                                     |
+| Preliminary result figures                                             | [Figure generation guide](docs/FIGURES_README.md)                               |
+| Sensitivity and error analysis             | [Sensitivity analysis and existing-case comparison](docs/SENSITIVITY_README.md) |
 
 The completion-review reproduction guide documents the raw dataset snapshot, preserved annotation decisions, required scripts, expected outputs, and report-generation steps.
 
@@ -22,7 +22,6 @@ The completion-review reproduction guide documents the raw dataset snapshot, pre
 Follow the environment and dataset setup instructions in the reproduction and screening guides first.
 
 From the repository root, run this command in PowerShell:
-
     .\.venv-completion\Scripts\python.exe src/run_abandonment_pipeline.py --data-dir "data/specmine-official/data" --output-dir "results/abandonment_full_check_01" --labels "docs/reviewed_labels.json" --stale-days 90
 
 Use a new output directory for each run.
@@ -30,7 +29,6 @@ Use a new output directory for each run.
 This command prepares the raw sample, applies screening rules, evaluates the supplied review labels, and generates reports. Prepared data is written under `stage1/`; screening results and evaluation reports are written under `screening/`.
 
 The source sample revision is:
-
     9fbb61541046cb2fb770fa944192a3fc0b64a9b1
 
 ## Verified run and preliminary findings
