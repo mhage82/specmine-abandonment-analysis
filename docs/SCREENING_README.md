@@ -1,5 +1,13 @@
 # SpecMine retrospective screening add-on
 
+## Reproducing the reported results
+
+For first-time environment setup, dataset acquisition, and the raw-data screening command with saved evaluation labels, follow the [root README](../README.md#run-the-abandonment-screening-pipeline).
+
+The prepared-data commands below are alternatives for users who have already run the completion reproduction. The initial example intentionally omits labels and therefore does not reproduce the reported evaluation metrics. New manual annotation is not required to reproduce the existing results; the review-annotation section describes how to conduct additional reviews.
+
+For threshold comparisons and final comparison figures, follow the [sensitivity guide](SENSITIVITY_README.md).
+
 ## First run using your existing reproduction
 
 From the project root in PowerShell:
@@ -57,4 +65,6 @@ Tests cover false keyword matches, conflicts, supersession, missing dates/counts
 
 This is an additive runnable screening/evaluation stage, not a trained predictive model. It does not certify birth/path lineage or generate predictive eligibility windows. Reuse the preserved temporal experiment for that separate feasibility investigation. Existing stages cannot accept superseded as a manual_status without modification, so the new label schema remains separate.
 
-To finish the research deliverable: run on your real stage-one table, freeze rules and evaluation sampling, complete independent review, rerun evaluation, inspect false positives/negatives and unresolved cases, and write the decision rationale. No failed prediction performance is claimed: reliable prospective labels/history have not yet been established.
+
+
+
