@@ -5,7 +5,8 @@
 
 ## What it does
 This package includes a data loader that reads the actual SpecMine sample Parquet files into pandas
-DataFrames and a feature pipeline that combines the three loaded tables into one analysis table, with one row per specification.
+DataFrames and a feature pipeline that combines the three loaded tables into one analysis table, 
+with one row per specification.
 
 
 1. Calls data_loader.py to read `spec_files.parquet`,
@@ -20,8 +21,9 @@ DataFrames and a feature pipeline that combines the three loaded tables into one
 The specification table defines the population for this run. No source spec rows
 are filtered. Unmatched feature/history rows are counted in the summary but do
 not create extra specs. Missing feature values stay missing, not zero.
-This first implementation covers the broad census only; Kiro integration and
-the team's final predictor selection remain separate decisions.
+This pipeline covers the broad-census sample. Its outputs support descriptive analysis;
+the subsequent completion-evidence, abandonment-screening, and sensitivity workflows are
+documented separately.
 
 ## Outputs (replaced on each run)
 
@@ -59,7 +61,8 @@ for original field meanings.
 Requires Python 3.10+ and Git.
 1. Download or clone specmine-abandonment-analysis repository.
 2. Open CMD
-3. Change directory to this package directory. 
+3. Change directory to the repository root, which contains requirements.txt, 
+src, and README_EDA.md. Run all commands below from that directory. 
 
 ```bat
 cd "C:\your\actual\folder\path\"  

@@ -1,5 +1,13 @@
 # SpecMine retrospective screening add-on
 
+## Reproducing the reported results
+
+For first-time environment setup, dataset acquisition, and the raw-data screening command with saved evaluation labels, follow the [root README](../README.md#run-the-abandonment-screening-pipeline).
+
+The prepared-data commands below are alternatives for users who have already run the completion reproduction. The initial example intentionally omits labels and therefore does not reproduce the reported evaluation metrics. New manual annotation is not required to reproduce the existing results; the review-annotation section describes how to conduct additional reviews.
+
+For threshold comparisons and final comparison figures, follow the [sensitivity guide](SENSITIVITY_README.md).
+
 ## First run using your existing reproduction
 
 From the project root in PowerShell:
